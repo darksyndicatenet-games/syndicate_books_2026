@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxsvpdaviidky"]
+
+[ext_resource type="Script" uid="uid://bgh5lj4dru7mx" path="res://Scenes/Objects_Items/Milk/milk_jug.gd" id="1_6vvtf"]
+[ext_resource type="Texture2D" uid="uid://24rki1c5er3h" path="res://Assets/crosshair003.png" id="2_ulsab"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ulsab"]
+radius = 0.05
+height = 0.2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_drhn2"]
+radius = 0.05
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vvtf"]
+albedo_color = Color(0.7522726, 0.769079, 0.58206993, 1)
+
+[node name="Area3D" type="Area3D"]
+collision_layer = 3
+script = ExtResource("1_6vvtf")
+item_name = "Milk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10124539, 0)
+shape = SubResource("CapsuleShape3D_ulsab")
+
+[node name="MilkJug" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MilkJug"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10065673, 0)
+mesh = SubResource("CapsuleMesh_drhn2")
+surface_material_override/0 = SubResource("StandardMaterial3D_6vvtf")
+
+[node name="RayCast3D" type="RayCast3D" parent="MilkJug"]
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8315619, 0)
+visible = false
+texture_albedo = ExtResource("2_ulsab")
+modulate = Color(0, 0, 0, 1)

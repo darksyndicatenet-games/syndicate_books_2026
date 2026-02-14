@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6wci2fte75cs"]
+
+[ext_resource type="Script" uid="uid://dx1wjikwroal3" path="res://Scenes/Objects_Items/Cups/cup.gd" id="1_m0pcm"]
+[ext_resource type="Texture2D" uid="uid://24rki1c5er3h" path="res://Assets/crosshair003.png" id="2_jv838"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jv838"]
+radius = 0.075683594
+height = 0.2589844
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a24bi"]
+radius = 0.05
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0pcm"]
+albedo_color = Color(0.58021134, 0.44495478, 0.046609968, 1)
+
+[node name="Area3D" type="Area3D"]
+collision_layer = 3
+script = ExtResource("1_m0pcm")
+Small = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09792509, 0)
+shape = SubResource("CapsuleShape3D_jv838")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8315619, 0)
+texture_albedo = ExtResource("2_jv838")
+modulate = Color(0, 0, 0, 1)
+
+[node name="Cup" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10065673, 0)
+mesh = SubResource("CapsuleMesh_a24bi")
+surface_material_override/0 = SubResource("StandardMaterial3D_m0pcm")
+
+[node name="RayCast3D" type="RayCast3D" parent="Cup"]

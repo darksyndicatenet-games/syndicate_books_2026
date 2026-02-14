@@ -1,0 +1,312 @@
+[gd_scene load_steps=13 format=3 uid="uid://db2h3t17k37pe"]
+
+[ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="1_45d1s"]
+[ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="3_irgfk"]
+[ext_resource type="Material" uid="uid://cmjj6de7emqlq" path="res://Materials/grid_map_editor.tres" id="4_45d1s"]
+[ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="4_nuwel"]
+[ext_resource type="Material" uid="uid://do5ao6ixnb61g" path="res://Materials/grid_map_editor_greeen.tres" id="4_y7y61"]
+[ext_resource type="PackedScene" uid="uid://dvtpjji0yerr8" path="res://Scenes/Player.tscn" id="5_p70al"]
+[ext_resource type="PackedScene" uid="uid://bnl2eka7ga6x7" path="res://Scenes/misc/placement.tscn" id="6_45d1s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_f6bkd"]
+sky_material = SubResource("ProceduralSkyMaterial_5lq0h")
+
+[sub_resource type="Environment" id="Environment_g2h84"]
+background_mode = 2
+sky = SubResource("Sky_f6bkd")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_p70al"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_45d1s"]
+
+[node name="World" type="Node3D"]
+
+[node name="Import" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.196537, -2, 0.382374)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(4, 5.83948, 4)
+
+[node name="Placement" parent="Import" instance=ExtResource("6_45d1s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.38237393, 2.9186158, 1.334425)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g2h84")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.86602354, -0.43301606, 0.25000072, 0, 0.49999818, 0.86602646, -0.5000033, 0.7499993, -0.4330102, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Main-Library" type="Node3D" parent="Map"]
+
+[node name="Wall" type="CSGBox3D" parent="Map/Main-Library"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.941414, 2.2047672, 5.2722607)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(70.526855, 5, 0.5)
+
+[node name="Wall2" type="CSGBox3D" parent="Map/Main-Library"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.812897, 2.2047672, -25.779985)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(8.422363, 5, 0.5)
+
+[node name="Wall4" type="CSGBox3D" parent="Map/Main-Library"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.812895, 2.2047672, 11.920063)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(57.00183, 5, 0.5)
+
+[node name="Wall3" type="CSGBox3D" parent="Map/Main-Library"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.257555, 2.2047672, -29.763184)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(63.93805, 5, 0.5)
+
+[node name="Wall5" type="CSGBox3D" parent="Map/Main-Library"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.473965, 2.2047672, -2.697467)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(40.47501, 5, 0.5)
+
+[node name="Wall6" type="CSGBox3D" parent="Map/Main-Library"]
+transform = Transform3D(-0.9718131, 0, -0.23575285, 0, 1, 0, 0.23575285, 0, -0.9718131, 2.0078275, 2.2047672, -27.574833)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(13.767617, 5, 0.5)
+
+[node name="floor" type="CSGBox3D" parent="Map/Main-Library"]
+use_collision = true
+size = Vector3(200, 0.5, 200)
+material = ExtResource("4_45d1s")
+metadata/_edit_lock_ = true
+
+[node name="Smaller-Room-Library" type="Node3D" parent="Map"]
+
+[node name="Wall4" type="CSGBox3D" parent="Map/Smaller-Room-Library"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 49.890236, 2.2047672, -29.763184)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(40, 5, 0.5)
+
+[node name="Wall6" type="CSGBox3D" parent="Map/Smaller-Room-Library"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 49.890236, 2.2047672, 0.58186483)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(40, 5, 0.5)
+
+[node name="Wall5" type="CSGBox3D" parent="Map/Smaller-Room-Library"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 59.532875, 2.2047672, -14.609011)
+material_override = ExtResource("4_45d1s")
+use_collision = true
+size = Vector3(30, 5, 0.5)
+
+[node name="shelves" type="Node3D" parent="Map"]
+
+[node name="Shelf01" type="Node3D" parent="Map/shelves"]
+
+[node name="Shefls" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.279003, 2.253697, -23.400972)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls2" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.595617, 2.253697, -23.400972)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls3" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.279003, 2.253697, -18.384438)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls4" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.595617, 2.253697, -18.384438)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls5" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.279003, 2.253697, -10.565003)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls6" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.595617, 2.253697, -10.565003)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls7" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.279003, 2.253697, -5.581004)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls8" type="CSGBox3D" parent="Map/shelves/Shelf01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.595617, 2.253697, -5.581004)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shelf02" type="Node3D" parent="Map/shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4397888, 0, 0)
+
+[node name="Shefls9" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -23.400972)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls10" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -23.400972)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls11" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -18.384438)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls12" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -18.384438)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls13" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -10.565003)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls14" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -10.565003)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls15" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -5.581004)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls16" type="CSGBox3D" parent="Map/shelves/Shelf02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -5.581004)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shelf03" type="Node3D" parent="Map/shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.855038, 0, 0)
+
+[node name="Shefls9" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -23.400972)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls10" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -23.400972)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls11" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -18.384438)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls12" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -18.384438)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls13" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -10.565003)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls14" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -10.565003)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls15" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767113, 2.253697, -5.581004)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls16" type="CSGBox3D" parent="Map/shelves/Shelf03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.083727, 2.253697, -5.581004)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shelf04" type="Node3D" parent="Map/shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.110497, 0, 40.32621)
+
+[node name="Shefls9" type="CSGBox3D" parent="Map/shelves/Shelf04"]
+transform = Transform3D(1.6678736, 0, 0, 0, 1, 0, 0, 0, 1, -11.102589, 2.253697, -28.71713)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls11" type="CSGBox3D" parent="Map/shelves/Shelf04"]
+transform = Transform3D(1.6678736, 0, 0, 0, 1, 0, 0, 0, 1, -11.102589, 2.253697, -23.700596)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls10" type="CSGBox3D" parent="Map/shelves/Shelf04"]
+transform = Transform3D(1.6678736, 0, 0, 0, 1, 0, 0, 0, 1, -11.102589, 2.253697, -11.8599415)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls12" type="CSGBox3D" parent="Map/shelves/Shelf04"]
+transform = Transform3D(1.6678736, 0, 0, 0, 1, 0, 0, 0, 1, -11.102589, 2.253697, -6.8434067)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shelf05" type="Node3D" parent="Map/shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.526941, 0, 29.472382)
+
+[node name="Shefls9" type="CSGBox3D" parent="Map/shelves/Shelf05"]
+transform = Transform3D(1.6678736, 0, 0, 0, 1, 0, 0, 0, 1, -11.102589, 2.253697, -28.71713)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls11" type="CSGBox3D" parent="Map/shelves/Shelf05"]
+transform = Transform3D(1.6678736, 0, 0, 0, 1, 0, 0, 0, 1, -11.102589, 2.253697, -23.700596)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls10" type="CSGBox3D" parent="Map/shelves/Shelf05"]
+transform = Transform3D(1.5623528, 0, 0.3500439, 0, 1, 0, -0.583829, 0, 0.9367333, -10.026379, 2.253697, -18.261826)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Shefls12" type="CSGBox3D" parent="Map/shelves/Shelf05"]
+transform = Transform3D(1.5623528, 0, 0.3500439, 0, 1, 0, -0.583829, 0, 0.9367333, -8.270371, 2.253697, -13.56267)
+material_override = ExtResource("4_y7y61")
+size = Vector3(1, 4, 5)
+
+[node name="Misc" type="Node3D" parent="Map"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3361874, 1.3228525, 19.345697)
+material_override = ExtResource("1_45d1s")
+size = Vector3(19, 1, 5)
+
+[node name="Player" parent="." instance=ExtResource("5_p70al")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.528347, 0, 40.50698)
+
+[node name="Ball" type="RigidBody3D" parent="." groups=["books"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.968807, 0.99698687, -7.3174095)
+collision_layer = 3
+collision_mask = 3
+mass = 3.0
+freeze_mode = 1
+angular_damp = 0.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_p70al")
+surface_material_override/0 = ExtResource("3_irgfk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("SphereShape3D_45d1s")

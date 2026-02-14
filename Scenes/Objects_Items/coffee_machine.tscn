@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://oq8x2ou81l0f"]
+
+[ext_resource type="Script" uid="uid://c5vhkldy86dvu" path="res://Scenes/Objects_Items/CoffeeRecipes.gd" id="1_prvrg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kqqr"]
+size = Vector3(1.5, 1.1740723, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8kqqr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prvrg"]
+albedo_color = Color(0.75131226, 0.36800805, 0.21445653, 1)
+
+[node name="InteractionArea" type="Area3D"]
+collision_layer = 3
+script = ExtResource("1_prvrg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024780273, 0)
+shape = SubResource("BoxShape3D_8kqqr")
+
+[node name="CoffeeMachine" type="Node3D" parent="."]
+
+[node name="mesh" type="MeshInstance3D" parent="CoffeeMachine"]
+mesh = SubResource("BoxMesh_8kqqr")
+surface_material_override/0 = SubResource("StandardMaterial3D_prvrg")
+
+[node name="Label3D" type="Label3D" parent="CoffeeMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98655385, 0)
+visible = false
+billboard = 2
+text = "Coffee Machine"
+
+[node name="BrewButton" type="Button" parent="CoffeeMachine"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -31.0
+offset_right = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "Brew Button"
