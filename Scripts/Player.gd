@@ -52,6 +52,15 @@ func _physics_process(delta):
 	handle_holding_objects()
 	
 	
+	if interaction_ray.is_colliding():
+		var collider = interaction_ray.get_collider()
+
+		if collider.is_in_group("computer"):
+			print("Looking at interactable object!")
+
+			if Input.is_action_just_pressed("place"):
+				collider.show_computer_screen()
+	
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
@@ -59,13 +68,14 @@ func _physics_process(delta):
 	var obj = interaction_ray.get_collider()
 
 	if Input.is_action_just_pressed("interact"):
-		#var obj = interaction_ray.get_collider()
 		print("Ray hit: ", obj)
-		if obj and obj.has_method("interact"):
-		
-			print("Calling interact...")
-			obj.interact(self)
-			
+		#if obj and obj.has_method("interact"):
+		#
+			#print("Calling interact...")
+			#obj.interact(self)
+		#if obj and obj.has_method("show_computer_screen"):
+			#print("show_computer_screen")
+			#
 	# --- Hover label code ---
 	if obj:
 		# Show label above object

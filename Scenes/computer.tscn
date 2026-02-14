@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://dly8h81en08y1"]
+
+[ext_resource type="Script" uid="uid://ciqyugam84pnd" path="res://Scenes/computer.gd" id="1_7h0tq"]
+[ext_resource type="Texture2D" uid="uid://dagf0v1hown1i" path="res://Assets/ImagesComputer/Login_Screen.png" id="1_m1ujp"]
+[ext_resource type="Texture2D" uid="uid://edh5fokwvrvv" path="res://Assets/ImagesComputer/Booking_Screen.png" id="2_7h0tq"]
+[ext_resource type="Texture2D" uid="uid://5pvnwbpffimx" path="res://Assets/ImagesComputer/Exit_Img.png" id="3_3cxpa"]
+[ext_resource type="Texture2D" uid="uid://u0qvvbpp7qe4" path="res://Assets/ImagesComputer/Enter_Icon.png" id="3_m7p0i"]
+
+[node name="Computer" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7h0tq")
+
+[node name="LoginScreen" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m1ujp")
+
+[node name="btnEnter" type="TextureButton" parent="LoginScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.57900006
+anchor_top = 0.61200005
+anchor_right = 0.68200004
+anchor_bottom = 0.68
+offset_left = -0.6800537
+offset_top = 0.039978027
+offset_right = -0.44006348
+offset_bottom = -0.4000244
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_m7p0i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="edtName" type="TextEdit" parent="LoginScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40800002
+anchor_top = 0.44000003
+anchor_right = 0.68
+anchor_bottom = 0.483
+offset_left = -0.3600464
+offset_top = -0.20004272
+offset_right = 0.4000244
+offset_bottom = 0.35998535
+
+[node name="edtPassword" type="TextEdit" parent="LoginScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40800002
+anchor_top = 0.531
+anchor_right = 0.68
+anchor_bottom = 0.57100004
+offset_left = -0.3600464
+offset_top = 0.5199585
+offset_right = 0.4000244
+offset_bottom = 0.3199463
+
+[node name="BookingScreen" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7h0tq")
+
+[node name="btnExit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.707
+anchor_top = 0.305
+anchor_right = 0.74600005
+anchor_bottom = 0.35500002
+offset_left = -0.44006348
+offset_top = -0.3999939
+offset_right = -0.32006836
+offset_bottom = -0.307312
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_3cxpa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="LoginScreen/btnEnter" to="." method="_on_btn_enter_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

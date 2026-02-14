@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://6bcp3wb15v3t" path="res://Assets/Temp/book_sample.glb" id="1_a41g7"]
 
 [node name="book_sample" instance=ExtResource("1_a41g7")]
+
+[node name="Book_Sample" parent="." index="1"]
+transform = Transform3D(0, 0, 0.8973912, 0, 0.8973912, 0, -0.8381027, 0, 0, 0.1867888, 2.0257938, 0.3549049)
