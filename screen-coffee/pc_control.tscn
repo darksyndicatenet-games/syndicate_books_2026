@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5fo37ceeaaev"]
+
+[ext_resource type="Texture2D" uid="uid://chn7rdyg62p2" path="res://wp6990351.jpg" id="1_viatp"]
+[ext_resource type="Texture2D" uid="uid://dtxif4vwdsg0d" path="res://mouse_cursor.jpg" id="2_1rrs0"]
+
+[sub_resource type="Theme" id="Theme_r3fl7"]
+TabContainer/font_sizes/font_size = 20
+
+[node name="PC Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_r3fl7")
+
+[node name="MouseCursor" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(69, 67)
+scale = Vector2(0.29918033, 0.24452554)
+texture = ExtResource("2_1rrs0")
+offset = Vector2(16, 16)
+
+[node name="bg" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1987.0
+offset_top = -1085.0
+offset_right = 1981.0
+offset_bottom = 1147.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_viatp")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -8.0
+offset_right = 76.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test me..."
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 231.0
+offset_right = 665.0
+offset_bottom = 288.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.006
+anchor_bottom = 0.018000001
+offset_left = 511.0
+offset_top = 163.0
+offset_right = 570.088
+offset_bottom = 174.336
+text = "Enter Password:"
