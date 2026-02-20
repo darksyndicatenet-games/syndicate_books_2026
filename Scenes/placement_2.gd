@@ -11,7 +11,7 @@ func _physics_process(_delta: float) -> void:
 	
 	
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("books"):
+	if body.is_in_group("key"):
 		body_inside = body
 
 func move_to_marker(body: Node3D, marker: Marker3D):
@@ -19,7 +19,7 @@ func move_to_marker(body: Node3D, marker: Marker3D):
 	body.linear_velocity = Vector3.ZERO
 	body.angular_velocity = Vector3.ZERO
 	body.global_transform = marker.global_transform
-
+#	open door animation goes here
 func _on_body_exited(body: Node3D) -> void:
 	if body == body_inside:
 		body_inside = null

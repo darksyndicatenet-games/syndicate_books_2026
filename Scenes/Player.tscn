@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvtpjji0yerr8"]
+[gd_scene format=3 uid="uid://dvtpjji0yerr8"]
 
 [ext_resource type="Script" uid="uid://brl2bfd0j3i3" path="res://Scripts/Player.gd" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://xi51bjlu5g3m" path="res://Scenes/Objects_Items/crosshair001.png" id="2_kyqiw"]
@@ -7,24 +7,24 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("groudRay") groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=2139854177 node_paths=PackedStringArray("groudRay") groups=["player"]]
 script = ExtResource("1_rpqav")
 groudRay = NodePath("Head/Camera3D/DropRay")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=858942726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_xc2g5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=975189455]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_wydro")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=507162010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=674797463]
 
-[node name="HoverLabel" type="Label" parent="Head/Camera3D"]
+[node name="HoverLabel" type="Label" parent="Head/Camera3D" unique_id=124303641]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -38,10 +38,10 @@ text = "Yee"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Hand" type="Marker3D" parent="Head/Camera3D"]
+[node name="Hand" type="Marker3D" parent="Head/Camera3D" unique_id=264362362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.123649836, -1.1944897)
 
-[node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D"]
+[node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" unique_id=1245212001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13508677, -0.27770948)
 target_position = Vector3(0, 0, -4)
 collision_mask = 2
@@ -49,14 +49,14 @@ collide_with_areas = true
 debug_shape_custom_color = Color(0, 0.8265635, 0.90775096, 1)
 debug_shape_thickness = 5
 
-[node name="DropRay" type="RayCast3D" parent="Head/Camera3D"]
+[node name="DropRay" type="RayCast3D" parent="Head/Camera3D" unique_id=6881789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14157772, -1.906575)
 target_position = Vector3(0, -0.1, 0)
 collide_with_areas = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984107159]
 
-[node name="crosshair" type="Control" parent="CanvasLayer"]
+[node name="crosshair" type="Control" parent="CanvasLayer" unique_id=1414601954]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="cross" type="TextureRect" parent="CanvasLayer/crosshair"]
+[node name="cross" type="TextureRect" parent="CanvasLayer/crosshair" unique_id=85756162]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

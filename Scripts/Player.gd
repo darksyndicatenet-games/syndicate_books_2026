@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+var cursor_visible: bool = false
+
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
@@ -48,7 +50,13 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-	
+	if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
+		cursor_visible = not cursor_visible  # toggle the flag
+	if cursor_visible:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	handle_holding_objects()
 	
 	
@@ -58,8 +66,8 @@ func _physics_process(delta):
 		if collider.is_in_group("computer"):
 			print("Looking at interactable object!")
 
-			if Input.is_action_just_pressed("place"):
-				collider.show_computer_screen()
+			#if Input.is_action_just_pressed("place"):
+				#collider.show_computer_screen()
 	
 	
 	if Input.is_action_just_pressed("ui_cancel"):
