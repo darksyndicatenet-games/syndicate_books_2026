@@ -388,7 +388,7 @@ transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.8
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.9445771, 0, 0.32828987, 0, 1, 0, -0.32828987, 0, 0.9445771, -0.29054356, 0, 69.5446)
+transform = Transform3D(0.9445771, 0, 0.32828987, 0, 1, 0, -0.32828987, 0, 0.9445771, -5.103136, 0, 25.24329)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -449,6 +449,9 @@ shape = SubResource("BoxShape3D_ot02y")
 [node name="InventoryBookItem" parent="Day1" unique_id=1545751716 groups=["inventory_item"] instance=ExtResource("18_bf250")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.954108, 0.7958417, 40.164757)
 collision_layer = 5
+
+[node name="Shelf01" parent="Day1" unique_id=1389904403 instance=ExtResource("24_e5fr8")]
+transform = Transform3D(-0.9998712, 0, 0.008192416, 0, 1.5856996, 0, -0.016056336, 0, -0.5101663, -18.332693, 1.7955707, 30.34902)
 
 [node name="FrontDeskArea3D" type="Area3D" parent="Day1" unique_id=1224705965]
 
@@ -543,9 +546,6 @@ autowrap_mode = 3
 
 [node name="MissonManager" type="Node" parent="." unique_id=1637588277]
 script = ExtResource("16_jhl3c")
-
-[node name="Shelf01" parent="." unique_id=1389904403 instance=ExtResource("24_e5fr8")]
-transform = Transform3D(1, 0, 0, 0, 1.5856993, 0, 0, 0, 0.5102321, -19.001966, 1.7955707, 29.966105)
 
 [connection signal="body_entered" from="Import/Placement2" to="Import/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Import/Placement2" to="Import/Placement2" method="_on_body_exited"]
