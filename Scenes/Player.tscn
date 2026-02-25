@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.123649836, -1.1944897)
 [node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" unique_id=1245212001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13508677, -0.27770948)
 target_position = Vector3(0, 0, -4)
-collision_mask = 2
+collision_mask = 4
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0.8265635, 0.90775096, 1)
 debug_shape_thickness = 5
@@ -52,6 +52,7 @@ debug_shape_thickness = 5
 [node name="DropRay" type="RayCast3D" parent="Head/Camera3D" unique_id=6881789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14157772, -1.906575)
 target_position = Vector3(0, -0.1, 0)
+collision_mask = 8
 collide_with_areas = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984107159]
@@ -79,3 +80,18 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_kyqiw")
+
+[node name="InstructionLabel" type="Label" parent="CanvasLayer/crosshair" unique_id=1314027592]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.59900004
+anchor_right = 1.0
+anchor_bottom = 0.63100004
+offset_top = -3.920044
+offset_bottom = 3.5199585
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://sqimq48mlymu" path="res://Scenes/inventory_item.gd" id="1_giout"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_60bxy"]
-size = Vector3(1.5634766, 1.6953125, 2.5388184)
+size = Vector3(2.53125, 1.6953125, 2.8220215)
 
 [node name="InventoryItem" type="Area3D" unique_id=2002788006]
 script = ExtResource("1_giout")

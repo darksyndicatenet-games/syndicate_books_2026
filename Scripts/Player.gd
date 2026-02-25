@@ -39,6 +39,9 @@ var current_cup =  null
 @export var groudRay: RayCast3D
 var heldObjects : RigidBody3D
 
+
+@onready var instruction_label: Label = $CanvasLayer/crosshair/InstructionLabel
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -57,33 +60,23 @@ func _physics_process(delta):
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	handle_holding_objects()
-	
-	
-	if interaction_ray.is_colliding():
-		var collider = interaction_ray.get_collider()
-
-		if collider.is_in_group("computer"):
-			print("Looking at interactable object!")
-
-			#if Input.is_action_just_pressed("place"):
-				#collider.show_computer_screen()
-	
+	handle_holding_objects()	
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 #	stores the obj that the raycast detects
 	var obj = interaction_ray.get_collider()
-
+	if obj:
+		if obj.has_method("get_interact_text"):
+			instruction_label.visible = true
+			instruction_label.text = obj.get_interact_text()
+		else:
+			instruction_label.visible = false
+	else:
+		instruction_label.visible = false
 	if Input.is_action_just_pressed("interact"):
 		print("Ray hit: ", obj)
-		#if obj and obj.has_method("interact"):
-		#
-			#print("Calling interact...")
-			#obj.interact(self)
-		#if obj and obj.has_method("show_computer_screen"):
-			#print("show_computer_screen")
-			#
+
 	# --- Hover label code ---
 	if obj:
 		# Show label above object
@@ -172,6 +165,7 @@ func handle_holding_objects():
 	if Input.is_action_just_pressed("interact"):
 		if heldObjects != null: drop_held_object()
 		elif interaction_ray.is_colliding(): set_held_object(interaction_ray.get_collider())
+
 	
 	if heldObjects != null:
 		var targetPos = camera.global_transform.origin + (camera.global_basis * Vector3(0, 0, -followDistance))

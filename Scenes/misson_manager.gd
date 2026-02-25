@@ -8,9 +8,9 @@ var current_mission := 0
 
 @export_multiline var missions: PackedStringArray = [
 	"Find Key inside of return box outside of the library",
-	"Pick up the book.",
-	"Enter the correct log details.",
-	"Return the book before the due date."
+	"Pick up the stack of books.",
+	"Place books",
+	"... "
 ]
 
 
