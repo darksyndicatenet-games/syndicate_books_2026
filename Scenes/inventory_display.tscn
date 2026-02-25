@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://vnsnk4gu52t2"]
+
+[ext_resource type="Script" uid="uid://dm0urqko13n6g" path="res://inventory_display.gd" id="1_cytub"]
+
+[node name="InventoryDisplay" type="CanvasLayer" unique_id=1611622683]
+script = ExtResource("1_cytub")
+
+[node name="Panel" type="Panel" parent="." unique_id=1426266905]
+anchors_preset = -1
+anchor_left = 0.22900002
+anchor_top = 0.156
+anchor_right = 0.771
+anchor_bottom = 0.84400004
+offset_left = -0.6800232
+offset_top = 0.519989
+offset_right = 0.67993164
+offset_bottom = -0.52001953
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryText" type="Label" parent="Panel" unique_id=1957029687]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -39.0
+offset_right = 260.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

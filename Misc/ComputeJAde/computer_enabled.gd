@@ -31,8 +31,8 @@ func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("place"):
 		if not interacting:
 			start_interaction()
-		else:
-			end_interaction()
+		#else:
+			#end_interaction()
 
 func start_interaction() -> void:
 	interacting = true

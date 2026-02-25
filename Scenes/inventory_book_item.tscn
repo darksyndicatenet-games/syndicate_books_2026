@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpb6lrv1600bm"]
+
+[ext_resource type="Script" uid="uid://cvtrtsiyd45xx" path="res://Scenes/inventory_book_item.gd" id="1_0b7v4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60bxy"]
+size = Vector3(1.5634766, 1.6953125, 2.5388184)
+
+[node name="InventoryBookItem" type="Area3D" unique_id=1545751716]
+script = ExtResource("1_0b7v4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=487432995]
+shape = SubResource("BoxShape3D_60bxy")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1787706635]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

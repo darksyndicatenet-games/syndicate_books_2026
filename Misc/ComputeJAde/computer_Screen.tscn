@@ -48,7 +48,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kilop")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bt4do"]
-size = Vector3(5, 2, 5)
+size = Vector3(5, 2, 3.5336914)
 
 [node name="Computer" type="Node3D" unique_id=499691354 groups=["computer"]]
 script = ExtResource("1_bt4do")
@@ -64,13 +64,14 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="." unique_id=1567470442]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=652211640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7331543)
 shape = SubResource("BoxShape3D_bt4do")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2016741429]
 
 [node name="User" type="TextureRect" parent="CanvasLayer" unique_id=1806258265]
 visible = false
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1290.2944
@@ -126,6 +127,7 @@ offset_bottom = 305.00574
 scale = Vector2(0.82343644, 0.5928757)
 
 [node name="Logbook" type="Control" parent="CanvasLayer" unique_id=1838962447]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,7 +141,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1310.2805
+offset_right = -1307.4089
 offset_bottom = -634.6571
 grow_horizontal = 2
 grow_vertical = 2
@@ -214,28 +216,11 @@ scale = Vector2(0.90169966, 0.87150437)
 layout_mode = 0
 offset_left = 456.89084
 offset_top = 34.32
-offset_right = 482.3672
+offset_right = 485.55194
 offset_bottom = 55.885338
 scale = Vector2(0.90169966, 0.87150425)
 mouse_default_cursor_shape = 16
 texture_normal = ExtResource("11_y38at")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Help2" type="Sprite2D" parent="CanvasLayer/Logbook/Log" unique_id=650700277]
-visible = false
-position = Vector2(279.81372, 213.68286)
-scale = Vector2(0.3705144, 0.38772824)
-texture = ExtResource("12_d3en1")
-
-[node name="Exit" type="TextureButton" parent="CanvasLayer/Logbook/Log" unique_id=138639764]
-layout_mode = 0
-offset_left = 340.75378
-offset_top = 64.14572
-offset_right = 365.1688
-offset_bottom = 88.523926
-scale = Vector2(0.9016997, 0.87150425)
-texture_normal = ExtResource("13_h0g28")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -245,6 +230,24 @@ offset_left = 514.6403
 offset_top = 35.137146
 offset_right = 536.93225
 offset_bottom = 58.57774
+scale = Vector2(0.9016997, 0.87150425)
+texture_normal = ExtResource("13_h0g28")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Help2" type="Sprite2D" parent="CanvasLayer/Logbook" unique_id=650700277]
+z_index = 1
+position = Vector2(877, 523)
+scale = Vector2(1.1612766, 0.9489852)
+texture = ExtResource("12_d3en1")
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer/Logbook" unique_id=138639764]
+z_index = 1
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 157.00002
+offset_right = 1143.4131
+offset_bottom = 215.5195
 scale = Vector2(0.9016997, 0.87150425)
 texture_normal = ExtResource("13_h0g28")
 ignore_texture_size = true
@@ -279,5 +282,5 @@ offset_bottom = 23.0
 [connection signal="pressed" from="CanvasLayer/User/Control/btnEnter" to="CanvasLayer/User" method="_on_btn_enter_pressed"]
 [connection signal="pressed" from="CanvasLayer/Logbook/Log/btnEnter2" to="CanvasLayer/User" method="_on_btn_enter_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Logbook/Log/Help" to="CanvasLayer/User" method="_on_help_pressed"]
-[connection signal="pressed" from="CanvasLayer/Logbook/Log/Exit" to="CanvasLayer/User" method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Logbook/Log/Exit2" to="CanvasLayer/User" method="_on_exit_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Logbook/Exit" to="CanvasLayer/User" method="_on_exit_pressed"]

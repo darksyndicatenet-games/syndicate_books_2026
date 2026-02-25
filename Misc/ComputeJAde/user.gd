@@ -27,25 +27,34 @@ var books = {
 @onready var returned: LineEdit = $"../Logbook/Log/Returned"
 @onready var fine: LineEdit = $"../Logbook/Log/Fine"
 @onready var taken_out_by: LineEdit = $"../Logbook/Log/TakenOutBy"
-@onready var help_2: Sprite2D = $"../Logbook/Log/Help2"
+@onready var help_2: Sprite2D = $"../Logbook/Help2"
 
-@onready var exit: TextureButton = $"../Logbook/Log/Exit"
+@onready var exit: TextureButton = $"../Logbook/Exit"
 
 func _ready() -> void:
-	exit.visible = false
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # Show cursor for UI
 	logbook.visible = false
 	error_message.visible = false
+	
+#	rule book
+	exit.visible = true
+	help_2.visible = true
 
 func _on_btn_enter_pressed() -> void:
 	var entereed_user_name = user_name.text
 	var entereed_password= password.text
-	print(entereed_user_name)
-	print(entereed_password)
-	control.visible = false
-	logbook.visible = true
-	user.visible = false
-	log_.visible = true
+	
+	if user_name.text == "zee" && password.text == "zee":
+		print(entereed_user_name)
+		print(entereed_password)
+		control.visible = false
+		logbook.visible = true
+		user.visible = false
+		log_.visible = true
+	else:
+		print("error username and password incorrect")
+		#throw an error here visible to player
 
 
 func error_message_function(message: String):

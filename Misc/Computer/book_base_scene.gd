@@ -1,82 +1,81 @@
 extends RigidBody3D
 
+# -------------------------
+# Exported Book Properties
+# -------------------------
 @export var book_name: String
 @export var author: String
 @export var taken_out_by: String
 @export var issue_date: String = "2025-01-01" # YYYY-MM-DD
 @export var fine_per_day: float = 2.0
 
+# -------------------------
+# Internal Tracking
+# -------------------------
 var allowed_days := 14
 var days_kept := 0
 var fine_amount := 0.0
 var due_date: String = ""
 
-
+# -------------------------
+# Ready
+# -------------------------
 func _ready():
 	calculate_book_info()
-	self.set_meta("display_name",book_name)
-
+	self.set_meta("display_name", book_name)
 
 # -------------------------
-#  PARSE YYYY-MM-DD string
+# Parse YYYY-MM-DD string → UNIX timestamp
 # -------------------------
-func parse_date(date_str: String) -> int:
+func parse_date_to_unix(date_str: String) -> int:
 	var parts = date_str.split("-")
-	var year = int(parts[0])
-	var month = int(parts[1])
-	var day = int(parts[2])
-
-	# Convert to UNIX time (seconds since 1970)
-	return Time.get_unix_time_from_datetime_dict({
-		"year": year,
-		"month": month,
-		"day": day,
+	var dt_dict = {
+		"year": int(parts[0]),
+		"month": int(parts[1]),
+		"day": int(parts[2]),
 		"hour": 0,
 		"minute": 0,
 		"second": 0
-	})
-
+	}
+	return Time.get_unix_time_from_datetime_dict(dt_dict)
 
 # -------------------------
-#  ADD days to UNIX time
+# Convert UNIX → YYYY-MM-DD string
+# -------------------------
+func unix_to_date_string(unix_time: int) -> String:
+	var dt = Time.get_datetime_dict_from_unix_time(unix_time) # UTC dictionary
+	return "%04d-%02d-%02d" % [dt.year, dt.month, dt.day]
+
+# -------------------------
+# Add days to UNIX timestamp
 # -------------------------
 func add_days(unix_time: int, days: int) -> int:
-	return unix_time + (days * 86400)
-
+	return unix_time + days * 86400
 
 # -------------------------
-#  MAIN CALCULATION
+# Main Calculation
 # -------------------------
 func calculate_book_info():
-	var issue_unix := parse_date(issue_date)
-	var now_unix := Time.get_unix_time_from_system()
-
-	# Days kept
+	var issue_unix = parse_date_to_unix(issue_date)
+	var now_unix = Time.get_unix_time_from_system() # Current UNIX time (UTC)
+	
+	# Days kept (floor division)
 	days_kept = int((now_unix - issue_unix) / 86400)
-
+	
 	# Due date
-	var due_unix := add_days(issue_unix, allowed_days)
-	due_date = convert_unix_to_date_string(due_unix)
-
+	var due_unix = add_days(issue_unix, allowed_days)
+	due_date = unix_to_date_string(due_unix)
+	
 	# Fine
 	if days_kept > allowed_days:
 		fine_amount = (days_kept - allowed_days) * fine_per_day
 	else:
 		fine_amount = 0
 
-	# Debug print
 	print_book_info()
 
 # -------------------------
-#  Convert UNIX → YYYY-MM-DD
-# -------------------------
-func convert_unix_to_date_string(unix_time: int) -> String:
-	var d = Time.get_datetime_dict_from_unix_time(unix_time)
-	return "%04d-%02d-%02d" % [d.year, d.month, d.day]
-
-
-# -------------------------
-#  Print info (for testing)
+# Print info
 # -------------------------
 func print_book_info():
 	print("-----------------------------")
@@ -88,8 +87,10 @@ func print_book_info():
 	print("Days Kept:", days_kept)
 	print("Fine: R", fine_amount)
 	print("-----------------------------")
-
-
+	
+	#have a signal and of specific books
+#	emit these and keep track so the new misson can be printed
+	
 func interact(player):
 	player.current_cup = self
 	

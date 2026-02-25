@@ -9,6 +9,8 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ch4ms"]
 size = Vector3(0.5, 0.5, 0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibhri"]
+
 [node name="BookBaseScene" type="RigidBody3D" unique_id=1562565056 groups=["books"]]
 collision_layer = 3
 collision_mask = 3
@@ -22,3 +24,9 @@ mesh = SubResource("BoxMesh_gko4i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1592677587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24844906, 0)
 shape = SubResource("BoxShape3D_ch4ms")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1732778017]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=517621835]
+shape = SubResource("BoxShape3D_ibhri")
+debug_color = Color(0.978744, 0, 0.39751428, 0.41960785)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d2h6j1hjodv6x"]
+
+[ext_resource type="Script" uid="uid://sqimq48mlymu" path="res://Scenes/inventory_item.gd" id="1_giout"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60bxy"]
+size = Vector3(1.5634766, 1.6953125, 2.5388184)
+
+[node name="InventoryItem" type="Area3D" unique_id=2002788006]
+script = ExtResource("1_giout")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=720768427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.670395, 3.1906064, 1.0798416)
+shape = SubResource("BoxShape3D_60bxy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

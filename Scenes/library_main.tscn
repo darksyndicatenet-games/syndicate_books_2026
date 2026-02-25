@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cvk3gsgfjr0jb" path="res://Scenes/placement_2.gd" id="4_7vups"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_dicjl"]
 [ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="5_qstqp"]
+[ext_resource type="PackedScene" uid="uid://d2h6j1hjodv6x" path="res://Scenes/inventory_item.tscn" id="6_dicjl"]
 [ext_resource type="Material" uid="uid://def8l0xxqoggq" path="res://Materials/grid_map_editor_red.tres" id="6_jhl3c"]
 [ext_resource type="Script" uid="uid://dqd13f621xeqr" path="res://Scenes/pc.gd" id="7_21cw4"]
 [ext_resource type="PackedScene" uid="uid://dly8h81en08y1" path="res://Scenes/computer.tscn" id="8_44hc2"]
@@ -15,10 +16,13 @@
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="10_dicjl"]
 [ext_resource type="Texture2D" uid="uid://dg5cr45qp6f52" path="res://Assets/Temp/book_sample_ColorPalette2.png" id="11_0yy4c"]
 [ext_resource type="PackedScene" uid="uid://dxtn76e3f80ig" path="res://Misc/ComputeJAde/computer_Screen.tscn" id="13_ocnvn"]
+[ext_resource type="PackedScene" uid="uid://vnsnk4gu52t2" path="res://Scenes/inventory_display.tscn" id="13_ot02y"]
 [ext_resource type="PackedScene" uid="uid://dusddvyrnmaq2" path="res://Misc/Computer/book_base_scene.tscn" id="14_1kku3"]
+[ext_resource type="Script" uid="uid://btwimjempan50" path="res://Scenes/key.gd" id="15_dicjl"]
 [ext_resource type="PackedScene" uid="uid://dq1tnobntax1c" path="res://Scenes/fade_text.tscn" id="15_qstqp"]
 [ext_resource type="Script" uid="uid://cjdjmcwn3ngfr" path="res://Scenes/fade_text_prompt.gd" id="16_21cw4"]
 [ext_resource type="Script" uid="uid://dqjis7j3pndp5" path="res://Scenes/misson_manager.gd" id="16_jhl3c"]
+[ext_resource type="PackedScene" uid="uid://bpb6lrv1600bm" path="res://Scenes/inventory_book_item.tscn" id="18_bf250"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lje5s"]
 size = Vector3(1, 0.20062256, 1)
@@ -127,47 +131,14 @@ data = PackedVector3Array(-0.1450468, -0.24430776, 0.047901154, -0.15667495, 0.2
 [sub_resource type="BoxShape3D" id="BoxShape3D_wohjs"]
 size = Vector3(0.5654297, 0.40460205, 0.5683594)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ot02y"]
+size = Vector3(3.865, 6.29, 1.46)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bf250"]
+size = Vector3(14.973125, 1.775, 3.4998877)
+
 [node name="Library_Main" type="Node3D" unique_id=1105848030]
 script = ExtResource("1_wohjs")
-
-[node name="Import" type="CSGBox3D" parent="." unique_id=1522006644]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.790764, -2, 1.768575)
-material_override = ExtResource("1_o65xa")
-use_collision = true
-size = Vector3(4, 5.83948, 4)
-
-[node name="Placement" parent="Import" unique_id=900833626 instance=ExtResource("2_wohjs")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.442188, 3.5011628, -5.2347984)
-visible = false
-
-[node name="Placement2" type="Area3D" parent="Import" unique_id=1307869224]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.140589, 4.275371, -20.375439)
-visible = false
-script = ExtResource("4_7vups")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Import/Placement2" unique_id=702845606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1065979, 0)
-shape = SubResource("BoxShape3D_lje5s")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Import/Placement2" unique_id=669329066]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113586426, -0.0044555664)
-visible = false
-material_override = ExtResource("5_dicjl")
-size = Vector3(1, 0.21520996, 0.97546387)
-
-[node name="ObjectPlaced" type="Marker3D" parent="Import/Placement2" unique_id=985395488]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.017788023, 0.025157988)
-
-[node name="Placement3" parent="Import" unique_id=1297805254 instance=ExtResource("2_wohjs")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.87017, 3.4510107, -7.1086445)
-visible = false
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=29769233]
-environment = SubResource("Environment_g2h84")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1189328732]
-transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.86602646, -0.5000033, 0.7499993, -0.4330102, -0.33124197, 0, 1.386201)
-shadow_enabled = true
 
 [node name="Map" type="Node3D" parent="." unique_id=663058725]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33124197, 0, 1.386201)
@@ -395,6 +366,7 @@ size = Vector3(1, 4, 5)
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Misc" unique_id=1550285286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.47283, 0.7263559, 20.327631)
 material_override = ExtResource("5_qstqp")
+use_collision = true
 size = Vector3(15, 1.293335, 3.0361328)
 
 [node name="Door" type="CSGBox3D" parent="Map/Misc" unique_id=341284320]
@@ -416,8 +388,49 @@ script = ExtResource("7_21cw4")
 [node name="Computer" parent="Map/Comps/PC" unique_id=1603696071 groups=["computer"] instance=ExtResource("8_44hc2")]
 visible = false
 
+[node name="Import" type="CSGBox3D" parent="." unique_id=1522006644]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.790764, -2, 1.768575)
+material_override = ExtResource("1_o65xa")
+use_collision = true
+size = Vector3(4, 5.83948, 4)
+
+[node name="Placement" parent="Import" unique_id=900833626 instance=ExtResource("2_wohjs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.442188, 3.5011628, -5.2347984)
+visible = false
+
+[node name="Placement2" type="Area3D" parent="Import" unique_id=1307869224]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.140589, 4.275371, -20.375439)
+visible = false
+script = ExtResource("4_7vups")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Import/Placement2" unique_id=702845606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1065979, 0)
+shape = SubResource("BoxShape3D_lje5s")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Import/Placement2" unique_id=669329066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113586426, -0.0044555664)
+visible = false
+material_override = ExtResource("5_dicjl")
+size = Vector3(1, 0.21520996, 0.97546387)
+
+[node name="ObjectPlaced" type="Marker3D" parent="Import/Placement2" unique_id=985395488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.017788023, 0.025157988)
+
+[node name="Placement3" parent="Import" unique_id=1297805254 instance=ExtResource("2_wohjs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.87017, 3.4510107, -7.1086445)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=29769233]
+environment = SubResource("Environment_g2h84")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1189328732]
+transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.86602646, -0.5000033, 0.7499993, -0.4330102, -0.33124197, 0, 1.386201)
+shadow_enabled = true
+
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4025326, 0, 62.96508)
+transform = Transform3D(-0.9950954, 0, -0.09892034, 0, 1, 0, 0.09892034, 0, -0.9950954, -11.999829, 0, 14.983328)
+
+[node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
 [node name="Ball" type="RigidBody3D" parent="." unique_id=921842464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.068901, 0.99698687, 10.579591)
@@ -459,10 +472,9 @@ shape = SubResource("ConcavePolygonShape3D_1xhe1")
 
 [node name="Day1" type="Node3D" parent="." unique_id=414483559]
 
-[node name="Key" type="RigidBody3D" parent="Day1" unique_id=1268743026 groups=["key"]]
+[node name="Key" type="RigidBody3D" parent="Day1" unique_id=1268743026 groups=["inventory_item", "key"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.801567, 0.37172508, 34.214832)
-collision_layer = 3
-collision_mask = 3
+script = ExtResource("15_dicjl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/Key" unique_id=1907182427]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26162052, 0.16763306, 0.05108261)
@@ -473,11 +485,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26660156, 0.14888066, 0.053
 material_override = ExtResource("5_qstqp")
 size = Vector3(0.46679688, 0.36999512, 0.48583984)
 
+[node name="InventoryItem" parent="Day1/Key" unique_id=2002788006 instance=ExtResource("6_dicjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.92591, -2.9495523, -0.38274002)
+
+[node name="Door" type="Area3D" parent="Day1" unique_id=1245343156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.07555)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/Door" unique_id=1490496602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0697556, 1.5333531, -0.87189484)
+shape = SubResource("BoxShape3D_ot02y")
+
+[node name="InventoryBookItem" parent="Day1" unique_id=1545751716 instance=ExtResource("18_bf250")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.954108, 0.7958417, 40.164757)
+
+[node name="FrontDeskArea3D" type="Area3D" parent="Day1" unique_id=1224705965]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/FrontDeskArea3D" unique_id=12156866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.756346, 0.75652504, 21.630194)
+shape = SubResource("BoxShape3D_bf250")
+debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
+
+[node name="Label3D" type="Label3D" parent="Day1/FrontDeskArea3D" unique_id=1755319332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.055252, 2.7285573, 21.492002)
+billboard = 2
+text = "Place Books 1/2"
+
 [node name="Computer" parent="." unique_id=499691354 instance=ExtResource("13_ocnvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.92816, 0.9713683, 37.88896)
+transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -14.147482, 2.015899, 21.035038)
 
 [node name="ThePowerofYourSubconsciousMind" parent="." unique_id=1562565056 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.399266, 0.25105524, 42.75129)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.790524, 0.25105524, 25.751282)
 mass = 10.0
 book_name = "The Power of Your Subconscious Mind"
 author = "Jason Murphy"
@@ -485,7 +522,8 @@ taken_out_by = "Me"
 issue_date = "2025-11-10"
 
 [node name="TheRoutledgeHandbookofPhilosophyofEmpathy" parent="." unique_id=488190995 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.399266, 0.25105524, 43.6196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.399266, 0.25105524, 26.61959)
+mass = 10.0
 book_name = "The Routledge Handbook of Philosophy of Empathy"
 author = "Jason Murphy"
 taken_out_by = "Me"
@@ -521,6 +559,7 @@ grow_horizontal = 0
 script = ExtResource("16_21cw4")
 
 [node name="Label" type="Label" parent="TriggerThoughts/FadeText" unique_id=1695920582]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.21000001
@@ -535,6 +574,17 @@ theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="MissonLabel" type="Label" parent="TriggerThoughts/FadeText" unique_id=1555930675]
+layout_mode = 0
+offset_left = -413.0
+offset_top = 55.0
+offset_right = -91.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="TriggerPrompts" type="Node3D" parent="." unique_id=636225065]
 
 [node name="MissonManager" type="Node" parent="." unique_id=1637588277]
@@ -542,3 +592,7 @@ script = ExtResource("16_jhl3c")
 
 [connection signal="body_entered" from="Import/Placement2" to="Import/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Import/Placement2" to="Import/Placement2" method="_on_body_exited"]
+[connection signal="key_collected" from="Day1/Key/InventoryItem" to="Day1/Key" method="_on_inventory_item_key_collected"]
+[connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
+[connection signal="book_collected" from="Day1/InventoryBookItem" to="." method="_on_inventory_book_item_book_collected"]
+[connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]

@@ -1,7 +1,7 @@
 extends Node
 
 signal object_state_changed(is_holding: bool)
-
+var is_player_occupied:= false
 var is_holding := false
 
 func set_holding(state: bool):
