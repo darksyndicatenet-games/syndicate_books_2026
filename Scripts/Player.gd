@@ -60,7 +60,8 @@ func _physics_process(delta):
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	handle_holding_objects()	
+	handle_holding_objects()
+#	I FIXED MY ERROR IM A GENIUS
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
@@ -173,10 +174,10 @@ func handle_holding_objects():
 		
 	if Input.is_action_just_pressed("interact"):
 		if heldObjects != null: drop_held_object()
-	elif interaction_ray.is_colliding():
-		var obj = interaction_ray.get_collider()
-		if obj is RigidBody3D:
-			set_held_object(obj)
+		if interaction_ray.is_colliding():
+			var obj = interaction_ray.get_collider()
+			if obj is RigidBody3D:
+				set_held_object(obj)
 	
 	if heldObjects != null:
 		var targetPos = camera.global_transform.origin + (camera.global_basis * Vector3(0, 0, -followDistance))
