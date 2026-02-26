@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ck6wehu2sblth"]
+
+[ext_resource type="Material" uid="uid://do5ao6ixnb61g" path="res://Materials/grid_map_editor_greeen.tres" id="1_ebtxs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x2qk8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xlkoh"]
+
+[node name="Spook_1" type="CharacterBody3D" unique_id=1482541136]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1991601404]
+shape = SubResource("CapsuleShape3D_x2qk8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1672135948]
+mesh = SubResource("CapsuleMesh_xlkoh")
+surface_material_override/0 = ExtResource("1_ebtxs")
