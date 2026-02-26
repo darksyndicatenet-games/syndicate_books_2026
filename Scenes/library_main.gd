@@ -22,3 +22,7 @@ func _on_inventory_book_item_book_collected() -> void:
 func _on_front_desk_area_3d_area_entered(area: Area3D) -> void:
 	if area.is_in_group("books"):
 		print(area)
+
+
+func _ready() -> void:
+	Dialogic.start("scare1_spook1")
