@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://dqd13f621xeqr" path="res://Scenes/pc.gd" id="7_21cw4"]
 [ext_resource type="PackedScene" uid="uid://dly8h81en08y1" path="res://Scenes/computer.tscn" id="8_44hc2"]
 [ext_resource type="PackedScene" uid="uid://dvtpjji0yerr8" path="res://Scenes/Player.tscn" id="9_7vups"]
-[ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="10_dicjl"]
 [ext_resource type="Texture2D" uid="uid://dg5cr45qp6f52" path="res://Assets/Temp/book_sample_ColorPalette2.png" id="11_0yy4c"]
 [ext_resource type="PackedScene" uid="uid://dxtn76e3f80ig" path="res://Misc/ComputeJAde/computer_Screen.tscn" id="13_ocnvn"]
 [ext_resource type="PackedScene" uid="uid://vnsnk4gu52t2" path="res://Scenes/inventory_display.tscn" id="13_ot02y"]
@@ -41,10 +40,6 @@ background_mode = 2
 sky = SubResource("Sky_f6bkd")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="SphereMesh" id="SphereMesh_p70al"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_45d1s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_648av"]
 resource_name = "Material"
@@ -389,24 +384,9 @@ transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.8
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.9445771, 0, 0.32828987, 0, 1, 0, -0.32828987, 0, 0.9445771, 1.9801617, 0, 76.21298)
+transform = Transform3D(0.9445771, 0, 0.32828987, 0, 1, 0, -0.32828987, 0, 0.9445771, 1.9801617, 0, 23.18928)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
-
-[node name="Ball" type="RigidBody3D" parent="." unique_id=921842464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.068901, 0.99698687, 10.579591)
-collision_layer = 3
-collision_mask = 3
-mass = 3.0
-freeze_mode = 1
-angular_damp = 0.5
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball" unique_id=1218139401]
-mesh = SubResource("SphereMesh_p70al")
-surface_material_override/0 = ExtResource("10_dicjl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball" unique_id=404020522]
-shape = SubResource("SphereShape3D_45d1s")
 
 [node name="book_sample" type="Node3D" parent="." unique_id=1007294265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7044, 0.25, 29.798338)

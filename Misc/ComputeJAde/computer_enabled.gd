@@ -1,9 +1,7 @@
 extends Node3D
 
 @onready var sprite_2d: TextureRect = $CanvasLayer/User
-
 @onready var error_message: Label = $CanvasLayer/ErrorMessage
-
 @onready var user: TextureRect = $CanvasLayer/User
 
 var cursor_visible: bool = false

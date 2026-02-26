@@ -109,10 +109,20 @@ func _on_btn_enter_2_pressed() -> void:
 	var author_correct = book_node.author.to_lower() == entered_author.to_lower()
 	var issued_correct = book_node.issue_date == entered_issued
 	var taken_out_by_correct = book_node.taken_out_by.to_lower() == entered_taken_out_by.to_lower()
+	
+	# Get today's system date
+	var today_dict = Time.get_datetime_dict_from_system()
 
+	var today_string = str(today_dict.year) + "-" + \
+		str(today_dict.month).pad_zeros(2) + "-" + \
+		str(today_dict.day).pad_zeros(2)
+
+	# Check if entered return date matches today's date
+	var returned_correct = entered_returned == today_string
+	var returned_unix = parse_date_to_unix(entered_returned)
 	# Calculate fine based on returned date
 	var issue_unix = parse_date_to_unix(book_node.issue_date)
-	var returned_unix = parse_date_to_unix(entered_returned)
+	#var returned_unix = parse_date_to_unix(entered_returned)
 	var days_kept = int((returned_unix - issue_unix) / 86400)
 	var fine_calculated = 0.0
 	if days_kept > book_node.allowed_days:
@@ -121,7 +131,8 @@ func _on_btn_enter_2_pressed() -> void:
 	var fine_correct = float(entered_fine) == fine_calculated
 
 	# No need to compare returned directly to due_date
-	var returned_correct = true  # any valid returned date is acceptable
+	#var returned_correct = true 
+	# any valid returned date is acceptable
 
 	if book_name_correct and author_correct and issued_correct and returned_correct and fine_correct and taken_out_by_correct:
 		correct_message.text = "All entries are correct!"
@@ -141,6 +152,10 @@ func _on_btn_enter_2_pressed() -> void:
 		if not fine_correct:
 			print("- Fine is wrong")
 			error_message_function("- Fine is wrong")
+		if not returned_correct:
+			print("- Return Date is wrong")
+			error_message_function("- Return Date is wrong")
+			
 		if not taken_out_by_correct:
 			print("- Taken out by is wrong")
 			error_message_function("- Taken out by is wrong")
