@@ -22,6 +22,8 @@ func _on_inventory_book_item_book_collected() -> void:
 func _on_front_desk_area_3d_area_entered(area: Area3D) -> void:
 	if area.is_in_group("books"):
 		print(area)
+#		wait one sec
+#above
 
 
 #func _ready() -> void:

@@ -40,6 +40,9 @@ func _ready() -> void:
 #	rule book
 	exit.visible = true
 	help_2.visible = true
+	
+#	signals
+	SignalManager.scene1_return_books_to_shelf.connect(on_scene1_return_books_to_shelf)
 
 func _on_btn_enter_pressed() -> void:
 	var entereed_user_name = user_name.text
@@ -63,16 +66,16 @@ func error_message_function(message: String):
 	await get_tree().create_timer(2.0).timeout
 	error_message.visible = false
 
-func find_book_node_by_name(name: String) -> RigidBody3D:
+func find_book_node_by_name(book_title: String) -> RigidBody3D:
 	for book in get_tree().get_nodes_in_group("books"):
-		if book is RigidBody3D and book.book_name.to_lower() == name.strip_edges().to_lower():
+		if book is RigidBody3D and book.book_name.to_lower() == book_title.strip_edges().to_lower():
 			return book
 	return null
 func parse_date_to_unix(date_str: String) -> int:
 	var parts = date_str.split("-")
 	
 	if parts.size() != 3:
-		push_error("Invalid date format: " + date_str)
+		#push_error("Invalid date format: " + date_str)
 		return 0
 	
 	var year = int(parts[0])
@@ -136,7 +139,10 @@ func _on_btn_enter_2_pressed() -> void:
 
 	if book_name_correct and author_correct and issued_correct and returned_correct and fine_correct and taken_out_by_correct:
 		correct_message.text = "All entries are correct!"
+
+#i think i need to add a temp counter and dsicard it once used -- signal should then be fired,having the entries only enter is the incorrect way of firing it
 		print("All entries are correct!")
+		SignalManager.emit_signal("scene1_return_books_to_shelf")
 	else:
 		
 		print("Some entries are incorrect:")
@@ -172,3 +178,7 @@ func _on_exit_pressed() -> void:
 
 func _on_exit_2_pressed() -> void:
 	log_.visible = false
+
+func on_scene1_return_books_to_shelf():
+	SignalManager.prompt_scene1_return_books_to_shelf = true
+	print("scene1_return_books_to_shelf")

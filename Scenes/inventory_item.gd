@@ -12,7 +12,7 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		player_in_area = false
 
-func _process(delta):
+func _process(_delta):
 	if player_in_area and Input.is_action_just_pressed("place"):
 		Inventory.add_item(item_name)
 		queue_free()

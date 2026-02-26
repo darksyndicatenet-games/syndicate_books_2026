@@ -26,6 +26,7 @@ CoffeeRecipes="*res://Scenes/Objects_Items/CoffeeRecipes.gd"
 Global="*res://global.tscn"
 Inventory="*uid://clhd31qkv6wcp"
 Dialogic="*uid://ds2q0uclmolvu"
+SignalManager="*uid://clm7qw6ujn7ug"
 
 [dialogic]
 
