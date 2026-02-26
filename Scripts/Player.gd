@@ -76,6 +76,15 @@ func _physics_process(delta):
 		instruction_label.visible = false
 	if Input.is_action_just_pressed("interact"):
 		print("Ray hit: ", obj)
+		
+#		triggers the function that calls dialogic
+	if Input.is_action_just_pressed("place"):
+		if obj and obj.has_method("begin_dialogue"):
+			obj.begin_dialogue()
+		else:
+			print("no obj found")
+
+		
 
 	# --- Hover label code ---
 	if obj:
@@ -164,8 +173,10 @@ func handle_holding_objects():
 		
 	if Input.is_action_just_pressed("interact"):
 		if heldObjects != null: drop_held_object()
-		elif interaction_ray.is_colliding(): set_held_object(interaction_ray.get_collider())
-
+	elif interaction_ray.is_colliding():
+		var obj = interaction_ray.get_collider()
+		if obj is RigidBody3D:
+			set_held_object(obj)
 	
 	if heldObjects != null:
 		var targetPos = camera.global_transform.origin + (camera.global_basis * Vector3(0, 0, -followDistance))

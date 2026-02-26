@@ -27,7 +27,7 @@
 "scale": 1.0,
 "scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
 },
-"eh": {
+"Tester": {
 "export_overrides": {
 "image": "\"res://Timelines/Dialogue_box.png\""
 },

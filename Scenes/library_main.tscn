@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://dqjis7j3pndp5" path="res://Scenes/misson_manager.gd" id="16_jhl3c"]
 [ext_resource type="PackedScene" uid="uid://bpb6lrv1600bm" path="res://Scenes/inventory_book_item.tscn" id="18_bf250"]
 [ext_resource type="PackedScene" uid="uid://c42n7vkio527i" path="res://Scenes/misc/shelf_01.tscn" id="24_e5fr8"]
+[ext_resource type="PackedScene" uid="uid://ck6wehu2sblth" path="res://Scenes/NPCs/spook_1 .tscn" id="25_x6hv0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lje5s"]
 size = Vector3(1, 0.20062256, 1)
@@ -388,7 +389,7 @@ transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.8
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.9445771, 0, 0.32828987, 0, 1, 0, -0.32828987, 0, 0.9445771, -5.103136, 0, 25.24329)
+transform = Transform3D(0.9445771, 0, 0.32828987, 0, 1, 0, -0.32828987, 0, 0.9445771, 20.019972, 0, 12.394165)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -546,6 +547,9 @@ autowrap_mode = 3
 
 [node name="MissonManager" type="Node" parent="." unique_id=1637588277]
 script = ExtResource("16_jhl3c")
+
+[node name="Spook_1" parent="." unique_id=1482541136 instance=ExtResource("25_x6hv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.337366, 1.25, 10.172702)
 
 [connection signal="body_entered" from="Import/Placement2" to="Import/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Import/Placement2" to="Import/Placement2" method="_on_body_exited"]

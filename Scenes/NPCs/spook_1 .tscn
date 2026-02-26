@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://ck6wehu2sblth"]
 
 [ext_resource type="Material" uid="uid://do5ao6ixnb61g" path="res://Materials/grid_map_editor_greeen.tres" id="1_ebtxs"]
+[ext_resource type="Script" uid="uid://dv7ribyyjb73j" path="res://Scenes/NPCs/spook_1_.gd" id="1_hqy7w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x2qk8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xlkoh"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebtxs"]
+size = Vector3(2.1982422, 2.0358887, 2.053711)
+
 [node name="Spook_1" type="CharacterBody3D" unique_id=1482541136]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_hqy7w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1991601404]
 shape = SubResource("CapsuleShape3D_x2qk8")
@@ -14,3 +21,9 @@ shape = SubResource("CapsuleShape3D_x2qk8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1672135948]
 mesh = SubResource("CapsuleMesh_xlkoh")
 surface_material_override/0 = ExtResource("1_ebtxs")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=845184117]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=827471031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1973877, 0)
+shape = SubResource("BoxShape3D_ebtxs")
