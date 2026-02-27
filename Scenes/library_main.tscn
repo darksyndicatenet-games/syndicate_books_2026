@@ -437,15 +437,15 @@ debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
 [node name="Computer" parent="." unique_id=499691354 instance=ExtResource("13_ocnvn")]
 transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -16.533772, 2.015899, 21.035038)
 
-[node name="ThePowerofYourSubconsciousMind" parent="." unique_id=1562565056 instance=ExtResource("14_1kku3")]
+[node name="AnimalFarm" parent="." unique_id=1562565056 instance=ExtResource("14_1kku3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.790524, 0.25105524, 25.751282)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
-book_name = "The Power of Your Subconscious Mind"
-author = "Jason Murphy"
+book_name = "animal farm"
+author = "George Orwell"
 taken_out_by = "Me"
-issue_date = "2025-11-10"
+issue_date = "2026-02-10"
 
 [node name="TheRoutledgeHandbookofPhilosophyofEmpathy" parent="." unique_id=488190995 instance=ExtResource("14_1kku3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.399266, 0.25105524, 26.61959)
@@ -453,9 +453,9 @@ collision_layer = 5
 collision_mask = 13
 mass = 10.0
 book_name = "The Routledge Handbook of Philosophy of Empathy"
-author = "Jason Murphy"
+author = "Unknown Author"
 taken_out_by = "Me"
-issue_date = "2025-11-10"
+issue_date = "2026-02-10"
 
 [node name="TriggerThoughts" type="Node3D" parent="." unique_id=903876427]
 
