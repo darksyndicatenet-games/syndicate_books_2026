@@ -8,6 +8,7 @@ var cursor_visible: bool = false
 var player_in_range: bool = false
 var cam_is_enable: bool = false
 var interacting: bool = false  # Track if player is interacting
+#@onready var entry_list: Panel = $CanvasLayer/EntryItem
 
 func _ready() -> void:
 	user.visible = false
@@ -35,6 +36,7 @@ func _process(_delta: float) -> void:
 func start_interaction() -> void:
 	interacting = true
 	sprite_2d.visible = true
+	#entry_list.visible = true
 	# Show cursor when interacting
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -45,6 +47,7 @@ func start_interaction() -> void:
 func end_interaction() -> void:
 	interacting = false
 	sprite_2d.visible = false
+	#entry_list.visible = false
 	# Hide cursor and return to player camera
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#if computer_camera:

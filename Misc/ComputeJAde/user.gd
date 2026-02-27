@@ -31,6 +31,18 @@ var books = {
 
 @onready var exit: TextureButton = $"../Logbook/Exit"
 
+#entry item vars
+@onready var entry_list: VBoxContainer = $"../EntryItem"
+var entry_scene = preload("res://Scenes/entry_item.tscn")
+
+var submitted_books: Array[String] = []
+
+var required_books: Array[String] = [
+	"the routledge handbook of philosophy of empathy",
+	"animal farm"
+
+]
+
 func _ready() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # Show cursor for UI
@@ -43,6 +55,11 @@ func _ready() -> void:
 	
 #	signals
 	SignalManager.scene1_return_books_to_shelf.connect(on_scene1_return_books_to_shelf)
+	
+#	entry items
+	entry_list.visible = false
+	
+
 
 func _on_btn_enter_pressed() -> void:
 	var entereed_user_name = user_name.text
@@ -55,6 +72,7 @@ func _on_btn_enter_pressed() -> void:
 		logbook.visible = true
 		user.visible = false
 		log_.visible = true
+		entry_list.visible = true
 	else:
 		print("error username and password incorrect")
 		#throw an error here visible to player
@@ -138,11 +156,22 @@ func _on_btn_enter_2_pressed() -> void:
 	# any valid returned date is acceptable
 
 	if book_name_correct and author_correct and issued_correct and returned_correct and fine_correct and taken_out_by_correct:
+			# ✅ Prevent duplicate submission
+		if submitted_books.has(entered_book_name):
+			error_message_function("This book has already been submitted!")
+			return
+#		addd visually on database
+		add_entry_to_log()
+#add lowercase for consistency
+		submitted_books.append(entered_book_name)
+		
+	# Check if required books are all submitted
+		if check_required_books():
+			print("Both required books submitted! Firing signal...")
+			SignalManager.emit_signal("scene1_return_books_to_shelf")
+
 		correct_message.text = "All entries are correct!"
 
-#i think i need to add a temp counter and dsicard it once used -- signal should then be fired,having the entries only enter is the incorrect way of firing it
-		print("All entries are correct!")
-		SignalManager.emit_signal("scene1_return_books_to_shelf")
 	else:
 		
 		print("Some entries are incorrect:")
@@ -182,3 +211,20 @@ func _on_exit_2_pressed() -> void:
 func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
 	print("scene1_return_books_to_shelf")
+
+func add_entry_to_log():
+	var entry = entry_scene.instantiate()
+
+	entry.get_node("HBoxContainer/BookNameLabel").text = book_name.text
+	entry.get_node("HBoxContainer/AuthorLabel").text = author.text
+	entry.get_node("HBoxContainer/IssuedLabel").text = issued.text
+	entry.get_node("HBoxContainer/ReturnedLabel").text = returned.text
+	entry.get_node("HBoxContainer/FineLabel").text = fine.text
+
+	entry_list.add_child(entry)
+	
+func check_required_books() -> bool:
+	for book in required_books:
+		if not submitted_books.has(book):
+			return false
+	return true

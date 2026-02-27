@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cf6c6iaw1saeh" path="res://Misc/ComputeJAde/computer_enabled.gd" id="1_bt4do"]
 [ext_resource type="Texture2D" uid="uid://sn0ltunlm21q" path="res://Misc/ComputeJAde/log.png" id="2_i4by8"]
+[ext_resource type="PackedScene" uid="uid://crwitpv2d7pj4" path="res://Scenes/entry_item.tscn" id="8_0to7y"]
 [ext_resource type="Script" uid="uid://buaduggrj83x1" path="res://Misc/ComputeJAde/user.gd" id="9_pik5k"]
 [ext_resource type="Texture2D" uid="uid://dk4no8hybqgbi" path="res://Misc/Computer/login.png" id="10_mqjhd"]
 [ext_resource type="Texture2D" uid="uid://tsq1fu2xfiip" path="res://Misc/ComputeJAde/help.png" id="11_y38at"]
@@ -253,6 +254,19 @@ texture_normal = ExtResource("13_h0g28")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Entries" type="BoxContainer" parent="CanvasLayer/Logbook" unique_id=1427208678]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="EntryList" type="VBoxContainer" parent="CanvasLayer/Logbook/Entries" unique_id=2040705031]
+layout_mode = 2
+
 [node name="ErrorMessage" type="Label" parent="CanvasLayer" unique_id=1397355342]
 z_index = 5
 anchors_preset = -1
@@ -276,6 +290,18 @@ vertical_alignment = 1
 [node name="CorrectMessage" type="Label" parent="CanvasLayer" unique_id=1809973355]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="EntryItem" parent="CanvasLayer" unique_id=1290074172 instance=ExtResource("8_0to7y")]
+z_index = 2
+anchor_left = 0.105000004
+anchor_top = 0.132
+anchor_right = 0.544
+anchor_bottom = 0.91
+offset_left = -0.6000061
+offset_top = 0.44000244
+offset_right = 396.2257
+offset_bottom = 39.19995
+scale = Vector2(0.68, 1)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
