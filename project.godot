@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Syndicate_Books"
 config/tags=PackedStringArray("main")
-run/main_scene="uid://bsvfydq58ckdh"
+run/main_scene="uid://cfq0rn35pqt2s"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

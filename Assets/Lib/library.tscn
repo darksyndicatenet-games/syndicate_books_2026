@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://brdo16g1dhgym"]
+
+[ext_resource type="PackedScene" uid="uid://boxow46scefs8" path="res://library.glb" id="1_mh1fx"]
+
+[node name="library" unique_id=965397706 instance=ExtResource("1_mh1fx")]
+
+[node name="Wall_Window_A" parent="." index="0" unique_id=591626056]
+transform = Transform3D(1.5775907, 0, 0, 0, 1.4110826, 0, 0, 0, 1.4110826, 7.170859, -0.011293283, 0.006233258)
+
+[node name="Glass_Rect" parent="." index="1" unique_id=1279161508]
+transform = Transform3D(0.5935922, 0, 0, 0, 0.7265876, 0, 0, 0, 0.9633492, 7.190604, 0.15373985, -0.053603683)
+
+[node name="Inner_Window_Corners_A" parent="." index="2" unique_id=1054843659]
+transform = Transform3D(0.608574, 0, 0, 0, 0.7479919, 0, 0, 0, 1.9982262, 7.180363, 0.13379627, -0.10510011)
+
+[node name="Upper_Corner_A-imp" parent="." index="4" unique_id=2002948239]
+transform = Transform3D(1.5775907, 0, 0, 0, 1.4110826, 0, 0, 0, 1.4110826, 9.234061, -0.011293283, 0.006233258)
+
+[node name="Pillar-imp" parent="." index="5" unique_id=28927695]
+transform = Transform3D(1.5775907, 0, 0, 0, 1.4110826, 0, 0, 0, 1.4110826, -3.0446856, -0.011293283, 0.006233258)
+
+[node name="Wall_A-imp" parent="." index="6" unique_id=763708654]
+transform = Transform3D(1.5775907, 0, 0, 0, 1.4110826, 0, 0, 0, 1.4110826, 2.5666964, -0.011293283, 0.006233258)
+
+[node name="Wall_Top_A" parent="." index="7" unique_id=87510612]
+transform = Transform3D(6.997709e-05, -8.410291e-08, 0.78879535, 1.4110826, 8.411125e-08, -3.91172e-05, -8.410708e-08, 1.4110826, 4.7015867e-08, 4.7381163, -0.011293283, 0.006233258)

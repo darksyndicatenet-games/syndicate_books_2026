@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dcyljydwljb4"]
+
+[ext_resource type="PackedScene" uid="uid://cfq0rn35pqt2s" path="res://Assets/Lib/book_shelf_Sample.glb" id="1_jxklk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wi0bb"]
+size = Vector3(2.7407074, 0.7376709, 0.55207825)
+
+[node name="book_shelf_Sample" unique_id=1126810428 instance=ExtResource("1_jxklk")]
+
+[node name="Area3D" type="Area3D" parent="." index="6" unique_id=617382213]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=944278590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 2.3941264, -0.4349513)
+shape = SubResource("BoxShape3D_wi0bb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" index="1" unique_id=643167147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 3.3300014, -0.4349513)
+shape = SubResource("BoxShape3D_wi0bb")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D" index="2" unique_id=1078708930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 1.4513946, -0.4349513)
+shape = SubResource("BoxShape3D_wi0bb")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D" index="3" unique_id=1668705413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 3.3300014, 0.41792154)
+shape = SubResource("BoxShape3D_wi0bb")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D" index="4" unique_id=117580641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 1.4513946, 0.41792154)
+shape = SubResource("BoxShape3D_wi0bb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="5" unique_id=2046293018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 2.3941264, 0.38463092)
+shape = SubResource("BoxShape3D_wi0bb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="7" unique_id=881346590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19806, 0.28917432)
