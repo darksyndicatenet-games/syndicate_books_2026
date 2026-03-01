@@ -1,5 +1,6 @@
 extends TextureRect
 
+@onready var misson_manager: Node = $"../../../MissonManager"
 
 @onready var error_message: Label = $"../ErrorMessage"
 @onready var correct_message: Label = $"../CorrectMessage"
@@ -210,7 +211,9 @@ func _on_exit_2_pressed() -> void:
 
 func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
-	print("scene1_return_books_to_shelf")
+	misson_manager.set_message("Return books to shelf")
+	print("scene1_return_books_to_shelf, next mission since books are entered")
+#	this needs checking
 
 func add_entry_to_log():
 	var entry = entry_scene.instantiate()

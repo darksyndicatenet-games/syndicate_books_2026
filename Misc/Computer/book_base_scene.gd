@@ -8,6 +8,7 @@ extends RigidBody3D
 @export var taken_out_by: String
 @export var issue_date: String = "2025-01-01" # YYYY-MM-DD
 @export var fine_per_day: float = 2.0
+@export var book_id: String = "001"
 
 # -------------------------
 # Internal Tracking

@@ -3,6 +3,7 @@ extends Node
 signal object_state_changed(is_holding: bool)
 var is_player_occupied:= false
 var is_holding := false
+var book_iCounter:= 0
 
 func set_holding(state: bool):
 	is_holding = state

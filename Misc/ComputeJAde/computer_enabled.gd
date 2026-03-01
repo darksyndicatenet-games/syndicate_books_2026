@@ -1,5 +1,8 @@
 extends Node3D
 
+signal prompt_player_computer_interaction
+@onready var misson_manager: Node = $"../MissonManager"
+
 @onready var sprite_2d: TextureRect = $CanvasLayer/User
 @onready var error_message: Label = $CanvasLayer/ErrorMessage
 @onready var user: TextureRect = $CanvasLayer/User
@@ -9,6 +12,8 @@ var player_in_range: bool = false
 var cam_is_enable: bool = false
 var interacting: bool = false  # Track if player is interacting
 #@onready var entry_list: Panel = $CanvasLayer/EntryItem
+
+var prompted_Beginning := false
 
 func _ready() -> void:
 	user.visible = false
@@ -30,6 +35,7 @@ func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("place"):
 		if not interacting:
 			start_interaction()
+			prompt_message_when_player_interacts_computer()
 		#else:
 			#end_interaction()
 
@@ -63,3 +69,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
 		player_in_range = false
+		
+func prompt_message_when_player_interacts_computer():
+	print("next mission")
+	#misson_manager.set_message("log the books in")
+#	so here should be a signal
+	emit_signal("prompt_player_computer_interaction")
+	

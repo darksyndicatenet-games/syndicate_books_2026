@@ -1,5 +1,19 @@
 extends Node3D
 
+@onready var receptionist_label_3d: Label3D = $Map/Misc/Desk/ReceptionistLabel3D
+
+var counter := 0
+
+# books already counted
+var counted_books: Array[String] = []
+
+# ONLY these books should count
+var required_books := [
+	"animal farm",
+	"the routledge handbook of philosophy of empathy"
+]
+
+
 var player_in_area:= false
 func _process(_delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("place"):
@@ -18,13 +32,34 @@ func _on_inventory_book_item_book_collected() -> void:
 #	erase bools from inventory
 	pass # Replace with function body.
 
-
-func _on_front_desk_area_3d_area_entered(area: Area3D) -> void:
-	if area.is_in_group("books"):
-		print(area)
-#		wait one sec
-#above
-
-
 #func _ready() -> void:
 	#Dialogic.start("scare1_spook1")
+
+
+func _on_front_desk_area_3d_body_entered(body: Node3D) -> void:
+	if not body.is_in_group("books"):
+		return
+		
+	var book_name = body.book_name.to_lower()
+
+	# nly specific books allowed
+	if not required_books.has(book_name):
+		return
+
+	# prevent counting same book twice
+	if counted_books.has(book_name):
+		return
+
+	# Count it
+	counted_books.append(book_name)
+	counter += 1
+
+	print("Book added:", book_name)
+	print("Counter = ", counter)
+	receptionist_label_3d.text = "books " + str(counter) + " / 2"
+	check_completion()
+	
+func check_completion():
+	if counter == required_books.size():
+		print("All required books returned!")
+		#SignalManager.emit_signal("scene1_return_books_to_shelf")

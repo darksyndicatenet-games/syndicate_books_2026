@@ -9,7 +9,8 @@ var current_mission := 0
 @export_multiline var missions: PackedStringArray = [
 	"Find Key inside of return box outside of the library",
 	"Pick up the stack of books.",
-	"Log into the Library Computer System and log the books in",
+	"Log into the Library Computer System",
+	"log the books in",
 	"Return books to shelf"
 
 ]
@@ -32,7 +33,7 @@ func complete_mission():
 	
 func set_message(new_text: String):
 	message = new_text
-	misson_label.text = new_text	
+	misson_label.text = new_text
 #get_node("MissionManager").complete_mission()
 #func _on_book_picked_up():
 	#get_node("/root/Main/MissionManager").complete_mission()
