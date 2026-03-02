@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c42n7vkio527i" path="res://Scenes/misc/shelf_01.tscn" id="24_e5fr8"]
 [ext_resource type="PackedScene" uid="uid://crwitpv2d7pj4" path="res://Scenes/entry_item.tscn" id="24_o4vrq"]
 [ext_resource type="PackedScene" uid="uid://ck6wehu2sblth" path="res://Scenes/NPCs/spook_1 .tscn" id="25_x6hv0"]
+[ext_resource type="Script" uid="uid://clhd31qkv6wcp" path="res://Scripts/Inventory.gd" id="32_vfwt6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lje5s"]
 size = Vector3(1, 0.20062256, 1)
@@ -711,7 +712,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0697556, 1.5333531, -0.871
 shape = SubResource("BoxShape3D_ot02y")
 
 [node name="door" type="Node3D" parent="Day1/Door" unique_id=671098180]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6875072, 0.41961026, -0.33376312)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.99158, 0.24326944, -0.33376312)
 
 [node name="Door_Group" type="Node3D" parent="Day1/Door/door" unique_id=1837352041]
 transform = Transform3D(1.6961001, 0, 0, 0, 1.6961001, 0, 0, 0, 1.6961001, 0, 0, 0)
@@ -727,6 +728,7 @@ mesh = SubResource("ArrayMesh_q5j81")
 skeleton = NodePath("")
 
 [node name="DoorFrame" type="MeshInstance3D" parent="Day1/Door/door/Door_Group" unique_id=898073315]
+transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, -0.01665628, 0, -0.5142307)
 mesh = SubResource("ArrayMesh_sj7is")
 skeleton = NodePath("")
 
@@ -1110,6 +1112,9 @@ author = "Unknown Author"
 taken_out_by = "Me"
 issue_date = "2026-02-10"
 book_id = "002"
+
+[node name="Inventory" type="Node" parent="." unique_id=1188565707]
+script = ExtResource("32_vfwt6")
 
 [connection signal="body_entered" from="Import/Placement2" to="Import/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Import/Placement2" to="Import/Placement2" method="_on_body_exited"]
