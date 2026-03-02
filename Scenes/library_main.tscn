@@ -6,8 +6,8 @@
 [ext_resource type="Material" uid="uid://cmjj6de7emqlq" path="res://Materials/grid_map_editor.tres" id="3_ocnvn"]
 [ext_resource type="Material" uid="uid://do5ao6ixnb61g" path="res://Materials/grid_map_editor_greeen.tres" id="4_1kku3"]
 [ext_resource type="Script" uid="uid://cvk3gsgfjr0jb" path="res://Scenes/placement_2.gd" id="4_7vups"]
-[ext_resource type="PackedScene" uid="uid://cfq0rn35pqt2s" path="res://Assets/Lib/book_shelf_Sample.glb" id="4_ixevi"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_dicjl"]
+[ext_resource type="PackedScene" uid="uid://rersmf0mlwyr" path="res://Assets/single-shelf.glb" id="5_mr6og"]
 [ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="5_qstqp"]
 [ext_resource type="PackedScene" uid="uid://dcyljydwljb4" path="res://Scenes/book_shelf_sample.tscn" id="5_vfwt6"]
 [ext_resource type="PackedScene" uid="uid://d2h6j1hjodv6x" path="res://Scenes/inventory_item.tscn" id="6_dicjl"]
@@ -213,8 +213,32 @@ size = Vector3(64.231445, 0.3, 60.24463)
 
 [node name="shelves" type="Node3D" parent="Map" unique_id=1095715572]
 
+[node name="ShelfCorner" type="Node3D" parent="Map/shelves" unique_id=1525881057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2031755, 0.05473137, 0)
+
+[node name="book_shelf_Sample7" parent="Map/shelves/ShelfCorner" unique_id=1126810428 instance=ExtResource("5_vfwt6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.2949934, -0.3175788, -0.49638546)
+
+[node name="book_shelf_Sample8" parent="Map/shelves/ShelfCorner" unique_id=1395648948 instance=ExtResource("5_vfwt6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.2949934, -0.3175788, 2.8919811)
+
+[node name="book_shelf_Sample9" parent="Map/shelves/ShelfCorner" unique_id=2061312483 instance=ExtResource("5_vfwt6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.294994, -0.3175788, 6.262866)
+
+[node name="Node3D" type="Node3D" parent="Map/shelves/ShelfCorner" unique_id=912931931]
+
+[node name="book_shelf_Sample10" parent="Map/shelves/ShelfCorner/Node3D" unique_id=1542731700 instance=ExtResource("5_vfwt6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.294994, -0.3175788, 11.303724)
+
+[node name="book_shelf_Sample11" parent="Map/shelves/ShelfCorner/Node3D" unique_id=44346945 instance=ExtResource("5_vfwt6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.294994, -0.3175788, 14.69209)
+
+[node name="book_shelf_Sample12" parent="Map/shelves/ShelfCorner/Node3D" unique_id=1791852745 instance=ExtResource("5_vfwt6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.294994, -0.3175788, 18.062975)
+
 [node name="Shelf05" type="Node3D" parent="Map/shelves" unique_id=1897883720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.560747, 0, 7.758956)
+visible = false
 
 [node name="Shefls" type="CSGBox3D" parent="Map/shelves/Shelf05" unique_id=846962435]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.632648, 2.253697, -20.551195)
@@ -255,27 +279,6 @@ size = Vector3(1, 4, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.595617, 2.253697, -5.581004)
 material_override = ExtResource("4_1kku3")
 size = Vector3(1, 4, 5)
-
-[node name="book_shelf_Sample" parent="Map/shelves/Shelf05" unique_id=692747859 instance=ExtResource("4_ixevi")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.7746811, -0.33915043, -7.63968)
-
-[node name="book_shelf_Sample2" parent="Map/shelves/Shelf05" unique_id=1533622066 instance=ExtResource("4_ixevi")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.7746811, -0.33915043, -4.270608)
-
-[node name="book_shelf_Sample3" parent="Map/shelves/Shelf05" unique_id=708519569 instance=ExtResource("4_ixevi")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.7746811, -0.33915043, -1.0039101)
-
-[node name="book_shelf_Sample4" parent="Map/shelves/Shelf05" unique_id=1126810428 instance=ExtResource("4_ixevi")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.7746811, -0.33915043, 5.8213625)
-
-[node name="book_shelf_Sample5" parent="Map/shelves/Shelf05" unique_id=394244420 instance=ExtResource("4_ixevi")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.7746811, -0.33915043, 9.190435)
-
-[node name="book_shelf_Sample6" parent="Map/shelves/Shelf05" unique_id=263376973 instance=ExtResource("4_ixevi")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.7746811, -0.33915043, 12.457132)
-
-[node name="book_shelf_Sample7" parent="Map/shelves/Shelf05" unique_id=866737455 instance=ExtResource("5_vfwt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6663609, 0.25, 6.3176537)
 
 [node name="Shelf03" type="Node3D" parent="Map/shelves" unique_id=855594159]
 transform = Transform3D(-0.0021641674, 0, -0.9999977, 0, 1, 0, 0.9999977, 0, -0.0021641674, -18.838326, 0, -2.746436)
@@ -345,6 +348,47 @@ size = Vector3(1, 4, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.615986, 2.253697, -8.067246)
 material_override = ExtResource("4_1kku3")
 size = Vector3(1, 4, 5)
+
+[node name="MiddleSingleShelf" type="Node3D" parent="Map/shelves" unique_id=1307761066]
+
+[node name="single-shelf" parent="Map/shelves/MiddleSingleShelf" unique_id=526331590 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, 2.5143385)
+
+[node name="single-shelf2" parent="Map/shelves/MiddleSingleShelf" unique_id=1861916548 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -0.8928398)
+
+[node name="single-shelf3" parent="Map/shelves/MiddleSingleShelf" unique_id=196726834 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -4.3346815)
+
+[node name="single-shelf4" parent="Map/shelves/MiddleSingleShelf" unique_id=559301260 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -7.7897167)
+
+[node name="single-shelf5" parent="Map/shelves/MiddleSingleShelf" unique_id=363206222 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -11.219879)
+
+[node name="single-shelf6" parent="Map/shelves/MiddleSingleShelf" unique_id=209796066 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -14.783894)
+
+[node name="MiddleSingleShelf2" type="Node3D" parent="Map/shelves" unique_id=1612755135]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -22.98744, 0, -12.108323)
+
+[node name="single-shelf" parent="Map/shelves/MiddleSingleShelf2" unique_id=178494664 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, 2.5143385)
+
+[node name="single-shelf2" parent="Map/shelves/MiddleSingleShelf2" unique_id=1573214061 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -0.8928398)
+
+[node name="single-shelf3" parent="Map/shelves/MiddleSingleShelf2" unique_id=608866229 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -4.3346815)
+
+[node name="single-shelf4" parent="Map/shelves/MiddleSingleShelf2" unique_id=2088767236 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -7.7897167)
+
+[node name="single-shelf5" parent="Map/shelves/MiddleSingleShelf2" unique_id=202961627 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -11.219879)
+
+[node name="single-shelf6" parent="Map/shelves/MiddleSingleShelf2" unique_id=849363822 instance=ExtResource("5_mr6og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.275236, -0.1537373, -14.783894)
 
 [node name="Misc" type="Node3D" parent="Map" unique_id=782938315]
 

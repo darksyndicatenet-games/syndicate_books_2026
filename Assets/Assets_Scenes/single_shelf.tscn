@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bq6o2ebdc8dr2"]
+
+[ext_resource type="PackedScene" uid="uid://rersmf0mlwyr" path="res://Assets/single-shelf.glb" id="1_hrwcm"]
+
+[node name="single-shelf" unique_id=526331590 instance=ExtResource("1_hrwcm")]
