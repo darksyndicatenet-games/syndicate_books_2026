@@ -16,12 +16,17 @@ var required_books := [
 
 var player_in_area:= false
 func _process(_delta: float) -> void:
+#	check inventory for item
 	if player_in_area and Input.is_action_just_pressed("place"):
 		Inventory.check_if_player_has_item("Library Key")
+		
+		
 
 func _on_door_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+#		detects when player is in door area3d
 		player_in_area = true
+		
 		
 
 
@@ -32,8 +37,6 @@ func _on_inventory_book_item_book_collected() -> void:
 #	erase bools from inventory
 	pass # Replace with function body.
 
-#func _ready() -> void:
-	#Dialogic.start("scare1_spook1")
 
 
 func _on_front_desk_area_3d_body_entered(body: Node3D) -> void:

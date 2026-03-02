@@ -8,6 +8,7 @@ extends RigidBody3D
 @export var item_name: String = "Library Key"
 @onready var misson_manager: Node = $"../../MissonManager"
 
+
 var player_in_area := false
 
 func _on_body_entered(body):
@@ -19,12 +20,16 @@ func _on_body_exited(body):
 		player_in_area = false
 
 func _process(_delta):
+#	collects key?
 	if player_in_area and Input.is_action_just_pressed("place"):
 		Inventory.add_item(item_name)
 		queue_free()
 
+		#wjat
+
 
 func _on_inventory_item_key_collected() -> void:
+#	collect keys
 	key.queue_free()
 	misson_manager.complete_mission()
 

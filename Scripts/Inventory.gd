@@ -1,6 +1,7 @@
 extends Node
 
 var items := {}
+@onready var door_animation_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 
 func add_item(item_name: String):
 	if items.has(item_name):
@@ -26,5 +27,8 @@ func check_if_player_has_item(inventoryItem : String):
 	if items.has(inventoryItem):
 		Inventory.remove_item(inventoryItem)
 		print( inventoryItem+ " was used")
+	#	i think door animation should be played here
+		
+		
 	else:
 		print(inventoryItem+" not found")
