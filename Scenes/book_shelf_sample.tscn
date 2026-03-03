@@ -32,6 +32,3 @@ shape = SubResource("BoxShape3D_wi0bb")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="5" unique_id=2046293018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055007935, 2.3941264, 0.38463092)
 shape = SubResource("BoxShape3D_wi0bb")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." index="7" unique_id=881346590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19806, 0.28917432)

@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=32 format=4 uid="uid://dnc7enqm48los"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://dnc7enqm48los"]
 
 [ext_resource type="Material" uid="uid://cmjj6de7emqlq" path="res://Materials/grid_map_editor.tres" id="1_5ufrv"]
 

@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var receptionist_label_3d: Label3D = $Map/Misc/Desk/ReceptionistLabel3D
+@onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 
 var counter := 0
 
@@ -15,6 +16,10 @@ var required_books := [
 
 
 var player_in_area:= false
+
+func _ready() -> void:
+	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
+
 func _process(_delta: float) -> void:
 #	check inventory for item
 	if player_in_area and Input.is_action_just_pressed("place"):
@@ -66,3 +71,12 @@ func check_completion():
 	if counter == required_books.size():
 		print("All required books returned!")
 		#SignalManager.emit_signal("scene1_return_books_to_shelf")
+
+
+func on_trigger_door_animation_():
+#	trigger door animation here
+	door_anim_player.play("Open_Door")
+	print("trigger door animation here")
+	pass
+	
+	
