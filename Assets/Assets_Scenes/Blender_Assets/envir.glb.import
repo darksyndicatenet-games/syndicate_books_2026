@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgma1ar7y18ys"
-path="res://.godot/imported/door.glb-6457325175eaa409801a8ca9cdd74f2d.scn"
+uid="uid://cougpptw1fyc4"
+path="res://.godot/imported/envir.glb-40312ddf4d537d9c8a0fe4e6f2c4ac40.scn"
 
 [deps]
 
-source_file="res://Assets/door.glb"
-dest_files=["res://.godot/imported/door.glb-6457325175eaa409801a8ca9cdd74f2d.scn"]
+source_file="res://Assets/Assets_Scenes/Blender_Assets/envir.glb"
+dest_files=["res://.godot/imported/envir.glb-40312ddf4d537d9c8a0fe4e6f2c4ac40.scn"]
 
 [params]
 

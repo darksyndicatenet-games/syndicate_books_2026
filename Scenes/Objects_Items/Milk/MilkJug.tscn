@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxsvpdaviidky"]
+[gd_scene format=3 uid="uid://dxsvpdaviidky"]
 
 [ext_resource type="Script" uid="uid://bgh5lj4dru7mx" path="res://Scenes/Objects_Items/Milk/milk_jug.gd" id="1_6vvtf"]
-[ext_resource type="Texture2D" uid="uid://24rki1c5er3h" path="res://Assets/crosshair003.png" id="2_ulsab"]
+[ext_resource type="Texture2D" uid="uid://24rki1c5er3h" path="res://Assets/Grid_Texture_Level_Editor/crosshair003.png" id="2_ulsab"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ulsab"]
 radius = 0.05

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3fgl030uj0yh"
-path.s3tc="res://.godot/imported/single-shelf_ColorPalette2.png-e9aae14a6700e683a6412d34652b21d4.s3tc.ctex"
+path.s3tc="res://.godot/imported/single-shelf_ColorPalette2.png-2225261bf7c62485601d61d289cba771.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/single-shelf_ColorPalette2.png"
-dest_files=["res://.godot/imported/single-shelf_ColorPalette2.png-e9aae14a6700e683a6412d34652b21d4.s3tc.ctex"]
+source_file="res://Assets/Assets_Scenes/Blender_Assets/single-shelf_ColorPalette2.png"
+dest_files=["res://.godot/imported/single-shelf_ColorPalette2.png-2225261bf7c62485601d61d289cba771.s3tc.ctex"]
 
 [params]
 

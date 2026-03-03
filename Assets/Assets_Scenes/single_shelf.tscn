@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://bq6o2ebdc8dr2"]
 
-[ext_resource type="PackedScene" uid="uid://rersmf0mlwyr" path="res://Assets/single-shelf.glb" id="1_hrwcm"]
+[ext_resource type="PackedScene" uid="uid://rersmf0mlwyr" path="res://Assets/Assets_Scenes/Blender_Assets/single-shelf.glb" id="1_hrwcm"]
+[ext_resource type="Script" uid="uid://cmodu50hdehns" path="res://Assets/Assets_Scenes/single_shelf.gd" id="2_2k2gx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrwcm"]
 
 [node name="single-shelf" unique_id=526331590 instance=ExtResource("1_hrwcm")]
+script = ExtResource("2_2k2gx")
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1672924342]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2075873192]
+shape = SubResource("BoxShape3D_hrwcm")

@@ -2,8 +2,6 @@ extends Node
 signal trigger_door_animation
 var items := {}
 
-@onready var door_animation_player: AnimationPlayer = $"../Day1/Door/door/AnimationPlayer"
-
 func add_item(item_name: String):
 	if items.has(item_name):
 		items[item_name] += 1

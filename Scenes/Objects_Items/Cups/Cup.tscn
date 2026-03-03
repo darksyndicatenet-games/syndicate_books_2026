@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6wci2fte75cs"]
+[gd_scene format=3 uid="uid://b6wci2fte75cs"]
 
 [ext_resource type="Script" uid="uid://dx1wjikwroal3" path="res://Scenes/Objects_Items/Cups/cup.gd" id="1_m0pcm"]
-[ext_resource type="Texture2D" uid="uid://24rki1c5er3h" path="res://Assets/crosshair003.png" id="2_jv838"]
+[ext_resource type="Texture2D" uid="uid://24rki1c5er3h" path="res://Assets/Grid_Texture_Level_Editor/crosshair003.png" id="2_jv838"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jv838"]
 radius = 0.075683594

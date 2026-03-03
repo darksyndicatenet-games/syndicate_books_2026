@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckucg3in0k55a"]
 
-[ext_resource type="PackedScene" uid="uid://bgma1ar7y18ys" path="res://Assets/door.glb" id="1_rhbxs"]
+[ext_resource type="PackedScene" uid="uid://bgma1ar7y18ys" path="res://Assets/Assets_Scenes/Blender_Assets/door.glb" id="1_rhbxs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rhbxs"]
 size = Vector3(1.4221191, 3.3806152, 0.12084961)
