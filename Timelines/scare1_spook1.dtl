@@ -5,6 +5,7 @@ Player: "Hey, are you alright?"
 Spook_1: Muttering...
 Player: "Must be having a rough night, what with exams next week..."
 - Offer Coffee
+	[signal arg="player_offered_coffee"]
 	Player: We're all having a tough time! Not my problem!
 - Leave him be
 	Player: "I know what that's like... Can I get you some coffee?"

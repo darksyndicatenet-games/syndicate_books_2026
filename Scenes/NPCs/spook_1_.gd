@@ -1,14 +1,20 @@
 extends CharacterBody3D
 
+@onready var misson_manager: Node = $"../../MissonManager"
 
 var has_player_interacted01:= false
 
 #connect signal here in begin dialogue
 
-
 func begin_dialogue():
 	if has_player_interacted01 == false:
 		Dialogic.start("scare1_spook1")
 		has_player_interacted01 = true
+		Dialogic.signal_event.connect(on_player_offered_coffee)
 	else:
 		return
+
+func on_player_offered_coffee(argument : String):
+	if argument == "player_offered_coffee":
+		print("Player chooses to offer coffee")
+	misson_manager.set_message("Get coffee from staff room coffee machine")

@@ -1,4 +1,5 @@
 extends Area3D
+@onready var misson_manager: Node = $"../../MissonManager"
 
 @export_multiline var message: String = "Hello"
 @export var fade_time: float = 1.0
@@ -48,3 +49,4 @@ func _on_body_entered(body: Node3D) -> void:
 			body.force_look_at(look_target.global_position)
 			monitoring = false
 			has_player_entered = true
+			misson_manager.set_message("Speak to the person")
