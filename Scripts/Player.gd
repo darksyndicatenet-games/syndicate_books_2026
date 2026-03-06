@@ -76,6 +76,7 @@ func _physics_process(delta):
 #	stores the obj that the raycast detects
 	var obj = interaction_ray.get_collider()
 	if obj:
+		hover_label.text = str(obj.get_meta("display_name")) if obj.has_meta("display_name") else obj.name
 		if obj.has_method("get_interact_text"):
 			instruction_label.visible = true
 			instruction_label.text = obj.get_interact_text()

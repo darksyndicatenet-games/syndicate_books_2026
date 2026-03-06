@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://3yt04d31g23j"]
+
+[ext_resource type="PackedScene" uid="uid://cfcne3kfnqbfu" path="res://Assets/coffee_machine.glb" id="1_dgved"]
+[ext_resource type="Script" uid="uid://cnythmqm70oq2" path="res://Assets/Assets_Scenes/static_body_3d.gd" id="2_y0iep"]
+
+[node name="coffee_machine" unique_id=852744974 instance=ExtResource("1_dgved")]
+
+[node name="StaticBody3D" parent="coffee_machine" parent_id_path=PackedInt32Array(979574774) index="0" unique_id=230457595]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_y0iep")
+
+[node name="Cup" type="CSGCylinder3D" parent="." index="1" unique_id=327053859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12330052, 0.85204107)
+visible = false
+radius = 0.1694336
+height = 0.45117188

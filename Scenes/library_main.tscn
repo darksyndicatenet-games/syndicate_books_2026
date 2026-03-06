@@ -29,7 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://crwitpv2d7pj4" path="res://Scenes/entry_item.tscn" id="24_o4vrq"]
 [ext_resource type="PackedScene" uid="uid://ck6wehu2sblth" path="res://Scenes/NPCs/spook_1 .tscn" id="25_x6hv0"]
 [ext_resource type="Script" uid="uid://03duvf2sqkgq" path="res://Scenes/scare_1_custcene.gd" id="29_mldkg"]
-[ext_resource type="PackedScene" uid="uid://cfcne3kfnqbfu" path="res://Assets/coffee_machine.glb" id="30_q1f5f"]
+[ext_resource type="Script" uid="uid://dvh7r5f2f21re" path="res://Scenes/coffee_machine_trigger.gd" id="30_ixevi"]
+[ext_resource type="PackedScene" uid="uid://3yt04d31g23j" path="res://Assets/Assets_Scenes/coffee_machine.tscn" id="30_q1f5f"]
+[ext_resource type="PackedScene" uid="uid://bnl2eka7ga6x7" path="res://Scenes/misc/placement.tscn" id="32_vfwt6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -367,6 +369,13 @@ size = Vector3(5, 2, 3.5336914)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jrsms"]
 size = Vector3(0.75808716, 2.2475586, 2.6108398)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixevi"]
+size = Vector3(3.1364288, 2.5726318, 4.0316467)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ixevi"]
+height = 0.4580078
+radius = 0.19921875
+
 [node name="Library_Main" type="Node3D" unique_id=1105848030]
 script = ExtResource("1_wohjs")
 
@@ -676,7 +685,7 @@ transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.8
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -6.1353807, 0, 16.502277)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, 11.398007, 0, -13.693153)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -1148,8 +1157,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.689518, 1.25, 9.604641)
 [node name="LookAtSpook1" type="Marker3D" parent="Scare_1/Spook_1" unique_id=1559634196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1937504, 0, 4.010373)
 
-[node name="coffee_machine" parent="." unique_id=1645633356 instance=ExtResource("30_q1f5f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.606768, 0.27918172, -22.489895)
+[node name="CoffeeMachineTrigger" type="Area3D" parent="Scare_1" unique_id=1442232335]
+script = ExtResource("30_ixevi")
+
+[node name="coffee_machine" parent="Scare_1/CoffeeMachineTrigger" unique_id=852744974 instance=ExtResource("30_q1f5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.606768, 1.3555012, -21.703472)
+
+[node name="Placement" parent="Scare_1/CoffeeMachineTrigger/coffee_machine" unique_id=1862691038 instance=ExtResource("32_vfwt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2643938, 0.8351841)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/CoffeeMachineTrigger" unique_id=32368905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.580432, 1.6154473, -20.972462)
+shape = SubResource("BoxShape3D_ixevi")
+
+[node name="Cup" type="RigidBody3D" parent="Scare_1/CoffeeMachineTrigger" unique_id=1971986983 groups=["cups"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.237721, 1.3119283, -21.047117)
+collision_layer = 13
+collision_mask = 13
+mass = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/CoffeeMachineTrigger/Cup" unique_id=889426935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057972193, 0)
+shape = SubResource("CylinderShape3D_ixevi")
+debug_color = Color(0.96962434, 0, 0.46326667, 0.41960785)
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
@@ -1163,3 +1193,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.606768, 0.27918172, -22.48
 [connection signal="pressed" from="Computer/CanvasLayer/Logbook/Exit" to="Computer/CanvasLayer/User" method="_on_exit_pressed"]
 [connection signal="scene1_return_books_to_shelf" from="SignalManager" to="SignalManager" method="_on_scene_1_return_books_to_shelf"]
 [connection signal="body_entered" from="Scare_1/FadeTextArea" to="Scare_1/FadeTextArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_entered"]
+[connection signal="cup_placed_in_coffe_machine" from="Scare_1/CoffeeMachineTrigger/coffee_machine/Placement" to="Scare_1/CoffeeMachineTrigger" method="_on_placement_cup_placed_in_coffe_machine"]
