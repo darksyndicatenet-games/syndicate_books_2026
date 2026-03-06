@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c42n7vkio527i" path="res://Scenes/misc/shelf_01.tscn" id="24_e5fr8"]
 [ext_resource type="PackedScene" uid="uid://crwitpv2d7pj4" path="res://Scenes/entry_item.tscn" id="24_o4vrq"]
 [ext_resource type="PackedScene" uid="uid://ck6wehu2sblth" path="res://Scenes/NPCs/spook_1 .tscn" id="25_x6hv0"]
-[ext_resource type="Script" uid="uid://03duvf2sqkgq" path="res://Scenes/scare_1_custcene.gd" id="29_mldkg"]
+[ext_resource type="PackedScene" uid="uid://cndkqvfmrx8kf" path="res://Scenes/cutscene.tscn" id="28_vfwt6"]
 [ext_resource type="Script" uid="uid://dvh7r5f2f21re" path="res://Scenes/coffee_machine_trigger.gd" id="30_ixevi"]
 [ext_resource type="PackedScene" uid="uid://3yt04d31g23j" path="res://Assets/Assets_Scenes/coffee_machine.tscn" id="30_q1f5f"]
 [ext_resource type="PackedScene" uid="uid://bnl2eka7ga6x7" path="res://Scenes/misc/placement.tscn" id="32_vfwt6"]
@@ -366,18 +366,16 @@ shadow_mesh = SubResource("ArrayMesh_kilop")
 [sub_resource type="BoxShape3D" id="BoxShape3D_bt4do"]
 size = Vector3(5, 2, 3.5336914)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jrsms"]
-size = Vector3(0.75808716, 2.2475586, 2.6108398)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ixevi"]
-size = Vector3(3.1364288, 2.5726318, 4.0316467)
+size = Vector3(3.1364288, 2.5726318, 2.6867218)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ixevi"]
 height = 0.4580078
 radius = 0.19921875
 
-[node name="Library_Main" type="Node3D" unique_id=1105848030]
+[node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
+spook_1 = NodePath("Scare_1/Spook_1")
 
 [node name="Map" type="Node3D" parent="." unique_id=663058725]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33124197, 0, 1.386201)
@@ -1104,52 +1102,21 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.4184527, 2.3027067, 
 
 [node name="Scare_1" type="Node3D" parent="." unique_id=2109900009]
 
-[node name="FadeTextArea" type="Area3D" parent="Scare_1" unique_id=1373761917 node_paths=PackedStringArray("player")]
+[node name="Cutscene" parent="Scare_1" unique_id=1042776018 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.710108, 0.3204906, 20.627197)
-script = ExtResource("29_mldkg")
-message = "Someone's actually here? Here I thought I was the only night owl."
-auto_play = false
 player = NodePath("../../Player")
+look_target = NodePath("../Spook_1/LookAtSpook1")
+spook_1 = NodePath("../Spook_1")
+mission_text = "Check library for any people studying or looking for books"
 
-[node name="TextureRect" type="TextureRect" parent="Scare_1/FadeTextArea" unique_id=812966162]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="FadeText" type="Control" parent="Scare_1/FadeTextArea" unique_id=834222077]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Scare_1/FadeTextArea/FadeText" unique_id=713921918]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.47900003
-anchor_top = 0.21000001
-anchor_right = 0.5
-anchor_bottom = 0.24300002
-offset_left = -0.6800537
-offset_top = 0.19999695
-offset_right = -1.0
-offset_bottom = -0.44000244
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 35
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/FadeTextArea" unique_id=1863558205]
-transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -3.7868562, 0.7310052, -0.33940697)
-shape = SubResource("BoxShape3D_jrsms")
+[node name="Cutscene2" parent="Scare_1" unique_id=1118747980 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.694862, 0.3204906, 20.627197)
+monitoring = false
+monitorable = false
+player = NodePath("../../Player")
+look_target = NodePath("../Spook_1/LookAtSpook1")
+spook_1 = NodePath("../Spook_1")
+mission_text = "Check library for any people studying or looking for books"
 
 [node name="Spook_1" parent="Scare_1" unique_id=1482541136 instance=ExtResource("25_x6hv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.689518, 1.25, 9.604641)
@@ -1158,6 +1125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.689518, 1.25, 9.604641)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1937504, 0, 4.010373)
 
 [node name="CoffeeMachineTrigger" type="Area3D" parent="Scare_1" unique_id=1442232335]
+collision_mask = 9
 script = ExtResource("30_ixevi")
 
 [node name="coffee_machine" parent="Scare_1/CoffeeMachineTrigger" unique_id=852744974 instance=ExtResource("30_q1f5f")]
@@ -1166,8 +1134,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.606768, 1.3555012, -21.703
 [node name="Placement" parent="Scare_1/CoffeeMachineTrigger/coffee_machine" unique_id=1862691038 instance=ExtResource("32_vfwt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2643938, 0.8351841)
 
+[node name="CoffeeMachineProgress" type="ProgressBar" parent="Scare_1/CoffeeMachineTrigger/coffee_machine" unique_id=1608444127]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/CoffeeMachineTrigger" unique_id=32368905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.580432, 1.6154473, -20.972462)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.580432, 1.6154473, -21.644924)
 shape = SubResource("BoxShape3D_ixevi")
 
 [node name="Cup" type="RigidBody3D" parent="Scare_1/CoffeeMachineTrigger" unique_id=1971986983 groups=["cups"]]
@@ -1175,6 +1148,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.237721, 1.3119283, -21.047
 collision_layer = 13
 collision_mask = 13
 mass = 100.0
+sleeping = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/CoffeeMachineTrigger/Cup" unique_id=889426935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057972193, 0)
@@ -1192,6 +1169,7 @@ debug_color = Color(0.96962434, 0, 0.46326667, 0.41960785)
 [connection signal="pressed" from="Computer/CanvasLayer/Logbook/Log/Exit2" to="Computer/CanvasLayer/User" method="_on_exit_2_pressed"]
 [connection signal="pressed" from="Computer/CanvasLayer/Logbook/Exit" to="Computer/CanvasLayer/User" method="_on_exit_pressed"]
 [connection signal="scene1_return_books_to_shelf" from="SignalManager" to="SignalManager" method="_on_scene_1_return_books_to_shelf"]
-[connection signal="body_entered" from="Scare_1/FadeTextArea" to="Scare_1/FadeTextArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_exited"]
+[connection signal="despawn_spook_1_coffe_finished" from="Scare_1/CoffeeMachineTrigger" to="." method="_on_coffee_machine_trigger_despawn_spook_1_coffe_finished"]
 [connection signal="cup_placed_in_coffe_machine" from="Scare_1/CoffeeMachineTrigger/coffee_machine/Placement" to="Scare_1/CoffeeMachineTrigger" method="_on_placement_cup_placed_in_coffe_machine"]

@@ -5,11 +5,14 @@ var body_inside: RigidBody3D = null
 @onready var door: CSGBox3D = $"../../Map/Misc/Door"
 
 signal cup_placed_in_coffe_machine
+
+
 func _physics_process(_delta: float) -> void:
 	if body_inside and Input.is_action_just_pressed("place"):
 		move_to_marker(body_inside, object_placed)
 		print("placed")
 		emit_signal("cup_placed_in_coffe_machine")
+		Global.player_placed_coffee_in_machine = true
 	
 	
 func _on_body_entered(body: Node3D) -> void:

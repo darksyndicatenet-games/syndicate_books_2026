@@ -4,7 +4,8 @@ extends Node3D
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 
 var counter := 0
-
+#@onready var spook_1: CharacterBody3D = $Scare_1/Spook_1
+@export var spook_1: CharacterBody3D
 # books already counted
 var counted_books: Array[String] = []
 
@@ -19,6 +20,7 @@ var player_in_area:= false
 
 func _ready() -> void:
 	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
+
 
 func _process(_delta: float) -> void:
 #	check inventory for item
@@ -80,3 +82,6 @@ func on_trigger_door_animation_():
 	pass
 	
 	
+
+func _on_coffee_machine_trigger_despawn_spook_1_coffe_finished() -> void:
+	spook_1.queue_free()

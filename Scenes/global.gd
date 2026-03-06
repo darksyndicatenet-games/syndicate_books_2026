@@ -5,6 +5,8 @@ var is_player_occupied:= false
 var is_holding := false
 var book_iCounter:= 0
 
+
+var player_placed_coffee_in_machine := false
 func set_holding(state: bool):
 	is_holding = state
 	emit_signal("object_state_changed", state)
