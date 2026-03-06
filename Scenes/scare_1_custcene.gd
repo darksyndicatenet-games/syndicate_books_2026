@@ -9,6 +9,8 @@ extends Area3D
 var has_player_entered :bool = false
 @onready var label: Label = $FadeText/Label
 
+@onready var look_target: Marker3D = $"../Spook_1/LookAtSpook1"
+
 func _ready():
 	
 	label.text = message
@@ -43,4 +45,6 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		if has_player_entered == false:
 			play_fade()
+			body.force_look_at(look_target.global_position)
+			monitoring = false
 			has_player_entered = true

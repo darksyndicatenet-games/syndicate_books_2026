@@ -1,10 +1,11 @@
 extends TextureRect
 
+#@onready var misson_manager: Node = $"../../../MissonManager"
 @onready var misson_manager: Node = $"../../../MissonManager"
 
 @onready var error_message: Label = $"../ErrorMessage"
 @onready var correct_message: Label = $"../CorrectMessage"
-
+var entry_visual_db
 var books = {
 	"the routledge handbook of philosophy of empathy": "Unknown Author",
 	"animal farm": "George Orwell",
@@ -170,7 +171,6 @@ func _on_btn_enter_2_pressed() -> void:
 		if check_required_books():
 			print("Both required books submitted! Firing signal...")
 			SignalManager.emit_signal("scene1_return_books_to_shelf")
-
 		correct_message.text = "All entries are correct!"
 
 	else:
@@ -208,11 +208,15 @@ func _on_exit_pressed() -> void:
 
 func _on_exit_2_pressed() -> void:
 	log_.visible = false
+#	this is suppose make book lines db close
+	entry_list.visible = false
+	
 
 func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
-	misson_manager.set_message("Return books to shelf")
+	#misson_manager.set_message("Return books to shelf")
 	print("scene1_return_books_to_shelf, next mission since books are entered")
+	misson_manager.set_message("Pack Books into shelfs")
 #	this needs checking
 
 func add_entry_to_log():
@@ -225,9 +229,13 @@ func add_entry_to_log():
 	entry.get_node("HBoxContainer/FineLabel").text = fine.text
 
 	entry_list.add_child(entry)
-	
+
 func check_required_books() -> bool:
 	for book in required_books:
 		if not submitted_books.has(book):
 			return false
 	return true
+
+
+#so i need ti=o make text invisvible once i exit the computer
+#the validation message still show - needa to be invisible

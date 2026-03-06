@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cmodu50hdehns" path="res://Assets/Assets_Scenes/single_shelf.gd" id="2_2k2gx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hrwcm"]
+size = Vector3(2.8081055, 0.6538086, 0.5546875)
 
 [node name="single-shelf" unique_id=526331590 instance=ExtResource("1_hrwcm")]
 script = ExtResource("2_2k2gx")
@@ -11,4 +12,19 @@ script = ExtResource("2_2k2gx")
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1672924342]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2075873192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079833984, 2.0827613, 0.4350922)
 shape = SubResource("BoxShape3D_hrwcm")
+debug_color = Color(0.9689093, 0, 0.4679109, 0.41960785)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="1" unique_id=1452464605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079833984, 1.2236791, 0.4350922)
+shape = SubResource("BoxShape3D_hrwcm")
+debug_color = Color(0.9689093, 0, 0.4679109, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" index="2" unique_id=977123520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079833984, 2.9504793, 0.4350922)
+shape = SubResource("BoxShape3D_hrwcm")
+debug_color = Color(0.9689093, 0, 0.4679109, 0.41960785)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

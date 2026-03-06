@@ -42,10 +42,17 @@ var heldObjects : RigidBody3D
 
 @onready var instruction_label: Label = $CanvasLayer/crosshair/InstructionLabel
 
+#cut scene var
+var forced_look = false
+var forced_target : Vector3
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
+	if forced_look:
+		return
+		
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
@@ -53,6 +60,7 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+		
 	if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
 		cursor_visible = not cursor_visible  # toggle the flag
 	if cursor_visible:
@@ -162,7 +170,6 @@ func drop_held_object():
 		heldObjects.gravity_scale = 1
 	heldObjects = null
 	
-	
 func throw_held_object():
 	var obj = heldObjects
 	drop_held_object()
@@ -190,3 +197,30 @@ func handle_holding_objects():
 		if dropBelowPlayer && groudRay.is_colliding():
 			if groudRay.get_collider() ==  heldObjects: drop_held_object()
 	
+func force_look_at(target_pos: Vector3):
+	# Activate forced look so player input is temporarily disabled
+	forced_look = true
+
+	# Calculate the direction vector from the camera to the target
+	var dir = (target_pos - camera.global_transform.origin).normalized()
+
+	# Calculate the yaw (left/right rotation) needed for the head to face the target
+	var target_yaw = atan2(-dir.x, -dir.z)
+
+	# Calculate the pitch (up/down rotation) needed for the camera to look at the target
+	var target_pitch = asin(dir.y)
+
+	# Create a tween to smoothly rotate the head and camera
+	var tween = create_tween()
+
+	# Rotate the head's Y rotation (yaw) toward the target over 0.5 seconds
+	tween.tween_property(head, "rotation:y", target_yaw, 0.5)
+
+	# Rotate the camera's X rotation (pitch) toward the target over 0.5 seconds in parallel
+	tween.parallel().tween_property(camera, "rotation:x", target_pitch, 0.5)
+
+	# Wait for 2 seconds while the forced look is active
+	await get_tree().create_timer(2.0).timeout
+
+	# Deactivate forced look so player can regain camera control
+	forced_look = false
