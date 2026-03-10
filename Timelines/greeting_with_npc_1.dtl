@@ -1,0 +1,3 @@
+NPC_1: Good day, I would like to return a book.
+Player: "Oh, thank you, let me log it back into the system.
+[signal arg="log_book_return_into_computer"]

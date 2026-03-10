@@ -36,6 +36,8 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"check_if_npc_1_saw_someone_leave": "res://Timelines/check_if_npc_1_saw_someone_leave.dtl",
+"greeting_with_npc_1": "res://Timelines/greeting_with_npc_1.dtl",
 "scare1_spook1": "res://Timelines/scare1_spook1.dtl"
 }
 layout/style_directory={

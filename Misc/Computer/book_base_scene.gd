@@ -107,3 +107,17 @@ func interact(player):
 	self.transform = Transform3D.IDENTITY    
 
 	print("Picked up cup")
+
+
+func check_book_for_first_npc() -> bool:
+	var correct_name = "Animal Farm"
+	var correct_author = "George Orwell"
+
+	if book_name.strip_edges().to_lower() == correct_name.to_lower() \
+	and author.strip_edges().to_lower() == correct_author.to_lower():
+		print("Correct book entered.")
+		Global.check_book_first_npc = true
+		return true
+	else:
+		print("Wrong book.")
+		return false

@@ -21,7 +21,6 @@ extends Area3D
 
 
 @export var play_scene_once: bool
-
 # -----------------------------
 # Internal
 # -----------------------------
@@ -46,7 +45,6 @@ func play_cutscene() -> void:
 
 	has_played = true
 	monitoring = false  # only triggers once
-	Global.played_cutscene_1 = true
 
 	# Show player's thoughts
 	play_fade()
@@ -98,6 +96,4 @@ func _on_body_entered(body: Node3D) -> void:
 			play_cutscene()
 	else:
 		return
-
-		
 		

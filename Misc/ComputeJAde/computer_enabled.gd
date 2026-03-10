@@ -53,9 +53,6 @@ func end_interaction() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#if computer_camera:
 		#computer_camera.current = false
-
-
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		player_in_range = true

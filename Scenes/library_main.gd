@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var receptionist_label_3d: Label3D = $Map/Misc/Desk/ReceptionistLabel3D
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
+@onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
 
 var counter := 0
 #@onready var spook_1: CharacterBody3D = $Scare_1/Spook_1
@@ -15,6 +16,7 @@ var required_books := [
 	"the routledge handbook of philosophy of empathy"
 ]
 
+@onready var cutscene_2: Area3D = $Scare_1/Cutscene2
 
 var player_in_area:= false
 
@@ -85,3 +87,11 @@ func on_trigger_door_animation_():
 
 func _on_coffee_machine_trigger_despawn_spook_1_coffe_finished() -> void:
 	spook_1.queue_free()
+	cutscene_2.monitoring = true
+
+
+
+func _on_cutscene_2_body_entered(body: Node3D) -> void:
+	if body.name == "Player" && Global.played_cutscene_1 == true:
+		bell_sound.play()
+		Global.move_npc_1_to_desk_after_bell_rings = true

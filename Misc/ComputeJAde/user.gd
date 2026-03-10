@@ -210,6 +210,10 @@ func _on_exit_2_pressed() -> void:
 	log_.visible = false
 #	this is suppose make book lines db close
 	entry_list.visible = false
+	#Global.player_left_screen_npc_1 = true 
+#	can make this a locak variable?
+	Global.player_left_screen_npc_1  = true
+
 	
 
 func on_scene1_return_books_to_shelf():

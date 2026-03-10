@@ -46,6 +46,9 @@ var heldObjects : RigidBody3D
 var forced_look = false
 var forced_target : Vector3
 
+@onready var footstep_audio: AudioStreamPlayer3D = $Footsteps
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -60,7 +63,8 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-		
+
+#		need a global flag var so whe player gets promot: "Return to front desk" this function should play "footsteps_audio"
 	if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
 		cursor_visible = not cursor_visible  # toggle the flag
 	if cursor_visible:
@@ -93,8 +97,6 @@ func _physics_process(delta):
 			obj.begin_dialogue()
 		else:
 			print("no obj found")
-
-		
 
 	# --- Hover label code ---
 	if obj:
@@ -225,3 +227,14 @@ func force_look_at(target_pos: Vector3):
 
 	# Deactivate forced look so player can regain camera control
 	forced_look = false
+
+
+func footsteps_audio():
+	
+	var is_moving = velocity.length() > 0.1
+	
+	if is_moving:
+		if not footstep_audio.playing:
+			footstep_audio.play()
+	else:
+		footstep_audio.stop()
