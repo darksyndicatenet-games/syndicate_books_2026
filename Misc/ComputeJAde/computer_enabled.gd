@@ -20,19 +20,17 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
-		cursor_visible = not cursor_visible  # toggle the flag
+	if Input.is_action_just_pressed("ui_focus_next"):  # Tab
+		cursor_visible = not cursor_visible
 		if cursor_visible:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		
-	if player_in_range and Input.is_action_just_pressed("place"):
-		if not interacting:
-			start_interaction()
-			prompt_message_when_player_interacts_computer()
-		#else:
-			#end_interaction()
+
+	# Only open computer if NOT interacting
+	if player_in_range and not interacting and Input.is_action_just_pressed("place"):
+		start_interaction()
+		prompt_message_when_player_interacts_computer()
 
 func start_interaction() -> void:
 	interacting = true
@@ -48,10 +46,7 @@ func start_interaction() -> void:
 func end_interaction() -> void:
 	interacting = false
 	sprite_2d.visible = false
-	#entry_list.visible = false
-	# Hide cursor and return to player camera
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#if computer_camera:
 		#computer_camera.current = false
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player":

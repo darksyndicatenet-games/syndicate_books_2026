@@ -1,4 +1,5 @@
 extends TextureRect
+@onready var computer: Node3D = $"../.."
 
 #@onready var misson_manager: Node = $"../../../MissonManager"
 @onready var misson_manager: Node = $"../../../MissonManager"
@@ -206,13 +207,32 @@ func _on_exit_pressed() -> void:
 	exit.visible = false
 
 
+
 func _on_exit_2_pressed() -> void:
 	log_.visible = false
-#	this is suppose make book lines db close
 	entry_list.visible = false
-	#Global.player_left_screen_npc_1 = true 
-#	can make this a locak variable?
-	Global.player_left_screen_npc_1  = true
+	logbook.visible = false
+	
+	# hide messages
+	error_message.visible = false
+	correct_message.visible = false
+	
+	# reset login screen
+	control.visible = true
+	user.visible = true
+	
+	# clear all input fields
+	user_name.text = ""
+	password.text = ""
+	book_name.text = ""
+	author.text = ""
+	issued.text = ""
+	returned.text = ""
+	fine.text = ""
+	taken_out_by.text = ""
+
+	computer.end_interaction()
+	
 
 	
 

@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var receptionist_label_3d: Label3D = $Map/Misc/Desk/ReceptionistLabel3D
+@onready var receptionist_label_3d: Label3D = $NavigationRegion3D/Map/Misc/Desk/ReceptionistLabel3D
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 @onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
 

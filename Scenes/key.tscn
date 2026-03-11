@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://btwimjempan50" path="res://Scenes/key.gd" id="1_brn0f"]
 [ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="2_lc1k7"]
 [ext_resource type="PackedScene" uid="uid://d2h6j1hjodv6x" path="res://Scenes/inventory_item.tscn" id="3_58hov"]
+[ext_resource type="PackedScene" uid="uid://c21nxrlohp8nq" path="res://Assets/Assets_Scenes/Blender_Assets/key.glb" id="4_lc1k7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wohjs"]
 size = Vector3(0.8979492, 0.40460205, 1.4160156)
@@ -61,11 +62,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.92591, -2.9495523, -0.38274
 
 [node name="key" type="Node3D" parent="." unique_id=1474129763]
 transform = Transform3D(0.99995756, 0, -0.009215208, 0, 1, 0, 0.009215208, 0, 0.99995756, 0.18559368, 0, 0.40093693)
+visible = false
 
 [node name="Key" type="MeshInstance3D" parent="key" unique_id=636392670]
 transform = Transform3D(0.63933444, 0, 0, 0, 1, 0, 0, 0, 0.63933444, 0, 0, 0)
 mesh = SubResource("ArrayMesh_yo17j")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_lc1k7")
+
+[node name="key2" parent="." unique_id=1400885466 instance=ExtResource("4_lc1k7")]
+transform = Transform3D(0.6520442, 0, -0.0060089813, 0, 1, 0, 0.006008977, 0, 0.6520447, 0.18859966, -0.007691264, 0.40514076)
 
 [connection signal="key_collected" from="InventoryItem" to="." method="_on_inventory_item_key_collected"]
