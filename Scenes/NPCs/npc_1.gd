@@ -16,6 +16,7 @@ var has_player_interacted01:= false
 
 var check_book_first_npc_play_once := false
 func _ready():
+	
 	if target_marker:
 		nav_agent.target_position = target_marker.global_position
 		npc_1_is_finished_So_move_outside = true
@@ -79,7 +80,14 @@ func handle_npc_after_book() -> void:
 	# Wait until dialogue finishes (assuming Dialogic has a 'finished' signal)
 	#await Dialogic.finished  # pause here until dialogue is done
 #	basixally have a signal that emits when dialogue is finsihed 
-
+	Dialogic.signal_event.connect(on_npc1_can_leave_library)
 	# Now move NPC outside
-	target_marker = move_outside
-	nav_agent.target_position = target_marker.global_position
+	
+
+func on_npc1_can_leave_library(argument : String):
+	await get_tree().create_timer(4.0).timeout
+	if argument == "npc1 can leave library":
+		print("have npc walk away then")
+		target_marker = move_outside
+		nav_agent.target_position = target_marker.global_position
+	pass

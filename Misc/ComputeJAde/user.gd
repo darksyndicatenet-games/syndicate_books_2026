@@ -145,14 +145,12 @@ func _on_btn_enter_2_pressed() -> void:
 	var returned_correct = entered_returned == today_string
 	var returned_unix = parse_date_to_unix(entered_returned)
 	# Calculate fine based on returned date
-	var issue_unix = parse_date_to_unix(book_node.issue_date)
-	#var returned_unix = parse_date_to_unix(entered_returned)
-	var days_kept = int((returned_unix - issue_unix) / 86400)
-	var fine_calculated = 0.0
-	if days_kept > book_node.allowed_days:
-		fine_calculated = (days_kept - book_node.allowed_days) * book_node.fine_per_day
-
-	var fine_correct = float(entered_fine) == fine_calculated
+	var fine_calculated = book_node.calculate_fine_for_return(entered_returned)
+	#var fine_correct = float(entered_fine) == fine_calculated
+	var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
+	
+	print("Entered fine:", float(entered_fine))
+	print("Calculated fine:", fine_calculated)
 
 	# No need to compare returned directly to due_date
 	#var returned_correct = true 
@@ -296,7 +294,9 @@ func check_book_for_first_npc() -> bool:
 	var fine_calculated = 0.0
 	if days_kept > book_node.allowed_days:
 		fine_calculated = (days_kept - book_node.allowed_days) * book_node.fine_per_day
-	var fine_correct = float(entered_fine) == fine_calculated
+	#var fine_correct = float(entered_fine) == fine_calculated
+	var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
+
 
 	# If everything matches, mark as correct
 	if name_correct and author_correct and issued_correct and taken_out_by_correct and fine_correct:

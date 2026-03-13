@@ -22,11 +22,22 @@ var required_books := [
 
 var player_in_area:= false
 
+
+#proximity scary atmosphere sound
+@onready var scary_object: CSGBox3D = $NavigationRegion3D/Map/Misc/Desk
+@onready var player: CharacterBody3D = $Player
+@onready var scary_background_audio: AudioStreamPlayer3D = $NavigationRegion3D/Map/Misc/Desk/scaryBackgroundAudio
+
+# Max distance at which sound is still audible
+var max_distance = 10.0
+
 func _ready() -> void:
 	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
 
 
 func _process(_delta: float) -> void:
+#	need to add flag here
+	background_scary_audio_scare_()
 #	check inventory for item
 	if player_in_area and Input.is_action_just_pressed("place"):
 		Inventory.check_if_player_has_item("Library Key")
@@ -98,3 +109,22 @@ func _on_cutscene_2_body_entered(body: Node3D) -> void:
 		bell_sound.play()
 		Global.move_npc_1_to_desk_after_bell_rings = true
 		bell_has_been_fired = true
+
+
+func background_scary_audio_scare_():
+	var distance = player.global_transform.origin.distance_to(scary_object.global_transform.origin)
+	
+	# Clamp distance so it doesn't go negative or exceed max
+	distance = clamp(distance, 0, max_distance)
+	
+	# Map distance to volume: closer = louder
+	# volume_db: 0 is full volume, -80 is silent
+	var volume_factor = lerp(0, -30, distance / max_distance)  # adjust -30 to taste
+	scary_background_audio.volume_db = volume_factor
+	
+	# Optionally vary pitch for creepiness
+	scary_background_audio.pitch_scale = randf_range(0.95, 1.05)
+	
+	# Ensure audio is playing
+	if not scary_background_audio.playing:
+		scary_background_audio.play()

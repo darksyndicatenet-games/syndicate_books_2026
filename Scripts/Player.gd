@@ -45,9 +45,10 @@ var heldObjects : RigidBody3D
 #cut scene var
 var forced_look = false
 var forced_target : Vector3
-
 @onready var footstep_audio: AudioStreamPlayer3D = $Footsteps
 
+var footstep_timer := 0.0
+const STEP_INTERVAL := 0.45
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -63,7 +64,6 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-
 #		need a global flag var so whe player gets promot: "Return to front desk" this function should play "footsteps_audio"
 	if Global.lock_all_player_controls_:
 		if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
@@ -152,9 +152,12 @@ func _physics_process(delta):
 		var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 		
+		handle_footsteps(delta)
 		move_and_slide()
+		
 	else:
 		return
+	
 
 
 func _headbob(time) -> Vector3:
@@ -232,12 +235,17 @@ func force_look_at(target_pos: Vector3):
 	forced_look = false
 
 
-func footsteps_audio():
+func handle_footsteps(delta):
+	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var is_moving = input_dir.length() > 0
 	
-	var is_moving = velocity.length() > 0.1
-	
-	if is_moving:
-		if not footstep_audio.playing:
+	if is_moving and is_on_floor():
+		#print("walking")  # DEBUG
+		footstep_timer -= delta
+		
+		if footstep_timer <= 0:
+			footstep_audio.pitch_scale = randf_range(0.9, 1.1)
 			footstep_audio.play()
+			footstep_timer = STEP_INTERVAL
 	else:
-		footstep_audio.stop()
+		footstep_timer = 0

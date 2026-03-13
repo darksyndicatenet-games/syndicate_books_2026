@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dcyljydwljb4" path="res://Scenes/book_shelf_sample.tscn" id="5_vfwt6"]
 [ext_resource type="Material" uid="uid://def8l0xxqoggq" path="res://Materials/grid_map_editor_red.tres" id="6_jhl3c"]
 [ext_resource type="PackedScene" uid="uid://bq6o2ebdc8dr2" path="res://Assets/Assets_Scenes/single_shelf.tscn" id="6_wo84d"]
-[ext_resource type="AudioStream" uid="uid://c3svnc0k18nbn" path="res://Music/suspenseful-dark-background.mp3" id="8_gndm1"]
 [ext_resource type="PackedScene" uid="uid://dvtpjji0yerr8" path="res://Scenes/Player.tscn" id="9_7vups"]
 [ext_resource type="AudioStream" uid="uid://bi6l0qft14v1b" path="res://Music/short-footsteps.mp3" id="11_a14d5"]
 [ext_resource type="PackedScene" uid="uid://vnsnk4gu52t2" path="res://Scenes/inventory_display.tscn" id="13_ot02y"]
@@ -681,9 +680,6 @@ text = "Place books
 ⬇️"
 font_size = 80
 
-[node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Map/Misc/Desk" unique_id=2038902659]
-stream = ExtResource("8_gndm1")
-
 [node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Map/Misc" unique_id=341284320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8650619, 9.220673, 30.182545)
 visible = false
@@ -703,7 +699,7 @@ transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="Player" unique_id=461560269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7037334, 1.5574124, 4.5702343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11227846, 0.97298396)
 stream = ExtResource("11_a14d5")
 volume_db = 80.0
 

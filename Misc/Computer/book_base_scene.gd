@@ -106,4 +106,15 @@ func interact(player):
 	# reset to hand's location
 	self.transform = Transform3D.IDENTITY    
 
-	print("Picked up cup")
+	print("Picked up book")
+	
+func calculate_fine_for_return(return_date: String) -> float:
+	var issue_unix = parse_date_to_unix(issue_date)
+	var return_unix = parse_date_to_unix(return_date)
+
+	var days = int((return_unix - issue_unix) / 86400)
+
+	if days > allowed_days:
+		return (days - allowed_days) * fine_per_day
+	else:
+		return 0.0
