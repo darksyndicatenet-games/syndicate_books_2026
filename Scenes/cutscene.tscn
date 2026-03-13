@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://03duvf2sqkgq" path="res://Scenes/scare_1_custcene.gd" id="1_7n648"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jrsms"]
-size = Vector3(0.75808716, 2.2475586, 2.6108398)
+size = Vector3(2.3261719, 2.2475586, 2.6108398)
 
 [node name="Cutscene" type="Area3D" unique_id=1042776018]
 script = ExtResource("1_7n648")

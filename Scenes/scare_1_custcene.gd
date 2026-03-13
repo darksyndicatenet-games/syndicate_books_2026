@@ -45,7 +45,8 @@ func play_cutscene() -> void:
 		return
 
 	has_played = true
-	monitoring = false  # only triggers once
+	#monitoring = false  # only triggers once
+	set_deferred("monitoring", false)
 	Global.played_cutscene_1 = true
 
 	# Show player's thoughts

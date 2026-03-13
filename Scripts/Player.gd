@@ -65,93 +65,96 @@ func _unhandled_input(event):
 func _physics_process(delta):
 
 #		need a global flag var so whe player gets promot: "Return to front desk" this function should play "footsteps_audio"
-	if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
-		cursor_visible = not cursor_visible  # toggle the flag
-	if cursor_visible:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if Global.lock_all_player_controls_:
+		if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
+			cursor_visible = not cursor_visible  # toggle the flag
+		if cursor_visible:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	handle_holding_objects()
-#	I FIXED MY ERROR IM A GENIUS
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
-#	stores the obj that the raycast detects
-	var obj = interaction_ray.get_collider()
-	if obj:
-		hover_label.text = str(obj.get_meta("display_name")) if obj.has_meta("display_name") else obj.name
-		if obj.has_method("get_interact_text"):
-			instruction_label.visible = true
-			instruction_label.text = obj.get_interact_text()
+		handle_holding_objects()
+	#	I FIXED MY ERROR IM A GENIUS
+		
+		if Input.is_action_just_pressed("ui_cancel"):
+			get_tree().quit()
+	#	stores the obj that the raycast detects
+		var obj = interaction_ray.get_collider()
+		if obj:
+			hover_label.text = str(obj.get_meta("display_name")) if obj.has_meta("display_name") else obj.name
+			if obj.has_method("get_interact_text"):
+				instruction_label.visible = true
+				instruction_label.text = obj.get_interact_text()
+			else:
+				instruction_label.visible = false
 		else:
 			instruction_label.visible = false
-	else:
-		instruction_label.visible = false
-	if Input.is_action_just_pressed("interact"):
-		print("Ray hit: ", obj)
+		if Input.is_action_just_pressed("interact"):
+			print("Ray hit: ", obj)
+			
+	#		triggers the function that calls dialogic
+		if Input.is_action_just_pressed("place"):
+			if obj and obj.has_method("begin_dialogue"):
+				obj.begin_dialogue()
+			else:
+				print("no obj found")
+
+		# --- Hover label code ---
+		if obj:
+			# Show label above object
+			hover_label.visible = true
+
+			# Set text
+			if obj.has_meta("display_name"):
+				hover_label.text = str(obj.get_meta("display_name"))
+			else:
+				hover_label.text = obj.name  # fallback to node name
+
+		else:
+			hover_label.visible = false
+			hover_label.text = ""
+
+
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+
+		# Handle Jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 		
-#		triggers the function that calls dialogic
-	if Input.is_action_just_pressed("place"):
-		if obj and obj.has_method("begin_dialogue"):
-			obj.begin_dialogue()
+		# Handle Sprint.
+		if Input.is_action_pressed("sprint"):
+			speed = SPRINT_SPEED
 		else:
-			print("no obj found")
+			speed = WALK_SPEED
 
-	# --- Hover label code ---
-	if obj:
-		# Show label above object
-		hover_label.visible = true
-
-		# Set text
-		if obj.has_meta("display_name"):
-			hover_label.text = str(obj.get_meta("display_name"))
+		# Get the input direction and handle the movement/deceleration.
+		var input_dir = Input.get_vector("left", "right", "up", "down")
+		var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if is_on_floor():
+			if direction:
+				velocity.x = direction.x * speed
+				velocity.z = direction.z * speed
+			else:
+				velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
+				velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 		else:
-			hover_label.text = obj.name  # fallback to node name
-
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		
+		# Head bob
+		t_bob += delta * velocity.length() * float(is_on_floor())
+		camera.transform.origin = _headbob(t_bob)
+		
+		# FOV
+		var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
+		var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
+		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+		
+		move_and_slide()
 	else:
-		hover_label.visible = false
-		hover_label.text = ""
-
-
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	# Handle Sprint.
-	if Input.is_action_pressed("sprint"):
-		speed = SPRINT_SPEED
-	else:
-		speed = WALK_SPEED
-
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if is_on_floor():
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		else:
-			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
-			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
-	else:
-		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
-		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
-	
-	# Head bob
-	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
-	
-	# FOV
-	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
-	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
-	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
-	
-	move_and_slide()
+		return
 
 
 func _headbob(time) -> Vector3:

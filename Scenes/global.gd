@@ -13,6 +13,10 @@ var player_left_screen_npc_1 := false
 #var start_said_npc_1_goodbye_dialgue := false
 
 var player_placed_coffee_in_machine := false
+
+var player_exited_the_screen:= false
+
+var lock_all_player_controls_ := true
 func set_holding(state: bool):
 	is_holding = state
 	emit_signal("object_state_changed", state)

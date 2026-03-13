@@ -2,7 +2,8 @@ extends Node3D
 
 var book1_in_area = false
 var book2_in_area = false
-@onready var misson_manager: Node = $"../../../../MissonManager"
+#@onready var misson_manager: Node = $"../../../../MissonManager"
+@onready var misson_manager: Node = $"../../../../../MissonManager"
 
 	#if body.is_in_group("books"):
 		#var book_name = body.name

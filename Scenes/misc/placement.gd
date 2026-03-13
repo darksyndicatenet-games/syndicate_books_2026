@@ -2,7 +2,7 @@ extends Area3D
 @onready var object_placed: Marker3D = $ObjectPlaced
 
 var body_inside: RigidBody3D = null
-@onready var door: CSGBox3D = $"../../Map/Misc/Door"
+#@onready var door: CSGBox3D = $"../../Map/Misc/Door"
 
 signal cup_placed_in_coffe_machine
 

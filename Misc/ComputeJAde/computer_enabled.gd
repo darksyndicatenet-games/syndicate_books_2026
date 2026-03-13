@@ -14,6 +14,7 @@ var interacting: bool = false  # Track if player is interacting
 
 var prompted_Beginning := false
 
+
 func _ready() -> void:
 	user.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -39,6 +40,8 @@ func start_interaction() -> void:
 	# Show cursor when interacting
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Global.player_exited_the_screen = false
+	Global.lock_all_player_controls_ = false
 	# Switch to computer camera if available
 	#if computer_camera:
 		#computer_camera.current = true
@@ -47,6 +50,8 @@ func end_interaction() -> void:
 	interacting = false
 	sprite_2d.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Global.player_exited_the_screen = true
+	Global.lock_all_player_controls_ = true
 		#computer_camera.current = false
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player":

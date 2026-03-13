@@ -233,6 +233,7 @@ func _on_exit_2_pressed() -> void:
 
 	computer.end_interaction()
 	
+	
 
 	
 
@@ -263,3 +264,46 @@ func check_required_books() -> bool:
 
 #so i need ti=o make text invisvible once i exit the computer
 #the validation message still show - needa to be invisible
+
+func check_book_for_first_npc() -> bool:
+	var correct_book_name = "animal farm"
+	var correct_author = "George Orwell"
+
+	var entered_book_name = book_name.text.strip_edges().to_lower()
+	var entered_author = author.text.strip_edges().to_lower()
+	var entered_issued = issued.text.strip_edges()
+	var entered_returned = returned.text.strip_edges()
+	var entered_taken_out_by = taken_out_by.text.strip_edges().to_lower()
+	var entered_fine = fine.text.strip_edges()
+
+	# Find the actual book node in the scene
+	var book_node = find_book_node_by_name(entered_book_name)
+	if not book_node:
+		print("Book not found in the scene")
+		Global.check_book_first_npc = false
+		return false
+
+	# Check all required fields
+	var name_correct = entered_book_name == correct_book_name
+	var author_correct = entered_author == correct_author.to_lower()
+	var issued_correct = entered_issued == book_node.issue_date
+	var taken_out_by_correct = entered_taken_out_by == book_node.taken_out_by.to_lower()
+
+	# Calculate fine based on dates
+	var returned_unix = parse_date_to_unix(entered_returned)
+	var issue_unix = parse_date_to_unix(book_node.issue_date)
+	var days_kept = int((returned_unix - issue_unix) / 86400)
+	var fine_calculated = 0.0
+	if days_kept > book_node.allowed_days:
+		fine_calculated = (days_kept - book_node.allowed_days) * book_node.fine_per_day
+	var fine_correct = float(entered_fine) == fine_calculated
+
+	# If everything matches, mark as correct
+	if name_correct and author_correct and issued_correct and taken_out_by_correct and fine_correct:
+		print("All data for first NPC book correct.")
+		Global.check_book_first_npc = true
+		return true
+	else:
+		print("Some data is incorrect for the first NPC book.")
+		Global.check_book_first_npc = false
+		return false
