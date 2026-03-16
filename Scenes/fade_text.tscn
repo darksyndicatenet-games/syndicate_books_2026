@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dap15jej834pg" path="res://Scenes/fade_text.gd" id="1_jrsms"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jrsms"]
-size = Vector3(3.699768, 2.2475586, 2.6108398)
+size = Vector3(23.80371, 2.2475586, 2.6108398)
 
 [node name="FadeTextArea" type="Area3D" unique_id=252518672]
 script = ExtResource("1_jrsms")

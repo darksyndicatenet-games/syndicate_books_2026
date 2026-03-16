@@ -1,7 +1,7 @@
+[background arg="#000000ff" fade="0.0"]
 join NPC_1 (NPC_1) center [animation="Bounce In"]
 join Player right [animation="Bounce In"]
 Player: "Okay.. all done. Sorry...You didn't see anyone leave on your way in, did you?"
 NPC_1 (NPC_1): "Unfortunately not, but have a good evening"
-[background arg="#000000ff" fade="0.0"]
 Player (Player): Is he still in the library then?
 [signal arg="npc1 can leave library"]

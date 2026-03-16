@@ -3,6 +3,9 @@ extends Node3D
 @onready var receptionist_label_3d: Label3D = $NavigationRegion3D/Map/Misc/Desk/ReceptionistLabel3D
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 @onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
+@onready var look_target: Marker3D = $Scare_1/Cutscene2/Marker3D
+@onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
+@onready var scare_2: Area3D = $Scare_1/Scare2
 
 var bell_has_been_fired := false
 var counter := 0
@@ -11,8 +14,7 @@ var counter := 0
 # books already counted
 var counted_books: Array[String] = []
 
-@onready var scare_2: Area3D = $Scare_1/NPC_1/Scare2
-@onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/NPC_1/TurnOffSoundsAndHaveNPC2Enter
+
 
 #need to put a boolean value after discussing wiht the new npc 
 #then player should look at study area for the guy that disappeared
@@ -40,8 +42,8 @@ var max_distance = 70.0
 
 func _ready() -> void:
 	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
-	#scare_2.monitoring = false
-	#turn_off_sounds_and_have_npc_2_enter.monitoring = false
+	scare_2.monitoring = false
+	turn_off_sounds_and_have_npc_2_enter.monitoring = false
 
 
 func _process(_delta: float) -> void:
@@ -118,6 +120,7 @@ func _on_coffee_machine_trigger_despawn_spook_1_coffe_finished() -> void:
 
 func _on_cutscene_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" && Global.played_cutscene_1 == true && bell_has_been_fired == false:
+		player.force_look_at(look_target.global_position)
 		bell_sound.play()
 		Global.move_npc_1_to_desk_after_bell_rings = true
 		print("Bell triggered")

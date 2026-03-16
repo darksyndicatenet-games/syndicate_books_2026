@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 	# Only open computer if NOT interacting
 	if player_in_range and not interacting and Input.is_action_just_pressed("place"):
 		start_interaction()
-		prompt_message_when_player_interacts_computer()
+		#prompt_message_when_player_interacts_computer()
 
 func start_interaction() -> void:
 	interacting = true
@@ -62,7 +62,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
 		player_in_range = false
 		
-func prompt_message_when_player_interacts_computer():
-	misson_manager.set_message("log the books in")
+#func prompt_message_when_player_interacts_computer():
+	#misson_manager.set_message("log the books in")
 
 	

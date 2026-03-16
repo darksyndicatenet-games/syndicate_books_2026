@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var speed: float = 3.0
 @onready var misson_manager: Node = $"../../MissonManager"
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-@export var have_elderly_come_in_library_npc2 : bool
+@export var have_elderly_come_in_library_npc2 : bool 
 var has_player_interacted01 = false
 @export var look_marker: Node3D
 var looking_timer := 0.0
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if have_elderly_come_in_library_npc2:
+	if Global.have_elderly_come_in_library_npc2_:
 		enter_library()
 	if Global.The_Long_Walk_To_Freedom_given_to_npc2:
 		player.force_look_at(look_marker.global_position)
