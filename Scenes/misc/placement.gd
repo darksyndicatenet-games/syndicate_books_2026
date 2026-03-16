@@ -5,6 +5,7 @@ var body_inside: RigidBody3D = null
 #@onready var door: CSGBox3D = $"../../Map/Misc/Door"
 
 signal cup_placed_in_coffe_machine
+@onready var cup: RigidBody3D = $"../../../Scare_1/CoffeeMachineTrigger/Cup"
 
 
 func _physics_process(_delta: float) -> void:
@@ -28,6 +29,11 @@ func move_to_marker(body: Node3D, marker: Marker3D):
 	if body.name == "TheLongWalkToFreedom":
 		print("TheLongWalkToFreedom -- true")
 		Global.The_Long_Walk_To_Freedom_given_to_npc2 = true
+	if body.name == "Cup":
+		print("coffee cup planted")
+		cup.collision_layer = 1
+		cup.collision_mask = 1
+#		have coffee mug static here
 
 func _on_body_exited(body: Node3D) -> void:
 	if body == body_inside:

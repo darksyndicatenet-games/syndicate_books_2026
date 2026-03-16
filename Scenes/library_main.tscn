@@ -421,6 +421,7 @@ material_override = ExtResource("6_jhl3c")
 size = Vector3(2.5, 3.6, 0.23)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
 navigation_mesh = SubResource("NavigationMesh_se8fg")
 
 [node name="Map" type="Node3D" parent="NavigationRegion3D" unique_id=663058725]
@@ -706,7 +707,7 @@ transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.8
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -5.011079, 0, 5.9915466)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -5.011079, 0, 53.614964)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -789,7 +790,10 @@ shape = SubResource("BoxShape3D_bf250")
 debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
 
 [node name="Placement" parent="Day1/FrontDeskArea3D" unique_id=1862691038 instance=ExtResource("32_vfwt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.864491, 1.417449, 9.229975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.532312, 1.417449, 9.229975)
+
+[node name="Placement2" parent="Day1/FrontDeskArea3D" unique_id=955218015 instance=ExtResource("32_vfwt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.925301, 1.417449, 9.229975)
 
 [node name="Computer" type="Node3D" parent="." unique_id=499691354 groups=["computer"]]
 transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -15.382231, 2.015899, 8.863877)
@@ -1111,7 +1115,7 @@ script = ExtResource("23_bf250")
 [node name="Books" type="Node3D" parent="." unique_id=1072965139]
 
 [node name="AnimalFarm" parent="Books" unique_id=1562565056 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.790524, 0.25105524, 15.365269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.188459, 0.19044161, 13.914481)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
@@ -1121,7 +1125,7 @@ taken_out_by = "Me"
 issue_date = "2026-02-10"
 
 [node name="TheRoutledgeHandbookofPhilosophyofEmpathy" parent="Books" unique_id=488190995 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.399266, 0.25105524, 16.233578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.797202, 0.19044161, 14.78279)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
@@ -1258,22 +1262,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.751123, -0.7709508, 9.2956
 [node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
 
 [node name="CollectNPC2" type="Marker3D" parent="Scare_3" unique_id=1320935651]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.205061, 0, 15.528894)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.89176, 0, 11.443726)
 
 [node name="Marker3D" type="Marker3D" parent="Scare_3" unique_id=1719493035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.950835, 3.9745102, 13.534685)
 
-[node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker") instance=ExtResource("38_s6gja")]
+[node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") instance=ExtResource("38_s6gja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5307174, 35.12947)
 collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("../../Scare_1/NPC_1/move_to_front_Desk")
 have_elderly_come_in_library_npc2 = true
 look_marker = NodePath("../Marker3D")
+leave_marker = NodePath("../LeaveMarker")
 
-[node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker") instance=ExtResource("37_e6shu")]
+[node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") instance=ExtResource("37_e6shu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5789776, 1.3208694, 29.43006)
 target_marker = NodePath("../CollectNPC2")
+look_marker = NodePath("../CollectNPC2")
+leave_marker = NodePath("../LeaveMarker")
+
+[node name="LeaveMarker" type="Marker3D" parent="Scare_3" unique_id=432443004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.764328, 41.711327)
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
@@ -1295,3 +1305,4 @@ target_marker = NodePath("../CollectNPC2")
 [connection signal="body_entered" from="Scare_1/TurnOffSoundsAndHaveNPC2Enter" to="." method="_on_turn_off_sounds_and_have_npc_2_enter_body_entered"]
 
 [editable path="Scare_1/Cutscene3"]
+[editable path="Scare_3/NPC_2"]

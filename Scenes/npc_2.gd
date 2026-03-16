@@ -11,6 +11,8 @@ var has_player_interacted01 = false
 var looking_timer := 0.0
 var look_duration := 3.0
 var is_looking := false
+@export var leave_marker : Marker3D
+
 func _ready() -> void:
 	
 	if target_marker:
@@ -70,6 +72,7 @@ func on_You_phone_the_number_on_the_band(argument : String):
 		print("You_phone_the_number_on_the_band")
 		Global.npc_3_can_get_npc_2 = true
 		print(Global.npc_3_can_get_npc_2, " npc_3_can_get_npc_2")
+		Global.have_npc3_collect_npc_2_once = true
 
 	pass
 	

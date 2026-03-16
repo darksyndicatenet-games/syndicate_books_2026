@@ -93,7 +93,7 @@ func _on_front_desk_area_3d_body_entered(body: Node3D) -> void:
 
 	print("Book added:", book_name)
 	print("Counter = ", counter)
-	receptionist_label_3d.text = "books " + str(counter) + " / 2"
+	#receptionist_label_3d.text = "books " + str(counter) + " / 2"
 	check_completion()
 	
 func check_completion():

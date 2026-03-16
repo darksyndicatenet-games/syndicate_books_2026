@@ -24,6 +24,7 @@ var background_scary_ambience := false
 var player_acquired_beaded_charm :=  false
 var The_Long_Walk_To_Freedom_given_to_npc2:= false
 var npc_3_can_get_npc_2:= false
+var have_npc3_collect_npc_2_once:= false
 func set_holding(state: bool):
 	is_holding = state
 	emit_signal("object_state_changed", state)
