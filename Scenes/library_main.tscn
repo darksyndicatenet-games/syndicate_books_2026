@@ -40,10 +40,9 @@
 [ext_resource type="PackedScene" uid="uid://byyudyocn5w5g" path="res://Scenes/NPCs/npc_1.tscn" id="34_se8fg"]
 [ext_resource type="PackedScene" uid="uid://dclvg1cbs0fpm" path="res://Scenes/npc_3.tscn" id="37_e6shu"]
 [ext_resource type="PackedScene" uid="uid://by2rs2s2syltp" path="res://Scenes/npc_2.tscn" id="38_s6gja"]
+[ext_resource type="PackedScene" uid="uid://gkofgu5n7x07" path="res://Syndicate_books.glb" id="41_hm7k4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_se8fg"]
-vertices = PackedVector3Array(-99.831245, 0.75, -22.1138, -25.581245, 0.75, -22.1138, -25.331245, 0.75, -23.1138, -23.331245, 0.75, -98.1138, -99.831245, 0.75, -98.1138, -23.331245, 0.75, -23.1138, -3.5812454, 0.75, -22.6138, -2.3312454, 0.75, -23.6138, -2.8312454, 0.75, -23.8638, -3.8312454, 0.75, -23.1138, -2.8312454, 0.75, -25.3638, -0.5812454, 0.75, -25.6138, -0.5812454, 0.75, -98.1138, 9.918755, 0.75, -25.6138, 9.918755, 0.75, -98.1138, 11.918755, 0.75, -25.6138, 12.168755, 0.75, -24.6138, 99.168755, 0.75, -24.6138, 99.168755, 0.75, -98.1138, -34.081245, 5.25, -28.1138, -34.081245, 5.25, 31.1362, 29.418755, 5.25, 31.1362, 29.418755, 5.25, -28.1138, -3.8312454, 0.75, -20.8638, 0.6687546, 0.75, -1.6138, 0.9187546, 0.75, -0.61380005, 4.9187546, 0.75, -0.61380005, 5.1687546, 0.75, -2.1138, 11.918755, 0.75, -23.6138, 7.1687546, 0.75, -2.1138, 7.4187546, 0.75, -0.36380005, 99.168755, 0.75, -0.61380005, -6.0812454, 0.75, -5.3638, -5.5812454, 0.75, -5.1138, -5.5812454, 0.75, -11.3638, -6.3312454, 0.75, -20.8638, -2.3312454, 0.75, -1.6138, -2.5812454, 0.75, -11.6138, -24.581245, 0.75, -1.1138, -24.581245, 0.75, -20.8638, -25.581245, 0.75, -21.1138, -99.831245, 0.75, -0.86380005, -22.331245, 0.75, -1.3638, -20.581245, 0.75, -1.1138, -20.331245, 0.75, -20.8638, -22.331245, 0.75, -20.8638, -17.331245, 0.75, -1.3638, -14.331245, 0.75, -1.3638, -14.081245, 0.75, -20.8638, -17.581245, 0.75, -20.8638, -11.331245, 0.75, -1.3638, -9.331245, 0.75, -1.3638, -9.081245, 0.75, -20.8638, -11.581245, 0.75, -20.8638, -22.581245, 0.75, 0.63619995, -20.331245, 0.75, 0.88619995, -24.331245, 0.75, 0.63619995, -11.331245, 0.75, 0.88619995, -9.081245, 0.75, 0.88619995, 6.1687546, 0.75, 100.8862, 6.1687546, 0.75, 19.3862, 4.9187546, 0.75, 19.1362, -14.331245, 0.75, 0.63619995, -17.581245, 0.75, 1.1362, -2.5812454, 0.75, 9.6362, -5.5812454, 0.75, 9.3862, -13.331245, 0.75, 1.1362, -6.0812454, 0.75, 0.88619995, 4.9187546, 0.75, 8.1362, -2.3312454, 0.75, 7.8862, -99.831245, 0.75, 100.8862, 0.6687546, 0.75, 0.63619995, -2.3312454, 0.75, 0.63619995, 7.4187546, 0.75, 17.6362, 99.168755, 0.75, 17.8862, 7.4187546, 0.75, 19.1362, 99.168755, 0.75, 100.8862)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 5, 11), PackedInt32Array(11, 5, 12), PackedInt32Array(12, 5, 3), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 9, 5), PackedInt32Array(12, 14, 11), PackedInt32Array(11, 14, 13), PackedInt32Array(15, 13, 14), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 18), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(23, 6, 7), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 27), PackedInt32Array(28, 16, 29), PackedInt32Array(29, 16, 30), PackedInt32Array(30, 16, 17), PackedInt32Array(30, 17, 31), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(24, 36, 27), PackedInt32Array(27, 36, 37), PackedInt32Array(23, 7, 37), PackedInt32Array(37, 7, 28), PackedInt32Array(37, 28, 27), PackedInt32Array(27, 28, 29), PackedInt32Array(35, 23, 34), PackedInt32Array(34, 23, 37), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 41), PackedInt32Array(40, 41, 0), PackedInt32Array(0, 1, 40), PackedInt32Array(42, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(46, 49, 47), PackedInt32Array(47, 49, 48), PackedInt32Array(50, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(42, 43, 54), PackedInt32Array(54, 43, 55), PackedInt32Array(41, 38, 56), PackedInt32Array(50, 51, 57), PackedInt32Array(57, 51, 58), PackedInt32Array(59, 61, 60), PackedInt32Array(47, 62, 46), PackedInt32Array(46, 62, 63), PackedInt32Array(65, 64, 61), PackedInt32Array(56, 54, 55), PackedInt32Array(62, 66, 63), PackedInt32Array(63, 66, 65), PackedInt32Array(66, 57, 58), PackedInt32Array(32, 33, 67), PackedInt32Array(67, 33, 65), PackedInt32Array(55, 63, 56), PackedInt32Array(56, 63, 65), PackedInt32Array(58, 67, 66), PackedInt32Array(66, 67, 65), PackedInt32Array(69, 68, 64), PackedInt32Array(64, 68, 61), PackedInt32Array(65, 61, 56), PackedInt32Array(56, 61, 41), PackedInt32Array(41, 61, 59), PackedInt32Array(41, 59, 70), PackedInt32Array(71, 25, 26), PackedInt32Array(69, 72, 71), PackedInt32Array(26, 68, 71), PackedInt32Array(71, 68, 69), PackedInt32Array(30, 31, 73), PackedInt32Array(73, 31, 74), PackedInt32Array(60, 75, 59), PackedInt32Array(59, 75, 76), PackedInt32Array(76, 75, 74), PackedInt32Array(75, 73, 74)]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -414,9 +413,10 @@ use_collision = true
 size = Vector3(5.0490723, 1.293335, 1.5527344)
 
 [node name="ReceptionistLabel3D" type="Label3D" parent="Misc/Desk" unique_id=244006026]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9992876, 1.7022187, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0010777, 1.7022187, 0.28633213)
+visible = false
 billboard = 2
-text = "Place books
+text = "Place Coffee
 
 ⬇️"
 font_size = 80
@@ -736,7 +736,7 @@ volume_db = 80.0
 transform = Transform3D(0.99995756, 0, 0.009215208, 0, 1, 0, -0.009215208, 0, 0.99995756, -6.722377, 0.37172508, 33.556736)
 
 [node name="Door" type="Area3D" parent="Day1" unique_id=1245343156]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721102, 0.089502335, 23.829672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47982192, 0.4961486, 24.907701)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/Door" unique_id=1490496602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0697556, 1.5333531, -0.7118645)
@@ -759,7 +759,7 @@ mesh = SubResource("ArrayMesh_q5j81")
 skeleton = NodePath("")
 
 [node name="DoorFrame" type="MeshInstance3D" parent="Day1/Door/door/Door_Group" unique_id=898073315]
-transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, -0.01665628, 0, -0.5142307)
+transform = Transform3D(1.1683316, 0, 8.526513e-14, 0, 1.198183, 0, -7.1054274e-14, 0, 1, 0.06304932, -0.19562212, -0.3447361)
 mesh = SubResource("ArrayMesh_sj7is")
 skeleton = NodePath("")
 
@@ -1174,6 +1174,7 @@ issue_date = "2026-03-10"
 
 [node name="envir" parent="." unique_id=132603951 instance=ExtResource("15_ixevi")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.4570632, 2.3350058, 0.17876339)
+visible = false
 
 [node name="Scare_1" type="Node3D" parent="." unique_id=2109900009]
 
@@ -1334,6 +1335,9 @@ debug_color = Color(0.9351875, 0.25609133, 0, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.700897, 1.5324538, 48.73638)
 shape = SubResource("BoxShape3D_s6gja")
 debug_color = Color(0.97659117, 0, 0.4142887, 0.41960785)
+
+[node name="Syndicate_books" parent="." unique_id=1346392109 instance=ExtResource("41_hm7k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2768674, 2.8664565, -4.968895)
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
