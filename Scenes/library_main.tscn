@@ -40,8 +40,6 @@
 [ext_resource type="PackedScene" uid="uid://by2rs2s2syltp" path="res://Scenes/npc_2.tscn" id="38_s6gja"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_se8fg"]
-vertices = PackedVector3Array(-99.831245, 0.75, -22.1138, -25.581245, 0.75, -22.1138, -25.331245, 0.75, -23.1138, -23.331245, 0.75, -98.1138, -99.831245, 0.75, -98.1138, -23.331245, 0.75, -23.1138, -3.5812454, 0.75, -22.6138, -2.3312454, 0.75, -23.6138, -2.8312454, 0.75, -23.8638, -3.8312454, 0.75, -23.1138, -2.8312454, 0.75, -25.3638, -0.5812454, 0.75, -25.6138, -0.5812454, 0.75, -98.1138, 9.918755, 0.75, -25.6138, 9.918755, 0.75, -98.1138, 11.918755, 0.75, -25.6138, 12.168755, 0.75, -24.6138, 99.168755, 0.75, -24.6138, 99.168755, 0.75, -98.1138, -34.081245, 5.25, -28.1138, -34.081245, 5.25, 31.1362, 29.418755, 5.25, 31.1362, 29.418755, 5.25, -28.1138, -3.8312454, 0.75, -20.8638, 0.6687546, 0.75, -1.6138, 0.9187546, 0.75, -0.61380005, 4.9187546, 0.75, -0.61380005, 5.1687546, 0.75, -2.1138, 11.918755, 0.75, -23.6138, 7.1687546, 0.75, -2.1138, 7.4187546, 0.75, -0.36380005, 99.168755, 0.75, -0.61380005, -6.0812454, 0.75, -5.3638, -5.5812454, 0.75, -5.1138, -5.5812454, 0.75, -11.3638, -6.3312454, 0.75, -20.8638, -2.3312454, 0.75, -1.6138, -2.5812454, 0.75, -11.6138, -24.581245, 0.75, -1.1138, -24.581245, 0.75, -20.8638, -25.581245, 0.75, -21.1138, -99.831245, 0.75, -0.86380005, -22.331245, 0.75, -1.3638, -20.581245, 0.75, -1.1138, -20.331245, 0.75, -20.8638, -22.331245, 0.75, -20.8638, -17.331245, 0.75, -1.3638, -14.331245, 0.75, -1.3638, -14.081245, 0.75, -20.8638, -17.581245, 0.75, -20.8638, -11.331245, 0.75, -1.3638, -9.331245, 0.75, -1.3638, -9.081245, 0.75, -20.8638, -11.581245, 0.75, -20.8638, 4.9187546, 0.75, 9.8862, 6.1687546, 0.75, 9.6362, 6.1687546, 0.75, 9.1362, 4.9187546, 0.75, 8.8862, 4.9187546, 0.75, 17.3862, -5.5812454, 0.75, 9.3862, -24.331245, 0.75, 0.63619995, -99.831245, 0.75, 100.8862, 6.1687546, 0.75, 100.8862, -22.581245, 0.75, 0.63619995, -20.331245, 0.75, 0.88619995, -2.5812454, 0.75, 9.6362, -11.331245, 0.75, 0.88619995, -9.081245, 0.75, 0.88619995, -14.331245, 0.75, 0.63619995, -17.581245, 0.75, 1.1362, -13.331245, 0.75, 1.1362, -6.0812454, 0.75, 0.88619995, 4.9187546, 0.75, 7.3862, -2.3312454, 0.75, 7.3862, 6.1687546, 0.75, 17.6362, 0.6687546, 0.75, 0.63619995, -2.3312454, 0.75, 0.63619995, 7.4187546, 0.75, 8.8862, 7.4187546, 0.75, 9.8862, 99.168755, 0.75, 16.1362, 7.4187546, 0.75, 15.8862, 7.4187546, 0.75, 17.3862, 99.168755, 0.75, 100.8862)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 5, 11), PackedInt32Array(11, 5, 12), PackedInt32Array(12, 5, 3), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 9, 5), PackedInt32Array(12, 14, 11), PackedInt32Array(11, 14, 13), PackedInt32Array(15, 13, 14), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 18), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(23, 6, 7), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 27), PackedInt32Array(28, 16, 29), PackedInt32Array(29, 16, 30), PackedInt32Array(30, 16, 17), PackedInt32Array(30, 17, 31), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(24, 36, 27), PackedInt32Array(27, 36, 37), PackedInt32Array(23, 7, 37), PackedInt32Array(37, 7, 28), PackedInt32Array(37, 28, 27), PackedInt32Array(27, 28, 29), PackedInt32Array(35, 23, 34), PackedInt32Array(34, 23, 37), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 41), PackedInt32Array(40, 41, 0), PackedInt32Array(0, 1, 40), PackedInt32Array(42, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(46, 49, 47), PackedInt32Array(47, 49, 48), PackedInt32Array(50, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 57), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 41), PackedInt32Array(41, 58, 62), PackedInt32Array(41, 62, 61), PackedInt32Array(42, 43, 63), PackedInt32Array(63, 43, 64), PackedInt32Array(65, 54, 58), PackedInt32Array(50, 51, 66), PackedInt32Array(66, 51, 67), PackedInt32Array(41, 38, 60), PackedInt32Array(47, 68, 46), PackedInt32Array(46, 68, 69), PackedInt32Array(59, 65, 58), PackedInt32Array(60, 63, 64), PackedInt32Array(68, 70, 69), PackedInt32Array(69, 70, 59), PackedInt32Array(70, 66, 67), PackedInt32Array(32, 33, 71), PackedInt32Array(71, 33, 59), PackedInt32Array(64, 69, 60), PackedInt32Array(60, 69, 59), PackedInt32Array(67, 71, 70), PackedInt32Array(70, 71, 59), PackedInt32Array(73, 72, 57), PackedInt32Array(54, 65, 57), PackedInt32Array(57, 65, 73), PackedInt32Array(62, 58, 74), PackedInt32Array(75, 25, 26), PackedInt32Array(73, 76, 75), PackedInt32Array(26, 72, 75), PackedInt32Array(75, 72, 73), PackedInt32Array(56, 77, 55), PackedInt32Array(55, 77, 78), PackedInt32Array(78, 77, 79), PackedInt32Array(30, 31, 77), PackedInt32Array(77, 31, 79), PackedInt32Array(79, 80, 78), PackedInt32Array(74, 81, 62), PackedInt32Array(62, 81, 82), PackedInt32Array(82, 81, 79), PackedInt32Array(81, 80, 79)]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -332,7 +330,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bf250"]
-size = Vector3(5.5058594, 1.9452393, 1.5605469)
+size = Vector3(4.9833984, 1.9452393, 1.5605469)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35ql4"]
 resource_name = "Material.001"
@@ -387,7 +385,13 @@ radius = 0.19921875
 size = Vector3(12.125244, 2.5020752, 22.894775)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gndm1"]
-size = Vector3(14.265259, 1, 3.9765625)
+size = Vector3(9.67511, 1, 3.9765625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6shu"]
+size = Vector3(2.1899414, 4.2373657, 76.71094)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6gja"]
+size = Vector3(25.804443, 4.371155, 1)
 
 [node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
@@ -785,7 +789,7 @@ transform = Transform3D(-0.9998712, 0, 0.008192416, 0, 1.5856996, 0, -0.01605633
 [node name="FrontDeskArea3D" type="Area3D" parent="Day1" unique_id=1224705965]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/FrontDeskArea3D" unique_id=12156866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.400431, 0.84164464, 9.255172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.782467, 0.84164464, 9.255172)
 shape = SubResource("BoxShape3D_bf250")
 debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
 
@@ -1145,7 +1149,7 @@ taken_out_by = "me"
 issue_date = "2026-03-10"
 
 [node name="envir" parent="." unique_id=132603951 instance=ExtResource("15_ixevi")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.4184527, 2.359599, -0.0012397766)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.4570632, 2.3350058, 0.17876339)
 
 [node name="Scare_1" type="Node3D" parent="." unique_id=2109900009]
 
@@ -1243,7 +1247,7 @@ debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 1.4265189, 5.993471)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/TurnOffSoundsAndHaveNPC2Enter" unique_id=623654230]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9938354, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28891, -0.6069579, 0)
 shape = SubResource("BoxShape3D_gndm1")
 debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
 
@@ -1277,13 +1281,33 @@ look_marker = NodePath("../Marker3D")
 leave_marker = NodePath("../LeaveMarker")
 
 [node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") instance=ExtResource("37_e6shu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5789776, 1.3208694, 29.43006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9184446, 1.3208694, 29.43006)
 target_marker = NodePath("../CollectNPC2")
 look_marker = NodePath("../CollectNPC2")
 leave_marker = NodePath("../LeaveMarker")
 
 [node name="LeaveMarker" type="Marker3D" parent="Scare_3" unique_id=432443004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.764328, 41.711327)
+
+[node name="invisibleWalls" type="Node3D" parent="." unique_id=1891493792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.207591, 0.73281527, 50.989464)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="invisibleWalls" unique_id=210064835]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invisibleWalls/StaticBody3D" unique_id=1839586836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5949707, 1.6186829, 10.595703)
+shape = SubResource("BoxShape3D_e6shu")
+debug_color = Color(0.9351875, 0.25609133, 0, 0.41960785)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="invisibleWalls/StaticBody3D" unique_id=656262099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.477856, 1.6186829, 10.595703)
+shape = SubResource("BoxShape3D_e6shu")
+debug_color = Color(0.9351875, 0.25609133, 0, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="invisibleWalls/StaticBody3D" unique_id=1351546102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.700897, 1.5324538, 48.73638)
+shape = SubResource("BoxShape3D_s6gja")
+debug_color = Color(0.97659117, 0, 0.4142887, 0.41960785)
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]

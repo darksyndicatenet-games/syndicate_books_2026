@@ -1,5 +1,6 @@
-Player: "Is this the book, sir?"
-NPC_2: Yes! That's the book! Thank you.
-Player: "Great, let me ring it up for you can call your daughter"
-NPC_2: If you must...
+join Player (Player) right [animation="Bounce In"]
+join NPC_1 (NPC_1) center [animation="Bounce In"]
+NPC_2 (NPC_2): Yes! That's the book! Thank you.
+Player (Player): "Great, let me ring it up for you can call your daughter"
+NPC_2 (NPC_2): If you must...
 [signal arg="You_phone_the_number_on_the_band"]

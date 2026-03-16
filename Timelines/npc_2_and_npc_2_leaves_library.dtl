@@ -1,2 +1,4 @@
-NPC_3: "Let's go dad... it's been a long night. Good evening."
+join NPC_3 center [animation="Bounce In"]
+join NPC_2 (NPC_2) left
+NPC_3 (NPC_3): "Let's go dad... it's been a long night. Good evening."
 [signal arg="npc_2_and_3_leaves_and_close_library_prompt"]

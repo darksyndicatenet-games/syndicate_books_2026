@@ -1,4 +1,5 @@
 join Spook_1 (Normal_Spook_1) center
+join Player (Player) rightmost [animation="Bounce In"]
 Player: "Good evening... Hard at work I see"
 Spook_1: Muttering...
 Player: "Hey, are you alright?"

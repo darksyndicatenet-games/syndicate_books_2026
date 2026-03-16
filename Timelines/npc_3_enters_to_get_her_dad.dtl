@@ -1,3 +1,5 @@
+join Player (Player) rightmost [animation="Bounce In"]
+join NPC_3 (NPC_3) center [animation="Bounce In"]
 NPC_3: Ah, there you are dad! I was panicked when I saw you weren't home. I apologize. I hope he wasn't too much trouble?
 Player: "Not at all. I enjoyed the little treasure hunt we had for the book. Please enjoy and you're welcome to come back once you are finished."
 NPC_3: Thank you so much. I'll try and accompany him next time.

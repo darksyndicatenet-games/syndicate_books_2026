@@ -10,14 +10,14 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Player",
+&"default_portrait": "END",
 &"description": "",
-&"display_name": "Player",
+&"display_name": "Spook 1 End",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"New portrait": {
+"END": {
 "export_overrides": {
 "image": ""
 },
@@ -25,15 +25,6 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
-},
-"Player": {
-"export_overrides": {
-"image": "\"res://images/Player.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
 }
 },
 &"scale": 1.0

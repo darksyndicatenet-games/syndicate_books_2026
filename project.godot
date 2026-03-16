@@ -31,7 +31,11 @@ Inventory="*uid://clhd31qkv6wcp"
 [dialogic]
 
 directories/dch_directory={
+"NPC_1": "res://images/NPC_1.dch",
+"NPC_2": "res://Timelines/Portraits/NPC_2.dch",
+"NPC_3": "res://Timelines/Portraits/NPC_3.dch",
 "Player": "res://Timelines/Player.dch",
+"Spook1_end": "res://images/Spook1_end.dch",
 "Spook_1": "res://Timelines/Spook_1.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }

@@ -1,3 +1,5 @@
+join Player (Player) rightmost [animation="Bounce In"]
+join NPC_2 (NPC_2) center [animation="Bounce In"]
 Player: "Good evening sir, how may I help you?"
 NPC_2: Good Day, young one. I'm here to take out a book...
 Player: "Oh, then you can just have a look around the-"
@@ -12,6 +14,7 @@ Player: 'That bracelet... It looks like the ones they give for people with demen
 	[signal arg="You_phone_the_number_on_the_band"]
 	[wait time="2.0"]
 	NPC_3: Dad! How many times do I have to tell you not to come out. I hope he wasn't a bother?
+	join NPC_3 (NPC_3) left
 	Player: "Just make sure it doesn't happen again, you need to keep a better eye on him"
 	NPC_3: I apologize, let's go home dad...
 
