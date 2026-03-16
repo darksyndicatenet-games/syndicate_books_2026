@@ -19,8 +19,7 @@ Player: 'That bracelet... It looks like the ones they give for people with demen
 - Assist him
 	Player: "I'll help you get the book, if you allow me to call your daughter afterwards"
 	NPC_2: I am a grown adult, I can make it home myself!
-	Player: "Even though we are technically still on campus, there has been incidents these evenings where people target late
-	working students. Please sir, I'd feel better if someone accompanies you home"
+	Player: "Even though we are technically still on campus, there has been incidents these evenings where people target late working students. Please sir, I'd feel better if someone accompanies you home"
 	NPC_2: Alright... But you better get me that book!
 	Player: "Sure, can you remember whether it was fiction or non-fiction"
 	
@@ -29,3 +28,4 @@ Player: 'That bracelet... It looks like the ones they give for people with demen
 	NPC_2: "I'm not sure... But I'll know the cover"
 	Player: "Okay, I remember seeing it, let me get it for you"
 	[signal arg="Get_The_Long_Walk_To_Freedom_Book_for_the_man"]
+	# bool value so player can get braclet

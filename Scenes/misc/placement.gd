@@ -19,11 +19,15 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("cups"):
 		body_inside = body
 
+
 func move_to_marker(body: Node3D, marker: Marker3D):
 	body.freeze = true
 	body.linear_velocity = Vector3.ZERO
 	body.angular_velocity = Vector3.ZERO
 	body.global_transform = marker.global_transform
+	if body.name == "TheLongWalkToFreedom":
+		print("TheLongWalkToFreedom -- true")
+		Global.The_Long_Walk_To_Freedom_given_to_npc2 = true
 
 func _on_body_exited(body: Node3D) -> void:
 	if body == body_inside:

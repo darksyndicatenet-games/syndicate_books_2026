@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var misson_manager: Node = $"../../MissonManager"
 @onready var user: TextureRect = $"../../Computer/CanvasLayer/User"
 
-@onready var cutscene_3: Area3D = $Cutscene3
+@onready var cutscene_3: Area3D = $"../Cutscene3"
 
 @export var target_marker: Node3D
 @export var speed: float = 3.0

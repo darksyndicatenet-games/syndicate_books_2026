@@ -4,7 +4,6 @@ extends Node3D
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 @onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
 
-
 var bell_has_been_fired := false
 var counter := 0
 #@onready var spook_1: CharacterBody3D = $Scare_1/Spook_1
@@ -41,8 +40,8 @@ var max_distance = 70.0
 
 func _ready() -> void:
 	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
-	scare_2.monitoring = false
-	turn_off_sounds_and_have_npc_2_enter.monitoring = false
+	#scare_2.monitoring = false
+	#turn_off_sounds_and_have_npc_2_enter.monitoring = false
 
 
 func _process(_delta: float) -> void:
@@ -58,6 +57,9 @@ func _on_door_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 #		detects when player is in door area3d
 		player_in_area = true
+	if body.name == "NPC_2":
+		print("ring bell for npc_2 in library script")
+		bell_sound.play()
 		
 		
 

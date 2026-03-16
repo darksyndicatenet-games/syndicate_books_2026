@@ -36,8 +36,12 @@
 [ext_resource type="PackedScene" uid="uid://3yt04d31g23j" path="res://Assets/Assets_Scenes/coffee_machine.tscn" id="30_q1f5f"]
 [ext_resource type="PackedScene" uid="uid://bnl2eka7ga6x7" path="res://Scenes/misc/placement.tscn" id="32_vfwt6"]
 [ext_resource type="PackedScene" uid="uid://byyudyocn5w5g" path="res://Scenes/NPCs/npc_1.tscn" id="34_se8fg"]
+[ext_resource type="PackedScene" uid="uid://dclvg1cbs0fpm" path="res://Scenes/npc_3.tscn" id="37_e6shu"]
+[ext_resource type="PackedScene" uid="uid://by2rs2s2syltp" path="res://Scenes/npc_2.tscn" id="38_s6gja"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_se8fg"]
+vertices = PackedVector3Array(-99.831245, 0.75, -22.1138, -25.581245, 0.75, -22.1138, -25.331245, 0.75, -23.1138, -23.331245, 0.75, -98.1138, -99.831245, 0.75, -98.1138, -23.331245, 0.75, -23.1138, -3.5812454, 0.75, -22.6138, -2.3312454, 0.75, -23.6138, -2.8312454, 0.75, -23.8638, -3.8312454, 0.75, -23.1138, -2.8312454, 0.75, -25.3638, -0.5812454, 0.75, -25.6138, -0.5812454, 0.75, -98.1138, 9.918755, 0.75, -25.6138, 9.918755, 0.75, -98.1138, 11.918755, 0.75, -25.6138, 12.168755, 0.75, -24.6138, 99.168755, 0.75, -24.6138, 99.168755, 0.75, -98.1138, -34.081245, 5.25, -28.1138, -34.081245, 5.25, 31.1362, 29.418755, 5.25, 31.1362, 29.418755, 5.25, -28.1138, -3.8312454, 0.75, -20.8638, 0.6687546, 0.75, -1.6138, 0.9187546, 0.75, -0.61380005, 4.9187546, 0.75, -0.61380005, 5.1687546, 0.75, -2.1138, 11.918755, 0.75, -23.6138, 7.1687546, 0.75, -2.1138, 7.4187546, 0.75, -0.36380005, 99.168755, 0.75, -0.61380005, -6.0812454, 0.75, -5.3638, -5.5812454, 0.75, -5.1138, -5.5812454, 0.75, -11.3638, -6.3312454, 0.75, -20.8638, -2.3312454, 0.75, -1.6138, -2.5812454, 0.75, -11.6138, -24.581245, 0.75, -1.1138, -24.581245, 0.75, -20.8638, -25.581245, 0.75, -21.1138, -99.831245, 0.75, -0.86380005, -22.331245, 0.75, -1.3638, -20.581245, 0.75, -1.1138, -20.331245, 0.75, -20.8638, -22.331245, 0.75, -20.8638, -17.331245, 0.75, -1.3638, -14.331245, 0.75, -1.3638, -14.081245, 0.75, -20.8638, -17.581245, 0.75, -20.8638, -11.331245, 0.75, -1.3638, -9.331245, 0.75, -1.3638, -9.081245, 0.75, -20.8638, -11.581245, 0.75, -20.8638, 4.9187546, 0.75, 9.8862, 6.1687546, 0.75, 9.6362, 6.1687546, 0.75, 9.1362, 4.9187546, 0.75, 8.8862, 4.9187546, 0.75, 17.3862, -5.5812454, 0.75, 9.3862, -24.331245, 0.75, 0.63619995, -99.831245, 0.75, 100.8862, 6.1687546, 0.75, 100.8862, -22.581245, 0.75, 0.63619995, -20.331245, 0.75, 0.88619995, -2.5812454, 0.75, 9.6362, -11.331245, 0.75, 0.88619995, -9.081245, 0.75, 0.88619995, -14.331245, 0.75, 0.63619995, -17.581245, 0.75, 1.1362, -13.331245, 0.75, 1.1362, -6.0812454, 0.75, 0.88619995, 4.9187546, 0.75, 7.3862, -2.3312454, 0.75, 7.3862, 6.1687546, 0.75, 17.6362, 0.6687546, 0.75, 0.63619995, -2.3312454, 0.75, 0.63619995, 7.4187546, 0.75, 8.8862, 7.4187546, 0.75, 9.8862, 99.168755, 0.75, 16.1362, 7.4187546, 0.75, 15.8862, 7.4187546, 0.75, 17.3862, 99.168755, 0.75, 100.8862)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 5, 11), PackedInt32Array(11, 5, 12), PackedInt32Array(12, 5, 3), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 9, 5), PackedInt32Array(12, 14, 11), PackedInt32Array(11, 14, 13), PackedInt32Array(15, 13, 14), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 18), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(23, 6, 7), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 27), PackedInt32Array(28, 16, 29), PackedInt32Array(29, 16, 30), PackedInt32Array(30, 16, 17), PackedInt32Array(30, 17, 31), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(24, 36, 27), PackedInt32Array(27, 36, 37), PackedInt32Array(23, 7, 37), PackedInt32Array(37, 7, 28), PackedInt32Array(37, 28, 27), PackedInt32Array(27, 28, 29), PackedInt32Array(35, 23, 34), PackedInt32Array(34, 23, 37), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 41), PackedInt32Array(40, 41, 0), PackedInt32Array(0, 1, 40), PackedInt32Array(42, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(46, 49, 47), PackedInt32Array(47, 49, 48), PackedInt32Array(50, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 57), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 41), PackedInt32Array(41, 58, 62), PackedInt32Array(41, 62, 61), PackedInt32Array(42, 43, 63), PackedInt32Array(63, 43, 64), PackedInt32Array(65, 54, 58), PackedInt32Array(50, 51, 66), PackedInt32Array(66, 51, 67), PackedInt32Array(41, 38, 60), PackedInt32Array(47, 68, 46), PackedInt32Array(46, 68, 69), PackedInt32Array(59, 65, 58), PackedInt32Array(60, 63, 64), PackedInt32Array(68, 70, 69), PackedInt32Array(69, 70, 59), PackedInt32Array(70, 66, 67), PackedInt32Array(32, 33, 71), PackedInt32Array(71, 33, 59), PackedInt32Array(64, 69, 60), PackedInt32Array(60, 69, 59), PackedInt32Array(67, 71, 70), PackedInt32Array(70, 71, 59), PackedInt32Array(73, 72, 57), PackedInt32Array(54, 65, 57), PackedInt32Array(57, 65, 73), PackedInt32Array(62, 58, 74), PackedInt32Array(75, 25, 26), PackedInt32Array(73, 76, 75), PackedInt32Array(26, 72, 75), PackedInt32Array(75, 72, 73), PackedInt32Array(56, 77, 55), PackedInt32Array(55, 77, 78), PackedInt32Array(78, 77, 79), PackedInt32Array(30, 31, 77), PackedInt32Array(77, 31, 79), PackedInt32Array(79, 80, 78), PackedInt32Array(74, 81, 62), PackedInt32Array(62, 81, 82), PackedInt32Array(82, 81, 79), PackedInt32Array(81, 80, 79)]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -53,7 +57,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot02y"]
-size = Vector3(3.865, 6.29, 2.140879)
+size = Vector3(31.292969, 6.29, 2.140879)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kfah"]
 resource_name = "hidden_material"
@@ -370,7 +374,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kilop")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bt4do"]
-size = Vector3(5, 2, 3.5336914)
+size = Vector3(1.3183594, 2, 3.5336914)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ixevi"]
 size = Vector3(3.1364288, 2.5726318, 2.6867218)
@@ -388,6 +392,33 @@ size = Vector3(14.265259, 1, 3.9765625)
 [node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
 spook_1 = NodePath("Scare_1/Spook_1")
+
+[node name="Misc" type="Node3D" parent="." unique_id=782938315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33124197, 0, -5.5548)
+
+[node name="Desk" type="CSGBox3D" parent="Misc" unique_id=1550285286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.47283, 0.7263559, 14.795219)
+material_override = ExtResource("5_qstqp")
+use_collision = true
+size = Vector3(5.0490723, 1.293335, 1.5527344)
+
+[node name="ReceptionistLabel3D" type="Label3D" parent="Misc/Desk" unique_id=244006026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9992876, 1.7022187, 0)
+billboard = 2
+text = "Place books
+
+⬇️"
+font_size = 80
+
+[node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="Misc/Desk" unique_id=2038902659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1471753, 0)
+stream = ExtResource("8_gndm1")
+
+[node name="Door" type="CSGBox3D" parent="Misc" unique_id=341284320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8650619, 9.220673, 30.182545)
+visible = false
+material_override = ExtResource("6_jhl3c")
+size = Vector3(2.5, 3.6, 0.23)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 navigation_mesh = SubResource("NavigationMesh_se8fg")
@@ -667,33 +698,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -33.
 
 [node name="Node3D3" type="Node3D" parent="NavigationRegion3D/Map/shelves" unique_id=66860061]
 
-[node name="Misc" type="Node3D" parent="NavigationRegion3D/Map" unique_id=782938315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.941001)
-
-[node name="Desk" type="CSGBox3D" parent="NavigationRegion3D/Map/Misc" unique_id=1550285286]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.47283, 0.7263559, 14.795219)
-material_override = ExtResource("5_qstqp")
-use_collision = true
-size = Vector3(5.0490723, 1.293335, 1.5527344)
-
-[node name="ReceptionistLabel3D" type="Label3D" parent="NavigationRegion3D/Map/Misc/Desk" unique_id=244006026]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9992876, 1.7022187, 0)
-billboard = 2
-text = "Place books
-
-⬇️"
-font_size = 80
-
-[node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Map/Misc/Desk" unique_id=2038902659]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1471753, 0)
-stream = ExtResource("8_gndm1")
-
-[node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Map/Misc" unique_id=341284320]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8650619, 9.220673, 30.182545)
-visible = false
-material_override = ExtResource("6_jhl3c")
-size = Vector3(2.5, 3.6, 0.23)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=29769233]
 environment = SubResource("Environment_g2h84")
 
@@ -784,6 +788,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.400431, 0.84164464, 9.255
 shape = SubResource("BoxShape3D_bf250")
 debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
 
+[node name="Placement" parent="Day1/FrontDeskArea3D" unique_id=1862691038 instance=ExtResource("32_vfwt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.864491, 1.417449, 9.229975)
+
 [node name="Computer" type="Node3D" parent="." unique_id=499691354 groups=["computer"]]
 transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -15.382231, 2.015899, 8.863877)
 script = ExtResource("17_q1f5f")
@@ -799,7 +806,7 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="Computer" unique_id=1567470442]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Computer/Area3D" unique_id=652211640]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7331543)
+transform = Transform3D(1, 0, 4.8428774e-08, 0, 1, 0, -4.8428774e-08, 0, 1, 1.9073486e-06, 0, 0.7331538)
 shape = SubResource("BoxShape3D_bt4do")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Computer" unique_id=2016741429]
@@ -1123,6 +1130,16 @@ author = "Unknown Author"
 taken_out_by = "Me"
 issue_date = "2026-02-10"
 
+[node name="TheLongWalkToFreedom" parent="Books" unique_id=1921935806 groups=["cups"] instance=ExtResource("14_1kku3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.399266, 0.25105524, 12.301239)
+collision_layer = 5
+collision_mask = 13
+mass = 10.0
+book_name = "The Long Walk To Freedom"
+author = "me"
+taken_out_by = "me"
+issue_date = "2026-03-10"
+
 [node name="envir" parent="." unique_id=132603951 instance=ExtResource("15_ixevi")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.4184527, 2.359599, -0.0012397766)
 
@@ -1165,7 +1182,7 @@ script = ExtResource("30_ixevi")
 [node name="coffee_machine" parent="Scare_1/CoffeeMachineTrigger" unique_id=852744974 instance=ExtResource("30_q1f5f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.606768, 1.3555012, -21.703472)
 
-[node name="Placement" parent="Scare_1/CoffeeMachineTrigger/coffee_machine" unique_id=1862691038 instance=ExtResource("32_vfwt6")]
+[node name="Placement" parent="Scare_1/CoffeeMachineTrigger/coffee_machine" unique_id=190714806 instance=ExtResource("32_vfwt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2643938, 0.8351841)
 
 [node name="CoffeeMachineProgress" type="ProgressBar" parent="Scare_1/CoffeeMachineTrigger/coffee_machine" unique_id=1608444127]
@@ -1192,6 +1209,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057972193, 0)
 shape = SubResource("CylinderShape3D_ixevi")
 debug_color = Color(0.96962434, 0, 0.46326667, 0.41960785)
 
+[node name="Cutscene3" parent="Scare_1" unique_id=852871049 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.710108, 0.3204906, 20.627197)
+monitorable = false
+player = NodePath("../../Player")
+look_target = NodePath("../NPC1_Face")
+spook_1 = NodePath("../NPC_1")
+message = "tester"
+mission_text = "tester"
+play_scene_once = true
+
+[node name="CollisionShape3D" parent="Scare_1/Cutscene3" index="2" unique_id=1633756298]
+transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -11.786856, 0.7310052, 7.660593)
+
+[node name="NPC1_Face" type="Marker3D" parent="Scare_1" unique_id=1547270549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3457423, 2.126519, 29.85082)
+
+[node name="Scare2" type="Area3D" parent="Scare_1" unique_id=1487941500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.816401, 1.4265189, 8.6673565)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/Scare2" unique_id=1622434260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026903152, 2.115223)
+shape = SubResource("BoxShape3D_se8fg")
+debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
+
+[node name="TurnOffSoundsAndHaveNPC2Enter" type="Area3D" parent="Scare_1" unique_id=2077189692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 1.4265189, 5.993471)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/TurnOffSoundsAndHaveNPC2Enter" unique_id=623654230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9938354, 0, 0)
+shape = SubResource("BoxShape3D_gndm1")
+debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
+
 [node name="NPC_1" parent="Scare_1" unique_id=829859548 node_paths=PackedStringArray("target_marker") instance=ExtResource("34_se8fg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 29.85082)
 collision_layer = 5
@@ -1199,44 +1250,30 @@ collision_mask = 5
 target_marker = NodePath("move_to_front_Desk")
 
 [node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_1" unique_id=893017267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.211653, -0.56813955, -18.4723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
 
 [node name="move_outside" type="Marker3D" parent="Scare_1/NPC_1" unique_id=2108978918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.751123, -0.7709508, 9.295614)
 
-[node name="Cutscene3" parent="Scare_1/NPC_1" unique_id=852871049 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.710108, -1.1060283, -9.223623)
-monitorable = false
-player = NodePath("../../../Player")
-look_target = NodePath("../NPC1_Face")
-spook_1 = NodePath("..")
-message = "tester"
-mission_text = "tester"
-play_scene_once = true
-
-[node name="CollisionShape3D" parent="Scare_1/NPC_1/Cutscene3" index="2" unique_id=1633756298]
-transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -11.786856, 0.7310052, 7.660593)
-
-[node name="NPC1_Face" type="Marker3D" parent="Scare_1/NPC_1" unique_id=1547270549]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3457423, 0.70000005, 0)
-
-[node name="Scare2" type="Area3D" parent="Scare_1/NPC_1" unique_id=1487941500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.816401, 0, -21.183464)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/NPC_1/Scare2" unique_id=1622434260]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026903152, 2.115223)
-shape = SubResource("BoxShape3D_se8fg")
-debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
-
-[node name="TurnOffSoundsAndHaveNPC2Enter" type="Area3D" parent="Scare_1/NPC_1" unique_id=2077189692]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 0, -23.85735)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/NPC_1/TurnOffSoundsAndHaveNPC2Enter" unique_id=623654230]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9938354, 0, 0)
-shape = SubResource("BoxShape3D_gndm1")
-debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
-
 [node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
+
+[node name="CollectNPC2" type="Marker3D" parent="Scare_3" unique_id=1320935651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.205061, 0, 15.528894)
+
+[node name="Marker3D" type="Marker3D" parent="Scare_3" unique_id=1719493035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.950835, 3.9745102, 13.534685)
+
+[node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker") instance=ExtResource("38_s6gja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5307174, 35.12947)
+collision_layer = 5
+collision_mask = 5
+target_marker = NodePath("../../Scare_1/NPC_1/move_to_front_Desk")
+have_elderly_come_in_library_npc2 = true
+look_marker = NodePath("../Marker3D")
+
+[node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker") instance=ExtResource("37_e6shu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5789776, 1.3208694, 29.43006)
+target_marker = NodePath("../CollectNPC2")
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
@@ -1254,7 +1291,7 @@ debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
 [connection signal="body_exited" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_exited"]
 [connection signal="despawn_spook_1_coffe_finished" from="Scare_1/CoffeeMachineTrigger" to="." method="_on_coffee_machine_trigger_despawn_spook_1_coffe_finished"]
 [connection signal="cup_placed_in_coffe_machine" from="Scare_1/CoffeeMachineTrigger/coffee_machine/Placement" to="Scare_1/CoffeeMachineTrigger" method="_on_placement_cup_placed_in_coffe_machine"]
-[connection signal="body_entered" from="Scare_1/NPC_1/Scare2" to="." method="_on_scare_2_body_entered"]
-[connection signal="body_entered" from="Scare_1/NPC_1/TurnOffSoundsAndHaveNPC2Enter" to="." method="_on_turn_off_sounds_and_have_npc_2_enter_body_entered"]
+[connection signal="body_entered" from="Scare_1/Scare2" to="." method="_on_scare_2_body_entered"]
+[connection signal="body_entered" from="Scare_1/TurnOffSoundsAndHaveNPC2Enter" to="." method="_on_turn_off_sounds_and_have_npc_2_enter_body_entered"]
 
-[editable path="Scare_1/NPC_1/Cutscene3"]
+[editable path="Scare_1/Cutscene3"]

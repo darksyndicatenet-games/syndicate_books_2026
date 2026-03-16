@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://by2rs2s2syltp"]
 
+[ext_resource type="Script" uid="uid://dswqlu51frc3" path="res://Scenes/npc_2.gd" id="1_8ygaf"]
 [ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="1_xsdt3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ygaf"]
 
 [node name="NPC_2" type="CharacterBody3D" unique_id=154204417]
+script = ExtResource("1_8ygaf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1785176085]
 shape = SubResource("CapsuleShape3D_8ygaf")
@@ -12,3 +14,7 @@ debug_color = Color(0.9303059, 0.21492794, 0.3996007, 0.41960785)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=122830239]
 material_override = ExtResource("1_xsdt3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1438960119]
+debug_enabled = true
+debug_path_custom_color = Color(0.71598154, 0.00069423794, 0.7720883, 1)
