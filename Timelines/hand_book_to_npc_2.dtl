@@ -1,0 +1,5 @@
+Player: "Is this the book, sir?"
+NPC_2: Yes! That's the book! Thank you.
+Player: "Great, let me ring it up for you can call your daughter"
+NPC_2: If you must...
+[signal arg="You_phone_the_number_on_the_band"]

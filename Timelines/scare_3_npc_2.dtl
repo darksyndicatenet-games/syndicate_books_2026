@@ -1,0 +1,31 @@
+Player: "Good evening sir, how may I help you?"
+NPC_2: Good Day, young one. I'm here to take out a book...
+Player: "Oh, then you can just have a look around the-"
+NPC_2: But... you see... I forgot what book I'm looking for?
+Player: 'That bracelet... It looks like the ones they give for people with dementia... Is he suppose to be out?'
+- Send him away
+	Player: Sir, are you supposed to be out?
+	NPC_2: You sound just like my daughter... No respect for their elders...
+	Player: "Please wait a moment while I call your daughter sir"
+	NPC_2: She's just going to shout at me. I'm a grown adult, I should be able to get a book by myself...
+	# Player calls daughter and NPC_3 comes in.
+	[signal arg="You_phone_the_number_on_the_band"]
+	[wait time="2.0"]
+	NPC_3: Dad! How many times do I have to tell you not to come out. I hope he wasn't a bother?
+	Player: "Just make sure it doesn't happen again, you need to keep a better eye on him"
+	NPC_3: I apologize, let's go home dad...
+
+
+- Assist him
+	Player: "I'll help you get the book, if you allow me to call your daughter afterwards"
+	NPC_2: I am a grown adult, I can make it home myself!
+	Player: "Even though we are technically still on campus, there has been incidents these evenings where people target late
+	working students. Please sir, I'd feel better if someone accompanies you home"
+	NPC_2: Alright... But you better get me that book!
+	Player: "Sure, can you remember whether it was fiction or non-fiction"
+	
+	NPC_2: "Mmmm... I believe it was. non-fiction... that one about the president... with a star on his face? It was a Longsomething?"
+	Player: "Ah! Could it be a long walk to freedom, per chance?"
+	NPC_2: "I'm not sure... But I'll know the cover"
+	Player: "Okay, I remember seeing it, let me get it for you"
+	[signal arg="Get_The_Long_Walk_To_Freedom_Book_for_the_man"]

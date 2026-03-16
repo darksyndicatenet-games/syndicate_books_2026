@@ -38,7 +38,11 @@ directories/dch_directory={
 directories/dtl_directory={
 "check_if_npc_1_saw_someone_leave": "res://Timelines/check_if_npc_1_saw_someone_leave.dtl",
 "greeting_with_npc_1": "res://Timelines/greeting_with_npc_1.dtl",
-"scare1_spook1": "res://Timelines/scare1_spook1.dtl"
+"hand_book_to_npc_2": "res://Timelines/hand_book_to_npc_2.dtl",
+"npc_2_and_npc_2_leaves_library": "res://Timelines/npc_2_and_npc_2_leaves_library.dtl",
+"npc_3_enters_to_get_her_dad": "res://Timelines/npc_3_enters_to_get_her_dad.dtl",
+"scare1_spook1": "res://Timelines/scare1_spook1.dtl",
+"scare_3_npc_2": "res://Timelines/scare_3_npc_2.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/visual_novel_custome_style.tres",

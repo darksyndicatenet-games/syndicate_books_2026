@@ -328,7 +328,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bf250"]
-size = Vector3(14.7396145, 1.9452393, 3.0448656)
+size = Vector3(5.5058594, 1.9452393, 1.5605469)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35ql4"]
 resource_name = "Material.001"
@@ -674,7 +674,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.941001)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.47283, 0.7263559, 14.795219)
 material_override = ExtResource("5_qstqp")
 use_collision = true
-size = Vector3(15, 1.293335, 3.0361328)
+size = Vector3(5.0490723, 1.293335, 1.5527344)
 
 [node name="ReceptionistLabel3D" type="Label3D" parent="NavigationRegion3D/Map/Misc/Desk" unique_id=244006026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9992876, 1.7022187, 0)
@@ -785,7 +785,7 @@ shape = SubResource("BoxShape3D_bf250")
 debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
 
 [node name="Computer" type="Node3D" parent="." unique_id=499691354 groups=["computer"]]
-transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -16.533772, 2.015899, 8.155529)
+transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -15.382231, 2.015899, 8.863877)
 script = ExtResource("17_q1f5f")
 
 [node name="monitor" type="Node3D" parent="Computer" unique_id=236776842]
@@ -1199,7 +1199,7 @@ collision_mask = 5
 target_marker = NodePath("move_to_front_Desk")
 
 [node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_1" unique_id=893017267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.751123, -0.7709508, -17.55304)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.211653, -0.56813955, -18.4723)
 
 [node name="move_outside" type="Marker3D" parent="Scare_1/NPC_1" unique_id=2108978918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.751123, -0.7709508, 9.295614)
@@ -1235,6 +1235,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 0, -23.85735)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9938354, 0, 0)
 shape = SubResource("BoxShape3D_gndm1")
 debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
+
+[node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]

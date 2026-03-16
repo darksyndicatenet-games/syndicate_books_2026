@@ -1,0 +1,2 @@
+NPC_3: "Let's go dad... it's been a long night. Good evening."
+[signal arg="npc_2_and_3_leaves_and_close_library_prompt"]
