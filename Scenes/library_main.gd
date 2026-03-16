@@ -12,6 +12,14 @@ var counter := 0
 # books already counted
 var counted_books: Array[String] = []
 
+@onready var scare_2: Area3D = $Scare_1/NPC_1/Scare2
+@onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/NPC_1/TurnOffSoundsAndHaveNPC2Enter
+
+#need to put a boolean value after discussing wiht the new npc 
+#then player should look at study area for the guy that disappeared
+#then that when the bg ambience and footsteps sfx should be turned on
+
+
 # ONLY these books should count
 var required_books := [
 	"animal farm",
@@ -29,10 +37,12 @@ var player_in_area:= false
 @onready var scary_background_audio: AudioStreamPlayer3D = $NavigationRegion3D/Map/Misc/Desk/scaryBackgroundAudio
 
 # Max distance at which sound is still audible
-var max_distance = 10.0
+var max_distance = 70.0
 
 func _ready() -> void:
 	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
+	scare_2.monitoring = false
+	turn_off_sounds_and_have_npc_2_enter.monitoring = false
 
 
 func _process(_delta: float) -> void:
@@ -108,23 +118,44 @@ func _on_cutscene_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" && Global.played_cutscene_1 == true && bell_has_been_fired == false:
 		bell_sound.play()
 		Global.move_npc_1_to_desk_after_bell_rings = true
+		print("Bell triggered")
 		bell_has_been_fired = true
 
 
 func background_scary_audio_scare_():
-	var distance = player.global_transform.origin.distance_to(scary_object.global_transform.origin)
-	
-	# Clamp distance so it doesn't go negative or exceed max
-	distance = clamp(distance, 0, max_distance)
-	
-	# Map distance to volume: closer = louder
-	# volume_db: 0 is full volume, -80 is silent
-	var volume_factor = lerp(0, -30, distance / max_distance)  # adjust -30 to taste
-	scary_background_audio.volume_db = volume_factor
-	
-	# Optionally vary pitch for creepiness
-	scary_background_audio.pitch_scale = randf_range(0.95, 1.05)
-	
-	# Ensure audio is playing
-	if not scary_background_audio.playing:
-		scary_background_audio.play()
+	if Global.background_scary_ambience and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps:
+		var distance = player.global_transform.origin.distance_to(scary_object.global_transform.origin)
+		
+		# Clamp distance so it doesn't go negative or exceed max
+		distance = clamp(distance, 0, max_distance)
+		
+		# Map distance to volume: closer = louder
+		# volume_db: 0 is full volume, -80 is silent
+		var volume_factor = lerp(0, -30, distance / max_distance)  # adjust -30 to taste
+		scary_background_audio.volume_db = volume_factor
+		
+		# Optionally vary pitch for creepiness
+		scary_background_audio.pitch_scale = randf_range(0.95, 1.05)
+		
+		# Ensure audio is playing
+		if not scary_background_audio.playing:
+			scary_background_audio.play()
+
+
+func _on_scare_2_body_entered(body: Node3D) -> void:
+	if body.name == "Player" and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps == true:
+		Global.background_scary_ambience = true
+		Global.disable_ghost_footsteps = true
+		print("Player activated sound here")
+#		this monitoring stuff needs to be checked
+		turn_off_sounds_and_have_npc_2_enter.monitoring = true
+		pass # Replace with function body.
+
+
+func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		Global.background_scary_ambience = false
+		Global.disable_ghost_footsteps = false
+		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = false
+		print("Player de-activate sound here")
+		pass # Replace with function body.

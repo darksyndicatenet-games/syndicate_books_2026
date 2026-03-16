@@ -380,7 +380,10 @@ height = 0.4580078
 radius = 0.19921875
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_se8fg"]
-size = Vector3(4.571289, 1, 2.4521484)
+size = Vector3(12.125244, 2.5020752, 22.894775)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gndm1"]
+size = Vector3(14.265259, 1, 3.9765625)
 
 [node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
@@ -682,6 +685,7 @@ text = "Place books
 font_size = 80
 
 [node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Map/Misc/Desk" unique_id=2038902659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1471753, 0)
 stream = ExtResource("8_gndm1")
 
 [node name="Door" type="CSGBox3D" parent="NavigationRegion3D/Map/Misc" unique_id=341284320]
@@ -1217,11 +1221,20 @@ transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3457423, 0.70000005, 0)
 
 [node name="Scare2" type="Area3D" parent="Scare_1/NPC_1" unique_id=1487941500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6524909, 0, -17.412292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.816401, 0, -21.183464)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/NPC_1/Scare2" unique_id=1622434260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026903152, 2.115223)
 shape = SubResource("BoxShape3D_se8fg")
 debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
+
+[node name="TurnOffSoundsAndHaveNPC2Enter" type="Area3D" parent="Scare_1/NPC_1" unique_id=2077189692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 0, -23.85735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/NPC_1/TurnOffSoundsAndHaveNPC2Enter" unique_id=623654230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9938354, 0, 0)
+shape = SubResource("BoxShape3D_gndm1")
+debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
@@ -1239,5 +1252,7 @@ debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
 [connection signal="body_exited" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_exited"]
 [connection signal="despawn_spook_1_coffe_finished" from="Scare_1/CoffeeMachineTrigger" to="." method="_on_coffee_machine_trigger_despawn_spook_1_coffe_finished"]
 [connection signal="cup_placed_in_coffe_machine" from="Scare_1/CoffeeMachineTrigger/coffee_machine/Placement" to="Scare_1/CoffeeMachineTrigger" method="_on_placement_cup_placed_in_coffe_machine"]
+[connection signal="body_entered" from="Scare_1/NPC_1/Scare2" to="." method="_on_scare_2_body_entered"]
+[connection signal="body_entered" from="Scare_1/NPC_1/TurnOffSoundsAndHaveNPC2Enter" to="." method="_on_turn_off_sounds_and_have_npc_2_enter_body_entered"]
 
 [editable path="Scare_1/NPC_1/Cutscene3"]

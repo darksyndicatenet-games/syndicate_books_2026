@@ -113,6 +113,9 @@ func parse_date_to_unix(date_str: String) -> int:
 	})
 
 func _on_btn_enter_2_pressed() -> void:
+			# Check if player entered the book correctly
+	if Global.check_book_first_npc == false:
+		user.check_book_for_first_npc()
 	var entered_book_name = book_name.text.strip_edges().to_lower()
 	var entered_author = author.text.strip_edges()
 	var entered_issued = issued.text.strip_edges()

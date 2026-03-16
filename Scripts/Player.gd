@@ -236,16 +236,17 @@ func force_look_at(target_pos: Vector3):
 
 
 func handle_footsteps(delta):
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var is_moving = input_dir.length() > 0
-	
-	if is_moving and is_on_floor():
-		#print("walking")  # DEBUG
-		footstep_timer -= delta
+	if Global.disable_ghost_footsteps == true and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps:
+		var input_dir = Input.get_vector("left", "right", "up", "down")
+		var is_moving = input_dir.length() > 0
 		
-		if footstep_timer <= 0:
-			footstep_audio.pitch_scale = randf_range(0.9, 1.1)
-			footstep_audio.play()
-			footstep_timer = STEP_INTERVAL
-	else:
-		footstep_timer = 0
+		if is_moving and is_on_floor():
+			#print("walking")  # DEBUG
+			footstep_timer -= delta
+			
+			if footstep_timer <= 0:
+				footstep_audio.pitch_scale = randf_range(0.9, 1.1)
+				footstep_audio.play()
+				footstep_timer = STEP_INTERVAL
+		else:
+			footstep_timer = 0

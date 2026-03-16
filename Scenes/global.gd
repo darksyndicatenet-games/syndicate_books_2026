@@ -17,6 +17,10 @@ var player_placed_coffee_in_machine := false
 var player_exited_the_screen:= false
 
 var lock_all_player_controls_ := true
+var npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps := false
+
+var disable_ghost_footsteps:= false
+var background_scary_ambience := false
 func set_holding(state: bool):
 	is_holding = state
 	emit_signal("object_state_changed", state)

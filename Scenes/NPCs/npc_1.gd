@@ -12,6 +12,7 @@ extends CharacterBody3D
 
 var npc_1_is_finished_So_move_outside:= false
 var has_player_interacted01:= false
+@onready var scare_2: Area3D = $Scare2
 
 
 var check_book_first_npc_play_once := false
@@ -27,9 +28,7 @@ func _physics_process(_delta):
 		if nav_agent.is_navigation_finished():
 			velocity = Vector3.ZERO
 
-			# Check if player entered the book correctly
-			if Global.check_book_first_npc == false:
-				user.check_book_for_first_npc()
+
 
 			# If book is correct, player has left screen, and dialogue hasn't played yet
 			if Global.check_book_first_npc and Global.player_exited_the_screen and check_book_first_npc_play_once == false:
@@ -61,6 +60,9 @@ func last_dialogue():
 	if nav_agent.is_navigation_finished():
 		target_marker = move_outside
 		nav_agent.target_position = target_marker.global_position
+		misson_manager.set_message("Search Study Area")
+		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = true
+		scare_2.monitoring = true
 		
 func on_log_book_return_into_computer(argument : String):
 	if argument == "log_book_return_into_computer":
