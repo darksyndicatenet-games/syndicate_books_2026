@@ -12,7 +12,7 @@
 },
 &"default_portrait": "NPC_2",
 &"description": "",
-&"display_name": "Npc 2",
+&"display_name": "Mr Amari",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),

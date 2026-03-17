@@ -12,7 +12,7 @@
 },
 &"default_portrait": "NPC_3",
 &"description": "",
-&"display_name": "Npc 3",
+&"display_name": "Grace",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
