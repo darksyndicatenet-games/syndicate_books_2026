@@ -1313,10 +1313,9 @@ freeze = true
 freeze_mode = 1
 
 [node name="coffee_mug" type="Node3D" parent="Scare_1/CoffeeMachineTrigger/Cup" unique_id=827880736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057972193, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19634223, 0)
 
 [node name="mug" type="MeshInstance3D" parent="Scare_1/CoffeeMachineTrigger/Cup/coffee_mug" unique_id=70723142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2380681, 0)
 mesh = SubResource("ArrayMesh_023v2")
 skeleton = NodePath("")
 
