@@ -1,6 +1,8 @@
 extends Area3D
 #once only?
 #press e to intercat snap cup to the machine
+@onready var coffee: MeshInstance3D = $Cup/coffee_mug/coffee
+
 @onready var coffee_machine_progress: ProgressBar = $coffee_machine/CoffeeMachineProgress
 var player_in_area: bool = false  # Track if player is inside the area
 @onready var misson_manager: Node = $"../../MissonManager"
@@ -32,7 +34,7 @@ func _on_placement_cup_placed_in_coffe_machine() -> void:
 	
 	misson_manager.set_message("Turn coffee machine on")
 	Global.player_placed_coffee_in_machine = true
-	
+	coffee.visible = true
 	cup_placed_once = true  # prevent repeating
 
 func _on_body_exited(body: Node3D) -> void:
