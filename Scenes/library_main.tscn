@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="5_qstqp"]
 [ext_resource type="PackedScene" uid="uid://dcyljydwljb4" path="res://Scenes/book_shelf_sample.tscn" id="5_vfwt6"]
 [ext_resource type="Material" uid="uid://def8l0xxqoggq" path="res://Materials/grid_map_editor_red.tres" id="6_jhl3c"]
+[ext_resource type="Texture2D" uid="uid://d4m4qp0awxmmg" path="res://Gravel.png" id="6_q5ofo"]
 [ext_resource type="PackedScene" uid="uid://bq6o2ebdc8dr2" path="res://Assets/Assets_Scenes/single_shelf.tscn" id="6_wo84d"]
 [ext_resource type="AudioStream" uid="uid://c3svnc0k18nbn" path="res://Music/suspenseful-dark-background.mp3" id="8_gndm1"]
 [ext_resource type="PackedScene" uid="uid://dvtpjji0yerr8" path="res://Scenes/Player.tscn" id="9_7vups"]
@@ -46,8 +47,13 @@
 [ext_resource type="Texture2D" uid="uid://ceo2lygppc1uy" path="res://Assets/chairs_lamps_charTexture_Mapped.png" id="44_ijtr6"]
 [ext_resource type="PackedScene" uid="uid://d1uawwru8mgnv" path="res://bracelet.glb" id="45_vtpl0"]
 [ext_resource type="PackedScene" uid="uid://dv7oq72pl0kdx" path="res://filler-buildings.glb" id="46_ijtr6"]
+[ext_resource type="PackedScene" uid="uid://baexu4ea40fuo" path="res://Background_Buildings_Flat.glb" id="47_jsnu8"]
+[ext_resource type="Texture2D" uid="uid://b6le2nwof87ex" path="res://Grass.png" id="49_pat0f"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_se8fg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pat0f"]
+albedo_texture = ExtResource("6_q5ofo")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -64,6 +70,7 @@ glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.038867652, 0.13293234, 0.17832115, 1)
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.0634
 volumetric_fog_albedo = Color(0.09366939, 0.09366938, 0.09366938, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot02y"]
@@ -558,6 +565,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xt42j")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62wgf"]
+albedo_texture = ExtResource("49_pat0f")
+
 [node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
 spook_1 = NodePath("Scare_1/Spook_1")
@@ -606,8 +616,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33124197, 0, 1.386201)
 [node name="floor" type="CSGBox3D" parent="NavigationRegion3D/Map/Main-Library" unique_id=1050154993]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0499897, 61.510254)
 use_collision = true
-size = Vector3(200, 0.5, 76.97949)
-material = ExtResource("3_ocnvn")
+size = Vector3(21.331787, 0.5, 76.97949)
+material = SubResource("StandardMaterial3D_pat0f")
 metadata/_edit_lock_ = true
 
 [node name="roof" type="CSGBox3D" parent="NavigationRegion3D/Map/Main-Library" unique_id=453664450]
@@ -1301,7 +1311,7 @@ visible = false
 [node name="Scare_1" type="Node3D" parent="." unique_id=2109900009]
 
 [node name="Cutscene" parent="Scare_1" unique_id=1042776018 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.710108, 0.3204906, 20.627197)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.558446, 0.3204906, 20.627197)
 player = NodePath("../../Player")
 look_target = NodePath("../Spook_1/LookAtSpook1")
 spook_1 = NodePath("../Spook_1")
@@ -1470,7 +1480,7 @@ shape = SubResource("BoxShape3D_e6shu")
 debug_color = Color(0.9351875, 0.25609133, 0, 0.41960785)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="invisibleWalls/StaticBody3D" unique_id=1351546102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.700897, 1.5324538, 48.73638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.700897, 1.5324538, 17.753563)
 shape = SubResource("BoxShape3D_s6gja")
 debug_color = Color(0.97659117, 0, 0.4142887, 0.41960785)
 
@@ -1582,6 +1592,12 @@ light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 7.45
 omni_range = 29.761795
 
+[node name="OmniLight3D5" type="OmniLight3D" parent="filler-buildings" unique_id=1179085207]
+transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 3.9798627, 0, -0.8664373)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 7.45
+omni_range = 1280.539
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="filler-buildings" unique_id=1874835461]
 transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589404, 0, -0.20449948)
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
@@ -1592,13 +1608,13 @@ omni_range = 29.761795
 transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.55893993, 0, 0.3392285)
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 16.0
-omni_range = 29.761795
+omni_range = 11.644537
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="filler-buildings" unique_id=997184094]
-transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589397, -0.14664292, 0.90034443)
+transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589397, -0.1466429, 0.84167564)
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 3.479
-omni_range = 29.761795
+omni_range = 3.1271486
 
 [node name="filler-buildings2" parent="." unique_id=1118343396 instance=ExtResource("46_ijtr6")]
 transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 35, -36.17414, 7.6184735, 61.577084)
@@ -1609,6 +1625,19 @@ visible = false
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 10.0
 omni_range = 8.603392
+
+[node name="Background_Buildings_Flat" parent="." unique_id=1397663350 instance=ExtResource("47_jsnu8")]
+transform = Transform3D(-1.6968761e-06, 0, 47.998, 0, 22.795, 0, -38.82, 0, -2.0980592e-06, -9.565161, 11.550344, 101.23071)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=261818074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.461088, -0.16751099, 57.6697)
+size = Vector3(33.88922, 0.664978, 88.03418)
+material = SubResource("StandardMaterial3D_62wgf")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1313331344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.431597, -0.16751099, 57.6697)
+size = Vector3(33.88922, 0.664978, 88.03418)
+material = SubResource("StandardMaterial3D_62wgf")
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
