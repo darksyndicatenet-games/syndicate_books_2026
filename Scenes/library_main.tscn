@@ -44,6 +44,8 @@
 [ext_resource type="PackedScene" uid="uid://4y0ywju8gkhg" path="res://Scenes/long_lamp.tscn" id="43_bvh21"]
 [ext_resource type="PackedScene" uid="uid://bbploffq3dovf" path="res://Scenes/short_lamp.tscn" id="44_bvh21"]
 [ext_resource type="Texture2D" uid="uid://ceo2lygppc1uy" path="res://Assets/chairs_lamps_charTexture_Mapped.png" id="44_ijtr6"]
+[ext_resource type="PackedScene" uid="uid://d1uawwru8mgnv" path="res://bracelet.glb" id="45_vtpl0"]
+[ext_resource type="PackedScene" uid="uid://dv7oq72pl0kdx" path="res://filler-buildings.glb" id="46_ijtr6"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_se8fg"]
 
@@ -61,8 +63,6 @@ tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.038867652, 0.13293234, 0.17832115, 1)
-fog_light_energy = 0.0
-fog_density = 0.0701
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.09366939, 0.09366938, 0.09366938, 1)
 
@@ -839,10 +839,14 @@ environment = SubResource("Environment_g2h84")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1189328732]
 transform = Transform3D(-0.86602354, -0.43301603, 0.25000072, 0, 0.49999818, 0.86602646, -0.5000033, 0.7499993, -0.4330102, -0.33124197, 27.821842, 1.386201)
 light_color = Color(0.005164542, 0.004710414, 0.0054997792, 1)
+light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -5.011079, 0, 10.482914)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -5.011079, 0, 32.843445)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -1470,7 +1474,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.700897, 1.5324538, 48.736
 shape = SubResource("BoxShape3D_s6gja")
 debug_color = Color(0.97659117, 0, 0.4142887, 0.41960785)
 
-[node name="Syndicate_books" parent="." unique_id=2014128587 instance=ExtResource("41_hm7k4")]
+[node name="Syndicate_books" parent="." unique_id=1122206506 instance=ExtResource("41_hm7k4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2768674, 2.8955636, -4.968895)
 
 [node name="StudyArea" type="Node3D" parent="." unique_id=456109292]
@@ -1565,6 +1569,46 @@ transform = Transform3D(-0.006756253, 0, -0.17587027, 0, 0.077, 0, 0.17587027, 0
 
 [node name="desk" parent="StudyArea/Cafeteria" unique_id=996552268 instance=ExtResource("42_kllcd")]
 transform = Transform3D(-0.028351113, 0, 2.4995534, 0, 0.9, 0, -1.499732, 0, -0.047251858, 15.558225, 0.2515391, -32.712696)
+
+[node name="bracelet" parent="." unique_id=826853743 instance=ExtResource("45_vtpl0")]
+transform = Transform3D(0.4936696, 0.079311684, 0, -0.079311684, 0.4936696, 0, 0, 0, 0.5, -14.762654, 1.7016505, 8.882347)
+
+[node name="filler-buildings" parent="." unique_id=475227516 instance=ExtResource("46_ijtr6")]
+transform = Transform3D(-10, 0, -5.284853e-06, 0, 15, 0, 1.509958e-06, 0, -35, 31.786366, 7.6184735, 61.577084)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="filler-buildings" unique_id=714680838]
+transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589409, 0, -0.68340456)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 7.45
+omni_range = 29.761795
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="filler-buildings" unique_id=1874835461]
+transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589404, 0, -0.20449948)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 16.0
+omni_range = 29.761795
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="filler-buildings" unique_id=1902765101]
+transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.55893993, 0, 0.3392285)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 16.0
+omni_range = 29.761795
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="filler-buildings" unique_id=997184094]
+transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589397, -0.14664292, 0.90034443)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 3.479
+omni_range = 29.761795
+
+[node name="filler-buildings2" parent="." unique_id=1118343396 instance=ExtResource("46_ijtr6")]
+transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 35, -36.17414, 7.6184735, 61.577084)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="filler-buildings2" unique_id=290123814]
+transform = Transform3D(0.2, 0, 1.7763568e-15, 0, 0.2, 0, -1.7763568e-15, 0, 0.2, 0.55894065, 0, 0)
+visible = false
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 10.0
+omni_range = 8.603392
 
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
 [connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
