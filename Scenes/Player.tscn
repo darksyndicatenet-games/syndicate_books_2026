@@ -23,7 +23,7 @@ shape = SubResource("CapsuleShape3D_wydro")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=674797463]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3574462, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12787223, 0)
 
 [node name="HoverLabel" type="Label" parent="Head/Camera3D" unique_id=124303641]
 anchors_preset = 5
