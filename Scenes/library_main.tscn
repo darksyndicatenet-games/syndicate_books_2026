@@ -55,7 +55,6 @@
 [ext_resource type="PackedScene" uid="uid://baexu4ea40fuo" path="res://Background_Buildings_Flat.glb" id="47_jsnu8"]
 [ext_resource type="Texture2D" uid="uid://b6le2nwof87ex" path="res://Grass.png" id="49_pat0f"]
 [ext_resource type="PackedScene" uid="uid://da4qcc7rvlmyi" path="res://note_password_username.glb" id="53_bxqww"]
-[ext_resource type="PackedScene" uid="uid://c41k0lk0134a0" path="res://Scenes/tester_spook.tscn" id="56_pb5wr"]
 
 [sub_resource type="Sky" id="Sky_4so3u"]
 sky_material = ExtResource("2_08ywl")
@@ -1939,9 +1938,6 @@ material = SubResource("StandardMaterial3D_62wgf")
 [node name="note_password_username" parent="." unique_id=1480211382 instance=ExtResource("53_bxqww")]
 transform = Transform3D(-1.009457, 0.9915753, -4.3343135e-08, 0, -6.1851615e-08, -1.415, -0.9915753, -1.009457, 4.412476e-08, -16.009491, 2.1627078, 8.885568)
 
-[node name="tester_spook" parent="." unique_id=1958646611 instance=ExtResource("56_pb5wr")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -2.943779, 0.26988062, 46.35899)
-
 [connection signal="body_entered" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_exited"]
 [connection signal="pressed" from="Computer/CanvasLayer/User/Control/btnEnter" to="Computer/CanvasLayer/User" method="_on_btn_enter_pressed"]
@@ -1970,3 +1966,5 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -2.943779, 0.26988062, 
 [editable path="Books/ThePowerOfPatience"]
 [editable path="Scare_1/Cutscene3"]
 [editable path="Scare_3/NPC_2"]
+[editable path="Scare_3/NPC_2/Idle"]
+[editable path="Scare_3/NPC_2/Walk"]
