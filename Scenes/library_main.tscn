@@ -1940,7 +1940,7 @@ material = SubResource("StandardMaterial3D_62wgf")
 transform = Transform3D(-1.009457, 0.9915753, -4.3343135e-08, 0, -6.1851615e-08, -1.415, -0.9915753, -1.009457, 4.412476e-08, -16.009491, 2.1627078, 8.885568)
 
 [node name="tester_spook" parent="." unique_id=1958646611 instance=ExtResource("56_pb5wr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.943779, 0.26988062, 46.35899)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -2.943779, 0.26988062, 46.35899)
 
 [connection signal="body_entered" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_exited"]

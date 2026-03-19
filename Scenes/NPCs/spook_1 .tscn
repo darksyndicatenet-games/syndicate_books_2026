@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://do5ao6ixnb61g" path="res://Materials/grid_map_editor_greeen.tres" id="1_ebtxs"]
 [ext_resource type="Script" uid="uid://dv7ribyyjb73j" path="res://Scenes/NPCs/spook_1_.gd" id="1_hqy7w"]
+[ext_resource type="PackedScene" uid="uid://d2t15cm10l2sr" path="res://Scenes/NPCs/tester_spook.tscn" id="3_wcqng"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x2qk8"]
 
@@ -19,6 +20,7 @@ script = ExtResource("1_hqy7w")
 shape = SubResource("CapsuleShape3D_x2qk8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1672135948]
+visible = false
 mesh = SubResource("CapsuleMesh_xlkoh")
 surface_material_override/0 = ExtResource("1_ebtxs")
 
@@ -27,3 +29,8 @@ surface_material_override/0 = ExtResource("1_ebtxs")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=827471031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1973877, 0)
 shape = SubResource("BoxShape3D_ebtxs")
+
+[node name="tester_spook" parent="." unique_id=1830100418 instance=ExtResource("3_wcqng")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, -0.60282993, 0)
+
+[editable path="tester_spook"]

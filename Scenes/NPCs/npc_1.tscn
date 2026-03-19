@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://do5ao6ixnb61g" path="res://Materials/grid_map_editor_greeen.tres" id="1_1oey7"]
 [ext_resource type="Script" uid="uid://dnx1lywut7djf" path="res://Scenes/NPCs/npc_1.gd" id="1_nnii4"]
+[ext_resource type="PackedScene" uid="uid://br1g4rpcmcn1w" path="res://Scenes/NPCs/npc_1_walk.tscn" id="3_3bhtg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8c3i1"]
 
@@ -13,8 +14,12 @@ shape = SubResource("CapsuleShape3D_8c3i1")
 debug_color = Color(0.8533458, 0.21174061, 0.750531, 0.41960785)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1776722000]
+visible = false
 material = ExtResource("1_1oey7")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=732849442]
 debug_enabled = true
 debug_path_custom_color = Color(0.20009375, 0.7907172, 0.21035275, 1)
+
+[node name="npc_1_walk" parent="." unique_id=1506507941 instance=ExtResource("3_3bhtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92279387, 0)
