@@ -11,7 +11,7 @@ func _process(_delta):
 	if player_in_area and Input.is_action_just_pressed("place"):
 		Inventory.add_item(item_name)
 		queue_free()
-		misson_manager.complete_mission()
+		#misson_manager.set_message("Collect Key")
 		emit_signal("book_collected")
 
 

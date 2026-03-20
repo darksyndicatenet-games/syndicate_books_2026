@@ -2,12 +2,13 @@ extends Node3D
 
 
 signal iLoveYussie 
-@onready var receptionist_label_3d: Label3D = $NavigationRegion3D/Map/Misc/Desk/ReceptionistLabel3D
+
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 @onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
 @onready var look_target: Marker3D = $Scare_1/Cutscene2/Marker3D
 @onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
 @onready var scare_2: Area3D = $Scare_1/Scare2
+@onready var receptionist_label: Label3D = $Day1/FrontDeskArea3D/ReceptionistLabel
 
 var bell_has_been_fired := false
 var counter := 0
@@ -26,7 +27,7 @@ var counted_books: Array[String] = []
 # ONLY these books should count
 var required_books := [
 	"animal farm",
-	"the routledge handbook of philosophy of empathy"
+	"the song of achiles"
 ]
 
 @onready var cutscene_2: Area3D = $Scare_1/Cutscene2
@@ -97,13 +98,13 @@ func _on_front_desk_area_3d_body_entered(body: Node3D) -> void:
 
 	print("Book added:", book_name)
 	print("Counter = ", counter)
-	#receptionist_label_3d.text = "books " + str(counter) + " / 2"
+	receptionist_label.text = "books " + str(counter) + " / 2"
 	check_completion()
 	
 func check_completion():
 	if counter == required_books.size():
 		print("All required books returned!")
-		#SignalManager.emit_signal("scene1_return_books_to_shelf")
+		SignalManager.emit_signal("scene1_return_books_to_shelf")
 
 
 func on_trigger_door_animation_():
@@ -166,3 +167,27 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = false
 		print("Player de-activate sound here")
 		pass # Replace with function body.
+
+#i need to i=fix the decrement
+func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
+	if not body.is_in_group("books"):
+		return
+		
+	var book_name = body.book_name.to_lower()
+
+	# nly specific books allowed
+	if not required_books.has(book_name):
+		return
+
+	# prevent counting same book twice
+	if counted_books.has(book_name):
+		return
+
+	# Count it
+	#counted_books.append(book_name)
+	counter -= 1
+
+	print("Book added:", book_name)
+	print("Counter = ", counter)
+	receptionist_label.text = "books " + str(counter) + " / 2"
+	#check_completion()

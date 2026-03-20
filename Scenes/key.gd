@@ -31,7 +31,7 @@ func _process(_delta):
 func _on_inventory_item_key_collected() -> void:
 #	collect keys
 	key.queue_free()
-	misson_manager.complete_mission()
+	misson_manager.set_message("Use key to open door")
 
 func get_interact_text():
 	return interact_message

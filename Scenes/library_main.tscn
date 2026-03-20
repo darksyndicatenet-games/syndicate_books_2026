@@ -9,12 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dd7ux483epwcy" path="res://Assets/Assets_Scenes/Blender_Assets/monitor.glb" id="3_n50q0"]
 [ext_resource type="Material" uid="uid://cmjj6de7emqlq" path="res://Materials/grid_map_editor.tres" id="3_ocnvn"]
 [ext_resource type="PackedScene" uid="uid://rersmf0mlwyr" path="res://Assets/Assets_Scenes/Blender_Assets/single-shelf.glb" id="5_mr6og"]
-[ext_resource type="Material" uid="uid://cf2laiqxgnfay" path="res://Materials/grid_map_editor_pink.tres" id="5_qstqp"]
 [ext_resource type="PackedScene" uid="uid://dcyljydwljb4" path="res://Scenes/book_shelf_sample.tscn" id="5_vfwt6"]
-[ext_resource type="Material" uid="uid://def8l0xxqoggq" path="res://Materials/grid_map_editor_red.tres" id="6_jhl3c"]
 [ext_resource type="Texture2D" uid="uid://d4m4qp0awxmmg" path="res://Gravel.png" id="6_q5ofo"]
 [ext_resource type="PackedScene" uid="uid://bq6o2ebdc8dr2" path="res://Assets/Assets_Scenes/single_shelf.tscn" id="6_wo84d"]
-[ext_resource type="AudioStream" uid="uid://c3svnc0k18nbn" path="res://Music/suspenseful-dark-background.mp3" id="8_gndm1"]
 [ext_resource type="PackedScene" uid="uid://dvtpjji0yerr8" path="res://Scenes/Player.tscn" id="9_7vups"]
 [ext_resource type="AudioStream" uid="uid://bi6l0qft14v1b" path="res://Music/short-footsteps.mp3" id="11_a14d5"]
 [ext_resource type="PackedScene" uid="uid://vnsnk4gu52t2" path="res://Scenes/inventory_display.tscn" id="13_ot02y"]
@@ -468,7 +465,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bf250"]
-size = Vector3(4.9833984, 1.9452393, 1.5605469)
+size = Vector3(4.9833984, 0.4148987, 1.5605469)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lje5s"]
 size = Vector3(1, 0.20062256, 1)
@@ -1046,57 +1043,31 @@ scale = Vector2(0.68, 1)
 [node name="StackedBooks" type="Node3D" parent="." unique_id=1634331662]
 
 [node name="Book_Sample_015" type="MeshInstance3D" parent="StackedBooks" unique_id=1536104776]
-transform = Transform3D(-0.83810264, 0, -3.9226215e-08, 0, 0.9696801, 0, 3.663463e-08, 0, -0.8973912, -6.879951, 1.8306806, -2.2515619)
+transform = Transform3D(-0.83810264, 0, -3.9226215e-08, 0, 0.9696801, 0, 3.663463e-08, 0, -0.8973912, -9.647623, 1.844207, -2.2569075)
 mesh = SubResource("ArrayMesh_n04mr")
 skeleton = NodePath("")
 
 [node name="Book_Sample_014" type="MeshInstance3D" parent="StackedBooks" unique_id=1266486142]
-transform = Transform3D(-0.8381027, 0, -3.9226215e-08, 0, 0.8973912, 0, 3.663463e-08, 0, -0.8973912, -7.091611, 1.7962604, -1.2021224)
+transform = Transform3D(-0.8381027, 0, -3.9226215e-08, 0, 0.8973912, 0, 3.663463e-08, 0, -0.8973912, -9.859283, 1.8097868, -1.2074682)
 mesh = SubResource("ArrayMesh_ak38f")
 skeleton = NodePath("")
 
 [node name="Book_Sample_016" type="MeshInstance3D" parent="StackedBooks" unique_id=1634432825]
-transform = Transform3D(-0.83810264, 0, -3.922621e-08, -1.4408242e-09, 0.8966968, 0.03529401, 3.6606284e-08, 0.03529401, -0.8966968, -7.091611, 2.682993, -2.288958)
+transform = Transform3D(-0.83810264, 0, -3.922621e-08, -1.4408242e-09, 0.8966968, 0.03529401, 3.6606284e-08, 0.03529401, -0.8966968, -9.859283, 2.6965194, -2.294304)
 mesh = SubResource("ArrayMesh_ak38f")
 skeleton = NodePath("")
 
 [node name="stacked_books" parent="StackedBooks" unique_id=306097892 instance=ExtResource("2_62wgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9122276, 2.6476524, -0.52179545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6799, 2.6611788, -0.52714115)
 
 [node name="stacked_books2" parent="StackedBooks" unique_id=1191361964 instance=ExtResource("2_62wgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9122276, 0.9226445, -2.3287628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6799, 0.93617094, -2.3341084)
 
 [node name="Misc" type="Node3D" parent="." unique_id=782938315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33124197, 0, -5.5548)
 
 [node name="receptionist_Desk" parent="Misc" unique_id=1542547513 instance=ExtResource("3_aofbe")]
 transform = Transform3D(0.006841682, 0, 0.9999766, 0, 1, 0, -0.9999766, 0, 0.006841682, -13.47283, 0.2718054, 14.795219)
-
-[node name="Desk" type="CSGBox3D" parent="Misc" unique_id=1550285286]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.47283, 0.7263559, 14.795219)
-visible = false
-material_override = ExtResource("5_qstqp")
-use_collision = true
-size = Vector3(5.0490723, 1.293335, 1.5527344)
-
-[node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="Misc/Desk" unique_id=2038902659]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1471753, 0)
-stream = ExtResource("8_gndm1")
-
-[node name="ReceptionistLabel3D" type="Label3D" parent="Misc/Desk" unique_id=244006026]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0010777, 1.7022187, 0.28633213)
-visible = false
-billboard = 2
-text = "Place Coffee
-
-⬇️"
-font_size = 80
-
-[node name="Door" type="CSGBox3D" parent="Misc" unique_id=341284320]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8650619, 9.220673, 30.182545)
-visible = false
-material_override = ExtResource("6_jhl3c")
-size = Vector3(2.5, 3.6, 0.23)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
@@ -1546,7 +1517,7 @@ collision_layer = 5
 [node name="FrontDeskArea3D" type="Area3D" parent="Day1" unique_id=1224705965]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/FrontDeskArea3D" unique_id=12156866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.782467, 0.84164464, 9.255172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.782467, 1.606815, 9.255172)
 shape = SubResource("BoxShape3D_bf250")
 debug_color = Color(0.95680743, 0, 0.53855264, 0.41960785)
 
@@ -1569,6 +1540,12 @@ size = Vector3(1, 0.21520996, 0.97546387)
 
 [node name="ObjectPlaced" type="Marker3D" parent="Day1/FrontDeskArea3D/Placement2" unique_id=985395488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3240944, 0.025157928)
+
+[node name="ReceptionistLabel" type="Label3D" parent="Day1/FrontDeskArea3D" unique_id=1837662402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.310732, 2.1709409, 9.346553)
+billboard = 1
+text = "Test"
+font_size = 100
 
 [node name="TriggerThoughts" type="Node3D" parent="." unique_id=903876427]
 
@@ -1655,20 +1632,20 @@ transform = Transform3D(0.83810264, 0, 0, 0, -3.922621e-08, -0.89739114, 0, 0.89
 mesh = SubResource("ArrayMesh_cn8p3")
 skeleton = NodePath("")
 
-[node name="TheRoutledgeHandbookofPhilosophyofEmpathy" parent="Books" unique_id=488190995 instance=ExtResource("14_1kku3")]
+[node name="TheSongOfAchiles" parent="Books" unique_id=488190995 instance=ExtResource("14_1kku3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.797202, 1.4990119, 14.78279)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
-book_name = "The Routledge Handbook of Philosophy of Empathy"
+book_name = "The Song Of Achiles"
 author = "Unknown Author"
 taken_out_by = "Me"
 issue_date = "2026-02-10"
 
-[node name="MeshInstance3D" parent="Books/TheRoutledgeHandbookofPhilosophyofEmpathy" index="0" unique_id=937974331]
+[node name="MeshInstance3D" parent="Books/TheSongOfAchiles" index="0" unique_id=937974331]
 visible = false
 
-[node name="TheSongOfAchiles" type="MeshInstance3D" parent="Books/TheRoutledgeHandbookofPhilosophyofEmpathy" unique_id=147246059]
+[node name="TheSongOfAchiles" type="MeshInstance3D" parent="Books/TheSongOfAchiles" unique_id=147246059]
 transform = Transform3D(0.8381027, 0, 0, 0, -3.9226215e-08, -0.8973912, 0, 0.8973912, -3.9226215e-08, -0.0543499, 0.23879659, 0.009103775)
 mesh = SubResource("ArrayMesh_pe7hg")
 skeleton = NodePath("")
@@ -1690,9 +1667,6 @@ visible = false
 transform = Transform3D(0.953, 0, 0, 0, -4.4585615e-08, -1.02, 0, 1.02, -4.4585615e-08, -0.0021982193, 0.24215764, -0.05441761)
 mesh = SubResource("ArrayMesh_6h4yv")
 skeleton = NodePath("")
-
-[node name="special_books" type="Node3D" parent="Books" unique_id=859398324]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.001454)
 
 [node name="Scare_1" type="Node3D" parent="." unique_id=2109900009]
 
@@ -2040,8 +2014,8 @@ transform = Transform3D(-1.009457, 0.9915753, -4.3343135e-08, 0, -6.1851615e-08,
 [connection signal="pressed" from="Computer/CanvasLayer/Logbook/Log/Exit2" to="Computer/CanvasLayer/User" method="_on_exit_2_pressed"]
 [connection signal="pressed" from="Computer/CanvasLayer/Logbook/Exit" to="Computer/CanvasLayer/User" method="_on_exit_pressed"]
 [connection signal="body_entered" from="Day1/Door" to="." method="_on_door_body_entered"]
-[connection signal="area_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_area_entered"]
 [connection signal="body_entered" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_body_entered"]
+[connection signal="body_exited" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_body_exited"]
 [connection signal="body_entered" from="Day1/FrontDeskArea3D/Placement2" to="Day1/FrontDeskArea3D/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Day1/FrontDeskArea3D/Placement2" to="Day1/FrontDeskArea3D/Placement2" method="_on_body_exited"]
 [connection signal="scene1_return_books_to_shelf" from="SignalManager" to="SignalManager" method="_on_scene_1_return_books_to_shelf"]
@@ -2056,7 +2030,7 @@ transform = Transform3D(-1.009457, 0.9915753, -4.3343135e-08, 0, -6.1851615e-08,
 [editable path="Computer/monitor/monitor"]
 [editable path="NavigationRegion3D/Map/shelves/ShelfCorner/Node3D/book_shelf_Sample10"]
 [editable path="Books/AnimalFarm"]
-[editable path="Books/TheRoutledgeHandbookofPhilosophyofEmpathy"]
+[editable path="Books/TheSongOfAchiles"]
 [editable path="Books/ThePowerOfPatience"]
 [editable path="Scare_1/Cutscene3"]
 [editable path="Scare_3/NPC_2"]

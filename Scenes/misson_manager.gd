@@ -7,12 +7,7 @@ var current_mission := 0
 @onready var misson_label: Label = $"../TriggerThoughts/FadeText/MissonLabel"
 
 @export_multiline var missions: PackedStringArray = [
-	"Find Key inside of return box outside of the library",
-	"Pick up the stack of books.",
-	"Log into the Library Computer System",
-	"log the books in",
-	"Return books to shelf"
-
+	"Find Key inside of return box outside of the library"
 ]
 
 
