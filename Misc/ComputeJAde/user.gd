@@ -242,7 +242,7 @@ func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
 	#misson_manager.set_message("Return books to shelf")
 	print("scene1_return_books_to_shelf, next mission since books are entered")
-	misson_manager.set_message("Pack Books into shelfs")
+	misson_manager.set_message("Log books into Computer")
 #	this needs checking
 
 func add_entry_to_log():

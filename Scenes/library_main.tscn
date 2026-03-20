@@ -1763,6 +1763,9 @@ message = "tester"
 mission_text = "tester"
 play_scene_once = true
 
+[node name="FadeText" parent="Scare_1/Cutscene3" index="1" unique_id=1630234939]
+metadata/_edit_lock_ = true
+
 [node name="CollisionShape3D" parent="Scare_1/Cutscene3" index="2" unique_id=1633756298]
 transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -11.786856, 0.7310052, 7.660593)
 
