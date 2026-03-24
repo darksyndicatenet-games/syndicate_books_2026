@@ -64,14 +64,16 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-#		need a global flag var so whe player gets promot: "Return to front desk" this function should play "footsteps_audio"
 	if Global.lock_all_player_controls_:
-		if Input.is_action_just_pressed("ui_focus_next"):  # Tab key
-			cursor_visible = not cursor_visible  # toggle the flag
-		if cursor_visible:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if Input.is_action_just_pressed("ui_focus_next"):
+			cursor_visible = not cursor_visible
+
+		# Only manage mouse mode if NOT at a computer
+		if not Global.is_at_computer:  # add this flag
+			if cursor_visible:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 		handle_holding_objects()
 	#	I FIXED MY ERROR IM A GENIUS

@@ -310,3 +310,8 @@ func check_book_for_first_npc() -> bool:
 		print("Some data is incorrect for the first NPC book.")
 		Global.check_book_first_npc = false
 		return false
+
+
+func _on_exit_login_pressed() -> void:
+	user.visible =  false
+	pass # Replace with function body.
