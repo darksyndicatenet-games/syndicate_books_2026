@@ -764,6 +764,7 @@ environment = SubResource("Environment_pb5wr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120.42355, 0)
 light_energy = 0.0
 light_indirect_energy = 0.0
+shadow_enabled = true
 sky_mode = 2
 script = ExtResource("3_4so3u")
 worldEnvironment = NodePath("../WorldEnvironment")
@@ -772,6 +773,9 @@ nightLight = NodePath("DirectionalLight3D")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Night/DirectionalLight3D" unique_id=115877852]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
 
 [node name="Computer" type="Node3D" parent="." unique_id=499691354 groups=["computer"]]
 transform = Transform3D(-0.9999468, 0, -0.010314671, 0, 1, 0, 0.010314671, 0, -0.9999468, -15.382231, 2.015899, 8.863877)
@@ -1986,30 +1990,6 @@ transform = Transform3D(0.39155298, 0.09869286, 0.29486603, -0.122205265, 0.4848
 [node name="filler-buildings" parent="." unique_id=475227516 instance=ExtResource("46_ijtr6")]
 transform = Transform3D(-10, 0, -5.284853e-06, 0, 15, 0, 1.509958e-06, 0, -35, 31.786366, 7.6184735, 61.577084)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="filler-buildings" unique_id=714680838]
-transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589409, 0, -0.68340456)
-light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
-light_energy = 7.45
-omni_range = 29.761795
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="filler-buildings" unique_id=1179085207]
-transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 3.9798627, 0, -0.8664373)
-light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
-light_energy = 7.45
-omni_range = 1280.539
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="filler-buildings" unique_id=1902765101]
-transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589402, 0, 0.029809952)
-light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
-light_energy = 2.624
-omni_range = 11.644537
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="filler-buildings" unique_id=997184094]
-transform = Transform3D(0.1, 0, 3.5527137e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 0.5589397, -0.1466429, 0.7422757)
-light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
-light_energy = 1.532
-omni_range = 3.1271486
-
 [node name="filler-buildings2" parent="." unique_id=1118343396 instance=ExtResource("46_ijtr6")]
 transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 35, -36.17414, 7.6184735, 61.577084)
 
@@ -2019,6 +1999,13 @@ visible = false
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 10.0
 omni_range = 8.603392
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="filler-buildings2" unique_id=1161770759]
+transform = Transform3D(0.1, 0, 0, 0, 0.06666666, 0, 0, 0, 0.028571429, 0.80804753, 0, 0.050734878)
+light_color = Color(0.85143274, 0.77762926, 0.30449748, 1)
+light_energy = 0.706
+shadow_enabled = true
+omni_range = 20.983757
 
 [node name="Background_Buildings_Flat" parent="." unique_id=1397663350 instance=ExtResource("47_jsnu8")]
 transform = Transform3D(-1.6968761e-06, 0, 47.998, 0, 22.795, 0, -38.82, 0, -2.0980592e-06, -9.565161, 11.550344, 101.23071)
