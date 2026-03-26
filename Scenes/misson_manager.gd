@@ -4,6 +4,7 @@ extends Node
 var message: String = ""
 var current_mission := 0
 #@onready var label: Label = $"../TriggerThoughts/FadeText/Label"
+
 @onready var misson_label: Label = $"../TriggerThoughts/FadeText/MissonLabel"
 
 @export_multiline var missions: PackedStringArray = [

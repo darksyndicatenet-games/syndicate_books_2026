@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bnqspwc3wsegr"]
+
+[ext_resource type="PackedScene" uid="uid://rersmf0mlwyr" path="res://Assets/Assets_Scenes/Blender_Assets/single-shelf.glb" id="1_pv3tc"]
+[ext_resource type="Script" uid="uid://jp14cly71usn" path="res://Scenes/single_shelf_two_books.gd" id="2_y8x2d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pv3tc"]
+size = Vector3(2.6884766, 0.6933594, 1)
+
+[node name="single-shelf-two-books" unique_id=706171024 instance=ExtResource("1_pv3tc")]
+script = ExtResource("2_y8x2d")
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1637758110]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=440081492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.087776184, 1.195684, 0)
+shape = SubResource("BoxShape3D_pv3tc")
+debug_color = Color(0.97011775, 0, 0.46002483, 0.41960785)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="1" unique_id=1500239007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.087776184, 2.075527, 0)
+shape = SubResource("BoxShape3D_pv3tc")
+debug_color = Color(0.97011775, 0, 0.46002483, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" index="2" unique_id=1091355881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.087776184, 2.9037101, 0)
+shape = SubResource("BoxShape3D_pv3tc")
+debug_color = Color(0.97011775, 0, 0.46002483, 0.41960785)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

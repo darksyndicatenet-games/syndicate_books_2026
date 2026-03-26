@@ -41,7 +41,7 @@ var entry_scene = preload("res://Scenes/entry_item.tscn")
 var submitted_books: Array[String] = []
 
 var required_books: Array[String] = [
-	"the routledge handbook of philosophy of empathy",
+	"the song of achilles",
 	"animal farm"
 
 ]
@@ -240,9 +240,9 @@ func _on_exit_2_pressed() -> void:
 
 func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
-	#misson_manager.set_message("Return books to shelf")
+	misson_manager.set_message("Log books into computer")
 	print("scene1_return_books_to_shelf, next mission since books are entered")
-	misson_manager.set_message("Log books into Computer")
+	
 #	this needs checking
 
 func add_entry_to_log():
@@ -314,4 +314,5 @@ func check_book_for_first_npc() -> bool:
 
 func _on_exit_login_pressed() -> void:
 	user.visible =  false
+	computer.end_interaction()
 	pass # Replace with function body.

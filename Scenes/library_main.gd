@@ -9,6 +9,7 @@ signal iLoveYussie
 @onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
 @onready var scare_2: Area3D = $Scare_1/Scare2
 @onready var receptionist_label: Label3D = $Day1/FrontDeskArea3D/ReceptionistLabel
+@onready var misson_manager: Node = $MissonManager
 
 var bell_has_been_fired := false
 var counter := 0
@@ -27,7 +28,7 @@ var counted_books: Array[String] = []
 # ONLY these books should count
 var required_books := [
 	"animal farm",
-	"the song of achiles"
+	"the song of achilles"
 ]
 
 @onready var cutscene_2: Area3D = $Scare_1/Cutscene2
@@ -65,10 +66,7 @@ func _on_door_body_entered(body: Node3D) -> void:
 	if body.name == "NPC_2":
 		print("ring bell for npc_2 in library script")
 		bell_sound.play()
-		
-		
-
-
+	
 func _on_inventory_book_item_book_collected() -> void:
 	#here i make new mission to set books down
 #	bring it to the front desk
@@ -98,19 +96,22 @@ func _on_front_desk_area_3d_body_entered(body: Node3D) -> void:
 
 	print("Book added:", book_name)
 	print("Counter = ", counter)
-	receptionist_label.text = "books " + str(counter) + " / 2"
+	receptionist_label.text = "Books " + str(counter) + " / 2 ⬇️"
 	check_completion()
 	
 func check_completion():
 	if counter == required_books.size():
 		print("All required books returned!")
 		SignalManager.emit_signal("scene1_return_books_to_shelf")
+		await get_tree().create_timer(5).timeout
+		receptionist_label.text = ""
 
 
 func on_trigger_door_animation_():
 #	trigger door animation here
 	door_anim_player.play("Open_Door")
 	print("trigger door animation here")
+	misson_manager.set_message("Put books onto front desk")
 	pass
 	
 	
