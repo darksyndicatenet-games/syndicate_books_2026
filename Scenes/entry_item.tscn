@@ -18,15 +18,20 @@ layout_mode = 2
 
 [node name="BookNameLabel" type="Label" parent="HBoxContainer" unique_id=1017914234]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 
 [node name="AuthorLabel" type="Label" parent="HBoxContainer" unique_id=217553257]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 
 [node name="IssuedLabel" type="Label" parent="HBoxContainer" unique_id=910424226]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 
 [node name="ReturnedLabel" type="Label" parent="HBoxContainer" unique_id=1522885316]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 
 [node name="FineLabel" type="Label" parent="HBoxContainer" unique_id=453241524]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
