@@ -1713,7 +1713,6 @@ skeleton = NodePath("")
 
 [node name="Cutscene" parent="Scare_1" unique_id=1042776018 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.558446, 0.3204906, 20.627197)
-monitoring = false
 monitorable = false
 player = NodePath("../../Player")
 look_target = NodePath("../Spook_1/LookAtSpook1")
@@ -1740,8 +1739,8 @@ volume_db = 10.418
 [node name="Marker3D" type="Marker3D" parent="Scare_1/Cutscene2" unique_id=124062482]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.754856, 0, -10.718859)
 
-[node name="Spook_1" parent="Scare_1" unique_id=1482541136 instance=ExtResource("25_x6hv0")]
-transform = Transform3D(-0.106452145, 0, -1.1154717, 0, 1.265, 0, 1.1802088, 0, -0.100613, 24.71996, 0.9932331, -1.9255075)
+[node name="Spook_1" parent="Scare_1" unique_id=1482541136 groups=["npc"] instance=ExtResource("25_x6hv0")]
+transform = Transform3D(-0.089833036, 0, -0.99595684, 0, 1, 0, 0.99595684, 0, -0.089833036, 24.71996, 0.9932331, -1.9255075)
 
 [node name="LookAtSpook1" type="Marker3D" parent="Scare_1/Spook_1" unique_id=1559634196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1937504, 0, 4.010373)
@@ -1833,7 +1832,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28891, -0.6069579, 0)
 shape = SubResource("BoxShape3D_gndm1")
 debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
 
-[node name="NPC_1" parent="Scare_1" unique_id=829859548 node_paths=PackedStringArray("target_marker") instance=ExtResource("34_se8fg")]
+[node name="NPC_1" parent="Scare_1" unique_id=829859548 node_paths=PackedStringArray("target_marker") groups=["npc"] instance=ExtResource("34_se8fg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 29.85082)
 collision_layer = 5
 collision_mask = 5
@@ -1853,7 +1852,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.89176, 0, 11.443726)
 [node name="Marker3D" type="Marker3D" parent="Scare_3" unique_id=1719493035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.950835, 3.9745102, 13.534685)
 
-[node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") instance=ExtResource("38_s6gja")]
+[node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") groups=["npc"] instance=ExtResource("38_s6gja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0224934, 35.12947)
 collision_layer = 5
 collision_mask = 5
@@ -1862,7 +1861,7 @@ have_elderly_come_in_library_npc2 = true
 look_marker = NodePath("../Marker3D")
 leave_marker = NodePath("../LeaveMarker")
 
-[node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") instance=ExtResource("37_e6shu")]
+[node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") groups=["npc"] instance=ExtResource("37_e6shu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9184446, 1.3208694, 29.43006)
 target_marker = NodePath("../CollectNPC2")
 look_marker = NodePath("../CollectNPC2")
@@ -2054,6 +2053,9 @@ transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.277463
 [node name="long_lamp2" parent="StudyArea/Chairs" unique_id=900559408 instance=ExtResource("43_bvh21")]
 transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.27746347, 0, -0.044983987, -5.791665, 2.4197733, 0.7932348)
 
+[node name="long_lamp3" parent="StudyArea/Chairs" unique_id=1891288223 instance=ExtResource("43_bvh21")]
+transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.27746347, 0, -0.044983987, -10.710905, 2.4197733, 9.55872)
+
 [node name="long_lamp4" parent="StudyArea/Chairs" unique_id=1484364892 instance=ExtResource("43_bvh21")]
 transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.27746347, 0, -0.044983987, -5.791665, 2.4197733, -21.605024)
 
@@ -2062,6 +2064,9 @@ transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.277463
 
 [node name="short_lamp" parent="StudyArea/Chairs" unique_id=686758706 instance=ExtResource("44_bvh21")]
 transform = Transform3D(-0.006756253, 0, -0.17587027, 0, 0.077, 0, 0.17587027, 0, -0.006756253, 23.926, 2.07, -0.998)
+
+[node name="short_lamp2" parent="StudyArea/Chairs" unique_id=192804986 instance=ExtResource("44_bvh21")]
+transform = Transform3D(-0.006756253, 0, -0.17587027, 0, 0.077, 0, 0.17587027, 0, -0.006756253, -16.246164, 2.1757774, 7.8471346)
 
 [node name="Cafeteria" type="Node3D" parent="StudyArea" unique_id=1851022203]
 

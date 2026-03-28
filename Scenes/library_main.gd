@@ -1,8 +1,5 @@
 extends Node3D
 
-
-signal iLoveYussie 
-
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 @onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
 @onready var look_target: Marker3D = $Scare_1/Cutscene2/Marker3D

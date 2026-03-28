@@ -89,7 +89,16 @@ func _physics_process(delta):
 			get_tree().quit()
 	#	stores the obj that the raycast detects
 		var obj = interaction_ray.get_collider()
-
+		if Input.is_action_just_pressed("place"):
+			if obj:
+				var temp = obj
+				
+				# climb up to find NPC
+				while temp != null:
+					if temp.is_in_group("npc"):
+						temp.begin_dialogue()
+						break
+					temp = temp.get_parent()
 		if obj:
 			# Hover name
 			hover_label.visible = true

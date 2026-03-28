@@ -109,6 +109,7 @@ computer=""
 key=""
 inventory_item=""
 cups=""
+npc=""
 
 [gui]
 
