@@ -3,7 +3,7 @@ extends RigidBody3D
 
 @onready var inventory_item: Area3D = $InventoryItem
 @onready var key: RigidBody3D = $"."
-@export var interact_message: String = "Press E to take key"
+@export var interact_message: String = "Press E to interact"
 
 @export var item_name: String = "Library Key"
 @onready var misson_manager: Node = $"../../MissonManager"

@@ -2,7 +2,7 @@ extends Area3D
 #once only?
 #press e to intercat snap cup to the machine
 @onready var coffee: MeshInstance3D = $Cup/coffee_mug/coffee
-
+@export var interact_message: String = "Press E to interact"
 @onready var coffee_machine_progress: ProgressBar = $coffee_machine/CoffeeMachineProgress
 var player_in_area: bool = false  # Track if player is inside the area
 @onready var misson_manager: Node = $"../../MissonManager"
@@ -40,3 +40,15 @@ func _on_placement_cup_placed_in_coffe_machine() -> void:
 func _on_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
 		player_in_area = false
+
+func get_interact_text():
+	if not player_in_area:
+		return ""
+	
+	if not Global.player_placed_coffee_in_machine:
+		return ""
+	
+	if coffee_machine_activated:
+		return ""
+	
+	return "Press F to turn on coffee machine"
