@@ -83,8 +83,8 @@ func handle_npc_after_book() -> void:
 	print("Player entered book correctly & exited screen")
 	cutscene_3.monitoring = true
 	last_dialogue()
-	misson_manager.set_message("Look around the library if anyone is still inside.")
-
+	misson_manager.set_message("Put coffee in tray on receptionist desk")
+	
 	# Wait until dialogue finishes (assuming Dialogic has a 'finished' signal)
 	#await Dialogic.finished  # pause here until dialogue is done
 #	basixally have a signal that emits when dialogue is finsihed 

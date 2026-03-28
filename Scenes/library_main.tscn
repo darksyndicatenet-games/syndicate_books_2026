@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d4m4qp0awxmmg" path="res://Gravel.png" id="6_q5ofo"]
 [ext_resource type="PackedScene" uid="uid://bq6o2ebdc8dr2" path="res://Assets/Assets_Scenes/single_shelf.tscn" id="6_wo84d"]
 [ext_resource type="PackedScene" uid="uid://dvtpjji0yerr8" path="res://Scenes/Player.tscn" id="9_7vups"]
+[ext_resource type="Texture2D" uid="uid://c10fvkidi4i2j" path="res://Assets/Alphabet Plaques/data_entry.png" id="9_yldco"]
 [ext_resource type="AudioStream" uid="uid://bi6l0qft14v1b" path="res://Music/short-footsteps.mp3" id="11_a14d5"]
 [ext_resource type="PackedScene" uid="uid://vnsnk4gu52t2" path="res://Scenes/inventory_display.tscn" id="13_ot02y"]
 [ext_resource type="PackedScene" uid="uid://dusddvyrnmaq2" path="res://Misc/Computer/book_base_scene.tscn" id="14_1kku3"]
@@ -26,7 +27,6 @@
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="18_hm7k4"]
 [ext_resource type="Texture2D" uid="uid://sn0ltunlm21q" path="res://Misc/ComputeJAde/log.png" id="18_ixevi"]
 [ext_resource type="Script" uid="uid://buaduggrj83x1" path="res://Misc/ComputeJAde/user.gd" id="19_vfwt6"]
-[ext_resource type="Texture2D" uid="uid://dk4no8hybqgbi" path="res://Misc/Computer/login.png" id="20_mr6og"]
 [ext_resource type="Texture2D" uid="uid://tsq1fu2xfiip" path="res://Misc/ComputeJAde/help.png" id="21_se8fg"]
 [ext_resource type="Texture2D" uid="uid://caxyddg0orond" path="res://Misc/Computer/exit.png" id="22_a14d5"]
 [ext_resource type="Script" uid="uid://clm7qw6ujn7ug" path="res://Scenes/signal_manager.gd" id="23_bf250"]
@@ -914,7 +914,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.134228, 2.4475524)
 mouse_filter = 2
-texture = ExtResource("20_mr6og")
+texture = ExtResource("9_yldco")
 expand_mode = 1
 
 [node name="BookName" type="LineEdit" parent="Computer/CanvasLayer/Logbook/Log" unique_id=1514800960]

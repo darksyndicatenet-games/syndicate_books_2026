@@ -3,3 +3,6 @@ join Player right [animation="Bounce In"]
 NPC_1: Good day, I would like to return a book.
 Player: "Oh, thank you, let me log it back into the system.
 [signal arg="log_book_return_into_computer"]
+[background arg="#000000ff" fade="0.0"]
+leave NPC_1
+Player (Player): I first need to put this coffee down before I can log return, I'll put it on the tray on the receptionish desk.

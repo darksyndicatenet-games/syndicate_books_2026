@@ -6,6 +6,7 @@ var body_inside: RigidBody3D = null
 
 signal cup_placed_in_coffe_machine
 @onready var cup: RigidBody3D = $"../../../Scare_1/CoffeeMachineTrigger/Cup"
+@onready var misson_manager: Node = $"../../../MissonManager"
 
 
 func _physics_process(_delta: float) -> void:
@@ -19,6 +20,8 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("cups"):
 		body_inside = body
+		misson_manager.set_message("Log book return into computer")
+		
 
 
 func move_to_marker(body: Node3D, marker: Marker3D):

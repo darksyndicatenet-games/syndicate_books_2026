@@ -49,6 +49,6 @@ skeleton = NodePath("")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1948992130]
 transform = Transform3D(5.5419707, -0.9086054, -0.8625886, 2.0768127, 0.5062444, 12.809883, -0.86258847, -5.604324, 0.3613298, 0, 0.400359, 0)
-light_color = Color(0.27825895, 0.60500526, 0.8025094, 1)
-light_energy = 10.0
-spot_range = 0.6513391
+light_color = Color(0.35723317, 0.85762936, 0.86785287, 1)
+light_energy = 16.0
+spot_range = 4096.0
