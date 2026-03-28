@@ -173,6 +173,7 @@ func _on_btn_enter_2_pressed() -> void:
 		if check_required_books():
 			print("Both required books submitted! Firing signal...")
 			SignalManager.emit_signal("scene1_return_books_to_shelf")
+			Global.have_elderly_come_in_library_npc2_ = true
 		correct_message.text = "All entries are correct!"
 
 	else:
