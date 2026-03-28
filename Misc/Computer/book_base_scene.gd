@@ -18,6 +18,15 @@ var days_kept := 0
 var fine_amount := 0.0
 var due_date: String = ""
 
+
+func get_book_info() -> Dictionary:
+	return {
+		"author": author,
+		"taken": taken_out_by,
+		"issue": issue_date
+	}
+
+
 # -------------------------
 # Ready
 # -------------------------

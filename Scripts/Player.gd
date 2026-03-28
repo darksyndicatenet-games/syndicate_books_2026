@@ -50,6 +50,13 @@ var forced_target : Vector3
 var footstep_timer := 0.0
 const STEP_INTERVAL := 0.45
 
+#display book info var
+@onready var book_panel: Panel = $BookInfoDisplay/BookInfoPanel
+@onready var author_label: Label = $BookInfoDisplay/BookInfoPanel/AuthorLabel
+@onready var taken_label: Label = $BookInfoDisplay/BookInfoPanel/TakenLabel
+@onready var date_label: Label = $BookInfoDisplay/BookInfoPanel/DateLabel
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -82,40 +89,49 @@ func _physics_process(delta):
 			get_tree().quit()
 	#	stores the obj that the raycast detects
 		var obj = interaction_ray.get_collider()
+
 		if obj:
+			# Hover name
+			hover_label.visible = true
 			hover_label.text = str(obj.get_meta("display_name")) if obj.has_meta("display_name") else obj.name
+			
+			# Instruction label (keep yours)
 			if obj.has_method("get_interact_text"):
 				instruction_label.visible = true
 				instruction_label.text = obj.get_interact_text()
 			else:
 				instruction_label.visible = false
-		else:
-			instruction_label.visible = false
-		if Input.is_action_just_pressed("interact"):
-			print("Ray hit: ", obj)
 			
-	#		triggers the function that calls dialogic
-		if Input.is_action_just_pressed("place"):
-			if obj and obj.has_method("begin_dialogue"):
-				obj.begin_dialogue()
+			# 🔥 BOOK INFO (FIXED LOCATION)
+			if obj.has_method("get_book_info"):
+				var info = obj.get_book_info()
+				
+				author_label.text = "Author: " + info["author"]
+				taken_label.text = "Taken By: " + info["taken"]
+				date_label.text = "Issued: " + info["issue"]
+				
+				book_panel.visible = true
 			else:
-				print("no obj found")
-
-		# --- Hover label code ---
-		if obj:
-			# Show label above object
-			hover_label.visible = true
-
-			# Set text
-			if obj.has_meta("display_name"):
-				hover_label.text = str(obj.get_meta("display_name"))
-			else:
-				hover_label.text = obj.name  # fallback to node name
+				book_panel.visible = false
 
 		else:
 			hover_label.visible = false
 			hover_label.text = ""
+			instruction_label.visible = false
+			book_panel.visible = false
 
+		# --- Hover label code ---
+		if obj:
+			# Show label above object 
+			hover_label.visible = true 
+			# Set text 
+			if obj.has_meta("display_name"): 
+				hover_label.text = str(obj.get_meta("display_name")) 
+			else: 
+				hover_label.text = obj.name # fallback to node name 
+		else: 
+			hover_label.visible = false 
+			hover_label.text = ""
 
 		# Add the gravity.
 		if not is_on_floor():

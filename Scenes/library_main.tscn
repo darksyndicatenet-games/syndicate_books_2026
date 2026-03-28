@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://3yt04d31g23j" path="res://Assets/Assets_Scenes/coffee_machine.tscn" id="30_q1f5f"]
 [ext_resource type="Texture2D" uid="uid://dpy2px4j1ahcs" path="res://special_books_Specific_books.png" id="32_62wgf"]
 [ext_resource type="PackedScene" uid="uid://bnl2eka7ga6x7" path="res://Scenes/misc/placement.tscn" id="32_vfwt6"]
+[ext_resource type="PackedScene" uid="uid://crl7mae32u8sv" path="res://Scenes/book_info_display.tscn" id="32_yldco"]
 [ext_resource type="PackedScene" uid="uid://byyudyocn5w5g" path="res://Scenes/NPCs/npc_1.tscn" id="34_se8fg"]
 [ext_resource type="PackedScene" uid="uid://dclvg1cbs0fpm" path="res://Scenes/npc_3.tscn" id="37_e6shu"]
 [ext_resource type="PackedScene" uid="uid://by2rs2s2syltp" path="res://Scenes/npc_2.tscn" id="38_s6gja"]
@@ -186,6 +187,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dvga0")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_se8fg"]
+vertices = PackedVector3Array(6.2627525, 4.0499897, -29.237934, 6.7627525, 4.0499897, -29.237934, 6.7627525, 4.0499897, -30.737934, 6.2627525, 4.0499897, -31.237934, -33.987247, 5.2999897, -28.237934, -33.987247, 5.2999897, 31.262066, 29.262753, 5.2999897, 31.262066, 29.262753, 5.2999897, -28.237934, -10.737247, 0.7999897, 24.512066, -10.737247, 0.7999897, 105.76207, 10.012753, 0.7999897, 105.76207, 10.012753, 0.7999897, 24.512066)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pat0f"]
 albedo_texture = ExtResource("6_q5ofo")
@@ -1483,6 +1486,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7037334, 1.5574124, 4.5702
 stream = ExtResource("11_a14d5")
 volume_db = 80.0
 
+[node name="BookInfoDisplay" parent="Player" unique_id=530035837 instance=ExtResource("32_yldco")]
+
+[node name="AuthorLabel" parent="Player/BookInfoDisplay/BookInfoPanel" parent_id_path=PackedInt32Array(530035837, 1041012458) index="0" unique_id=1556020024]
+metadata/_edit_use_anchors_ = true
+
 [node name="Day1" type="Node3D" parent="." unique_id=414483559]
 
 [node name="Key" parent="Day1" unique_id=744914446 instance=ExtResource("14_q1f5f")]
@@ -1964,6 +1972,81 @@ transform = Transform3D(-0.47386372, 0, -0.10632934, 0, 0.071333915, 0, 0.106329
 mesh = SubResource("ArrayMesh_271e5")
 skeleton = NodePath("")
 
+[node name="chair_office_007" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=233914828]
+transform = Transform3D(0.46259764, 0, 0.14783838, 0, 0.07133392, 0, -0.14783838, 0, 0.46259764, 15.922775, 0.5604237, 3.6491623)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_008" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=714185981]
+transform = Transform3D(-0.4738637, 0, -0.10632934, 0, 0.071333915, 0, 0.10632934, 0, -0.4738637, 15.920935, 0.5604237, 6.959753)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_009" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=484804190]
+transform = Transform3D(0.46259776, 0, 0.14783838, 0, 0.07133392, 0, -0.14783838, 0, 0.46259776, 10.479589, 0.5604237, 4.90267)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_010" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=912045037]
+transform = Transform3D(-0.4738637, 0, -0.10632934, 0, 0.071333915, 0, 0.10632934, 0, -0.4738637, 10.477745, 0.5604237, 8.213255)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_013" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=468315620]
+transform = Transform3D(-0.4738637, 0, -0.10632934, 0, 0.071333915, 0, 0.10632934, 0, -0.4738637, 11.625354, 0.5604237, 8.59137)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_011" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=1370031728]
+transform = Transform3D(0.4625978, 0, 0.14783838, 0, 0.07133392, 0, -0.14783838, 0, 0.4625978, 5.8744864, 0.5604237, 5.649275)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_021" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=62130713]
+transform = Transform3D(0.47912443, 0, -0.07932718, 0, 0.07133392, 0, 0.07932718, 0, 0.47912443, 3.784903, 0.5604237, 1.3733406)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_020" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=143323084]
+transform = Transform3D(0.46259782, 0, 0.14783838, 0, 0.07133392, 0, -0.14783838, 0, 0.46259782, 5.193666, 0.5604237, 1.4499397)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_012" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=1628632912]
+transform = Transform3D(-0.48274076, 0, 0.05304774, 0, 0.07133391, 0, -0.05304774, 0, -0.48274076, 6.6776123, 0.5604237, 8.829355)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_016" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=1598011232]
+transform = Transform3D(-0.48274082, 0, 0.05304773, 0, 0.07133391, 0, -0.05304773, 0, -0.48274082, 1.9869916, 0.5604237, 14.388428)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_017" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=1551766599]
+transform = Transform3D(-0.4827409, 0, 0.053047717, 0, 0.07133391, 0, -0.053047717, 0, -0.4827409, 6.826424, 0.5604237, 13.077653)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_018" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=1904977296]
+transform = Transform3D(-0.22784014, 0, -0.4288843, 0, 0.07133391, 0, 0.4288843, 0, -0.22784014, 11.432101, 0.5604237, 12.77535)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_019" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=1385713080]
+transform = Transform3D(-0.4099225, 0, -0.26041585, 0, 0.07133391, 0, 0.26041585, 0, -0.4099225, 16.6759, 0.5604237, 11.925194)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_014" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=557406698]
+transform = Transform3D(0.46259782, 0, 0.14783838, 0, 0.07133392, 0, -0.14783838, 0, 0.46259782, 0.75459814, 0.5604237, 6.4793415)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
+[node name="chair_office_015" type="MeshInstance3D" parent="StudyArea/Chairs/chairs_lamps" unique_id=2066788643]
+transform = Transform3D(-0.4827408, 0, 0.05304774, 0, 0.07133391, 0, -0.05304774, 0, -0.4827408, 1.5577245, 0.5604237, 9.659422)
+mesh = SubResource("ArrayMesh_271e5")
+skeleton = NodePath("")
+
 [node name="long_lamp" parent="StudyArea/Chairs" unique_id=2147052093 instance=ExtResource("43_bvh21")]
 transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.27746347, 0, -0.044983987, 26.082115, 2.5377119, -5.360796)
 
@@ -1995,10 +2078,22 @@ transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 35, -36.17414, 7.6184735, 61.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="filler-buildings2" unique_id=290123814]
 transform = Transform3D(0.2, 0, 1.7763568e-15, 0, 0.2, 0, -1.7763568e-15, 0, 0.2, 0.55894065, 0, 0)
-visible = false
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 10.0
 omni_range = 8.603392
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="filler-buildings2" unique_id=1200967963]
+transform = Transform3D(0.1, 0, 3.1086245e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 3.7434223, 0, 1.0047255)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 16.0
+omni_range = 10.378
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="filler-buildings2" unique_id=1656217114]
+transform = Transform3D(0.1, 0, 3.1086245e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 3.3367064, -0.16265202, -0.88727456)
+light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
+light_energy = 16.0
+light_indirect_energy = 2.311
+omni_range = 40.18408
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="filler-buildings2" unique_id=1161770759]
 transform = Transform3D(0.1, 0, 0, 0, 0.06666666, 0, 0, 0, 0.028571429, 0.80804753, 0, 0.050734878)
@@ -2050,6 +2145,7 @@ script = ExtResource("16_jhl3c")
 
 [editable path="Computer/monitor/monitor"]
 [editable path="NavigationRegion3D/Map/shelves/ShelfCorner/Node3D/book_shelf_Sample10"]
+[editable path="Player/BookInfoDisplay"]
 [editable path="Books/AnimalFarm"]
 [editable path="Books/TheSongOfAchilles"]
 [editable path="Books/ThePowerOfPatience"]
