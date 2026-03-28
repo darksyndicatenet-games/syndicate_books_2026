@@ -1713,6 +1713,7 @@ skeleton = NodePath("")
 
 [node name="Cutscene" parent="Scare_1" unique_id=1042776018 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.558446, 0.3204906, 20.627197)
+monitoring = false
 monitorable = false
 player = NodePath("../../Player")
 look_target = NodePath("../Spook_1/LookAtSpook1")
@@ -1857,7 +1858,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0224934, 35.12947)
 collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("../../Scare_1/NPC_1/move_to_front_Desk")
-have_elderly_come_in_library_npc2 = true
 look_marker = NodePath("../Marker3D")
 leave_marker = NodePath("../LeaveMarker")
 

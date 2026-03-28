@@ -46,6 +46,13 @@ var required_books: Array[String] = [
 
 ]
 
+#cutscene
+@onready var cutscene: Area3D = $"../../../Scare_1/Cutscene"
+@onready var cutscene_2: Area3D = $"../../../Scare_1/Cutscene2"
+@onready var cutscene_3: Area3D = $"../../../Scare_1/Cutscene3"
+
+@onready var spook_1: CharacterBody3D = $"../../../Scare_1/Spook_1"
+
 func _ready() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # Show cursor for UI
@@ -61,6 +68,8 @@ func _ready() -> void:
 	
 #	entry items
 	entry_list.visible = false
+	
+	spook_1.visible =  false
 	
 
 
@@ -173,7 +182,10 @@ func _on_btn_enter_2_pressed() -> void:
 		if check_required_books():
 			print("Both required books submitted! Firing signal...")
 			SignalManager.emit_signal("scene1_return_books_to_shelf")
-			Global.have_elderly_come_in_library_npc2_ = true
+			#Global.have_elderly_come_in_library_npc2_ = true
+			cutscene.monitoring = true
+			spook_1.visible = true
+			misson_manager.set_message("Put books into shelves - alphabetical order")
 		correct_message.text = "All entries are correct!"
 
 	else:
@@ -234,10 +246,6 @@ func _on_exit_2_pressed() -> void:
 	taken_out_by.text = ""
 
 	computer.end_interaction()
-	
-	
-
-	
 
 func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
