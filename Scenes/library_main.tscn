@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dq1tnobntax1c" path="res://Scenes/fade_text.tscn" id="15_qstqp"]
 [ext_resource type="Script" uid="uid://cjdjmcwn3ngfr" path="res://Scenes/fade_text_prompt.gd" id="16_21cw4"]
 [ext_resource type="Script" uid="uid://dqjis7j3pndp5" path="res://Scenes/misson_manager.gd" id="16_jhl3c"]
+[ext_resource type="PackedScene" uid="uid://blim5l71yrogf" path="res://Assets/Alphabet Plaques/receptionish-desk-new.glb" id="16_ow8ig"]
 [ext_resource type="Script" uid="uid://csqf4vu8ujedv" path="res://Scenes/placement_coffee_cup.gd" id="17_d883j"]
 [ext_resource type="Script" uid="uid://cf6c6iaw1saeh" path="res://Misc/ComputeJAde/computer_enabled.gd" id="17_q1f5f"]
 [ext_resource type="PackedScene" uid="uid://bpb6lrv1600bm" path="res://Scenes/inventory_book_item.tscn" id="18_bf250"]
@@ -1099,6 +1100,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33124197, 0, -5.5548)
 
 [node name="receptionist_Desk" parent="Misc" unique_id=1542547513 instance=ExtResource("3_aofbe")]
 transform = Transform3D(0.006841682, 0, 0.9999766, 0, 1, 0, -0.9999766, 0, 0.006841682, -13.47283, 0.2718054, 14.795219)
+visible = false
+
+[node name="receptionish-desk-new" parent="Misc" unique_id=1241170175 instance=ExtResource("16_ow8ig")]
+transform = Transform3D(-4.283716e-08, 0, 0.98, 0, 0.98, 0, -0.98, 0, -4.283716e-08, -13.718128, 0.29187512, 14.716305)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
