@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cqrf0nfvaddet"]
+
+[ext_resource type="PackedScene" uid="uid://sqjmrv1j752" path="res://Assets/desk-lamp.glb" id="1_bcf7q"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bcf7q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwfsk"]
+albedo_color = Color(0.60285825, 0.52570534, 0.2429325, 1)
+emission_enabled = true
+emission = Color(0.44828302, 0.43815282, 0.3374536, 1)
+emission_energy_multiplier = 11.14
+
+[node name="desk-lamp" unique_id=422941174 instance=ExtResource("1_bcf7q")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2" unique_id=1854193747]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.3788443, -0.044363365)
+mesh = SubResource("SphereMesh_bcf7q")
+surface_material_override/0 = SubResource("StandardMaterial3D_bwfsk")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3" unique_id=641196155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3743362, 0)
+light_color = Color(0.71124494, 0.7358897, 0.7411751, 1)
+light_energy = 4.148
+shadow_enabled = true
+spot_range = 1.8817835
+spot_angle = 34.938633

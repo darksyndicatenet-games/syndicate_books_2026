@@ -62,6 +62,8 @@
 [ext_resource type="PackedScene" uid="uid://baexu4ea40fuo" path="res://Background_Buildings_Flat.glb" id="47_jsnu8"]
 [ext_resource type="Texture2D" uid="uid://b6le2nwof87ex" path="res://Grass.png" id="49_pat0f"]
 [ext_resource type="PackedScene" uid="uid://da4qcc7rvlmyi" path="res://note_password_username.glb" id="53_bxqww"]
+[ext_resource type="PackedScene" uid="uid://cqrf0nfvaddet" path="res://Assets/desk_lamp.tscn" id="57_3u5q6"]
+[ext_resource type="PackedScene" uid="uid://dur6rmb5v8rbk" path="res://Assets/flat_lights.tscn" id="58_5mjsl"]
 
 [sub_resource type="Sky" id="Sky_4so3u"]
 sky_material = ExtResource("2_08ywl")
@@ -471,6 +473,41 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bf250"]
 size = Vector3(4.9833984, 0.4148987, 1.5605469)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bywxv"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kbdjc"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUABAACAAYABQAEAAYAAwAFAAcAAwAHAAEABQAGAAcACAACAAEACQAGAAIACQACAAgACgAHAAYACgAGAAkACwABAAcACwAHAAoACAABAAsACgAMAAsACAANAAkACQAOAAoACgAOAAwACQANAA4ACwAMAA8ACwAPAAgADgAPAAwACAAPAA0ADgANAA8A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/4QhwvwAAgD/hCHA/4QhwPwAAgD/hCHA/4QhwPwAAgD/hCHC/4QhwvwAAgD/hCHC/4Qhwv0I/gD7hCHC/4QhwP0I/gD7hCHA/4QhwP0I/gD7hCHC/4Qhwv0I/gD7hCHA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gkaew"]
+resource_name = "coffee-tray_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("AADAPgAAgD8AACA/AABAPwAAID8AAIA/AADAPgAAQD8AAMA+AABAPwAAID8AAAA/AAAgPwAAQD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPhwBXj/I/YM+4/4hP8j9gz7j/iE/yP2DPhwBXj/I/YM+HAFeP8j9gz4AAGA/AAAAPxwBXj86Avw+AAAgPwAAAD8AAGA/AACAPuT+IT84Avw+4/4hP8j9gz4AACA/AACAPuT+IT84Avw+HAFeP8j9gz4cAV4/OgL8PuP+IT/I/YM+5P4hPzgC/D4cAV4/OgL8PhwBXj86Avw+5P4hPzgC/D7j/iE/yP2DPuT+IT84Avw+5P4hPzgC/D7j/iE/yP2DPhwBXj86Avw+HAFeP8j9gz4cAV4/yP2DPhwBXj86Avw+"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_bywxv"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAvwAAgL8AAIC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIC/AACAPwAAgL8AAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/4QhwvwAAgD/hCHA/4QhwP0I/gD7hCHA/4QhwPwAAgD/hCHA/4Qhwv0I/gD7hCHA/4QhwvwAAgD/hCHA/AACAvwAAgD8AAIC/4QhwvwAAgD/hCHC/AACAPwAAgD8AAIC/AACAvwAAgD8AAIA/4QhwPwAAgD/hCHC/4QhwPwAAgD/hCHA/AACAPwAAgD8AAIA/4QhwP0I/gD7hCHC/4Qhwv0I/gD7hCHA/4Qhwv0I/gD7hCHC/4QhwP0I/gD7hCHA/4QhwPwAAgD/hCHC/4Qhwv0I/gD7hCHC/4QhwvwAAgD/hCHC/4QhwP0I/gD7hCHC/4QhwPwAAgD/hCHA/4QhwP0I/gD7hCHC/4QhwPwAAgD/hCHC/4QhwP0I/gD7hCHA/4QhwvwAAgD/hCHC/4Qhwv0I/gD7hCHA/4QhwvwAAgD/hCHA/4Qhwv0I/gD7hCHC/AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9//////////3//////////f/////////9//////////3///////3//f///////f/9///////9//3///////3//f////3//f/9/////f/9//3////9//3//f////3//f/9/////fwAA////v/9/AAD///+//38AAP///7//fwAA////v/////////+//////////7//////////v/////////+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_kbdjc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow8ig"]
+albedo_color = Color(0.76750416, 0.52620053, 0.024487194, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lje5s"]
 size = Vector3(1, 0.20062256, 1)
@@ -1103,7 +1140,7 @@ transform = Transform3D(0.006841682, 0, 0.9999766, 0, 1, 0, -0.9999766, 0, 0.006
 visible = false
 
 [node name="receptionish-desk-new" parent="Misc" unique_id=1241170175 instance=ExtResource("16_ow8ig")]
-transform = Transform3D(-4.283716e-08, 0, 0.98, 0, 0.98, 0, -0.98, 0, -4.283716e-08, -13.718128, 0.29187512, 14.716305)
+transform = Transform3D(-4.283716e-08, 0, 0.98, 0, 0.98, 0, -0.98, 0, -4.283716e-08, -13.718128, 0.29187512, 14.71265)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
@@ -1486,7 +1523,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3348393, 2.8955636, -4.957
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, 1.3448486, 0.6018486, 62.20967)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, 1.3448486, 0.6018486, 8.230427)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -1577,8 +1614,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.532312, 1.417449, 9.22997
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.031852, 1.5673697, 8.145412)
 script = ExtResource("17_d883j")
 
+[node name="coffee-tray" type="Node3D" parent="Day1/FrontDeskArea3D/Placement2" unique_id=1282452512]
+transform = Transform3D(0.45, 0, 0, 0, 0.56, 0, 0, 0, 0.54, -0.39277363, 0.12867737, 0)
+
+[node name="Coffee-Tray" type="MeshInstance3D" parent="Day1/FrontDeskArea3D/Placement2/coffee-tray" unique_id=303364474]
+transform = Transform3D(0.9140342, 0, 0, 0, 0.062683955, 0, 0, 0, 0.7120578, 0, 0, 0)
+mesh = SubResource("ArrayMesh_gkaew")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ow8ig")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/FrontDeskArea3D/Placement2" unique_id=702845606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21168137, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30905724, 0.21168137, 0)
 shape = SubResource("BoxShape3D_lje5s")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Day1/FrontDeskArea3D/Placement2" unique_id=669329066]
@@ -1588,7 +1634,7 @@ material_override = ExtResource("18_hm7k4")
 size = Vector3(1, 0.21520996, 0.97546387)
 
 [node name="ObjectPlaced" type="Marker3D" parent="Day1/FrontDeskArea3D/Placement2" unique_id=985395488]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3240944, 0.025157928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40185452, 0.49944377, 0.025157928)
 
 [node name="ReceptionistLabel" type="Label3D" parent="Day1/FrontDeskArea3D" unique_id=1837662402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.654877, 2.55119, 9.346553)
@@ -2070,8 +2116,90 @@ transform = Transform3D(-0.044983987, 0, -0.27746347, 0, 0.34647545, 0, 0.277463
 [node name="short_lamp" parent="StudyArea/Chairs" unique_id=686758706 instance=ExtResource("44_bvh21")]
 transform = Transform3D(-0.006756253, 0, -0.17587027, 0, 0.077, 0, 0.17587027, 0, -0.006756253, 23.926, 2.07, -0.998)
 
-[node name="short_lamp2" parent="StudyArea/Chairs" unique_id=192804986 instance=ExtResource("44_bvh21")]
-transform = Transform3D(-0.006756253, 0, -0.17587027, 0, 0.077, 0, 0.17587027, 0, -0.006756253, -16.246164, 2.1757774, 7.8471346)
+[node name="Lights" type="Node3D" parent="StudyArea/Chairs" unique_id=1126989920]
+
+[node name="FlatLights" parent="StudyArea/Chairs/Lights" unique_id=1477892622 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, 11.474796)
+
+[node name="FlatLights2" parent="StudyArea/Chairs/Lights" unique_id=2110621844 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, 11.474796)
+
+[node name="FlatLights3" parent="StudyArea/Chairs/Lights" unique_id=1506949577 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.008373, 5.474571, 11.474796)
+
+[node name="FlatLights4" parent="StudyArea/Chairs/Lights" unique_id=1265172277 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.905883, 5.474571, 11.474796)
+
+[node name="FlatLights5" parent="StudyArea/Chairs/Lights" unique_id=1006037168 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, 11.474796)
+
+[node name="FlatLights6" parent="StudyArea/Chairs/Lights" unique_id=647806388 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, 1.1667004)
+
+[node name="FlatLights7" parent="StudyArea/Chairs/Lights" unique_id=2100258447 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, 1.1667004)
+
+[node name="FlatLights8" parent="StudyArea/Chairs/Lights" unique_id=1629105338 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.008373, 5.474571, 1.1667004)
+
+[node name="FlatLights9" parent="StudyArea/Chairs/Lights" unique_id=295940505 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.905883, 5.474571, 1.1667004)
+
+[node name="FlatLights10" parent="StudyArea/Chairs/Lights" unique_id=2114508156 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, 1.1667004)
+
+[node name="FlatLights11" parent="StudyArea/Chairs/Lights" unique_id=918889971 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, -26.888618)
+
+[node name="FlatLights12" parent="StudyArea/Chairs/Lights" unique_id=1398281220 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, -26.888618)
+
+[node name="FlatLights13" parent="StudyArea/Chairs/Lights" unique_id=781856152 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.008373, 5.474571, -26.888618)
+
+[node name="FlatLights14" parent="StudyArea/Chairs/Lights" unique_id=146015998 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.905883, 5.474571, -26.888618)
+
+[node name="FlatLights15" parent="StudyArea/Chairs/Lights" unique_id=738879777 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, -26.888618)
+
+[node name="FlatLights16" parent="StudyArea/Chairs/Lights" unique_id=1185114608 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, -13.265835)
+
+[node name="FlatLights17" parent="StudyArea/Chairs/Lights" unique_id=1382593103 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, -13.265835)
+
+[node name="FlatLights18" parent="StudyArea/Chairs/Lights" unique_id=320282541 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.008373, 5.474571, -13.265835)
+
+[node name="FlatLights19" parent="StudyArea/Chairs/Lights" unique_id=1543374390 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.905883, 5.474571, -13.265835)
+
+[node name="FlatLights20" parent="StudyArea/Chairs/Lights" unique_id=1434720152 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, -13.265835)
+
+[node name="FlatLights21" parent="StudyArea/Chairs/Lights" unique_id=1533827281 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, -7.332472)
+
+[node name="FlatLights22" parent="StudyArea/Chairs/Lights" unique_id=1371695845 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, -7.332472)
+
+[node name="FlatLights23" parent="StudyArea/Chairs/Lights" unique_id=1237601053 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.008373, 5.474571, -7.332472)
+
+[node name="FlatLights24" parent="StudyArea/Chairs/Lights" unique_id=1532224227 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.905883, 5.474571, -7.332472)
+
+[node name="FlatLights25" parent="StudyArea/Chairs/Lights" unique_id=1789263175 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, -7.332472)
+
+[node name="desk-lamp" parent="StudyArea/Chairs/Lights" unique_id=422941174 instance=ExtResource("57_3u5q6")]
+transform = Transform3D(-0.39293098, 0, -0.919568, 0, 1, 0, 0.919568, 0, -0.39293098, -16.462582, 1.6721116, 7.904578)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="StudyArea/Chairs/Lights" unique_id=713052584]
+transform = Transform3D(1, 0, 0, 0, 0.035370436, -0.9993743, 0, 0.9993743, 0.035370436, -7.39573, 2.358562, 2.3381753)
+light_color = Color(0.035655454, 0.6156636, 0.88232404, 1)
+light_energy = 0.7
 
 [node name="Cafeteria" type="Node3D" parent="StudyArea" unique_id=1851022203]
 
@@ -2091,12 +2219,14 @@ transform = Transform3D(10, 0, 0, 0, 15, 0, 0, 0, 35, -36.17414, 7.6184735, 61.5
 transform = Transform3D(0.2, 0, 1.7763568e-15, 0, 0.2, 0, -1.7763568e-15, 0, 0.2, 0.55894065, 0, 0)
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 10.0
+shadow_enabled = true
 omni_range = 8.603392
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="filler-buildings2" unique_id=1200967963]
 transform = Transform3D(0.1, 0, 3.1086245e-15, 0, 0.06666666, 0, -8.881784e-16, 0, 0.028571429, 3.7434223, 0, 1.0047255)
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 16.0
+shadow_enabled = true
 omni_range = 10.378
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="filler-buildings2" unique_id=1656217114]
@@ -2104,6 +2234,7 @@ transform = Transform3D(0.1, 0, 3.1086245e-15, 0, 0.06666666, 0, -8.881784e-16, 
 light_color = Color(0.7082572, 0.6138153, 0.3096059, 1)
 light_energy = 16.0
 light_indirect_energy = 2.311
+shadow_enabled = true
 omni_range = 40.18408
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="filler-buildings2" unique_id=1161770759]
