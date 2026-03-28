@@ -20,7 +20,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bwfsk")
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="3" unique_id=641196155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3743362, 0)
 light_color = Color(0.71124494, 0.7358897, 0.7411751, 1)
-light_energy = 4.148
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 1.8817835
 spot_angle = 34.938633
