@@ -2123,13 +2123,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, 11.4747
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, 11.474796)
 
 [node name="FlatLights3" parent="StudyArea/Chairs/Lights" unique_id=1506949577 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.008373, 5.474571, 11.474796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.683834, 5.474571, 11.474796)
 
 [node name="FlatLights4" parent="StudyArea/Chairs/Lights" unique_id=1265172277 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.905883, 5.474571, 11.474796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.447577, 5.474571, 11.474796)
 
 [node name="FlatLights5" parent="StudyArea/Chairs/Lights" unique_id=1006037168 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, 11.474796)
+
+[node name="FlatLights81" parent="StudyArea/Chairs/Lights" unique_id=828918787 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, 18.548374)
+
+[node name="FlatLights82" parent="StudyArea/Chairs/Lights" unique_id=1522754957 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.436172, 5.474571, 18.548374)
+
+[node name="FlatLights83" parent="StudyArea/Chairs/Lights" unique_id=298299619 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.683834, 5.474571, 18.548374)
+
+[node name="FlatLights84" parent="StudyArea/Chairs/Lights" unique_id=858673696 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.447577, 5.474571, 18.548374)
+
+[node name="FlatLights85" parent="StudyArea/Chairs/Lights" unique_id=627822709 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.626802, 5.474571, 18.548374)
+
+[node name="FlatLights86" parent="StudyArea/Chairs/Lights" unique_id=1790769473 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2674637, 5.474571, 18.548374)
+
+[node name="FlatLights87" parent="StudyArea/Chairs/Lights" unique_id=751081596 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0135984, 5.474571, 18.548374)
+
+[node name="FlatLights88" parent="StudyArea/Chairs/Lights" unique_id=1438801965 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26126003, 5.474571, 18.548374)
+
+[node name="FlatLights89" parent="StudyArea/Chairs/Lights" unique_id=181646810 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9749966, 5.474571, 18.548374)
+
+[node name="FlatLights90" parent="StudyArea/Chairs/Lights" unique_id=186833065 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7957716, 5.474571, 18.548374)
+
+[node name="FlatLights80" parent="StudyArea/Chairs/Lights" unique_id=195529460 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.490414, 5.474571, 11.474796)
 
 [node name="FlatLights6" parent="StudyArea/Chairs/Lights" unique_id=647806388 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, 1.1667004)
@@ -2224,20 +2257,101 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -3.567514
 [node name="FlatLights46" parent="StudyArea/Chairs/Lights" unique_id=1135204313 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, -3.567514)
 
-[node name="FlatLights47" parent="StudyArea/Chairs/Lights" unique_id=1866560093 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, -3.567514)
-
 [node name="FlatLights48" parent="StudyArea/Chairs/Lights" unique_id=1374692329 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.611571, 5.474571, -3.567514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.611571, 5.474571, 3.8861814)
 
 [node name="FlatLights49" parent="StudyArea/Chairs/Lights" unique_id=933428163 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -3.567514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, 3.8861814)
 
 [node name="FlatLights50" parent="StudyArea/Chairs/Lights" unique_id=1888014641 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, -3.567514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, 3.8861814)
 
 [node name="FlatLights51" parent="StudyArea/Chairs/Lights" unique_id=2053072291 instance=ExtResource("58_5mjsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, -3.567514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, 3.8861814)
+
+[node name="FlatLights52" parent="StudyArea/Chairs/Lights" unique_id=550926265 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.611571, 5.474571, 11.926195)
+
+[node name="FlatLights53" parent="StudyArea/Chairs/Lights" unique_id=1163119703 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, 11.926195)
+
+[node name="FlatLights54" parent="StudyArea/Chairs/Lights" unique_id=323971669 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, 11.926195)
+
+[node name="FlatLights60" parent="StudyArea/Chairs/Lights" unique_id=1902437780 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4625196, 5.474571, -25.137503)
+
+[node name="FlatLights61" parent="StudyArea/Chairs/Lights" unique_id=1675334156 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3468494, 5.474571, -25.148146)
+
+[node name="FlatLights62" parent="StudyArea/Chairs/Lights" unique_id=1885313164 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9190512, 5.474571, -25.148146)
+
+[node name="FlatLights63" parent="StudyArea/Chairs/Lights" unique_id=1942539597 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1834402, 5.474571, -25.148146)
+
+[node name="FlatLights64" parent="StudyArea/Chairs/Lights" unique_id=461279775 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4625196, 5.474571, -17.161121)
+
+[node name="FlatLights65" parent="StudyArea/Chairs/Lights" unique_id=1835087899 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3468494, 5.474571, -17.171764)
+
+[node name="FlatLights66" parent="StudyArea/Chairs/Lights" unique_id=1332895335 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9190512, 5.474571, -17.171764)
+
+[node name="FlatLights67" parent="StudyArea/Chairs/Lights" unique_id=1223662097 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1834402, 5.474571, -17.171764)
+
+[node name="FlatLights68" parent="StudyArea/Chairs/Lights" unique_id=561825360 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4625196, 5.474571, -8.988367)
+
+[node name="FlatLights69" parent="StudyArea/Chairs/Lights" unique_id=1157298400 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3468494, 5.474571, -8.99901)
+
+[node name="FlatLights70" parent="StudyArea/Chairs/Lights" unique_id=603775152 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9190512, 5.474571, -8.99901)
+
+[node name="FlatLights71" parent="StudyArea/Chairs/Lights" unique_id=1341070488 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1834402, 5.474571, -8.99901)
+
+[node name="FlatLights72" parent="StudyArea/Chairs/Lights" unique_id=2038239399 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4625196, 5.474571, 0.24775791)
+
+[node name="FlatLights73" parent="StudyArea/Chairs/Lights" unique_id=1858511940 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3468494, 5.474571, 0.2371149)
+
+[node name="FlatLights74" parent="StudyArea/Chairs/Lights" unique_id=1354735543 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9190512, 5.474571, 0.2371149)
+
+[node name="FlatLights75" parent="StudyArea/Chairs/Lights" unique_id=1884285489 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1834402, 5.474571, 0.2371149)
+
+[node name="FlatLights76" parent="StudyArea/Chairs/Lights" unique_id=1212829039 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4625196, 5.474571, 11.140503)
+
+[node name="FlatLights77" parent="StudyArea/Chairs/Lights" unique_id=1170478098 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3468494, 5.474571, 11.12986)
+
+[node name="FlatLights78" parent="StudyArea/Chairs/Lights" unique_id=812407161 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9190512, 5.474571, 11.12986)
+
+[node name="FlatLights79" parent="StudyArea/Chairs/Lights" unique_id=1401666034 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1834402, 5.474571, 11.12986)
+
+[node name="FlatLights55" parent="StudyArea/Chairs/Lights" unique_id=248259546 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, 11.926195)
+
+[node name="FlatLights56" parent="StudyArea/Chairs/Lights" unique_id=656383593 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.611571, 5.474571, 17.740034)
+
+[node name="FlatLights57" parent="StudyArea/Chairs/Lights" unique_id=154888609 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, 17.740034)
+
+[node name="FlatLights58" parent="StudyArea/Chairs/Lights" unique_id=1040416289 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, 17.740034)
+
+[node name="FlatLights59" parent="StudyArea/Chairs/Lights" unique_id=2087752642 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, 17.740034)
 
 [node name="FlatLights16" parent="StudyArea/Chairs/Lights" unique_id=1185114608 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.690037, 5.474571, -13.265835)
