@@ -7,7 +7,7 @@ extends TextureRect
 
 var books = {
 	"the routledge handbook of philosophy of empathy": "Unknown Author",
-	"animal farm": "George Orwell",
+	" farm": "George Orwell",
 	"to kill a mockingbird": "Harper Lee",
 	"python programming: the fundamental beginner's guide to learning python": "Thomas Jackson",
 	"the power of your subconscious mind": "Jason Murphy"
@@ -69,6 +69,7 @@ func _on_btn_enter_pressed() -> void:
 		entry_list.visible = true
 	else:
 		error_message_function("Username or password incorrect")
+
 
 func error_message_function(message: String):
 	error_message.visible = true
@@ -156,6 +157,9 @@ func _on_btn_enter_2_pressed() -> void:
 			return
 		add_entry_to_log()
 		submitted_books.append(entered_book_name)
+		
+		check_first_npc_book()
+		
 		if check_required_books():
 			print("Both require books submitted")
 			SignalManager.emit_signal("scene1_return_books_to_shelf")
@@ -221,3 +225,40 @@ func on_scene1_return_books_to_shelf():
 	SignalManager.prompt_scene1_return_books_to_shelf = true
 	misson_manager.set_message("Log books into computer")
 	print("scene1_return_books_to_shelf, next mission since books are entered")
+
+
+# Call this function at the end of your _on_btn_enter_2_pressed function
+func check_first_npc_book() -> void:
+	var entered_book_name = book_name.text.strip_edges().to_lower()
+	var entered_author = author.text.strip_edges().to_lower()
+	var entered_issued = issued.text.strip_edges()
+	var entered_returned = returned.text.strip_edges()
+	var entered_taken_out_by = taken_out_by.text.strip_edges().to_lower()
+	var entered_fine = fine.text.strip_edges()
+
+	# Only check for "animal farm"
+	if entered_book_name != "tester":
+		return  # Do nothing if it's not the first NPC's book
+
+	var book_node = find_book_node_by_name(entered_book_name)
+	if not book_node:
+		print("Book not found in scene for first NPC check")
+		return
+
+	var today_dict = Time.get_datetime_dict_from_system()
+	var today_string = str(today_dict.year) + "-" + str(today_dict.month).pad_zeros(2) + "-" + str(today_dict.day).pad_zeros(2)
+
+	var book_name_correct = book_node.book_name.to_lower() == entered_book_name
+	var author_correct = book_node.author.to_lower() == entered_author
+	var issued_correct = book_node.issue_date == entered_issued
+	var returned_correct = entered_returned == today_string
+	var taken_out_by_correct = book_node.taken_out_by.to_lower() == entered_taken_out_by
+	var fine_calculated = book_node.calculate_fine_for_return(entered_returned)
+	var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
+
+	if book_name_correct and author_correct and issued_correct and returned_correct and taken_out_by_correct and fine_correct:
+		Global.check_book_first_npc = true
+		print("First NPC book entered correctly. Global.check_book_first_npc = true")
+	else:
+		Global.check_book_first_npc = false
+		print("First NPC book entry incorrect. Global.check_book_first_npc = false")

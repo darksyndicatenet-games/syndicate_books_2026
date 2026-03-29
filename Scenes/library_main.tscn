@@ -1145,7 +1145,9 @@ visible = false
 transform = Transform3D(-4.283716e-08, 0, 0.98, 0, 0.98, 0, -0.98, 0, -4.283716e-08, -13.718128, 0.29187512, 14.71265)
 
 [node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="Misc/receptionish-desk-new" unique_id=456481681]
+transform = Transform3D(1.0204082, 0, 3.5527137e-15, 0, 1.0204082, 0, -3.5527137e-15, 0, 1.0204082, 0, 2.557681, 0)
 stream = ExtResource("17_1wjfb")
+volume_db = 45.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
@@ -1859,7 +1861,7 @@ shape = SubResource("CylinderShape3D_ixevi")
 debug_color = Color(0.96962434, 0, 0.46326667, 0.41960785)
 
 [node name="Cutscene3" parent="Scare_1" unique_id=852871049 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.710108, 0.3204906, 20.627197)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.586802, 0.3204906, 33.359417)
 monitorable = false
 player = NodePath("../../Player")
 look_target = NodePath("../NPC1_Face")
@@ -1872,7 +1874,7 @@ play_scene_once = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" parent="Scare_1/Cutscene3" index="2" unique_id=1633756298]
-transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -11.786856, 0.7310052, 7.660593)
+transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -5.740976, 0.7310052, -0.6711292)
 
 [node name="NPC1_Face" type="Marker3D" parent="Scare_1" unique_id=1547270549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3457423, 2.126519, 29.85082)
@@ -1900,6 +1902,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 29.85082)
 collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("move_to_front_Desk")
+
+[node name="Tester" parent="Scare_1/NPC_1" unique_id=2109147482 instance=ExtResource("14_1kku3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15822649, 0.040147066, -0.20606995)
+collision_layer = 5
+collision_mask = 13
+mass = 100.0
+book_name = "Tester"
+author = "tester"
+taken_out_by = "me"
+issue_date = "2026-03-29"
 
 [node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_1" unique_id=893017267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
@@ -2497,6 +2509,7 @@ script = ExtResource("16_jhl3c")
 [editable path="Books/ThePowerOfPatience"]
 [editable path="Scare_1/Cutscene"]
 [editable path="Scare_1/Cutscene3"]
+[editable path="Scare_1/NPC_1/Tester"]
 [editable path="Scare_3/NPC_2"]
 [editable path="Scare_3/NPC_2/Idle"]
 [editable path="Scare_3/NPC_2/Walk"]

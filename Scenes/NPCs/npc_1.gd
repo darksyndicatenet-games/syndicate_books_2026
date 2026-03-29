@@ -58,12 +58,14 @@ func _physics_process(_delta):
 		velocity.z = direction.z * speed
 		move_and_slide()
 
-#func on_npc1_can_leave_library(argument: String):
-	#await get_tree().create_timer(4.0).timeout
-	#if argument == "npc1 can leave library":
-		#print("have npc walk away then")
-		#nav_agent.target_position = move_outside.global_position
-		#npc_should_leave = true  # ← THIS is what actually restarts movement
+func on_npc1_can_leave_library(argument: String):
+	await get_tree().create_timer(4.0).timeout
+	if argument == "npc1 can leave library":
+		print("have npc walk away then")
+		nav_agent.target_position = move_outside.global_position
+		npc_should_leave = true  # ← THIS is what actually restarts movement
+		
+		npc_1.queue_free()
 
 
 func begin_dialogue():
@@ -109,12 +111,12 @@ func handle_npc_after_book() -> void:
 	# Now move NPC outside
 	
 
-func on_npc1_can_leave_library(argument : String):
-	await get_tree().create_timer(4.0).timeout
-	if argument == "npc1 can leave library":
-		print("have npc walk away then")
-		target_marker = move_outside
-		nav_agent.target_position = target_marker.global_position
-		
-	pass
+#func on_npc1_can_leave_library(argument : String):
+	#await get_tree().create_timer(4.0).timeout
+	#if argument == "npc1 can leave library":
+		#print("have npc walk away then")
+		#target_marker = move_outside
+		#nav_agent.target_position = target_marker.global_position
+		#
+	#pass
 #npc_1.queue_free()
