@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://cjdjmcwn3ngfr" path="res://Scenes/fade_text_prompt.gd" id="16_21cw4"]
 [ext_resource type="Script" uid="uid://dqjis7j3pndp5" path="res://Scenes/misson_manager.gd" id="16_jhl3c"]
 [ext_resource type="PackedScene" uid="uid://blim5l71yrogf" path="res://Assets/Alphabet Plaques/receptionish-desk-new.glb" id="16_ow8ig"]
+[ext_resource type="AudioStream" uid="uid://c3svnc0k18nbn" path="res://Music/suspenseful-dark-background.mp3" id="17_1wjfb"]
 [ext_resource type="Script" uid="uid://csqf4vu8ujedv" path="res://Scenes/placement_coffee_cup.gd" id="17_d883j"]
 [ext_resource type="Script" uid="uid://cf6c6iaw1saeh" path="res://Misc/ComputeJAde/computer_enabled.gd" id="17_q1f5f"]
 [ext_resource type="PackedScene" uid="uid://bpb6lrv1600bm" path="res://Scenes/inventory_book_item.tscn" id="18_bf250"]
@@ -1143,6 +1144,9 @@ visible = false
 [node name="receptionish-desk-new" parent="Misc" unique_id=1241170175 instance=ExtResource("16_ow8ig")]
 transform = Transform3D(-4.283716e-08, 0, 0.98, 0, 0.98, 0, -0.98, 0, -4.283716e-08, -13.718128, 0.29187512, 14.71265)
 
+[node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="Misc/receptionish-desk-new" unique_id=456481681]
+stream = ExtResource("17_1wjfb")
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
 navigation_mesh = SubResource("NavigationMesh_se8fg")
@@ -1901,12 +1905,7 @@ target_marker = NodePath("move_to_front_Desk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
 
 [node name="move_outside" type="Marker3D" parent="Scare_1/NPC_1" unique_id=2108978918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5751095, -0.7709508, 9.295614)
-
-[node name="Test" parent="Scare_1/NPC_1" unique_id=1358364062 instance=ExtResource("14_1kku3")]
-book_name = "test"
-author = "test"
-taken_out_by = "test"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -7.9774113)
 
 [node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
 

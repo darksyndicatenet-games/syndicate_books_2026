@@ -34,9 +34,12 @@ var player_in_area:= false
 
 
 #proximity scary atmosphere sound
-@onready var scary_object: CSGBox3D = $NavigationRegion3D/Map/Misc/Desk
+#@onready var scary_object: CSGBox3D = $NavigationRegion3D/Map/Misc/Desk
+@onready var scary_object: Node3D = $"Misc/receptionish-desk-new"
+
 @onready var player: CharacterBody3D = $Player
-@onready var scary_background_audio: AudioStreamPlayer3D = $NavigationRegion3D/Map/Misc/Desk/scaryBackgroundAudio
+
+@onready var scary_background_audio: AudioStreamPlayer3D = $"Misc/receptionish-desk-new/scaryBackgroundAudio"
 
 # Max distance at which sound is still audible
 var max_distance = 70.0

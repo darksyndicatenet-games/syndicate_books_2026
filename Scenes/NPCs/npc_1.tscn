@@ -18,6 +18,7 @@ visible = false
 material = ExtResource("1_1oey7")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=732849442]
+avoidance_enabled = true
 debug_enabled = true
 debug_path_custom_color = Color(0.20009375, 0.7907172, 0.21035275, 1)
 

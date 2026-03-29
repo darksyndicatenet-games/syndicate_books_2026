@@ -11,6 +11,7 @@ extends CharacterBody3D
 @export var speed: float = 3.0
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var move_outside: Marker3D = $move_outside
+@onready var npc_1: CharacterBody3D = $"."
 
 var npc_1_is_finished_So_move_outside:= false
 var has_player_interacted01:= false
@@ -22,6 +23,7 @@ func _ready():
 	if target_marker:
 		nav_agent.target_position = target_marker.global_position
 		npc_1_is_finished_So_move_outside = true
+		
 	cutscene_3.monitoring = false
 
 func _physics_process(_delta):
@@ -69,6 +71,7 @@ func last_dialogue():
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = true
 		scare_2.monitoring = true
 		Global.have_elderly_come_in_library_npc2_ = true
+		npc_1.visible = false
 		
 func on_log_book_return_into_computer(argument : String):
 	if argument == "log_book_return_into_computer":
@@ -98,4 +101,5 @@ func on_npc1_can_leave_library(argument : String):
 		print("have npc walk away then")
 		target_marker = move_outside
 		nav_agent.target_position = target_marker.global_position
+		
 	pass
