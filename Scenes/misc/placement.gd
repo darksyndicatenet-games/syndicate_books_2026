@@ -5,6 +5,8 @@ var body_inside: RigidBody3D = null
 #@onready var door: CSGBox3D = $"../../Map/Misc/Door"
 
 signal cup_placed_in_coffe_machine
+#@onready var cup: RigidBody3D = $"../../../Scare_1/CoffeeMachineTrigger/Cup"
+
 @onready var cup: RigidBody3D = $"../../../Scare_1/CoffeeMachineTrigger/Cup"
 
 

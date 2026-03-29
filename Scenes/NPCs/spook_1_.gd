@@ -6,6 +6,9 @@ var has_player_interacted01:= false
 
 #connect signal here in begin dialogue
 
+func _ready() -> void:
+	Dialogic.signal_event.connect(on_player_denied_coffee_For_spook)
+
 func begin_dialogue():
 	if has_player_interacted01 == false:
 		
@@ -20,3 +23,9 @@ func on_player_offered_coffee(argument : String):
 	if argument == "player_offered_coffee":
 		print("Player chooses to offer coffee")
 		misson_manager.set_message("Get coffee from staff room coffee machine")
+		Global.spook_1_ending = true
+#		this unlocks the ending
+		
+		
+func on_player_denied_coffee_For_spook():
+	pass

@@ -28,6 +28,8 @@ var have_npc3_collect_npc_2_once:= false
 
 var is_at_computer := false
 var have_elderly_come_in_library_npc2_ := false
+
+var spook_1_ending := false
 func set_holding(state: bool):
 	is_holding = state
 	emit_signal("object_state_changed", state)
