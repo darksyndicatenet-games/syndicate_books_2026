@@ -86,7 +86,7 @@ func last_dialogue():
 		misson_manager.set_message("Search Study Area")
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = true
 		scare_2.monitoring = true
-		Global.have_elderly_come_in_library_npc2_ = true
+		
 		
 		
 func on_log_book_return_into_computer(argument : String):

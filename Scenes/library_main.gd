@@ -167,6 +167,7 @@ func _on_scare_2_body_entered(body: Node3D) -> void:
 
 
 
+
 func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		Global.background_scary_ambience = false
@@ -176,6 +177,9 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		print("Player de-activate sound here")
 		turn_off_sounds_and_have_npc_2_enter.monitoring = false
 		background_normal_ambience.play()
+		await get_tree().create_timer(3).timeout
+#		olf man entere after music stops and after 2 secs
+		Global.have_elderly_come_in_library_npc2_ = true
 
 
 #i need to i=fix the decrement

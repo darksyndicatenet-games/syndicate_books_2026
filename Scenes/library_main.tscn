@@ -2195,13 +2195,13 @@ author = "tester"
 taken_out_by = "me"
 issue_date = "2026-03-29"
 
+[node name="MeshInstance3D" parent="Scare_1/Tester" index="0" unique_id=937974331]
+visible = false
+
 [node name="ToKillAMockingbird2" type="MeshInstance3D" parent="Scare_1/Tester" unique_id=1853200551]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.18338656, 0.11387634)
 mesh = SubResource("ArrayMesh_3nt5h")
 skeleton = NodePath("")
-
-[node name="MeshInstance3D" parent="Scare_1/Tester" index="1" unique_id=937974331]
-visible = false
 
 [node name="TurnOffSoundsAndHaveNPC2Enter" type="Area3D" parent="Scare_1" unique_id=2077189692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 1.4265189, 8.891923)
