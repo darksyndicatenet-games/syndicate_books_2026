@@ -263,7 +263,8 @@ func force_look_at(target_pos: Vector3):
 
 
 func handle_footsteps(delta):
-	if Global.disable_ghost_footsteps == true and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps:
+#	Global.disable_ghost_footsteps == true and 
+	if Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps:
 		var input_dir = Input.get_vector("left", "right", "up", "down")
 		var is_moving = input_dir.length() > 0
 		

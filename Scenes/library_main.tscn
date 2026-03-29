@@ -1147,7 +1147,7 @@ transform = Transform3D(-4.283716e-08, 0, 0.98, 0, 0.98, 0, -0.98, 0, -4.283716e
 [node name="scaryBackgroundAudio" type="AudioStreamPlayer3D" parent="Misc/receptionish-desk-new" unique_id=456481681]
 transform = Transform3D(1.0204082, 0, 3.5527137e-15, 0, 1.0204082, 0, -3.5527137e-15, 0, 1.0204082, 0, 2.557681, 0)
 stream = ExtResource("17_1wjfb")
-volume_db = 45.0
+volume_db = -3.333
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1567308425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057971954, 0, -0.0115356445)
@@ -1780,7 +1780,7 @@ monitorable = false
 player = NodePath("../../Player")
 look_target = NodePath("../Spook_1/LookAtSpook1")
 spook_1 = NodePath("../Spook_1")
-mission_text = "Speek to the person"
+mission_text = "Speak to the person"
 play_scene_once = true
 
 [node name="Cutscene2" parent="Scare_1" unique_id=1986530877 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
@@ -1791,7 +1791,8 @@ player = NodePath("../../Player")
 look_target = NodePath("../Spook_1/LookAtSpook1")
 spook_1 = NodePath("../Spook_1")
 message = "What? Did he seriously just leave?... rude..."
-mission_text = "Check front desk"
+mission_text = "Put Coffee on tray at front desk
+Speak to patron"
 play_scene_once = true
 
 [node name="BellSound" type="AudioStreamPlayer3D" parent="Scare_1/Cutscene2" unique_id=977336096]
@@ -1890,7 +1891,9 @@ shape = SubResource("BoxShape3D_se8fg")
 debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
 
 [node name="TurnOffSoundsAndHaveNPC2Enter" type="Area3D" parent="Scare_1" unique_id=2077189692]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 1.4265189, 5.993471)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 1.4265189, 8.891923)
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scare_1/TurnOffSoundsAndHaveNPC2Enter" unique_id=623654230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28891, -0.6069579, 0)
@@ -2231,11 +2234,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.611571, 5.474571, -26.8886
 [node name="FlatLights29" parent="StudyArea/Chairs/Lights" unique_id=520310236 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -26.888618)
 
+[node name="FlatLights94" parent="StudyArea/Chairs/Lights" unique_id=569652276 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -31.760359)
+
 [node name="FlatLights30" parent="StudyArea/Chairs/Lights" unique_id=1945897696 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, -26.888618)
 
 [node name="FlatLights31" parent="StudyArea/Chairs/Lights" unique_id=2086973820 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, -26.888618)
+
+[node name="FlatLights47" parent="StudyArea/Chairs/Lights" unique_id=188094035 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.427304, 5.474571, -32.414673)
+
+[node name="FlatLights91" parent="StudyArea/Chairs/Lights" unique_id=320909904 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.611571, 5.474571, -32.414673)
+
+[node name="FlatLights92" parent="StudyArea/Chairs/Lights" unique_id=420433209 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, -32.414673)
+
+[node name="FlatLights93" parent="StudyArea/Chairs/Lights" unique_id=458465645 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, -32.414673)
 
 [node name="FlatLights32" parent="StudyArea/Chairs/Lights" unique_id=719323042 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.42094, 5.474571, 6.596608)
@@ -2498,6 +2516,7 @@ script = ExtResource("16_jhl3c")
 [connection signal="despawn_spook_1_coffe_finished" from="Scare_1/CoffeeMachineTrigger" to="." method="_on_coffee_machine_trigger_despawn_spook_1_coffe_finished"]
 [connection signal="cup_placed_in_coffe_machine" from="Scare_1/CoffeeMachineTrigger/coffee_machine/Placement" to="Scare_1/CoffeeMachineTrigger" method="_on_placement_cup_placed_in_coffe_machine"]
 [connection signal="body_entered" from="Scare_1/Scare2" to="." method="_on_scare_2_body_entered"]
+[connection signal="body_exited" from="Scare_1/Scare2" to="." method="_on_scare_2_body_exited"]
 [connection signal="body_entered" from="Scare_1/TurnOffSoundsAndHaveNPC2Enter" to="." method="_on_turn_off_sounds_and_have_npc_2_enter_body_entered"]
 
 [editable path="Computer/monitor/monitor"]

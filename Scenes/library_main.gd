@@ -3,10 +3,11 @@ extends Node3D
 @onready var door_anim_player: AnimationPlayer = $Day1/Door/door/AnimationPlayer
 @onready var bell_sound: AudioStreamPlayer3D = $Scare_1/Cutscene2/BellSound
 @onready var look_target: Marker3D = $Scare_1/Cutscene2/Marker3D
-@onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
 @onready var scare_2: Area3D = $Scare_1/Scare2
 @onready var receptionist_label: Label3D = $Day1/FrontDeskArea3D/ReceptionistLabel
 @onready var misson_manager: Node = $MissonManager
+@onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
+
 
 var bell_has_been_fired := false
 var counter := 0
@@ -133,6 +134,7 @@ func _on_cutscene_2_body_entered(body: Node3D) -> void:
 
 
 func background_scary_audio_scare_():
+#	
 	if Global.background_scary_ambience and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps:
 		var distance = player.global_transform.origin.distance_to(scary_object.global_transform.origin)
 		
@@ -155,20 +157,24 @@ func background_scary_audio_scare_():
 func _on_scare_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps == true:
 		Global.background_scary_ambience = true
+		
 		Global.disable_ghost_footsteps = true
 		print("Player activated sound here")
 #		this monitoring stuff needs to be checked
 		turn_off_sounds_and_have_npc_2_enter.monitoring = true
-		pass # Replace with function body.
+		misson_manager.set_message("Return to Reception")
+
 
 
 func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		Global.background_scary_ambience = false
+		scary_background_audio.stop()
 		Global.disable_ghost_footsteps = false
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = false
 		print("Player de-activate sound here")
-		pass # Replace with function body.
+		turn_off_sounds_and_have_npc_2_enter.monitoring = false
+
 
 #i need to i=fix the decrement
 func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
@@ -193,3 +199,7 @@ func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
 	print("Counter = ", counter)
 	receptionist_label.text = "books " + str(counter) + " / 2"
 	check_completion()
+
+
+func _on_scare_2_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.
