@@ -66,6 +66,9 @@ func on_Get_The_Long_Walk_To_Freedom_Book_for_the_man(argument : String):
 		Global.player_acquired_beaded_charm = true
 		misson_manager.set_message("Get The Power Of Patience for the man")
 		pass
+		
+@onready var npc_3: CharacterBody3D = $"../NPC_3"
+
 func on_You_phone_the_number_on_the_band(argument : String):
 #	black screen with You_phone_the_number_on_the_band
 	if argument == "You_phone_the_number_on_the_band":
@@ -73,6 +76,6 @@ func on_You_phone_the_number_on_the_band(argument : String):
 		Global.npc_3_can_get_npc_2 = true
 		print(Global.npc_3_can_get_npc_2, " npc_3_can_get_npc_2")
 		Global.have_npc3_collect_npc_2_once = true
-
+		npc_3.visible = true
 	pass
 	

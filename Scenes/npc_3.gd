@@ -1,7 +1,7 @@
 extends CharacterBody3D
 #NPC_3
 @export var target_marker: Node3D
-@export var speed: float = 3.0
+@export var speed: float = 5.0
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @export var look_marker: Marker3D
 @onready var player: CharacterBody3D = $"../../Player"

@@ -237,7 +237,7 @@ func check_first_npc_book() -> void:
 	var entered_fine = fine.text.strip_edges()
 
 	# Only check for "animal farm"
-	if entered_book_name != "tester":
+	if entered_book_name != "to kill a mockingbird":
 		return  # Do nothing if it's not the first NPC's book
 
 	var book_node = find_book_node_by_name(entered_book_name)
@@ -262,3 +262,9 @@ func check_first_npc_book() -> void:
 	else:
 		Global.check_book_first_npc = false
 		print("First NPC book entry incorrect. Global.check_book_first_npc = false")
+
+
+func _on_exit_login_pressed() -> void:
+	#user.visible = false
+	computer.end_interaction()
+	pass # Replace with function body.

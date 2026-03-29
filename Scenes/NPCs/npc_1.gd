@@ -17,6 +17,8 @@ var npc_1_is_finished_So_move_outside:= false
 var has_player_interacted01:= false
 @onready var scare_2: Area3D = $"../Scare2"
 
+@onready var to_kill_a_mockingbird: RigidBody3D = $"../ToKillAMockingbird"
+
 var check_book_first_npc_play_once := false
 func _ready():
 	
@@ -25,6 +27,7 @@ func _ready():
 		npc_1_is_finished_So_move_outside = true
 		
 	cutscene_3.monitoring = false
+	to_kill_a_mockingbird.visible = false
 
 var npc_should_leave := false  # ADD THIS at the top with your other vars
 
@@ -74,6 +77,7 @@ func begin_dialogue():
 		has_player_interacted01 = true
 		Dialogic.signal_event.connect(on_log_book_return_into_computer)
 		Global.player_left_screen_npc_1 = true #change this name to player_had_been_spoken too
+		to_kill_a_mockingbird.visible = true
 	else:
 		return
 func last_dialogue():

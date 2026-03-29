@@ -124,6 +124,7 @@ func _on_coffee_machine_trigger_despawn_spook_1_coffe_finished() -> void:
 	cutscene_2.monitoring = true
 
 
+@onready var npc_1: CharacterBody3D = $Scare_1/NPC_1
 
 func _on_cutscene_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" && Global.played_cutscene_1 == true && bell_has_been_fired == false:
@@ -132,6 +133,7 @@ func _on_cutscene_2_body_entered(body: Node3D) -> void:
 		Global.move_npc_1_to_desk_after_bell_rings = true
 		print("Bell triggered")
 		bell_has_been_fired = true
+		npc_1.visible = true
 
 
 func background_scary_audio_scare_():
@@ -155,6 +157,7 @@ func background_scary_audio_scare_():
 			scary_background_audio.play()
 
 
+
 func _on_scare_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps == true:
 		Global.background_scary_ambience = true
@@ -165,9 +168,10 @@ func _on_scare_2_body_entered(body: Node3D) -> void:
 		await get_tree().create_timer(4).timeout
 		turn_off_sounds_and_have_npc_2_enter.monitoring = true
 		misson_manager.set_message("Return to Reception")
+		
 
 
-
+@onready var npc_2: CharacterBody3D = $Scare_3/NPC_2
 
 func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
@@ -181,6 +185,7 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		#await get_tree().create_timer(3).timeout
 #		olf man entere after music stops and after 2 secs
 		Global.have_elderly_come_in_library_npc2_ = true
+		npc_2.visible = true
 
 
 #i need to i=fix the decrement

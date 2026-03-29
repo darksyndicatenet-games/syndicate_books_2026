@@ -71,6 +71,7 @@
 [ext_resource type="PackedScene" uid="uid://dur6rmb5v8rbk" path="res://Assets/flat_lights.tscn" id="58_5mjsl"]
 [ext_resource type="PackedScene" uid="uid://sy4wuw74sbg3" path="res://addons/dialogic/Example Assets/staff_chairs.glb" id="59_sen8m"]
 [ext_resource type="PackedScene" uid="uid://cry8ghrilwywe" path="res://Scenes/waving_spookyy.tscn" id="71_l52nb"]
+[ext_resource type="PackedScene" uid="uid://car1bo5pqbpjf" path="res://Assets/Assets_Scenes/Blender_Assets/box_return.glb" id="72_cx67b"]
 
 [sub_resource type="Sky" id="Sky_4so3u"]
 sky_material = ExtResource("2_08ywl")
@@ -118,6 +119,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kilop")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cx67b"]
+size = Vector3(0.6748047, 1.2416687, 0.5578613)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bt4do"]
 size = Vector3(1.5935059, 2, 3.185669)
@@ -890,6 +894,12 @@ transform = Transform3D(-0.39569235, 0, 0.118196376, 0, -0.016999999, 0, -0.3040
 [node name="Cube_002" parent="Computer/monitor/monitor" index="2" unique_id=1429730964]
 transform = Transform3D(0.014654128, 0, -0.41529042, 0, 0.732, 0, 0.25057185, 0, 0.024287323, 1.165596, -0.882413, 2.1887102)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Computer/monitor/monitor" unique_id=197815200]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Computer/monitor/monitor/StaticBody3D" unique_id=1002753677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1339226, -0.71728516, 2.2330942)
+shape = SubResource("BoxShape3D_cx67b")
+
 [node name="Area3D" type="Area3D" parent="Computer" unique_id=1567470442]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Computer/Area3D" unique_id=652211640]
@@ -968,9 +978,9 @@ anchor_left = 0.694
 anchor_top = 0.31
 anchor_right = 0.72900003
 anchor_bottom = 0.358
-offset_left = 0.19927979
+offset_left = -0.12310791
 offset_top = -0.1464386
-offset_right = 0.08477783
+offset_right = -0.23760986
 offset_bottom = -0.17990112
 texture_normal = ExtResource("22_a14d5")
 ignore_texture_size = true
@@ -1846,7 +1856,7 @@ transform = Transform3D(1.2208236, 0, 9.313226e-10, 0, 1.2208236, 0, -9.313226e-
 [node name="Day1" type="Node3D" parent="." unique_id=414483559]
 
 [node name="Key" parent="Day1" unique_id=744914446 instance=ExtResource("14_q1f5f")]
-transform = Transform3D(0.99995756, 0, 0.009215208, 0, 1, 0, -0.009215208, 0, 0.99995756, -6.722377, 0.37172508, 33.556736)
+transform = Transform3D(0.99995756, 0, 0.009215208, 0, 1, 0, -0.009215208, 0, 0.99995756, -7.2119136, 1.2497046, 30.226852)
 
 [node name="Door" type="Area3D" parent="Day1" unique_id=1245343156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47982192, 0.4961486, 24.907701)
@@ -2011,7 +2021,7 @@ script = ExtResource("23_bf250")
 [node name="Books" type="Node3D" parent="." unique_id=1072965139]
 
 [node name="AnimalFarm" parent="Books" unique_id=1562565056 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.188459, 0.7872266, 13.914481)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0243645, 0.367315, 30.524141)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
@@ -2032,7 +2042,7 @@ mesh = SubResource("ArrayMesh_cn8p3")
 skeleton = NodePath("")
 
 [node name="TheSongOfAchilles" parent="Books" unique_id=488190995 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.076176, 1.4990119, 14.78279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.190641, 1.0845433, 30.681068)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
@@ -2044,8 +2054,11 @@ issue_date = "2026-02-10"
 [node name="MeshInstance3D" parent="Books/TheSongOfAchilles" index="0" unique_id=937974331]
 visible = false
 
-[node name="TheSongOfAchiles" type="MeshInstance3D" parent="Books/TheSongOfAchilles" unique_id=147246059]
-transform = Transform3D(0.8381027, 0, 0, 0, -3.9226215e-08, -0.8973912, 0, 0.8973912, -3.9226215e-08, -0.0543499, 0.23879659, 0.009103775)
+[node name="CollisionShape3D" parent="Books/TheSongOfAchilles" index="1" unique_id=1592677587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.021059275, 0)
+
+[node name="TheSongOfAchilles" type="MeshInstance3D" parent="Books/TheSongOfAchilles" unique_id=147246059]
+transform = Transform3D(0.8381027, 0, 0, 0, -3.9226215e-08, -0.8973912, 0, 0.8973912, -3.9226215e-08, -0.060031414, -0.057889104, 0.01402092)
 mesh = SubResource("ArrayMesh_pe7hg")
 skeleton = NodePath("")
 
@@ -2186,21 +2199,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.098297, 0.026903152, -0.70
 shape = SubResource("BoxShape3D_se8fg")
 debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
 
-[node name="Tester" parent="Scare_1" unique_id=2109147482 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.312191, 1.5782006, 12.488445)
+[node name="ToKillAMockingbird" parent="Scare_1" unique_id=2109147482 instance=ExtResource("14_1kku3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.312191, 1.9233463, 7.0677567)
 collision_layer = 5
 collision_mask = 13
 mass = 100.0
-book_name = "Tester"
+book_name = "To Kill A Mockingbird"
 author = "tester"
 taken_out_by = "me"
 issue_date = "2026-03-29"
 
-[node name="MeshInstance3D" parent="Scare_1/Tester" index="0" unique_id=937974331]
+[node name="MeshInstance3D" parent="Scare_1/ToKillAMockingbird" index="0" unique_id=937974331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248945, 0.20901394)
 visible = false
 
-[node name="ToKillAMockingbird2" type="MeshInstance3D" parent="Scare_1/Tester" unique_id=1853200551]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.18338656, 0.11387634)
+[node name="CollisionShape3D" parent="Scare_1/ToKillAMockingbird" index="1" unique_id=1592677587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14849126, 0.21202469)
+
+[node name="Area3D" parent="Scare_1/ToKillAMockingbird" index="2" unique_id=1732778017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1860094)
+
+[node name="CollisionShape3D" parent="Scare_1/ToKillAMockingbird/Area3D" index="0" unique_id=517621835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15454412, 0.015699387)
+
+[node name="ToKillAMockingbird2" type="MeshInstance3D" parent="Scare_1/ToKillAMockingbird" unique_id=1853200551]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.14730716, 0.28943062)
 mesh = SubResource("ArrayMesh_3nt5h")
 skeleton = NodePath("")
 
@@ -2215,7 +2238,8 @@ shape = SubResource("BoxShape3D_gndm1")
 debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
 
 [node name="NPC_1" parent="Scare_1" unique_id=829859548 node_paths=PackedStringArray("target_marker") groups=["npc"] instance=ExtResource("34_se8fg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 30.327028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3696241, 1.2035618, 29.357931)
+visible = false
 collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("move_to_front_Desk")
@@ -2236,6 +2260,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.950835, 3.9745102, 13.534
 
 [node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") groups=["npc"] instance=ExtResource("38_s6gja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050608158, 1.0224934, 25.571342)
+visible = false
 collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("../../Scare_1/NPC_1/move_to_front_Desk")
@@ -2243,7 +2268,8 @@ look_marker = NodePath("../Marker3D")
 leave_marker = NodePath("../LeaveMarker")
 
 [node name="NPC_3" parent="Scare_3" unique_id=499543744 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") groups=["npc"] instance=ExtResource("37_e6shu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9184446, 1.3208694, 29.43006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1740885, 1.3208694, 26.906076)
+visible = false
 target_marker = NodePath("../CollectNPC2")
 look_marker = NodePath("../CollectNPC2")
 leave_marker = NodePath("../LeaveMarker")
@@ -2859,6 +2885,9 @@ transform = Transform3D(-0.16053368, 0, 0.49985385, 0, 0.5249999, 0, -0.49985385
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.862102, 0.25604004, 14.52289)
 visible = false
 
+[node name="box_return" parent="." unique_id=761319766 instance=ExtResource("72_cx67b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62154)
+
 [connection signal="body_entered" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_exited"]
 [connection signal="pressed" from="Computer/CanvasLayer/User/Control/btnEnter" to="Computer/CanvasLayer/User" method="_on_btn_enter_pressed"]
@@ -2893,7 +2922,7 @@ visible = false
 [editable path="Books/ThePowerOfPatience"]
 [editable path="Scare_1/Cutscene"]
 [editable path="Scare_1/Cutscene3"]
-[editable path="Scare_1/Tester"]
+[editable path="Scare_1/ToKillAMockingbird"]
 [editable path="Scare_3/NPC_2"]
 [editable path="Scare_3/NPC_2/Idle"]
 [editable path="Scare_3/NPC_2/Walk"]
