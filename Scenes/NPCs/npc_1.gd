@@ -64,7 +64,7 @@ func on_npc1_can_leave_library(argument: String):
 		print("have npc walk away then")
 		nav_agent.target_position = move_outside.global_position
 		npc_should_leave = true  # ← THIS is what actually restarts movement
-		
+		misson_manager.set_message("Speak for ? in study area")
 		npc_1.queue_free()
 
 

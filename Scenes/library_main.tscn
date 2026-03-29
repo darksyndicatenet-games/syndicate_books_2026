@@ -51,6 +51,8 @@
 [ext_resource type="PackedScene" uid="uid://bnl2eka7ga6x7" path="res://Scenes/misc/placement.tscn" id="32_vfwt6"]
 [ext_resource type="PackedScene" uid="uid://crl7mae32u8sv" path="res://Scenes/book_info_display.tscn" id="32_yldco"]
 [ext_resource type="PackedScene" uid="uid://byyudyocn5w5g" path="res://Scenes/NPCs/npc_1.tscn" id="34_se8fg"]
+[ext_resource type="AudioStream" uid="uid://dglhjqvq11ra6" path="res://Music/library-music.mp3" id="36_cwu8b"]
+[ext_resource type="PackedScene" uid="uid://ri2452hu2syy" path="res://radio.glb" id="37_asr0j"]
 [ext_resource type="PackedScene" uid="uid://dclvg1cbs0fpm" path="res://Scenes/npc_3.tscn" id="37_e6shu"]
 [ext_resource type="PackedScene" uid="uid://by2rs2s2syltp" path="res://Scenes/npc_2.tscn" id="38_s6gja"]
 [ext_resource type="PackedScene" uid="uid://gkofgu5n7x07" path="res://Syndicate_books.glb" id="41_hm7k4"]
@@ -1547,6 +1549,18 @@ volume_db = 80.0
 [node name="AuthorLabel" parent="Player/BookInfoDisplay/BookInfoPanel" parent_id_path=PackedInt32Array(530035837, 1041012458) index="0" unique_id=1556020024]
 metadata/_edit_use_anchors_ = true
 
+[node name="BackgroundNormalAmbience" type="AudioStreamPlayer3D" parent="Player" unique_id=71785589]
+transform = Transform3D(0.94457704, 0, -0.32828984, 0, 1, 0, 0.32828984, 0, 0.94457704, 1.7426624, 2.464965, 8.817558)
+stream = ExtResource("36_cwu8b")
+volume_db = -15.0
+autoplay = true
+
+[node name="radio" parent="Player" unique_id=1460932352 instance=ExtResource("37_asr0j")]
+transform = Transform3D(-0.9483568, 0, 0.3172056, 0, 1, 0, -0.3172056, 0, -0.9483568, 40.63362, -0.45111, -56.151833)
+
+[node name="Radio" parent="Player/radio" index="0" unique_id=1434429732]
+transform = Transform3D(1.2208236, 0, 9.313226e-10, 0, 1.2208236, 0, -9.313226e-10, 0, 1.2208236, 0.46156883, 1.2374138, 36.812458)
+
 [node name="Day1" type="Node3D" parent="." unique_id=414483559]
 
 [node name="Key" parent="Day1" unique_id=744914446 instance=ExtResource("14_q1f5f")]
@@ -1804,7 +1818,7 @@ volume_db = 10.418
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.754856, 0, -10.718859)
 
 [node name="Spook_1" parent="Scare_1" unique_id=1482541136 groups=["npc"] instance=ExtResource("25_x6hv0")]
-transform = Transform3D(-0.089833036, 0, -0.99595684, 0, 1, 0, 0.99595684, 0, -0.089833036, 24.71996, 0.9932331, -1.9255075)
+transform = Transform3D(-0.10690132, 0, -1.0357951, 0, 1.18, 0, 1.1851887, 0, -0.093426354, 24.873146, 1.0423063, -1.9255075)
 
 [node name="LookAtSpook1" type="Marker3D" parent="Scare_1/Spook_1" unique_id=1559634196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1937504, 0, 4.010373)
@@ -1831,7 +1845,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.991477, 2.3240309, -32.895
 shape = SubResource("BoxShape3D_ixevi")
 
 [node name="Cup" type="RigidBody3D" parent="Scare_1/CoffeeMachineTrigger" unique_id=1453864631 groups=["cups"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.995422, 1.9780154, -32.18287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.995422, 1.858537, -32.18287)
 collision_layer = 13
 collision_mask = 13
 mass = 100.0
@@ -1890,6 +1904,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026903152, 2.115223)
 shape = SubResource("BoxShape3D_se8fg")
 debug_color = Color(0.970131, 0, 0.45993853, 0.41960785)
 
+[node name="Tester" parent="Scare_1" unique_id=2109147482 instance=ExtResource("14_1kku3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.312191, 1.5782006, 12.488445)
+collision_layer = 5
+collision_mask = 13
+mass = 100.0
+book_name = "Tester"
+author = "tester"
+taken_out_by = "me"
+issue_date = "2026-03-29"
+
 [node name="TurnOffSoundsAndHaveNPC2Enter" type="Area3D" parent="Scare_1" unique_id=2077189692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.705166, 1.4265189, 8.891923)
 monitoring = false
@@ -1906,20 +1930,22 @@ collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("move_to_front_Desk")
 
-[node name="Tester" parent="Scare_1/NPC_1" unique_id=2109147482 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15822649, 0.040147066, -0.20606995)
-collision_layer = 5
-collision_mask = 13
-mass = 100.0
-book_name = "Tester"
-author = "tester"
-taken_out_by = "me"
-issue_date = "2026-03-29"
-
 [node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_1" unique_id=893017267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
 
 [node name="move_outside" type="Marker3D" parent="Scare_1/NPC_1" unique_id=2108978918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -7.9774113)
+
+[node name="NPC_2" parent="Scare_1" unique_id=1361431538 node_paths=PackedStringArray("target_marker") groups=["npc"] instance=ExtResource("34_se8fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 29.85082)
+collision_layer = 5
+collision_mask = 5
+target_marker = NodePath("move_to_front_Desk")
+
+[node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_2" unique_id=1720897003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
+
+[node name="move_outside" type="Marker3D" parent="Scare_1/NPC_2" unique_id=1152513188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -7.9774113)
 
 [node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
@@ -2009,6 +2035,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.586115, 0.25000024, 13.488
 
 [node name="desk13" parent="StudyArea/Desks" unique_id=427274378 instance=ExtResource("42_kllcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.899849, 0.25000024, -2.2040806)
+
+[node name="desk17" parent="StudyArea/Desks" unique_id=1256862878 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.780489, 0.25000024, -14.236113)
+
+[node name="desk18" parent="StudyArea/Desks" unique_id=2125234228 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.337128, 0.25000024, -14.236113)
+
+[node name="desk19" parent="StudyArea/Desks" unique_id=1836264418 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.269121, 0.25000024, -14.236113)
+
+[node name="desk20" parent="StudyArea/Desks" unique_id=1819845327 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.82576, 0.25000024, -14.236113)
+
+[node name="desk21" parent="StudyArea/Desks" unique_id=744487781 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.780489, 0.25000024, -20.280891)
+
+[node name="desk22" parent="StudyArea/Desks" unique_id=1877866237 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.337128, 0.25000024, -20.280891)
+
+[node name="desk23" parent="StudyArea/Desks" unique_id=1931439328 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.269121, 0.25000024, -20.280891)
+
+[node name="desk24" parent="StudyArea/Desks" unique_id=2052470863 instance=ExtResource("42_kllcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.82576, 0.25000024, -20.280891)
 
 [node name="desk14" parent="StudyArea/Desks" unique_id=1623864846 instance=ExtResource("42_kllcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.899849, 0.25000024, 3.335966)
@@ -2523,12 +2573,13 @@ script = ExtResource("16_jhl3c")
 [editable path="NavigationRegion3D/Map/shelves/ShelfCorner/Node3D/book_shelf_Sample10"]
 [editable path="NavigationRegion3D/Syndicate_books"]
 [editable path="Player/BookInfoDisplay"]
+[editable path="Player/radio"]
 [editable path="Books/AnimalFarm"]
 [editable path="Books/TheSongOfAchilles"]
 [editable path="Books/ThePowerOfPatience"]
 [editable path="Scare_1/Cutscene"]
 [editable path="Scare_1/Cutscene3"]
-[editable path="Scare_1/NPC_1/Tester"]
+[editable path="Scare_1/Tester"]
 [editable path="Scare_3/NPC_2"]
 [editable path="Scare_3/NPC_2/Idle"]
 [editable path="Scare_3/NPC_2/Walk"]

@@ -8,6 +8,7 @@ extends Node3D
 @onready var misson_manager: Node = $MissonManager
 @onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
 
+@onready var background_normal_ambience: AudioStreamPlayer3D = $Player/BackgroundNormalAmbience
 
 var bell_has_been_fired := false
 var counter := 0
@@ -157,7 +158,7 @@ func background_scary_audio_scare_():
 func _on_scare_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" and Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps == true:
 		Global.background_scary_ambience = true
-		
+		background_normal_ambience.stop()
 		Global.disable_ghost_footsteps = true
 		print("Player activated sound here")
 #		this monitoring stuff needs to be checked
@@ -174,6 +175,7 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = false
 		print("Player de-activate sound here")
 		turn_off_sounds_and_have_npc_2_enter.monitoring = false
+		background_normal_ambience.play()
 
 
 #i need to i=fix the decrement

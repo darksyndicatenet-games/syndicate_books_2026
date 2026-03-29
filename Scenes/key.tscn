@@ -65,12 +65,12 @@ transform = Transform3D(0.99995756, 0, -0.009215208, 0, 1, 0, 0.009215208, 0, 0.
 visible = false
 
 [node name="Key" type="MeshInstance3D" parent="key" unique_id=636392670]
-transform = Transform3D(0.63933444, 0, 0, 0, 1, 0, 0, 0, 0.63933444, 0, 0, 0)
+transform = Transform3D(0.529, 0, 0, 0, 0.795, 0, 0, 0, 0.639, 0, 0, 0)
 mesh = SubResource("ArrayMesh_yo17j")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_lc1k7")
 
 [node name="key2" parent="." unique_id=1400885466 instance=ExtResource("4_lc1k7")]
-transform = Transform3D(0.6520442, 0, -0.0060089813, 0, 1, 0, 0.006008977, 0, 0.6520447, 0.18859966, -0.007691264, 0.40514076)
+transform = Transform3D(0.32198632, 0, -0.0025065364, 0, 0.935, 0, 0.0029672966, 0, 0.27198848, 0.18859966, -0.007691264, 0.40514076)
 
 [connection signal="key_collected" from="InventoryItem" to="." method="_on_inventory_item_key_collected"]
