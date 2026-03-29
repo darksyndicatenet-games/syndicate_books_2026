@@ -23,4 +23,4 @@ debug_enabled = true
 debug_path_custom_color = Color(0.20009375, 0.7907172, 0.21035275, 1)
 
 [node name="npc_1_walk" parent="." unique_id=1506507941 instance=ExtResource("3_3bhtg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92279387, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.92279387, 0)

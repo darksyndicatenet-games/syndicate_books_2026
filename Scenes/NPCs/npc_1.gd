@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+#npc1 script
 @onready var misson_manager: Node = $"../../MissonManager"
 @onready var user: TextureRect = $"../../Computer/CanvasLayer/User"
 @onready var computer: Node3D = $"../../Computer"
@@ -26,30 +26,44 @@ func _ready():
 		
 	cutscene_3.monitoring = false
 
+var npc_should_leave := false  # ADD THIS at the top with your other vars
+
 func _physics_process(_delta):
-
 	if Global.move_npc_1_to_desk_after_bell_rings:
-		if nav_agent.is_navigation_finished():
 
+		# --- NEW: handle leave movement separately ---
+		if npc_should_leave:
+			if not nav_agent.is_navigation_finished():
+				var next_position = nav_agent.get_next_path_position()
+				var direction = (next_position - global_position).normalized()
+				velocity.x = direction.x * speed
+				velocity.z = direction.z * speed
+			else:
+				velocity = Vector3.ZERO
+			move_and_slide()
+			return
+		# --- end new block ---
+
+		if nav_agent.is_navigation_finished():
 			velocity = Vector3.ZERO
-			#print("finished:", nav_agent.is_navigation_finished())
-			#print("book correct:", Global.check_book_first_npc)
-			#print("played once:", check_book_first_npc_play_once)
 			if not check_book_first_npc_play_once and Global.check_book_first_npc:
 				check_book_first_npc_play_once = true
-			
 				handle_npc_after_book()
-
 			move_and_slide()
 			return
 
 		var next_position = nav_agent.get_next_path_position()
 		var direction = (next_position - global_position).normalized()
-
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
-
 		move_and_slide()
+
+#func on_npc1_can_leave_library(argument: String):
+	#await get_tree().create_timer(4.0).timeout
+	#if argument == "npc1 can leave library":
+		#print("have npc walk away then")
+		#nav_agent.target_position = move_outside.global_position
+		#npc_should_leave = true  # ← THIS is what actually restarts movement
 
 
 func begin_dialogue():
@@ -71,7 +85,7 @@ func last_dialogue():
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = true
 		scare_2.monitoring = true
 		Global.have_elderly_come_in_library_npc2_ = true
-		npc_1.visible = false
+		
 		
 func on_log_book_return_into_computer(argument : String):
 	if argument == "log_book_return_into_computer":
@@ -103,3 +117,4 @@ func on_npc1_can_leave_library(argument : String):
 		nav_agent.target_position = target_marker.global_position
 		
 	pass
+#npc_1.queue_free()

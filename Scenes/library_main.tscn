@@ -1864,8 +1864,8 @@ monitorable = false
 player = NodePath("../../Player")
 look_target = NodePath("../NPC1_Face")
 spook_1 = NodePath("../NPC_1")
-message = "tester"
-mission_text = "tester"
+message = "music plays"
+mission_text = "\"\""
 play_scene_once = true
 
 [node name="FadeText" parent="Scare_1/Cutscene3" index="1" unique_id=1630234939]
