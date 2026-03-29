@@ -7,7 +7,7 @@ extends TextureRect
 
 var books = {
 	"the routledge handbook of philosophy of empathy": "Unknown Author",
-	" farm": "George Orwell",
+	"animal farm": "George Orwell",
 	"to kill a mockingbird": "Harper Lee",
 	"python programming: the fundamental beginner's guide to learning python": "Thomas Jackson",
 	"the power of your subconscious mind": "Jason Murphy"
