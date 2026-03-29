@@ -1079,10 +1079,10 @@ scale = Vector2(0.90169966, 0.87150437)
 
 [node name="Help" type="TextureButton" parent="Computer/CanvasLayer/Logbook/Log" unique_id=1091306111]
 layout_mode = 0
-offset_left = 456.89084
-offset_top = 34.32
-offset_right = 485.55194
-offset_bottom = 55.885338
+offset_left = 455.6146
+offset_top = 37.18
+offset_right = 484.2757
+offset_bottom = 58.74534
 scale = Vector2(0.90169966, 0.87150425)
 mouse_default_cursor_shape = 16
 texture_normal = ExtResource("21_se8fg")

@@ -67,6 +67,9 @@ func _on_btn_enter_pressed() -> void:
 		user.visible = false
 		log_.visible = true
 		entry_list.visible = true
+		
+		fill_return_date_with_today()  # ✅ ADD THIS LINE
+		
 	else:
 		error_message_function("Username or password incorrect")
 
@@ -268,3 +271,6 @@ func _on_exit_login_pressed() -> void:
 	#user.visible = false
 	computer.end_interaction()
 	pass # Replace with function body.
+func fill_return_date_with_today():
+	var today_dict = Time.get_datetime_dict_from_system()
+	returned.text = str(today_dict.year) + "-" + str(today_dict.month).pad_zeros(2) + "-" + str(today_dict.day).pad_zeros(2)
