@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://chw7xd3dcslgx"]
 
 [ext_resource type="Script" uid="uid://cji3d16erdkt6" path="res://Scenes/ScreenMenu/start_screen_menu.gd" id="1_226hb"]
+[ext_resource type="Texture2D" uid="uid://3amdfgih65ql" path="res://Scenes/ScreenMenu/MenuScreen-UI/Start.png" id="2_n4us5"]
+[ext_resource type="VideoStream" uid="uid://8gjawwcy71fj" path="res://Scenes/ScreenMenu/MenuScreen-UI/Instructions.ogv" id="3_cv40o"]
+[ext_resource type="Texture2D" uid="uid://c1kcy6dsfha4d" path="res://Scenes/ScreenMenu/MenuScreen-UI/Start_Clicked.png" id="3_laflf"]
+[ext_resource type="Texture2D" uid="uid://bvotb7n26lw3k" path="res://Scenes/ScreenMenu/MenuScreen-UI/Instructions.png" id="4_jbuxp"]
+[ext_resource type="Texture2D" uid="uid://caal1rfgcphmm" path="res://Scenes/ScreenMenu/MenuScreen-UI/Instructions_Clicked.png" id="5_7xfig"]
+[ext_resource type="VideoStream" uid="uid://dpheooc27bfey" path="res://Scenes/ScreenMenu/MenuScreen-UI/Opening-Screen (1).ogv" id="6_laflf"]
+[ext_resource type="Texture2D" uid="uid://bghtcwtquqjd8" path="res://Scenes/ScreenMenu/MenuScreen-UI/Quit.png" id="7_7xfig"]
+[ext_resource type="Texture2D" uid="uid://brchjwaev0fxy" path="res://Scenes/ScreenMenu/MenuScreen-UI/Quit_Click.png" id="8_cv40o"]
 
 [node name="StartScreenMenu" type="Control" unique_id=581198161]
 layout_mode = 3
@@ -11,36 +19,85 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_226hb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1189134374]
+[node name="OpeningScene" type="VideoStreamPlayer" parent="." unique_id=948559553]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -50.5
-offset_right = 48.0
-offset_bottom = 50.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+stream = ExtResource("6_laflf")
+autoplay = true
+loop = true
 
-[node name="Startbtn" type="Button" parent="VBoxContainer" unique_id=1455076699]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Start Game"
+[node name="Startbtn" type="TextureButton" parent="OpeningScene" unique_id=549183536]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 124.0
+offset_right = 1947.0
+offset_bottom = 1124.0
+scale = Vector2(0.14113785, 0.10709785)
+texture_normal = ExtResource("2_n4us5")
+texture_pressed = ExtResource("2_n4us5")
+texture_hover = ExtResource("3_laflf")
+ignore_texture_size = true
 
-[node name="Optionbtn" type="Button" parent="VBoxContainer" unique_id=2075704117]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Option"
+[node name="Optionbtn" type="TextureButton" parent="OpeningScene" unique_id=716269195]
+layout_mode = 0
+offset_left = 27.000122
+offset_top = 249.0
+offset_right = 1947.0
+offset_bottom = 1249.0
+scale = Vector2(0.13904715, 0.11953706)
+texture_normal = ExtResource("4_jbuxp")
+texture_pressed = ExtResource("4_jbuxp")
+texture_hover = ExtResource("5_7xfig")
+ignore_texture_size = true
 
-[node name="Quitbtn" type="Button" parent="VBoxContainer" unique_id=1597734233]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Quit"
+[node name="Quitbtn" type="TextureButton" parent="OpeningScene" unique_id=370762771]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 390.0
+offset_right = 1948.0
+offset_bottom = 1390.0
+scale = Vector2(0.14113785, 0.10709785)
+texture_normal = ExtResource("7_7xfig")
+texture_pressed = ExtResource("8_cv40o")
+texture_hover = ExtResource("8_cv40o")
+ignore_texture_size = true
 
-[connection signal="pressed" from="VBoxContainer/Startbtn" to="." method="_on_startbtn_pressed"]
-[connection signal="pressed" from="VBoxContainer/Optionbtn" to="." method="_on_optionbtn_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quitbtn" to="." method="_on_quitbtn_pressed"]
+[node name="Instructions" type="VideoStreamPlayer" parent="." unique_id=2013294835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 554.0
+offset_top = 107.0
+offset_right = 554.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0733622, 0.78536993)
+stream = ExtResource("3_cv40o")
+
+[node name="Quitbtn2" type="TextureButton" parent="Instructions" unique_id=2012568412]
+layout_mode = 0
+offset_left = 606.5054
+offset_top = 19.099274
+offset_right = 2526.5059
+offset_bottom = 1019.0995
+scale = Vector2(0.08473532, 0.09786326)
+texture_normal = ExtResource("7_7xfig")
+texture_pressed = ExtResource("8_cv40o")
+texture_hover = ExtResource("8_cv40o")
+ignore_texture_size = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=937048040]
+position = Vector2(963.77, 543.255)
+zoom = Vector2(1, 1.24)
+
+[connection signal="pressed" from="OpeningScene/Startbtn" to="." method="_on_startbtn_pressed"]
+[connection signal="pressed" from="OpeningScene/Optionbtn" to="." method="_on_optionbtn_pressed"]
+[connection signal="pressed" from="OpeningScene/Quitbtn" to="." method="_on_quitbtn_pressed"]
+[connection signal="pressed" from="Instructions/Quitbtn2" to="." method="_on_quitbtn_2_pressed"]
