@@ -2819,7 +2819,6 @@ transform = Transform3D(-0.028351113, 0, 2.4995534, 0, 0.9, 0, -1.499732, 0, -0.
 
 [node name="bracelet" parent="." unique_id=826853743 instance=ExtResource("45_vtpl0")]
 transform = Transform3D(0.39155298, 0.09869286, 0.29486603, -0.122205265, 0.48483598, 4.9736104e-09, -0.28592336, -0.07206838, 0.40379953, -16.10488, 1.7191509, 8.454385)
-visible = false
 
 [node name="filler-buildings" parent="." unique_id=475227516 instance=ExtResource("46_ijtr6")]
 transform = Transform3D(-10, 0, -5.284853e-06, 0, 15, 0, 1.509958e-06, 0, -35, 31.786366, 7.6184735, 61.577084)
