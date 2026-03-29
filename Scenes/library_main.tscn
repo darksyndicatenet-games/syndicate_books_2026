@@ -70,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://cqrf0nfvaddet" path="res://Assets/desk_lamp.tscn" id="57_3u5q6"]
 [ext_resource type="PackedScene" uid="uid://dur6rmb5v8rbk" path="res://Assets/flat_lights.tscn" id="58_5mjsl"]
 [ext_resource type="PackedScene" uid="uid://sy4wuw74sbg3" path="res://addons/dialogic/Example Assets/staff_chairs.glb" id="59_sen8m"]
+[ext_resource type="PackedScene" uid="uid://cry8ghrilwywe" path="res://Scenes/waving_spookyy.tscn" id="71_l52nb"]
 
 [sub_resource type="Sky" id="Sky_4so3u"]
 sky_material = ExtResource("2_08ywl")
@@ -1816,7 +1817,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0, -0.92729783, 0, 0, 0, -2.4727411, 7.7677526, 0, 0, 9.5383625, -0.37160444, -21.80069)
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -4.0394216, 0.6018486, 11.478622)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -1.9367363, 0.6018486, 37.124683)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -2031,7 +2032,7 @@ mesh = SubResource("ArrayMesh_cn8p3")
 skeleton = NodePath("")
 
 [node name="TheSongOfAchilles" parent="Books" unique_id=488190995 instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.797202, 1.4990119, 14.78279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.076176, 1.4990119, 14.78279)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
@@ -2211,28 +2212,16 @@ shape = SubResource("BoxShape3D_gndm1")
 debug_color = Color(0.7296057, 0.23666555, 1, 0.41960785)
 
 [node name="NPC_1" parent="Scare_1" unique_id=829859548 node_paths=PackedStringArray("target_marker") groups=["npc"] instance=ExtResource("34_se8fg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 29.85082)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 30.327028)
 collision_layer = 5
 collision_mask = 5
 target_marker = NodePath("move_to_front_Desk")
 
 [node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_1" unique_id=893017267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.242991, -0.26541936, -18.401403)
 
 [node name="move_outside" type="Marker3D" parent="Scare_1/NPC_1" unique_id=2108978918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -7.9774113)
-
-[node name="NPC_2" parent="Scare_1" unique_id=1361431538 node_paths=PackedStringArray("target_marker") groups=["npc"] instance=ExtResource("34_se8fg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4265189, 29.85082)
-collision_layer = 5
-collision_mask = 5
-target_marker = NodePath("move_to_front_Desk")
-
-[node name="move_to_front_Desk" type="Marker3D" parent="Scare_1/NPC_2" unique_id=1720897003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3863735, 0.08582485, -19.48837)
-
-[node name="move_outside" type="Marker3D" parent="Scare_1/NPC_2" unique_id=1152513188]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -7.9774113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -11.103025)
 
 [node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
 
@@ -2862,6 +2851,9 @@ transform = Transform3D(0.050948307, 0, -0.522522, 0, 0.525, 0, 0.522522, 0, 0.0
 
 [node name="monitor2" parent="." unique_id=737709439 instance=ExtResource("3_n50q0")]
 transform = Transform3D(-0.16053368, 0, 0.49985385, 0, 0.5249999, 0, -0.49985385, 0, -0.16053368, 19.329987, 1.5912735, -1.8569397)
+
+[node name="waving_spookyy" parent="." unique_id=917656382 instance=ExtResource("71_l52nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.862102, 0.25604004, 14.52289)
 
 [connection signal="body_entered" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_exited"]

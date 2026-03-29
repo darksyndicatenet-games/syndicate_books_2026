@@ -10,7 +10,7 @@
 [node name="Player" type="CharacterBody3D" unique_id=2139854177 node_paths=PackedStringArray("groudRay") groups=["player"]]
 script = ExtResource("1_rpqav")
 throwForce = 0.5
-followDistance = 1.0
+followDistance = 1.5
 groudRay = NodePath("Head/Camera3D/DropRay")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=858942726]
