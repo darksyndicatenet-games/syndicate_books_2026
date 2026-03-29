@@ -2260,7 +2260,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.89176, 0, 11.443726)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.950835, 3.9745102, 13.534685)
 
 [node name="NPC_2" parent="Scare_3" unique_id=154204417 node_paths=PackedStringArray("target_marker", "look_marker", "leave_marker") groups=["npc"] instance=ExtResource("38_s6gja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050608158, 1.0224934, 25.571342)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8020723, 1.0224934, 27.834642)
 visible = false
 collision_layer = 5
 collision_mask = 5
