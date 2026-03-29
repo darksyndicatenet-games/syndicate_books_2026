@@ -11,7 +11,7 @@ func _ready() -> void:
 	pass
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "AnimalFarm" or body.name == "TheSongOfAchilles":
+	if body.name == "TheAnimalFarm" or body.name == "TheSongOfAchilles":
 		print(body.name, "entered area")
 		books_in_shelf[body.name] = true
 	
@@ -23,6 +23,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.name == "AnimalFarm" or body.name == "TheSongOfAchilles":
+	if body.name == "TheAnimalFarm" or body.name == "TheSongOfAchilles":
 		print(body.name, "exited area")
 		books_in_shelf.erase(body.name)

@@ -26,7 +26,7 @@ var counted_books: Array[String] = []
 
 # ONLY these books should count
 var required_books := [
-	"animal farm",
+	"the animal farm",
 	"the song of achilles"
 ]
 

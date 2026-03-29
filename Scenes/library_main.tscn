@@ -2021,23 +2021,23 @@ script = ExtResource("23_bf250")
 
 [node name="Books" type="Node3D" parent="." unique_id=1072965139]
 
-[node name="AnimalFarm" parent="Books" unique_id=1562565056 instance=ExtResource("14_1kku3")]
+[node name="TheAnimalFarm" parent="Books" unique_id=1562565056 instance=ExtResource("14_1kku3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0243645, 0.367315, 30.524141)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
-book_name = "animal farm"
+book_name = "the animal farm"
 author = "George Orwell"
 taken_out_by = "Me"
 issue_date = "2026-02-10"
 
-[node name="MeshInstance3D" parent="Books/AnimalFarm" index="0" unique_id=937974331]
+[node name="MeshInstance3D" parent="Books/TheAnimalFarm" index="0" unique_id=937974331]
 visible = false
 
-[node name="CollisionShape3D" parent="Books/AnimalFarm" index="1" unique_id=1592677587]
+[node name="CollisionShape3D" parent="Books/TheAnimalFarm" index="1" unique_id=1592677587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2797143, 0)
 
-[node name="AnimalFarm2" type="MeshInstance3D" parent="Books/AnimalFarm" unique_id=2093773761]
+[node name="AnimalFarm2" type="MeshInstance3D" parent="Books/TheAnimalFarm" unique_id=2093773761]
 transform = Transform3D(0.83810264, 0, 0, 0, -3.922621e-08, -0.89739114, 0, 0.89739114, -3.922621e-08, -0.051057816, 0.28256857, 0.011597633)
 mesh = SubResource("ArrayMesh_cn8p3")
 skeleton = NodePath("")
@@ -2917,7 +2917,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62
 [editable path="NavigationRegion3D/Syndicate_books"]
 [editable path="Player/BookInfoDisplay"]
 [editable path="Player/radio"]
-[editable path="Books/AnimalFarm"]
+[editable path="Books/TheAnimalFarm"]
 [editable path="Books/TheSongOfAchilles"]
 [editable path="Books/ThePowerOfPatience"]
 [editable path="Scare_1/Cutscene"]

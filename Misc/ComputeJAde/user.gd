@@ -37,7 +37,7 @@ var submitted_books: Array[String] = []
 
 var required_books: Array[String] = [
 	"the song of achilles",
-	"animal farm"
+	"the animal farm"
 ]
 
 # cutscene and spook
