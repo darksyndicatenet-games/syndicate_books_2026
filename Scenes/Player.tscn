@@ -9,6 +9,8 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=2139854177 node_paths=PackedStringArray("groudRay") groups=["player"]]
 script = ExtResource("1_rpqav")
+throwForce = 0.5
+followDistance = 1.0
 groudRay = NodePath("Head/Camera3D/DropRay")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=858942726]
@@ -43,8 +45,8 @@ vertical_alignment = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.123649836, -1.1944897)
 
 [node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" unique_id=1245212001]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, -0.278)
-target_position = Vector3(0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.237)
+target_position = Vector3(0, 0, -2)
 collision_mask = 4
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0.8265635, 0.90775096, 1)

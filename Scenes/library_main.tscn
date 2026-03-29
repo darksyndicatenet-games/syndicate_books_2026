@@ -1816,7 +1816,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0, -0.92729783, 0, 0, 0, -2.4727411, 7.7677526, 0, 0, 9.5383625, -0.37160444, -21.80069)
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, 1.7690749, 0.6018486, 75.892365)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -4.0394216, 0.6018486, 11.478622)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -2127,7 +2127,6 @@ shape = SubResource("BoxShape3D_ixevi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.995422, 1.858537, -32.18287)
 collision_layer = 13
 collision_mask = 13
-mass = 100.0
 sleeping = true
 lock_rotation = true
 freeze = true
