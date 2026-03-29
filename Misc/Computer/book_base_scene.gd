@@ -77,10 +77,10 @@ func calculate_book_info():
 	due_date = unix_to_date_string(due_unix)
 	
 	# Fine
-	if days_kept > allowed_days:
-		fine_amount = (days_kept - allowed_days) * fine_per_day
-	else:
-		fine_amount = 0
+	#if days_kept > allowed_days:
+		#fine_amount = (days_kept - allowed_days) * fine_per_day
+	#else:
+		#fine_amount = 0
 
 	print_book_info()
 
@@ -117,13 +117,13 @@ func interact(player):
 
 	print("Picked up book")
 	
-func calculate_fine_for_return(return_date: String) -> float:
-	var issue_unix = parse_date_to_unix(issue_date)
-	var return_unix = parse_date_to_unix(return_date)
-
-	var days = int((return_unix - issue_unix) / 86400)
-
-	if days > allowed_days:
-		return (days - allowed_days) * fine_per_day
-	else:
-		return 0.0
+#func calculate_fine_for_return(return_date: String) -> float:
+	#var issue_unix = parse_date_to_unix(issue_date)
+	#var return_unix = parse_date_to_unix(return_date)
+#
+	#var days = int((return_unix - issue_unix) / 86400)
+#
+	#if days > allowed_days:
+		#return (days - allowed_days) * fine_per_day
+	#else:
+		#return 0.0

@@ -1052,6 +1052,7 @@ offset_bottom = 215.7252
 scale = Vector2(0.9016997, 0.87150425)
 
 [node name="Fine" type="LineEdit" parent="Computer/CanvasLayer/Logbook/Log" unique_id=922854250]
+visible = false
 layout_mode = 0
 offset_left = 405.2035
 offset_top = 220.27094

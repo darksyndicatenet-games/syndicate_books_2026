@@ -25,7 +25,7 @@ var books = {
 @onready var author: LineEdit = $"../Logbook/Log/Author"
 @onready var issued: LineEdit = $"../Logbook/Log/Issued"
 @onready var returned: LineEdit = $"../Logbook/Log/Returned"
-@onready var fine: LineEdit = $"../Logbook/Log/Fine"
+#@onready var fine: LineEdit = $"../Logbook/Log/Fine"
 @onready var taken_out_by: LineEdit = $"../Logbook/Log/TakenOutBy"
 @onready var help_2: Sprite2D = $"../Logbook/Help2"
 @onready var exit: TextureButton = $"../Logbook/Exit"
@@ -115,7 +115,7 @@ func _on_btn_enter_2_pressed() -> void:
 	var entered_author = author.text.strip_edges()
 	var entered_issued = issued.text.strip_edges()
 	var entered_returned = returned.text.strip_edges()
-	var entered_fine = fine.text.strip_edges()
+	#var entered_fine = fine.text.strip_edges()
 	var entered_taken_out_by = taken_out_by.text.strip_edges().to_lower()
 
 	# Validate date formats
@@ -127,9 +127,9 @@ func _on_btn_enter_2_pressed() -> void:
 		return
 
 	# Validate fine is a number
-	if not entered_fine.is_valid_float():
-		error_message_function("Fine must be a number")
-		return
+	#if not entered_fine.is_valid_float():
+		#error_message_function("Fine must be a number")
+		#return
 
 	# Find book node
 	var book_node = find_book_node_by_name(entered_book_name)
@@ -148,10 +148,10 @@ func _on_btn_enter_2_pressed() -> void:
 	var today_string = str(today_dict.year) + "-" + str(today_dict.month).pad_zeros(2) + "-" + str(today_dict.day).pad_zeros(2)
 	var returned_correct = entered_returned == today_string
 
-	var fine_calculated = book_node.calculate_fine_for_return(entered_returned)
-	var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
+	#var fine_calculated = book_node.calculate_fine_for_return(entered_returned)
+	#var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
 
-	if book_name_correct and author_correct and issued_correct and returned_correct and fine_correct and taken_out_by_correct:
+	if book_name_correct and author_correct and issued_correct and returned_correct and taken_out_by_correct:
 		if submitted_books.has(entered_book_name):
 			error_message_function("This book has already been submitted!")
 			return
@@ -174,8 +174,8 @@ func _on_btn_enter_2_pressed() -> void:
 			error_message_function("- Issued date is wrong")
 		if not returned_correct:
 			error_message_function("- Return date is wrong")
-		if not fine_correct:
-			error_message_function("- Fine is wrong")
+		#if not fine_correct:
+			#error_message_function("- Fine is wrong")
 		if not taken_out_by_correct:
 			error_message_function("- Taken out by is wrong")
 
@@ -185,7 +185,7 @@ func add_entry_to_log():
 	entry.get_node("HBoxContainer/AuthorLabel").text = author.text
 	entry.get_node("HBoxContainer/IssuedLabel").text = issued.text
 	entry.get_node("HBoxContainer/ReturnedLabel").text = returned.text
-	entry.get_node("HBoxContainer/FineLabel").text = fine.text
+	#entry.get_node("HBoxContainer/FineLabel").text = fine.text
 	entry_list.add_child(entry)
 
 func check_required_books() -> bool:
@@ -209,7 +209,7 @@ func _on_exit_2_pressed() -> void:
 	author.text = ""
 	issued.text = ""
 	returned.text = ""
-	fine.text = ""
+	#fine.text = ""
 	taken_out_by.text = ""
 	computer.end_interaction()
 
@@ -234,7 +234,7 @@ func check_first_npc_book() -> void:
 	var entered_issued = issued.text.strip_edges()
 	var entered_returned = returned.text.strip_edges()
 	var entered_taken_out_by = taken_out_by.text.strip_edges().to_lower()
-	var entered_fine = fine.text.strip_edges()
+	#var entered_fine = fine.text.strip_edges()
 
 	# Only check for "animal farm"
 	if entered_book_name != "to kill a mockingbird":
@@ -253,10 +253,10 @@ func check_first_npc_book() -> void:
 	var issued_correct = book_node.issue_date == entered_issued
 	var returned_correct = entered_returned == today_string
 	var taken_out_by_correct = book_node.taken_out_by.to_lower() == entered_taken_out_by
-	var fine_calculated = book_node.calculate_fine_for_return(entered_returned)
-	var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
+	#var fine_calculated = book_node.calculate_fine_for_return(entered_returned)
+	#var fine_correct = is_equal_approx(float(entered_fine), fine_calculated)
 
-	if book_name_correct and author_correct and issued_correct and returned_correct and taken_out_by_correct and fine_correct:
+	if book_name_correct and author_correct and issued_correct and returned_correct and taken_out_by_correct:
 		Global.check_book_first_npc = true
 		print("First NPC book entered correctly. Global.check_book_first_npc = true")
 	else:
