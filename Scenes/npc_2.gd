@@ -64,7 +64,7 @@ func on_Get_The_Long_Walk_To_Freedom_Book_for_the_man(argument : String):
 	if argument == "Get_The_Long_Walk_To_Freedom_Book_for_the_man":
 		print("Dialogic.signal_event(on_Get_The_Long_Walk_To_Freedom_Book_for_the_man) -true")
 		Global.player_acquired_beaded_charm = true
-		misson_manager.set_message("Get The Long Walk To Freedom Book for the man")
+		misson_manager.set_message("Get The Power Of Patience for the man")
 		pass
 func on_You_phone_the_number_on_the_band(argument : String):
 #	black screen with You_phone_the_number_on_the_band

@@ -10,6 +10,7 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(0.5, 0.17276001, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibhri"]
+size = Vector3(0.6291504, 0.28033447, 1)
 
 [node name="BookBaseScene" type="RigidBody3D" unique_id=1562565056 groups=["books"]]
 collision_layer = 3

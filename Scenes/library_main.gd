@@ -162,6 +162,7 @@ func _on_scare_2_body_entered(body: Node3D) -> void:
 		Global.disable_ghost_footsteps = true
 		print("Player activated sound here")
 #		this monitoring stuff needs to be checked
+		await get_tree().create_timer(4).timeout
 		turn_off_sounds_and_have_npc_2_enter.monitoring = true
 		misson_manager.set_message("Return to Reception")
 
@@ -177,7 +178,7 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		print("Player de-activate sound here")
 		turn_off_sounds_and_have_npc_2_enter.monitoring = false
 		background_normal_ambience.play()
-		await get_tree().create_timer(3).timeout
+		#await get_tree().create_timer(3).timeout
 #		olf man entere after music stops and after 2 secs
 		Global.have_elderly_come_in_library_npc2_ = true
 
@@ -205,3 +206,7 @@ func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
 	print("Counter = ", counter)
 	receptionist_label.text = "books " + str(counter) + " / 2"
 	check_completion()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
