@@ -47,6 +47,7 @@ var required_books: Array[String] = [
 @onready var spook_1: CharacterBody3D = $"../../../Scare_1/Spook_1"
 
 func _ready() -> void:
+	SignalManager.connect("scene1_return_books_to_shelf", on_scene1_return_books_to_shelf)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	logbook.visible = false
 	error_message.visible = false
@@ -156,6 +157,7 @@ func _on_btn_enter_2_pressed() -> void:
 		add_entry_to_log()
 		submitted_books.append(entered_book_name)
 		if check_required_books():
+			print("Both require books submitted")
 			SignalManager.emit_signal("scene1_return_books_to_shelf")
 			misson_manager.set_message("Put books into shelves - alphabetical order")
 		correct_message.text = "All entries are correct!"

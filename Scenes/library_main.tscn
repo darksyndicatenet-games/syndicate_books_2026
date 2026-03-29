@@ -2479,7 +2479,7 @@ script = ExtResource("16_jhl3c")
 [connection signal="body_exited" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_body_exited"]
 [connection signal="body_entered" from="Day1/FrontDeskArea3D/Placement2" to="Day1/FrontDeskArea3D/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Day1/FrontDeskArea3D/Placement2" to="Day1/FrontDeskArea3D/Placement2" method="_on_body_exited"]
-[connection signal="scene1_return_books_to_shelf" from="SignalManager" to="SignalManager" method="_on_scene_1_return_books_to_shelf"]
+[connection signal="scene1_return_books_to_shelf" from="SignalManager" to="Computer/CanvasLayer/User" method="on_scene1_return_books_to_shelf"]
 [connection signal="body_entered" from="Scare_1/Cutscene2" to="." method="_on_cutscene_2_body_entered"]
 [connection signal="body_entered" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="Scare_1/CoffeeMachineTrigger" to="Scare_1/CoffeeMachineTrigger" method="_on_body_exited"]

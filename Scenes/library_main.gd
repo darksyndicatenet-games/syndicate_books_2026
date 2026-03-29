@@ -103,6 +103,7 @@ func check_completion():
 	if counter == required_books.size():
 		print("All required books returned!")
 		SignalManager.emit_signal("scene1_return_books_to_shelf")
+		
 		await get_tree().create_timer(5).timeout
 		receptionist_label.text = ""
 
@@ -191,4 +192,4 @@ func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
 	print("Book added:", book_name)
 	print("Counter = ", counter)
 	receptionist_label.text = "books " + str(counter) + " / 2"
-	#check_completion()
+	check_completion()
