@@ -4381,6 +4381,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.269121, 0.25000024, -20.28
 [node name="desk24" parent="StudyArea/Desks" unique_id=2052470863 instance=ExtResource("42_kllcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.82576, 0.25000024, -20.280891)
 
+[node name="desk25" parent="StudyArea/Desks" unique_id=1241686542 instance=ExtResource("42_kllcd")]
+transform = Transform3D(0.14994946, 0, -0.98869365, 0, 1, 0, 0.98869365, 0, 0.14994946, 22.305958, 0.25000024, -24.31947)
+
+[node name="desk26" parent="StudyArea/Desks" unique_id=1461217261 instance=ExtResource("42_kllcd")]
+transform = Transform3D(0.14994946, 0, -0.98869365, 0, 1, 0, 0.98869365, 0, 0.14994946, 22.089527, 0.25000024, -25.74651)
+
 [node name="desk14" parent="StudyArea/Desks" unique_id=1623864846 instance=ExtResource("42_kllcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.899849, 0.25000024, 3.335966)
 
@@ -4413,6 +4419,9 @@ transform = Transform3D(-0.33513916, 0, 0.94216865, 0, 1, 0, -0.94216865, 0, -0.
 
 [node name="staff_chairs4" parent="StudyArea/Desks" unique_id=468397501 instance=ExtResource("59_sen8m")]
 transform = Transform3D(0.06406203, 0, 0.99794596, 0, 1, 0, -0.99794596, 0, 0.06406203, 19.205763, 0.2500019, -19.705542)
+
+[node name="staff_chairs11" parent="StudyArea/Desks" unique_id=1128389499 instance=ExtResource("59_sen8m")]
+transform = Transform3D(-0.94329226, 0, 0.33196354, 0, 1, 0, -0.33196354, 0, -0.94329226, 22.452913, 0.2500019, -23.2875)
 
 [node name="staff_chairs7" parent="StudyArea/Desks" unique_id=1510472270 instance=ExtResource("59_sen8m")]
 transform = Transform3D(0.06406203, 0, 0.99794596, 0, 1, 0, -0.99794596, 0, 0.06406203, 19.205763, 0.2500019, -14.822212)
