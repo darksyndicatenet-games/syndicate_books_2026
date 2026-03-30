@@ -30,5 +30,3 @@ Player: 'That bracelet... It looks like the ones they give for people with demen
 	Player: "Ah! Could it be a long walk to freedom, per chance?"
 	NPC_2: "I'm not sure... But I'll know the cover"
 	Player: "Okay, I remember seeing it, let me get it for you"
-	[signal arg="Get_The_Long_Walk_To_Freedom_Book_for_the_man"]
-	# bool value so player can get braclet
