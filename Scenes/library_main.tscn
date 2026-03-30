@@ -1914,7 +1914,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47982192, 0.4961486, 24.90
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4122229, 0.75790834, 2.9796066)
 player = NodePath("../../../Player")
 look_target = NodePath("CloseShop")
-message = "jkdkhtdktdktydkytdktydktydt"
+message = "Ah"
 play_scene_once = true
 
 [node name="CollisionShape3D" parent="Day1/Door/Cutscene" index="2" unique_id=1633756298]
@@ -2148,7 +2148,7 @@ issue_date = "2026-03-10"
 visible = false
 
 [node name="CollisionShape3D" parent="Books/ThePowerOfPatience/Area3D" parent_id_path=PackedInt32Array(1921935806, 1732778017) index="0" unique_id=517621835]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026977539, 0.12753302, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026977539, 0.25664634, 0.16723633)
 
 [node name="ThePowerOfPatience" type="MeshInstance3D" parent="Books/ThePowerOfPatience" unique_id=1621484975]
 transform = Transform3D(0.953, 0, 0, 0, -4.4585615e-08, -1.02, 0, 1.02, -4.4585615e-08, -0.15353775, 0.24215764, 0.17292786)
@@ -2992,6 +2992,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62
 [editable path="Computer/monitor/monitor"]
 [editable path="NavigationRegion3D/Map/shelves/ShelfCorner/Node3D/book_shelf_Sample10"]
 [editable path="NavigationRegion3D/Syndicate_books"]
+[editable path="Player"]
 [editable path="Player/BookInfoDisplay"]
 [editable path="Player/radio"]
 [editable path="Day1/Door/Cutscene"]

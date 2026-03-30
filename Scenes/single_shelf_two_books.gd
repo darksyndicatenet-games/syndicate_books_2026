@@ -19,7 +19,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		print("both books are in shelf")
 		misson_manager.set_message("Check library for any people studying or looking for books")
 		cutscene.monitoring = true
-		#spook_1.visible = true
+		spook_1.visible = true
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:

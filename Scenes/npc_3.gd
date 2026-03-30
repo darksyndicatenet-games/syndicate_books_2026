@@ -10,16 +10,19 @@ extends CharacterBody3D
 @onready var cutscene: Area3D = $"../../Day1/Door/Cutscene"
 
 @onready var waving_spookyy: Node3D = $"../../waving_spookyy"
+@onready var player_cam: Camera3D = $"../../Player/Head/Camera3D"
 
 var next_scene = preload("res://Assets/credits.tscn")
 
 @onready var animation_player_3: AnimationPlayer = $"../../waving_spookyy/AnimationPlayer3"
 
+@onready var camera_3d: Camera3D = $"../../waving_spookyy/Camera3D"
 
 @onready var npc_2: CharacterBody3D = $"../NPC_2"
 var npc3_event_triggered := false
 # if npc_3_can_get_npc_2 == true make npc3 walk
 func _ready() -> void:
+	waving_spookyy.visible = false
 	cutscene.monitoring = false
 	if target_marker:
 		nav_agent.target_position = target_marker.global_position
@@ -97,10 +100,11 @@ func trigger_npc3_event():
 	if Global.spook_1_ending == true:
 		cutscene.monitoring = true
 		waving_spookyy.visible = true
-		animation_player_3.play("camera_Spook")
-		#await get_tree().create_timer(2.0).timeout
-		#get_tree().change_scene_to_packed(next_scene)
-
+		
+		#animation_player_3.play("camera_Spook")
+		await get_tree().create_timer(4.0).timeout
+		get_tree().change_scene_to_packed(next_scene)
+		print("camera works i guess")
 #		need to show spook waving maybe havea  timer then play credits scene
 #get_tree().change_scene_to_packed(next_scene)
 	else:

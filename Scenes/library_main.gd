@@ -11,7 +11,7 @@ extends Node3D
 
 @onready var background_normal_ambience: AudioStreamPlayer3D = $Player/BackgroundNormalAmbience
 #@onready var the_power_of_patience: RigidBody3D = $Books/ThePowerOfPatience
-
+var scary_audio_playing := false
 var bell_has_been_fired := false
 var counter := 0
 #@onready var spook_1: CharacterBody3D = $Scare_1/Spook_1
@@ -25,7 +25,7 @@ var run_once := false
 #then player should look at study area for the guy that disappeared
 #then that when the bg ambience and footsteps sfx should be turned on
 
-
+var bg_ambience_only_once := true
 # ONLY these books should count
 var required_books := [
 	"the animal farm",
@@ -164,6 +164,7 @@ func background_scary_audio_scare_():
 		# Ensure audio is playing
 		if not scary_background_audio.playing:
 			scary_background_audio.play()
+		bg_ambience_only_once = false
 
 
 
@@ -190,7 +191,8 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		Global.npc_1_last_dialogue_is_finished_enabler_for_bg_sound_footsteps = false
 		print("Player de-activate sound here")
 		turn_off_sounds_and_have_npc_2_enter.monitoring = false
-		background_normal_ambience.play()
+		if bg_ambience_only_once == false:
+			background_normal_ambience.play()
 		#await get_tree().create_timer(3).timeout
 #		olf man entere after music stops and after 2 secs
 		Global.have_elderly_come_in_library_npc2_ = true
@@ -220,8 +222,3 @@ func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
 	print("Counter = ", counter)
 	receptionist_label.text = "books " + str(counter) + " / 2"
 	check_completion()
-
-func _on_patient_book_area_body_entered(body: Node3D) -> void:
-#	if the_power_of_patience is in area and player
-#global.The_Long_Walk_To_Freedom_given_to_npc2== true
-	pass # Replace with function body.
