@@ -7,6 +7,7 @@ var has_player_interacted01:= false
 #connect signal here in begin dialogue
 
 func _ready() -> void:
+	set_meta("display_name", "???")
 	Dialogic.signal_event.connect(on_player_denied_coffee_For_spook)
 
 func begin_dialogue():

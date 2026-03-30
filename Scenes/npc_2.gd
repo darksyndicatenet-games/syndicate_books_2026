@@ -14,7 +14,7 @@ var is_looking := false
 @export var leave_marker : Marker3D
 
 func _ready() -> void:
-	
+	set_meta("display_name", "Mr Amari")
 	if target_marker:
 		nav_agent.target_position = target_marker.global_position
 

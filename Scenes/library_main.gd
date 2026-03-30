@@ -18,6 +18,7 @@ var counter := 0
 @export var spook_1: CharacterBody3D
 # books already counted
 var counted_books: Array[String] = []
+@onready var cutscene: Area3D = $Day1/Door/Cutscene
 
 var run_once := false
 
@@ -196,7 +197,10 @@ func _on_turn_off_sounds_and_have_npc_2_enter_body_entered(body: Node3D) -> void
 		#await get_tree().create_timer(3).timeout
 #		olf man entere after music stops and after 2 secs
 		Global.have_elderly_come_in_library_npc2_ = true
-		npc_2.visible = true
+		if npc_2 and not npc_2.visible:
+			npc_2.visible = true
+		turn_off_sounds_and_have_npc_2_enter.monitoring = false
+		
 
 
 #i need to i=fix the decrement

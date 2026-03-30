@@ -12,7 +12,8 @@ extends CharacterBody3D
 @onready var waving_spookyy: Node3D = $"../../waving_spookyy"
 @onready var player_cam: Camera3D = $"../../Player/Head/Camera3D"
 
-var next_scene = preload("res://Assets/credits.tscn")
+var next_scene = preload("res://Scenes/ScreenMenu/StartScreenMenu.tscn")
+
 
 @onready var animation_player_3: AnimationPlayer = $"../../waving_spookyy/AnimationPlayer3"
 
@@ -22,6 +23,7 @@ var next_scene = preload("res://Assets/credits.tscn")
 var npc3_event_triggered := false
 # if npc_3_can_get_npc_2 == true make npc3 walk
 func _ready() -> void:
+	set_meta("display_name", "Grace")
 	waving_spookyy.visible = false
 	cutscene.monitoring = false
 	if target_marker:
@@ -83,6 +85,7 @@ func on_Beaded_charm_acquired_notification(argument: String):
 			if npc_2:
 				npc_2.queue_free()
 			#[Dialogue: "Guess it's time to lock up..."]
+			end_scene()
 func trigger_npc3_event():
 	if not Global.have_npc3_collect_npc_2_once:
 		return
@@ -93,20 +96,22 @@ func trigger_npc3_event():
 	Dialogic.start("npc_3_enters_to_get_her_dad")
 	if not Dialogic.signal_event.is_connected(on_Beaded_charm_acquired_notification):
 		Dialogic.signal_event.connect(on_Beaded_charm_acquired_notification)
-
-	await get_tree().create_timer(3.0).timeout
-	
+	cutscene.monitoring = true
+#Dialogic.signal_dialogue_ended
+	#await get_tree().create_timer(3.0).timeout
+	#await dialogue.finished
 	player.force_look_at(look_marker.global_position)
+	
+func end_scene():
+	#if body.name == "Player":
 	if Global.spook_1_ending == true:
 		cutscene.monitoring = true
 		waving_spookyy.visible = true
-		
-		#animation_player_3.play("camera_Spook")
+
 		await get_tree().create_timer(4.0).timeout
 		get_tree().change_scene_to_packed(next_scene)
 		print("camera works i guess")
-#		need to show spook waving maybe havea  timer then play credits scene
-#get_tree().change_scene_to_packed(next_scene)
+
 	else:
 #		play credits
 		get_tree().change_scene_to_packed(next_scene)

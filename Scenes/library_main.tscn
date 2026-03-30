@@ -892,7 +892,7 @@ _data = {
 &"camera_Spook": SubResource("Animation_g48l2")
 }
 
-[node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
+[node name="ThePowerOfPatience" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
 spook_1 = NodePath("Scare_1/Spook_1")
 
@@ -2565,7 +2565,7 @@ collision_mask = 13
 mass = 10.0
 book_name = "the animal farm"
 author = "George Orwell"
-taken_out_by = "Me"
+taken_out_by = "Zwivhuya"
 issue_date = "2026-02-10"
 
 [node name="MeshInstance3D" parent="Books/TheAnimalFarm" index="0" unique_id=937974331]
@@ -2585,8 +2585,8 @@ collision_layer = 5
 collision_mask = 13
 mass = 10.0
 book_name = "The Song Of Achilles"
-author = "Unknown Author"
-taken_out_by = "Me"
+author = "Madeline Miller"
+taken_out_by = "Yasminw"
 issue_date = "2026-02-10"
 
 [node name="MeshInstance3D" parent="Books/TheSongOfAchilles" index="0" unique_id=937974331]
@@ -2601,13 +2601,13 @@ mesh = SubResource("ArrayMesh_pe7hg")
 skeleton = NodePath("")
 
 [node name="ThePowerOfPatience" parent="Books" unique_id=1921935806 groups=["cups"] instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.586687, 0.8987605, 11.799688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.866341, 0.8987605, 4.3174906)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0
 book_name = "The Power Of Patience"
-author = "me"
-taken_out_by = "me"
+author = "MJ Ryan"
+taken_out_by = "NA"
 issue_date = "2026-03-10"
 
 [node name="MeshInstance3D" parent="Books/ThePowerOfPatience" index="0" unique_id=937974331]
@@ -2617,7 +2617,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026977539, 0.25664634, 0.16723633)
 
 [node name="ThePowerOfPatience" type="MeshInstance3D" parent="Books/ThePowerOfPatience" unique_id=1621484975]
-transform = Transform3D(0.953, 0, 0, 0, -4.4585615e-08, -1.02, 0, 1.02, -4.4585615e-08, -0.15353775, 0.24215764, 0.17292786)
+transform = Transform3D(0.953, 0, 0, 0, -4.4585615e-08, -1.02, 0, 1.02, -4.4585615e-08, -0.076221466, 0.25887936, -0.042196274)
 mesh = SubResource("ArrayMesh_6h4yv")
 skeleton = NodePath("")
 
@@ -2743,8 +2743,8 @@ collision_layer = 5
 collision_mask = 13
 mass = 100.0
 book_name = "To Kill A Mockingbird"
-author = "tester"
-taken_out_by = "me"
+author = "Mario Robinson"
+taken_out_by = "Mrs Johnson"
 issue_date = "2026-03-29"
 
 [node name="MeshInstance3D" parent="Scare_1/ToKillAMockingbird" index="0" unique_id=937974331]

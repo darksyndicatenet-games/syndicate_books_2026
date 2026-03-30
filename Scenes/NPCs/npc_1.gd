@@ -21,6 +21,7 @@ var has_player_interacted01:= false
 
 var check_book_first_npc_play_once := false
 func _ready():
+	set_meta("display_name", "Mrs Johnson")
 	
 	if target_marker:
 		nav_agent.target_position = target_marker.global_position
