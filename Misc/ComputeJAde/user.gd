@@ -61,7 +61,7 @@ func _ready() -> void:
 	returned.text = str(today_dict.year) + "-" + str(today_dict.month).pad_zeros(2) + "-" + str(today_dict.day).pad_zeros(2)
 
 func _on_btn_enter_pressed() -> void:
-	if user_name.text == "zee" and password.text == "zee":
+	if user_name.text == "librarian101" and password.text == "123":
 		control.visible = false
 		logbook.visible = true
 		user.visible = false
@@ -72,6 +72,7 @@ func _on_btn_enter_pressed() -> void:
 		
 	else:
 		error_message_function("Username or password incorrect")
+
 
 
 func error_message_function(message: String):
