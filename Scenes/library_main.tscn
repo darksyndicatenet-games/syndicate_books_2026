@@ -5049,6 +5049,12 @@ font_size = 40
 [node name="box_return" parent="." unique_id=761319766 instance=ExtResource("72_cx67b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62154)
 
+[node name="box_return2" parent="." unique_id=2022674898 instance=ExtResource("72_cx67b")]
+transform = Transform3D(17.575, 0, 0, 0, 2.38, 0, 0, 0, 1.81, -23.641253, 0.29999018, 25.279694)
+
+[node name="box_return3" parent="." unique_id=742876580 instance=ExtResource("72_cx67b")]
+transform = Transform3D(17.575, 0, 0, 0, 2.38, 0, 0, 0, 1.25, -23.641253, 0.29999018, 26.982952)
+
 [node name="carpet2" parent="." unique_id=2145663652 instance=ExtResource("76_pys0l")]
 transform = Transform3D(1.915, 0, 0, 0, 1.915, 0, 0, 0, 4.195, -19.656107, 0.62753785, 17.215576)
 
@@ -5060,6 +5066,15 @@ transform = Transform3D(0.725, 0, 0, 0, 1, 0, 0, 0, 1.84, -29.319895, 0.47662675
 
 [node name="carpet" parent="carpet3" index="0" unique_id=1314005991]
 transform = Transform3D(1.738376, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1876564, 0)
+
+[node name="coffee_mug" parent="." unique_id=299926777 instance=ExtResource("38_g48l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.07479, 1.7912737, -15.205759)
+
+[node name="coffee_mug2" parent="." unique_id=1678987374 instance=ExtResource("38_g48l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.968739, 1.7912736, -19.56286)
+
+[node name="coffee_mug3" parent="." unique_id=208929249 instance=ExtResource("38_g48l2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.12898, 1.7912736, -20.658842)
 
 [connection signal="body_entered" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_exited"]
