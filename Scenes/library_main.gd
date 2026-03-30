@@ -53,6 +53,7 @@ func _ready() -> void:
 	Inventory.connect("trigger_door_animation", on_trigger_door_animation_)
 	scare_2.monitoring = false
 	turn_off_sounds_and_have_npc_2_enter.monitoring = false
+	the_power_of_patience.visible = false
 
 
 func _process(_delta: float) -> void:

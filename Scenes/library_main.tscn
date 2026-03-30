@@ -2601,7 +2601,7 @@ mesh = SubResource("ArrayMesh_pe7hg")
 skeleton = NodePath("")
 
 [node name="ThePowerOfPatience" parent="Books" unique_id=1921935806 groups=["cups"] instance=ExtResource("14_1kku3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.866341, 0.8987605, 4.3174906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.46982, 0.36246705, 3.953425)
 collision_layer = 5
 collision_mask = 13
 mass = 10.0

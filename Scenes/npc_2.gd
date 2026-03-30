@@ -12,6 +12,7 @@ var looking_timer := 0.0
 var look_duration := 3.0
 var is_looking := false
 @export var leave_marker : Marker3D
+@onready var the_power_of_patience: RigidBody3D = $"../../Books/ThePowerOfPatience"
 
 func _ready() -> void:
 	set_meta("display_name", "Mr Amari")
@@ -55,6 +56,7 @@ func begin_dialogue():
 		has_player_interacted01 = true
 		Dialogic.signal_event.connect(on_You_phone_the_number_on_the_band)
 		Dialogic.signal_event.connect(on_Get_The_Long_Walk_To_Freedom_Book_for_the_man)
+		the_power_of_patience.visible = true
 		
 	else:
 		return
