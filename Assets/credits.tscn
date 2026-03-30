@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://eb2r8waimuin"]
 
-[ext_resource type="VideoStream" uid="uid://w0p4bknsgik6" path="res://Assets/End_Credits.ogv" id="1_nvd4n"]
 [ext_resource type="Script" uid="uid://dc6jbyinhomnm" path="res://Assets/credits.gd" id="1_r31na"]
+[ext_resource type="VideoStream" uid="uid://57elamry5d0f" path="res://Scenes/ScreenMenu/MenuScreen-UI/End_Credits_Sound.ogv" id="2_r31na"]
 
 [node name="Credits" type="Node2D" unique_id=2083744513]
 script = ExtResource("1_r31na")
@@ -15,7 +15,7 @@ offset_top = 4.0
 offset_right = 1907.0
 offset_bottom = 1084.0
 scale = Vector2(1.0196373, 1.0196373)
-stream = ExtResource("1_nvd4n")
+stream = ExtResource("2_r31na")
 autoplay = true
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

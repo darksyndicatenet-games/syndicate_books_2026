@@ -67,6 +67,7 @@
 [ext_resource type="Script" uid="uid://d26mf86s35kuw" path="res://Assets/Assets_Scenes/coffee_machine.gd" id="50_ydxcn"]
 [ext_resource type="PackedScene" uid="uid://da4qcc7rvlmyi" path="res://note_password_username.glb" id="53_bxqww"]
 [ext_resource type="Texture2D" uid="uid://bq7o54wclendt" path="res://addons/dialogic/Example Assets/ToKillAMockingbird_Specific_books.png" id="54_sen8m"]
+[ext_resource type="PackedScene" uid="uid://c6plwlb125n2w" path="res://Assets/fridge.glb" id="56_8a35c"]
 [ext_resource type="PackedScene" uid="uid://cqrf0nfvaddet" path="res://Assets/desk_lamp.tscn" id="57_3u5q6"]
 [ext_resource type="PackedScene" uid="uid://dur6rmb5v8rbk" path="res://Assets/flat_lights.tscn" id="58_5mjsl"]
 [ext_resource type="PackedScene" uid="uid://sy4wuw74sbg3" path="res://addons/dialogic/Example Assets/staff_chairs.glb" id="59_sen8m"]
@@ -2321,6 +2322,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.242991, -0.26541936, -18.
 
 [node name="move_outside" type="Marker3D" parent="Scare_1/NPC_1" unique_id=2108978918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.766632, -0.7709508, -11.103025)
+
+[node name="fridge" parent="Scare_1" unique_id=1374611559 instance=ExtResource("56_8a35c")]
+transform = Transform3D(1.675, 0, 0, 0, 1.675, 0, 0, 0, 1.675, 25.912903, 0.25247157, -32.646774)
+
+[node name="fridge2" parent="Scare_1" unique_id=1890336249 instance=ExtResource("56_8a35c")]
+transform = Transform3D(0.80405873, 0, 0.13309664, 0, 0.815, 0, -0.13309664, 0, 0.80405873, 18.306396, 1.4621073, -32.161575)
 
 [node name="Scare_3" type="Node3D" parent="." unique_id=1561720948]
 

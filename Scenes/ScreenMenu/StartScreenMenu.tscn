@@ -9,6 +9,7 @@
 [ext_resource type="VideoStream" uid="uid://dpheooc27bfey" path="res://Scenes/ScreenMenu/MenuScreen-UI/Opening-Screen (1).ogv" id="6_laflf"]
 [ext_resource type="Texture2D" uid="uid://bghtcwtquqjd8" path="res://Scenes/ScreenMenu/MenuScreen-UI/Quit.png" id="7_7xfig"]
 [ext_resource type="Texture2D" uid="uid://brchjwaev0fxy" path="res://Scenes/ScreenMenu/MenuScreen-UI/Quit_Click.png" id="8_cv40o"]
+[ext_resource type="AudioStream" uid="uid://d3wufj6mscxat" path="res://Scenes/ScreenMenu/MenuScreen-UI/main-menu-sound.mp3" id="10_731mm"]
 
 [node name="StartScreenMenu" type="Control" unique_id=581198161]
 layout_mode = 3
@@ -96,6 +97,10 @@ ignore_texture_size = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=937048040]
 position = Vector2(963.77, 543.255)
 zoom = Vector2(1, 1.24)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=897990274]
+stream = ExtResource("10_731mm")
+autoplay = true
 
 [connection signal="pressed" from="OpeningScene/Startbtn" to="." method="_on_startbtn_pressed"]
 [connection signal="pressed" from="OpeningScene/Optionbtn" to="." method="_on_optionbtn_pressed"]
