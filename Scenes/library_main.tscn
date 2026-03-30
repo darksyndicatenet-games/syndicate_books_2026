@@ -854,6 +854,43 @@ shadow_mesh = SubResource("ArrayMesh_xt42j")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62wgf"]
 albedo_texture = ExtResource("49_pat0f")
 
+[sub_resource type="Animation" id="Animation_8a35c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.060968876, 1.481647, 0.59373474)]
+}
+
+[sub_resource type="Animation" id="Animation_g48l2"]
+resource_name = "camera_Spook"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.060968876, 1.481647, 0.59373474), Vector3(1.6039557, 1.481647, 8.369236)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyfm8"]
+_data = {
+&"RESET": SubResource("Animation_8a35c"),
+&"camera_Spook": SubResource("Animation_g48l2")
+}
+
 [node name="Library_Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
 spook_1 = NodePath("Scare_1/Spook_1")
@@ -1879,6 +1916,9 @@ player = NodePath("../../../Player")
 look_target = NodePath("CloseShop")
 message = "jkdkhtdktdktydkytdktydktydt"
 play_scene_once = true
+
+[node name="CollisionShape3D" parent="Day1/Door/Cutscene" index="2" unique_id=1633756298]
+transform = Transform3D(2.11, 2.9393467e-08, -8.842939e-09, -2.9393467e-08, 2.11, 5.526817e-09, 8.842939e-09, -5.526817e-09, 2.11, -3.786856, 0.7310052, -1.7059536)
 
 [node name="CloseShop" type="Marker3D" parent="Day1/Door/Cutscene" unique_id=845663446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9305923, -5.445402)
@@ -2913,8 +2953,13 @@ transform = Transform3D(0.050948307, 0, -0.522522, 0, 0.525, 0, 0.522522, 0, 0.0
 transform = Transform3D(-0.16053368, 0, 0.49985385, 0, 0.5249999, 0, -0.49985385, 0, -0.16053368, 19.329987, 1.5912735, -1.8569397)
 
 [node name="waving_spookyy" parent="." unique_id=917656382 instance=ExtResource("71_l52nb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.862102, 0.25604004, 14.52289)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22612, 0.25604004, 21.613815)
+
+[node name="Camera3D" type="Camera3D" parent="waving_spookyy" unique_id=1770266391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060968876, 1.481647, 0.59373474)
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="waving_spookyy" unique_id=93031589]
+libraries/ = SubResource("AnimationLibrary_wyfm8")
 
 [node name="box_return" parent="." unique_id=761319766 instance=ExtResource("72_cx67b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62154)

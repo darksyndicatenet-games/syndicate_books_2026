@@ -9,6 +9,13 @@ extends CharacterBody3D
 @onready var misson_manager: Node = $"../../MissonManager"
 @onready var cutscene: Area3D = $"../../Day1/Door/Cutscene"
 
+@onready var waving_spookyy: Node3D = $"../../waving_spookyy"
+
+var next_scene = preload("res://Assets/credits.tscn")
+
+@onready var animation_player_3: AnimationPlayer = $"../../waving_spookyy/AnimationPlayer3"
+
+
 @onready var npc_2: CharacterBody3D = $"../NPC_2"
 var npc3_event_triggered := false
 # if npc_3_can_get_npc_2 == true make npc3 walk
@@ -51,6 +58,7 @@ func on_Beaded_charm_acquired_notification(argument: String):
 	
 	if argument == "Beaded_charm_acquired_notification":
 			print("player gains charm and leaves")
+			
 
 			# Wait 2 seconds
 			await get_tree().create_timer(2.0).timeout
@@ -64,6 +72,13 @@ func on_Beaded_charm_acquired_notification(argument: String):
 				if npc2_nav_agent:
 					npc2_nav_agent.target_position = leave_marker.global_position
 			misson_manager.set_message("Close Library")
+			
+			# 💥 REMOVE THEM AFTER THEY START WALKING
+			await get_tree().create_timer(2.5).timeout
+
+			queue_free() # removes NPC_3
+			if npc_2:
+				npc_2.queue_free()
 			#[Dialogue: "Guess it's time to lock up..."]
 func trigger_npc3_event():
 	if not Global.have_npc3_collect_npc_2_once:
@@ -81,6 +96,13 @@ func trigger_npc3_event():
 	player.force_look_at(look_marker.global_position)
 	if Global.spook_1_ending == true:
 		cutscene.monitoring = true
+		waving_spookyy.visible = true
+		animation_player_3.play("camera_Spook")
+		#await get_tree().create_timer(2.0).timeout
+		#get_tree().change_scene_to_packed(next_scene)
+
+#		need to show spook waving maybe havea  timer then play credits scene
+#get_tree().change_scene_to_packed(next_scene)
 	else:
 #		play credits
-		return
+		get_tree().change_scene_to_packed(next_scene)

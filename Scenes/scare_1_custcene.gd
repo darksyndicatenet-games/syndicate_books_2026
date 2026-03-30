@@ -91,14 +91,15 @@ func set_thoughts(new_text: String):
 #func _on_body_entered(body: Node3D) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
-	if play_scene_once:
-		if has_played:
-			return
+	if body.name == "Player":
+		if play_scene_once:
+			if has_played:
+				return
 
-		if body == player:
-			play_cutscene()
-	else:
-		return
+			if body == player:
+				play_cutscene()
+		else:
+			return
 
 		
 		
