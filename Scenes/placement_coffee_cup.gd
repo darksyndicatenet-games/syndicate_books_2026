@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("cups"):
 		body_inside = body
-		misson_manager.set_message("Log book return into computer")
+		misson_manager.set_message("Log book into computer")
 		
 
 

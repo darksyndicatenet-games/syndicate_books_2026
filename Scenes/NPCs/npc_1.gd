@@ -68,7 +68,7 @@ func on_npc1_can_leave_library(argument: String):
 		print("have npc walk away then")
 		nav_agent.target_position = move_outside.global_position
 		npc_should_leave = true  # ← THIS is what actually restarts movement
-		misson_manager.set_message("Speak for ? in study area")
+		misson_manager.set_message("Converse to the person studying")
 		npc_1.queue_free()
 
 
@@ -97,7 +97,7 @@ func last_dialogue():
 func on_log_book_return_into_computer(argument : String):
 	if argument == "log_book_return_into_computer":
 		print("log_book_return_into_computer")
-	misson_manager.set_message("Log book return into computer")
+	misson_manager.set_message("Log book into computer")
 #	so there needs to be a book here that player needs to log back in
 func handle_npc_after_book() -> void:
 	# wait 1 second before starting dialogue
@@ -107,7 +107,7 @@ func handle_npc_after_book() -> void:
 	print("Player entered book correctly & exited screen")
 	cutscene_3.monitoring = true
 	last_dialogue()
-	misson_manager.set_message("Put coffee in tray on receptionist desk")
+	misson_manager.set_message("Put coffee in tray on front desk")
 	
 	# Wait until dialogue finishes (assuming Dialogic has a 'finished' signal)
 	#await Dialogic.finished  # pause here until dialogue is done

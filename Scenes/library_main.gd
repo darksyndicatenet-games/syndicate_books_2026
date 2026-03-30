@@ -124,7 +124,7 @@ func on_trigger_door_animation_():
 #	trigger door animation here
 	door_anim_player.play("Open_Door")
 	print("trigger door animation here")
-	misson_manager.set_message("Put books onto front desk")
+	misson_manager.set_message("Put books onto Front Desk")
 	pass
 	
 	
@@ -178,7 +178,9 @@ func _on_scare_2_body_entered(body: Node3D) -> void:
 #		this monitoring stuff needs to be checked
 		await get_tree().create_timer(4).timeout
 		turn_off_sounds_and_have_npc_2_enter.monitoring = true
-		misson_manager.set_message("Return to Reception")
+		misson_manager.set_message("Return to Front Desk")
+		await get_tree().create_timer(3).timeout
+		misson_manager.set_message("Speak to Customer")
 		
 
 

@@ -20,14 +20,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_226hb")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1660143013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="OpeningScene" type="VideoStreamPlayer" parent="." unique_id=948559553]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -60.0
+offset_left = 135.0
+offset_top = 99.0
+offset_right = 135.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8260689, 0.89852256)
 stream = ExtResource("6_laflf")
 autoplay = true
 loop = true

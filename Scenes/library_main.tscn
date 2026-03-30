@@ -892,7 +892,7 @@ _data = {
 &"camera_Spook": SubResource("Animation_g48l2")
 }
 
-[node name="ThePowerOfPatience" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
+[node name="Library-Main" type="Node3D" unique_id=1105848030 node_paths=PackedStringArray("spook_1")]
 script = ExtResource("1_wohjs")
 spook_1 = NodePath("Scare_1/Spook_1")
 
@@ -2342,7 +2342,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0, -0.92729783, 0, 0, 0, -2.4727411, 7.7677526, 0, 0, 9.5383625, -0.37160444, -21.80069)
 
 [node name="Player" parent="." unique_id=2076376961 instance=ExtResource("9_7vups")]
-transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -1.9367363, 0.6018486, 68.78312)
+transform = Transform3D(0.94457704, 0, 0.32828984, 0, 1, 0, -0.32828984, 0, 0.94457704, -2.511771, 0.6018486, 27.61747)
 
 [node name="InventoryDisplay" parent="Player" unique_id=1611622683 instance=ExtResource("13_ot02y")]
 
@@ -2641,8 +2641,7 @@ player = NodePath("../../Player")
 look_target = NodePath("../Spook_1/LookAtSpook1")
 spook_1 = NodePath("../Spook_1")
 message = "What? Did he seriously just leave?... rude..."
-mission_text = "Put Coffee on tray at front desk
-Speak to patron"
+mission_text = "Speak to customer"
 play_scene_once = true
 
 [node name="BellSound" type="AudioStreamPlayer3D" parent="Scare_1/Cutscene2" unique_id=977336096]
@@ -3432,6 +3431,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060968876, 1.481647, 0.5937
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="waving_spookyy" unique_id=93031589]
 libraries/ = SubResource("AnimationLibrary_wyfm8")
+
+[node name="Label3D" type="Label3D" parent="waving_spookyy" unique_id=991121864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0505202, 0)
+billboard = 2
+text = "Thank you for the coffee..."
+font_size = 40
 
 [node name="box_return" parent="." unique_id=761319766 instance=ExtResource("72_cx67b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62154)

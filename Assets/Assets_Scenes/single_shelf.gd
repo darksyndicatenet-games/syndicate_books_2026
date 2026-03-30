@@ -23,7 +23,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	if book1_in_area and book2_in_area:
 		print("success")
-		misson_manager.set_message("Check library for any people studying or looking for books") 
+		misson_manager.set_message("Check library for patrons") 
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:

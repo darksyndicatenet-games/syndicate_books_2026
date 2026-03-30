@@ -12,7 +12,8 @@ extends CharacterBody3D
 @onready var waving_spookyy: Node3D = $"../../waving_spookyy"
 @onready var player_cam: Camera3D = $"../../Player/Head/Camera3D"
 
-var next_scene = preload("res://Scenes/ScreenMenu/StartScreenMenu.tscn")
+var next_scene = preload("res://Assets/credits.tscn")
+
 
 
 @onready var animation_player_3: AnimationPlayer = $"../../waving_spookyy/AnimationPlayer3"
@@ -76,7 +77,7 @@ func on_Beaded_charm_acquired_notification(argument: String):
 			if npc_2 and leave_marker:
 				if npc2_nav_agent:
 					npc2_nav_agent.target_position = leave_marker.global_position
-			misson_manager.set_message("Close Library")
+			misson_manager.set_message("Exit Library")
 			
 			# 💥 REMOVE THEM AFTER THEY START WALKING
 			await get_tree().create_timer(2.5).timeout

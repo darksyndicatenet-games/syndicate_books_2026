@@ -55,6 +55,7 @@ func begin_dialogue():
 		has_player_interacted01 = true
 		Dialogic.signal_event.connect(on_You_phone_the_number_on_the_band)
 		Dialogic.signal_event.connect(on_Get_The_Long_Walk_To_Freedom_Book_for_the_man)
+		
 	else:
 		return
 
@@ -64,7 +65,7 @@ func on_Get_The_Long_Walk_To_Freedom_Book_for_the_man(argument : String):
 	if argument == "Get_The_Long_Walk_To_Freedom_Book_for_the_man":
 		print("Dialogic.signal_event(on_Get_The_Long_Walk_To_Freedom_Book_for_the_man) -true")
 		Global.player_acquired_beaded_charm = true
-		misson_manager.set_message("Get The Power Of Patience for the man")
+		misson_manager.set_message("Get 'The Power Of Patience' for the man")
 		pass
 		
 @onready var npc_3: CharacterBody3D = $"../NPC_3"

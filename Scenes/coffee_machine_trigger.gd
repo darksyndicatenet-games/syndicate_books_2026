@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 			#misson_manager.set_message("coffee machine IS on")
 			coffee_machine_activated = true  # prevent repeat
 			print("Coffee is done")
-			misson_manager.set_message("return coffe to person")
+			misson_manager.set_message("Give coffee to person studying")
 			emit_signal("despawn_spook_1_coffe_finished")
 #			so add a siganl here
 #despawn that npc
