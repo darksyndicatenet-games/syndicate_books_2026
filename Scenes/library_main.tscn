@@ -207,6 +207,14 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pat0f"]
 albedo_texture = ExtResource("6_q5ofo")
 
+[sub_resource type="Animation" id="Animation_cx67b"]
+resource_name = "ending_Scene"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8a35c"]
+_data = {
+&"ending_Scene": SubResource("Animation_cx67b")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot02y"]
 size = Vector3(31.292969, 6.29, 2.140879)
 
@@ -1865,6 +1873,19 @@ transform = Transform3D(0.99995756, 0, 0.009215208, 0, 1, 0, -0.009215208, 0, 0.
 [node name="Door" type="Area3D" parent="Day1" unique_id=1245343156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47982192, 0.4961486, 24.907701)
 
+[node name="Cutscene" parent="Day1/Door" unique_id=1042776018 node_paths=PackedStringArray("player", "look_target") instance=ExtResource("28_vfwt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4122229, 0.75790834, 2.9796066)
+player = NodePath("../../../Player")
+look_target = NodePath("CloseShop")
+message = "jkdkhtdktdktydkytdktydktydt"
+play_scene_once = true
+
+[node name="CloseShop" type="Marker3D" parent="Day1/Door/Cutscene" unique_id=845663446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9305923, -5.445402)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Day1/Door/Cutscene" unique_id=503580754]
+libraries/ = SubResource("AnimationLibrary_8a35c")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/Door" unique_id=1490496602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0697556, 1.5333531, -0.7118645)
 shape = SubResource("BoxShape3D_ot02y")
@@ -2096,7 +2117,7 @@ skeleton = NodePath("")
 
 [node name="Scare_1" type="Node3D" parent="." unique_id=2109900009]
 
-[node name="Cutscene" parent="Scare_1" unique_id=1042776018 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
+[node name="Cutscene" parent="Scare_1" unique_id=500636334 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.558446, 0.3204906, 20.627197)
 monitoring = false
 monitorable = false
@@ -2182,7 +2203,7 @@ shape = SubResource("CylinderShape3D_ixevi")
 debug_color = Color(0.96962434, 0, 0.46326667, 0.41960785)
 
 [node name="Cutscene3" parent="Scare_1" unique_id=852871049 node_paths=PackedStringArray("player", "look_target", "spook_1") instance=ExtResource("28_vfwt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.586802, 0.3204906, 33.359417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.60715, 0.3204906, 24.993454)
 monitorable = false
 player = NodePath("../../Player")
 look_target = NodePath("../NPC1_Face")
@@ -2928,6 +2949,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62
 [editable path="NavigationRegion3D/Syndicate_books"]
 [editable path="Player/BookInfoDisplay"]
 [editable path="Player/radio"]
+[editable path="Day1/Door/Cutscene"]
 [editable path="Books/TheAnimalFarm"]
 [editable path="Books/TheSongOfAchilles"]
 [editable path="Books/ThePowerOfPatience"]

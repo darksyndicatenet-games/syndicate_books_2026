@@ -20,7 +20,7 @@ material_override = ExtResource("1_5kjd2")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=4896523]
 
 [node name="actual_texting_walking_npc4" parent="." unique_id=1392643325 instance=ExtResource("3_w8gxi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014863759, -1.0219171, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.014863759, -1.0219171, 0)
 
 [node name="Skeleton3D" parent="actual_texting_walking_npc4/Armature_001" parent_id_path=PackedInt32Array(1392643325, 1344876148) index="0" unique_id=922147498]
 bones/0/position = Vector3(0, -0.670144, -115.38903)

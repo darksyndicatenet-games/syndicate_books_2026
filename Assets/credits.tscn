@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://eb2r8waimuin"]
+
+[ext_resource type="VideoStream" uid="uid://w0p4bknsgik6" path="res://Assets/End_Credits.ogv" id="1_nvd4n"]
+
+[node name="Credits" type="Node2D" unique_id=2083744513]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1279733300]
+position = Vector2(967, 552)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2043816544]
+offset_left = -13.0
+offset_top = 4.0
+offset_right = 1907.0
+offset_bottom = 1084.0
+scale = Vector2(1.0196373, 1.0196373)
+stream = ExtResource("1_nvd4n")
+autoplay = true

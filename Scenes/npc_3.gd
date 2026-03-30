@@ -7,12 +7,13 @@ extends CharacterBody3D
 @onready var player: CharacterBody3D = $"../../Player"
 @export var leave_marker : Marker3D
 @onready var misson_manager: Node = $"../../MissonManager"
+@onready var cutscene: Area3D = $"../../Day1/Door/Cutscene"
 
 @onready var npc_2: CharacterBody3D = $"../NPC_2"
 var npc3_event_triggered := false
 # if npc_3_can_get_npc_2 == true make npc3 walk
 func _ready() -> void:
-
+	cutscene.monitoring = false
 	if target_marker:
 		nav_agent.target_position = target_marker.global_position
 
@@ -78,3 +79,8 @@ func trigger_npc3_event():
 	await get_tree().create_timer(3.0).timeout
 	
 	player.force_look_at(look_marker.global_position)
+	if Global.spook_1_ending == true:
+		cutscene.monitoring = true
+	else:
+#		play credits
+		return

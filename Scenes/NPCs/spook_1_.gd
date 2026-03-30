@@ -28,4 +28,5 @@ func on_player_offered_coffee(argument : String):
 		
 		
 func on_player_denied_coffee_For_spook():
+#	play credits
 	pass
