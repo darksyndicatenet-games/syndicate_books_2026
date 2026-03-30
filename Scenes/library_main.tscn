@@ -76,6 +76,7 @@
 [ext_resource type="PackedScene" uid="uid://cry8ghrilwywe" path="res://Scenes/waving_spookyy.tscn" id="71_l52nb"]
 [ext_resource type="PackedScene" uid="uid://car1bo5pqbpjf" path="res://Assets/Assets_Scenes/Blender_Assets/box_return.glb" id="72_cx67b"]
 [ext_resource type="PackedScene" uid="uid://b52ryuss8nm8o" path="res://Assets/carpet.glb" id="76_pys0l"]
+[ext_resource type="PackedScene" uid="uid://qrcj214wgkrq" path="res://cat_poster.tscn" id="77_mhq45"]
 
 [sub_resource type="Sky" id="Sky_4so3u"]
 sky_material = ExtResource("2_08ywl")
@@ -4702,6 +4703,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -26.88861
 [node name="FlatLights94" parent="StudyArea/Chairs/Lights" unique_id=569652276 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -31.760359)
 
+[node name="FlatLights107" parent="StudyArea/Chairs/Lights" unique_id=445423158 instance=ExtResource("58_5mjsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.03937, 5.474571, -31.760359)
+
 [node name="FlatLights30" parent="StudyArea/Chairs/Lights" unique_id=1945897696 instance=ExtResource("58_5mjsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.141861, 5.474571, -26.888618)
 
@@ -5075,6 +5079,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.968739, 1.7912736, -19.562
 
 [node name="coffee_mug3" parent="." unique_id=208929249 instance=ExtResource("38_g48l2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.12898, 1.7912736, -20.658842)
+
+[node name="CatPoster" parent="." unique_id=585175592 instance=ExtResource("77_mhq45")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.30383, 2.4999287, -33.314068)
 
 [connection signal="body_entered" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Computer/Area3D" to="Computer" method="_on_area_3d_body_exited"]
