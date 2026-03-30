@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var misson_manager: Node = $"../../MissonManager"
 
 @onready var npc_2: CharacterBody3D = $"../NPC_2"
-
+var npc3_event_triggered := false
 # if npc_3_can_get_npc_2 == true make npc3 walk
 func _ready() -> void:
 
@@ -19,14 +19,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if Global.npc_3_can_get_npc_2:
 		enter_library()
-		if Global.have_npc3_collect_npc_2_once:
-			Dialogic.start("npc_3_enters_to_get_her_dad")
-			
-			Global.have_npc3_collect_npc_2_once = false
-			Dialogic.signal_event.connect(on_Beaded_charm_acquired_notification)
-			# Wait 3 seconds
-			await get_tree().create_timer(3.0).timeout
-			player.force_look_at(look_marker.global_position)
+
+		if Global.have_npc3_collect_npc_2_once and not npc3_event_triggered:
+			npc3_event_triggered = true
+			trigger_npc3_event()
 		
 		
 func enter_library():
@@ -68,3 +64,17 @@ func on_Beaded_charm_acquired_notification(argument: String):
 					npc2_nav_agent.target_position = leave_marker.global_position
 			misson_manager.set_message("Close Library")
 			#[Dialogue: "Guess it's time to lock up..."]
+func trigger_npc3_event():
+	if not Global.have_npc3_collect_npc_2_once:
+		return
+
+	Global.have_npc3_collect_npc_2_once = false
+
+	enter_library()
+	Dialogic.start("npc_3_enters_to_get_her_dad")
+	if not Dialogic.signal_event.is_connected(on_Beaded_charm_acquired_notification):
+		Dialogic.signal_event.connect(on_Beaded_charm_acquired_notification)
+
+	await get_tree().create_timer(3.0).timeout
+	
+	player.force_look_at(look_marker.global_position)

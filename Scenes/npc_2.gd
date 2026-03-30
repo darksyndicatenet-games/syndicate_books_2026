@@ -22,12 +22,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if Global.have_elderly_come_in_library_npc2_:
 		enter_library()
-	if Global.The_Long_Walk_To_Freedom_given_to_npc2:
+	if Global.ThePowerOfPatienceBookEnteredArea:
 		player.force_look_at(look_marker.global_position)
 #		maybe add  an await for 1.5s
 #add dialogue here
 		Dialogic.start("hand_book_to_npc_2")
-		Global.The_Long_Walk_To_Freedom_given_to_npc2 = false
+		Global.ThePowerOfPatienceBookEnteredArea = false
 
 func enter_library():
 	if nav_agent.is_navigation_finished():

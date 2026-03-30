@@ -7,8 +7,10 @@ extends Node3D
 @onready var receptionist_label: Label3D = $Day1/FrontDeskArea3D/ReceptionistLabel
 @onready var misson_manager: Node = $MissonManager
 @onready var turn_off_sounds_and_have_npc_2_enter: Area3D = $Scare_1/TurnOffSoundsAndHaveNPC2Enter
+@onready var the_power_of_patience: RigidBody3D = $Books/ThePowerOfPatience
 
 @onready var background_normal_ambience: AudioStreamPlayer3D = $Player/BackgroundNormalAmbience
+#@onready var the_power_of_patience: RigidBody3D = $Books/ThePowerOfPatience
 
 var bell_has_been_fired := false
 var counter := 0
@@ -17,7 +19,7 @@ var counter := 0
 # books already counted
 var counted_books: Array[String] = []
 
-
+var run_once := false
 
 #need to put a boolean value after discussing wiht the new npc 
 #then player should look at study area for the guy that disappeared
@@ -84,20 +86,27 @@ func _on_front_desk_area_3d_body_entered(body: Node3D) -> void:
 		
 	var book_name = body.book_name.to_lower()
 
-	# nly specific books allowed
+	# 🔥 special book logic (runs regardless)
+	if book_name == "the power of patience" and run_once == false:
+		Global.ThePowerOfPatienceBookEnteredArea = true
+		Global.have_npc3_collect_npc_2_once = true
+		print("ThePowerOfPatienceBookEnteredArea Library main")
+		run_once = true
+
+	# only count required books
 	if not required_books.has(book_name):
 		return
 
-	# prevent counting same book twice
+	# prevent duplicates
 	if counted_books.has(book_name):
 		return
 
-	# Count it
 	counted_books.append(book_name)
 	counter += 1
 
 	print("Book added:", book_name)
 	print("Counter = ", counter)
+
 	receptionist_label.text = "Books " + str(counter) + " / 2 ⬇️"
 	check_completion()
 	
@@ -212,6 +221,7 @@ func _on_front_desk_area_3d_body_exited(body: Node3D) -> void:
 	receptionist_label.text = "books " + str(counter) + " / 2"
 	check_completion()
 
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_patient_book_area_body_entered(body: Node3D) -> void:
+#	if the_power_of_patience is in area and player
+#global.The_Long_Walk_To_Freedom_given_to_npc2== true
 	pass # Replace with function body.

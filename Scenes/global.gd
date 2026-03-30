@@ -5,7 +5,7 @@ var is_player_occupied:= false
 var is_holding := false
 var book_iCounter:= 0
 var animal_farm_entered:=false
- 
+var ThePowerOfPatienceBookEnteredArea := false
 var played_cutscene_1 := false
 var move_npc_1_to_desk_after_bell_rings := false
 var check_book_first_npc := false

@@ -523,6 +523,9 @@ albedo_color = Color(0.76750416, 0.52620053, 0.024487194, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lje5s"]
 size = Vector3(1, 0.20062256, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8a35c"]
+size = Vector3(6.784912, 2.430725, 4.619751)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yggxq"]
 resource_name = "Material"
 cull_mode = 2
@@ -1960,6 +1963,13 @@ billboard = 1
 text = "Books 0/2 ⬇️"
 font_size = 100
 
+[node name="PatientBookArea" type="Area3D" parent="Day1/FrontDeskArea3D" unique_id=1351989893]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Day1/FrontDeskArea3D/PatientBookArea" unique_id=1091802535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.805229, 1.619498, 8.8113575)
+shape = SubResource("BoxShape3D_8a35c")
+debug_color = Color(0.5163176, 0, 0.2115514, 0.41960785)
+
 [node name="TriggerThoughts" type="Node3D" parent="." unique_id=903876427]
 
 [node name="FadeTextArea" parent="TriggerThoughts" unique_id=252518672 node_paths=PackedStringArray("player") instance=ExtResource("15_qstqp")]
@@ -2901,6 +2911,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1023035, 0.29999018, 30.62
 [connection signal="body_exited" from="Day1/FrontDeskArea3D" to="." method="_on_front_desk_area_3d_body_exited"]
 [connection signal="body_entered" from="Day1/FrontDeskArea3D/Placement2" to="Day1/FrontDeskArea3D/Placement2" method="_on_body_entered"]
 [connection signal="body_exited" from="Day1/FrontDeskArea3D/Placement2" to="Day1/FrontDeskArea3D/Placement2" method="_on_body_exited"]
+[connection signal="body_entered" from="Day1/FrontDeskArea3D/PatientBookArea" to="." method="_on_patient_book_area_body_entered"]
 [connection signal="scene1_return_books_to_shelf" from="SignalManager" to="Computer/CanvasLayer/User" method="on_scene1_return_books_to_shelf"]
 [connection signal="body_entered" from="Books/ThePowerOfPatience/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Scare_1/Cutscene2" to="." method="_on_cutscene_2_body_entered"]
